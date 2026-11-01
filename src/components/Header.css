@@ -1,101 +1,114 @@
 @import "../styles/fonts.css";
 
 /* ============================================================================
-   TIFFANY & CO. STANDARD LUXURY HEADER & NAVIGATION SYSTEM
-   Two-tiered architecture: Unified Primary Row + Mega-Menu Dropdown
+   AVIORY & CO. — TIFFANY-STANDARD LUXURY NAVIGATION SYSTEM
+   Architecture: Announce Bar → Logo/Utility Row → Nav Row → Mega Panel
    ============================================================================ */
 
+/* ── Announcement Bar ── */
+.aviory-announce-bar {
+  background-color: #111111;
+  color: #C9A96E;
+  text-align: center;
+  padding: 8px 1rem;
+  font-family: var(--font-ui, 'Montserrat', sans-serif);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.aviory-announce-bar p {
+  margin: 0;
+}
+
+/* ── Header Shell ── */
 .tiffany-header {
   position: sticky;
   top: 0;
   left: 0;
   right: 0;
   z-index: 2000;
-  background-color: var(--color-white);
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+  background-color: #FFFFFF;
+  transition: box-shadow 0.3s ease;
 }
 
 .tiffany-header--scrolled {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.10);
 }
 
-/* ============================================================================
-   TOP ROW: Tiffany-standard Layout
-   Left: Atelier / Search | Center: Logo | Right: Contact / Switchers / Bag
-   ============================================================================ */
-
+/* ── Top Row: Logo Center, Utilities Left, Actions Right ── */
 .tiffany-header__top {
-  background-color: var(--color-white);
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--color-gray-light);
+  background-color: #FFFFFF;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid #E8E3DC;
   position: relative;
-  z-index: 2010;
+  z-index: 10;
 }
 
 .tiffany-header__top-inner {
   position: relative;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 
-/* Left Utility Cluster: Atelier & Search (Tiffany Pattern) */
+/* Left utilities */
 .tiffany-header__top-left {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.75rem;
   flex: 0 0 auto;
 }
 
 .tiffany-header__utility-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.4rem;
   background: none;
   border: none;
   padding: 0;
-  color: var(--color-black);
+  color: #1A1A1A;
   text-decoration: none;
   cursor: pointer;
-  font-family: var(--font-ui);
-  font-size: 0.72rem;
+  font-family: var(--font-ui, 'Montserrat', sans-serif);
+  font-size: 0.68rem;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  transition: color 0.25s ease;
+  transition: color 0.2s ease;
 }
 
 .tiffany-header__utility-btn:hover {
-  color: var(--color-accent);
+  color: #B8996A;
 }
 
 .tiffany-header__utility-text {
   display: inline-block;
 }
 
-/* Logo: Center Top */
+/* Center Logo — Absolute Centered */
 .tiffany-header__logo-link {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: center;
   text-decoration: none;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  gap: 0.3rem;
-  margin: 0;
+  gap: 0.25rem;
   z-index: 5;
+  white-space: nowrap;
 }
 
 .tiffany-header__logo-text {
-  font-family: "BlackGold", "BlackGoldRegular", "AvioryLogo", serif !important;
-  font-size: clamp(1.8rem, 3.2vw, 2.7rem);
+  font-family: "BlackGold", "BlackGoldRegular", serif !important;
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
   font-weight: normal;
-  letter-spacing: 0.08em;
-  color: var(--color-black);
+  letter-spacing: 0.1em;
+  color: #1A1A1A;
   line-height: 1;
   text-transform: uppercase;
 }
@@ -103,23 +116,23 @@
 .tiffany-header__logo-ampersand {
   font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif !important;
   font-style: italic;
-  font-size: clamp(1.5rem, 2.6vw, 2.2rem);
+  font-size: clamp(1.3rem, 2.3vw, 2rem);
   font-weight: 400;
-  color: var(--color-black);
-  margin: 0 0.35rem;
+  color: #1A1A1A;
+  margin: 0 0.3rem;
 }
 
 .tiffany-header__logo-co {
-  font-family: "BlackGold", "BlackGoldRegular", "AvioryLogo", serif !important;
-  font-size: clamp(1.5rem, 2.8vw, 2.3rem);
+  font-family: "BlackGold", "BlackGoldRegular", serif !important;
+  font-size: clamp(1.3rem, 2.4vw, 2rem);
   font-weight: normal;
-  letter-spacing: 0.1em;
-  color: var(--color-black);
+  letter-spacing: 0.12em;
+  color: #1A1A1A;
   line-height: 1;
   text-transform: uppercase;
 }
 
-/* Mobile Hamburger (Left) */
+/* Mobile Hamburger */
 .tiffany-header__hamburger {
   display: none;
   flex-direction: column;
@@ -138,7 +151,7 @@
   display: block;
   width: 22px;
   height: 1.5px;
-  background-color: var(--color-black);
+  background-color: #1A1A1A;
   transition: all 0.3s ease;
 }
 
@@ -154,7 +167,7 @@
   transform: translateY(-6.5px) rotate(-45deg);
 }
 
-/* Right-side Icon Cluster */
+/* Right Actions */
 .tiffany-header__actions {
   display: flex;
   align-items: center;
@@ -163,81 +176,58 @@
   z-index: 10;
 }
 
-.tiffany-header__action-text-link {
-  background: none;
-  border: none;
-  padding: 0;
-  font-family: var(--font-ui);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-black);
-  text-decoration: none;
-  cursor: pointer;
-  transition: color 0.25s ease;
-}
-
-.tiffany-header__action-text-link:hover {
-  color: var(--color-accent);
-}
-
 .tiffany-header__action-btn {
   background: none;
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-black);
+  color: #1A1A1A;
   cursor: pointer;
   padding: 0;
   min-width: 20px;
   min-height: 20px;
-  transition: all 0.25s ease;
+  transition: color 0.2s ease, transform 0.2s ease;
   position: relative;
 }
 
 .tiffany-header__action-btn:hover {
-  color: var(--color-accent);
+  color: #B8996A;
   transform: scale(1.08);
 }
 
-/* Cart Badge */
 .tiffany-header__bag-badge {
   position: absolute;
   top: -6px;
-  right: -6px;
-  background-color: var(--color-accent);
-  color: var(--color-white);
-  font-family: var(--font-ui);
-  font-size: 0.6rem;
+  right: -7px;
+  background-color: #B8996A;
+  color: #FFFFFF;
+  font-family: var(--font-ui, 'Montserrat', sans-serif);
+  font-size: 0.58rem;
   font-weight: 700;
-  width: 17px;
-  height: 17px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--color-white);
+  border: 1.5px solid #FFFFFF;
 }
 
-/* Language & Currency Locale Switchers */
+/* Locale Switchers */
 .tiffany-header__locale {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.65rem;
+  padding-left: 1rem;
   margin-left: 0.25rem;
-  padding-left: 0.75rem;
-  border-left: 1px solid var(--color-gray-light);
+  border-left: 1px solid #E8E3DC;
 }
 
-/* ============================================================================
-   BOTTOM ROW: Navigation (Centered)
-   ============================================================================ */
-
+/* ── Navigation Row ── */
 .tiffany-header__nav {
-  background-color: var(--color-white);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #E8E3DC;
   position: relative;
   z-index: 2005;
 }
@@ -248,7 +238,7 @@
   margin: 0;
   padding: 0;
   justify-content: center;
-  gap: 2.75rem;
+  gap: 2.5rem;
 }
 
 .tiffany-header__nav-item {
@@ -258,69 +248,66 @@
 .tiffany-header__nav-link {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
   padding: 0.95rem 0;
-  font-family: var(--font-ui);
-  font-size: 0.76rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
+  font-family: var(--font-ui, 'Montserrat', sans-serif);
+  font-size: 0.74rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--color-black);
+  color: #1A1A1A;
   text-decoration: none;
   white-space: nowrap;
-  transition: color 0.25s ease;
+  transition: color 0.2s ease;
   position: relative;
   cursor: pointer;
 }
 
-.tiffany-header__nav-link:hover {
-  color: var(--color-accent);
-}
-
-.tiffany-header__nav-item--active .tiffany-header__nav-link {
-  color: var(--color-accent);
-}
-
-.tiffany-header__nav-item--active .tiffany-header__nav-link::after {
+.tiffany-header__nav-link::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   height: 2px;
-  background-color: var(--color-accent);
-}
-
-.tiffany-nav-chevron {
-  opacity: 0.6;
+  background-color: #1A1A1A;
+  transform: scaleX(0);
   transition: transform 0.25s ease;
+  transform-origin: center;
 }
 
-.tiffany-header__nav-item--active .tiffany-nav-chevron {
-  transform: rotate(180deg);
-  opacity: 1;
+.tiffany-header__nav-link:hover {
+  color: #1A1A1A;
 }
 
-/* ============================================================================
-   FULL-WIDTH MEGA-MENU PANELS
-   ============================================================================ */
+.tiffany-header__nav-link:hover::after {
+  transform: scaleX(1);
+}
 
+.tiffany-header__nav-item--active .tiffany-header__nav-link {
+  color: #1A1A1A;
+  font-weight: 600;
+}
+
+.tiffany-header__nav-item--active .tiffany-header__nav-link::after {
+  transform: scaleX(1);
+}
+
+/* ── Full-Width Mega Menu Panel ── */
 .tiffany-mega {
   position: absolute;
   top: 100%;
   left: 0;
   right: 0;
-  z-index: 2005;
-  background-color: var(--color-white);
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
-  border-bottom: 1px solid var(--color-gray-light);
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.14);
+  z-index: 2004;
+  background-color: #FFFFFF;
+  border-top: 1px solid #E8E3DC;
+  border-bottom: 2px solid #E8E3DC;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-8px);
-  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+  transform: translateY(-6px);
+  transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
   pointer-events: none;
-  margin-top: 0;
 }
 
 .tiffany-mega--visible {
@@ -333,31 +320,33 @@
 /* Standard Multi-Column Layout */
 .tiffany-mega__inner {
   display: flex;
-  gap: 3.5rem;
-  padding-top: 2.75rem;
-  padding-bottom: 3.25rem;
+  gap: 0;
+  padding-top: 2.5rem;
+  padding-bottom: 3rem;
+  align-items: flex-start;
 }
 
 .tiffany-mega__columns {
   display: flex;
-  gap: 3.5rem;
+  gap: 3rem;
   flex: 1;
 }
 
 .tiffany-mega__column {
-  min-width: 180px;
+  flex: 1;
+  min-width: 160px;
 }
 
 .tiffany-mega__heading {
-  font-family: var(--font-ui);
-  font-size: 0.68rem;
+  font-family: var(--font-ui, 'Montserrat', sans-serif);
+  font-size: 0.63rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: var(--color-accent);
+  letter-spacing: 0.2em;
+  color: #B8996A;
   margin-bottom: 1.25rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid var(--color-gray-light);
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid #E8E3DC;
 }
 
 .tiffany-mega__links {
@@ -366,185 +355,213 @@
   padding: 0;
   display: flex;
   flex-direction: column;
+  gap: 0.8rem;
 }
 
 .tiffany-mega__link {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.45rem 0;
-  font-family: var(--font-ui);
+  gap: 0.4rem;
+  font-family: var(--font-ui, 'Montserrat', sans-serif);
   font-size: 0.8rem;
-  font-weight: 400;
-  color: var(--color-black);
+  font-weight: 300;
+  color: #1A1A1A;
   text-decoration: none;
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition: color 0.18s ease, transform 0.18s ease;
 }
 
 .tiffany-mega__link:hover {
-  color: var(--color-accent);
-  transform: translateX(4px);
+  color: #B8996A;
+  transform: translateX(3px);
 }
 
 .tiffany-mega__link--accent {
   font-weight: 600;
-  color: var(--color-black);
-  margin-top: 0.75rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid var(--color-gray-light);
+  color: #1A1A1A;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #E8E3DC;
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
 }
 
-/* Feature editorial card in standard mega */
+.tiffany-mega__link--accent:hover {
+  color: #B8996A;
+}
+
+/* Editorial Feature Card (right column) */
 .tiffany-mega__feature {
-  width: 310px;
-  min-height: 240px;
+  width: 280px;
+  min-height: 260px;
   flex-shrink: 0;
-  padding: 2.5rem 2rem;
+  padding: 2.25rem 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  color: var(--color-white);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+  justify-content: flex-end;
+  color: #FFFFFF;
   position: relative;
   overflow: hidden;
+  margin-left: 3rem;
+}
+
+.tiffany-mega__feature::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.55) 100%);
+  z-index: 1;
+}
+
+.tiffany-mega__feature > * {
+  position: relative;
+  z-index: 2;
 }
 
 .tiffany-mega__feature--sapphire {
-  background: linear-gradient(135deg, #071324 0%, #112544 50%, #1e4175 100%);
+  background: linear-gradient(145deg, #061422 0%, #0d2a50 40%, #173d70 70%, #1a4d8f 100%);
 }
 
 .tiffany-mega__feature--gold {
-  background: linear-gradient(135deg, #241c14 0%, #3d2f21 50%, #5e4732 100%);
+  background: linear-gradient(145deg, #1a1208 0%, #352208 40%, #5a3a10 70%, #7a5020 100%);
 }
 
 .tiffany-mega__feature--rose {
-  background: linear-gradient(135deg, #3d1a1a 0%, #5e2a2a 50%, #7d3a3a 100%);
+  background: linear-gradient(145deg, #2a0a0a 0%, #4a1515 40%, #6b2525 70%, #8b3535 100%);
 }
 
 .tiffany-mega__feature--platinum {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #4d4d4d 100%);
+  background: linear-gradient(145deg, #111111 0%, #252525 40%, #3d3d3d 100%);
 }
 
 .tiffany-mega__feature--champagne {
-  background: linear-gradient(135deg, #241c14 0%, #473623 50%, #6e5537 100%);
+  background: linear-gradient(145deg, #1a1108 0%, #352808 40%, #5a4518 70%, #7a6028 100%);
+}
+
+.tiffany-mega__feature-eyebrow {
+  font-family: var(--font-ui, 'Montserrat', sans-serif);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #C9A96E;
+  margin-bottom: 0.5rem;
 }
 
 .tiffany-mega__feature-title {
-  font-family: var(--font-primary, serif);
-  font-size: 1.25rem;
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
   line-height: 1.3;
+  color: #FFFFFF;
 }
 
 .tiffany-mega__feature-sub {
-  font-family: var(--font-ui);
-  font-size: 0.75rem;
-  font-weight: 400;
-  opacity: 0.95;
+  font-family: var(--font-ui, 'Montserrat', sans-serif);
+  font-size: 0.72rem;
+  font-weight: 300;
+  opacity: 0.9;
   margin-bottom: 1.5rem;
-  line-height: 1.5;
+  line-height: 1.6;
+  color: #EDE7DC;
+}
+
+.tiffany-mega__feature-rule {
+  width: 32px;
+  height: 1px;
+  background-color: #C9A96E;
+  margin-bottom: 1rem;
 }
 
 .tiffany-mega__feature-cta {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-family: var(--font-ui);
-  font-size: 0.75rem;
+  font-family: var(--font-ui, 'Montserrat', sans-serif);
+  font-size: 0.68rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--color-white);
+  letter-spacing: 0.1em;
+  color: #C9A96E;
   text-decoration: none;
-  border-bottom: 2px solid transparent;
-  padding-bottom: 2px;
-  transition: all 0.25s ease;
-  width: fit-content;
+  transition: gap 0.2s ease;
 }
 
 .tiffany-mega__feature-cta:hover {
-  border-bottom-color: var(--color-white);
-  transform: translateX(2px);
+  gap: 0.75rem;
 }
 
-/* ============================================================================
-   TIFFANY & CO. TABBED SUB-NAVIGATION MEGA-MENU SYSTEM
-   (Used for Love & Celebration and Signature Collections)
-   ============================================================================ */
-
+/* ── LOVE & CELEBRATION Tabbed Mega ── */
 .tiffany-mega__tabbed-container {
-  padding-top: 1.75rem;
+  padding-top: 0;
   padding-bottom: 2.75rem;
 }
 
+/* Sub-nav tab bar */
 .tiffany-mega__subnav-bar {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  border-bottom: 1px solid var(--color-gray-light);
-  padding-bottom: 0;
-  margin-bottom: 2.25rem;
+  border-bottom: 1px solid #E8E3DC;
+  margin-bottom: 2rem;
 }
 
 .tiffany-mega__subnav-tabs {
   display: flex;
-  gap: 2.5rem;
+  gap: 0;
 }
 
 .tiffany-mega__subnav-tab {
   background: none;
   border: none;
-  cursor: pointer;
-  padding: 0.5rem 0.25rem 0.85rem 0.25rem;
-  font-family: var(--font-ui);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #555555;
-  position: relative;
-  transition: all 0.25s ease;
   border-bottom: 2px solid transparent;
+  cursor: pointer;
+  padding: 1rem 1.5rem 0.85rem 1.5rem;
+  font-family: var(--font-ui, 'Montserrat', sans-serif);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #888888;
+  position: relative;
+  transition: color 0.2s ease, border-color 0.2s ease;
   margin-bottom: -1px;
+  white-space: nowrap;
 }
 
 .tiffany-mega__subnav-tab:hover {
-  color: var(--color-black);
+  color: #1A1A1A;
 }
 
 .tiffany-mega__subnav-tab--active {
-  color: var(--color-black);
-  font-weight: 700;
-  border-bottom: 2px solid var(--color-black);
-}
-
-.tiffany-mega__subnav-tab--active::after {
-  display: none;
+  color: #1A1A1A;
+  font-weight: 600;
+  border-bottom-color: #1A1A1A;
 }
 
 .tiffany-mega__subnav-info {
-  font-family: var(--font-primary, serif);
-  font-size: 0.88rem;
-  color: var(--color-black);
-  text-decoration: none;
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  font-size: 0.85rem;
   font-style: italic;
-  padding-bottom: 0.85rem;
-  transition: color 0.25s ease;
+  color: #1A1A1A;
+  text-decoration: none;
+  padding: 0.75rem 0 0.85rem 0;
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
+  transition: color 0.2s ease;
+  white-space: nowrap;
 }
 
 .tiffany-mega__subnav-info:hover {
-  color: var(--color-accent);
+  color: #B8996A;
 }
 
-/* 6-Column Card Grid (Like Tiffany Engagement Ring & Diamond Shapes Grid) */
+/* 6-col image card grid */
 .tiffany-mega__cards-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .tiffany-mega__card {
@@ -552,7 +569,7 @@
   flex-direction: column;
   text-align: center;
   text-decoration: none;
-  color: var(--color-black);
+  color: #1A1A1A;
   transition: transform 0.3s ease;
 }
 
@@ -563,13 +580,9 @@
 .tiffany-mega__card-media {
   width: 100%;
   aspect-ratio: 1 / 1;
-  background-color: #F7F5F0;
-  border-radius: 2px;
+  background-color: #F4F0EA;
   overflow: hidden;
-  margin-bottom: 0.85rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin-bottom: 0.65rem;
   position: relative;
 }
 
@@ -577,37 +590,49 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .tiffany-mega__card:hover .tiffany-mega__card-media img {
-  transform: scale(1.06);
+  transform: scale(1.07);
 }
 
 .tiffany-card-fallback {
-  background: linear-gradient(135deg, #FAF7F2 0%, #EDE7DD 100%);
+  background: linear-gradient(135deg, #F4F0EA 0%, #EAE4D8 100%);
 }
 
 .tiffany-mega__card-title {
-  font-family: var(--font-primary, serif);
-  font-size: 0.85rem;
+  font-family: var(--font-ui, 'Montserrat', sans-serif);
+  font-size: 0.72rem;
   font-weight: 500;
+  letter-spacing: 0.04em;
   line-height: 1.3;
-  margin-bottom: 0.3rem;
-  color: var(--color-black);
+  margin-bottom: 0.2rem;
+  color: #1A1A1A;
 }
 
 .tiffany-mega__card-desc {
-  font-family: var(--font-ui);
-  font-size: 0.68rem;
+  font-family: var(--font-ui, 'Montserrat', sans-serif);
+  font-size: 0.62rem;
   line-height: 1.4;
-  color: var(--color-text-secondary);
+  color: #777777;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
+/* Guide card style */
+.tiffany-mega__card--guide .tiffany-mega__card-media {
+  background: linear-gradient(145deg, #1A1A1A 0%, #333333 100%);
+}
+
+.tiffany-mega__card--guide .tiffany-mega__card-title {
+  color: #B8996A;
+  font-style: italic;
+}
+
+/* ── Backdrop ── */
 .tiffany-mega-backdrop {
   position: fixed;
   top: 0;
@@ -615,7 +640,7 @@
   right: 0;
   bottom: 0;
   z-index: 1998;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.18);
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -628,10 +653,7 @@
   pointer-events: auto;
 }
 
-/* ============================================================================
-   MOBILE DRAWER NAVIGATION
-   ============================================================================ */
-
+/* ── Mobile Drawer Navigation ── */
 .tiffany-mobile-drawer {
   position: fixed;
   top: 0;
@@ -639,9 +661,9 @@
   width: 100%;
   max-width: 380px;
   height: 100vh;
-  background-color: var(--color-white);
+  background-color: #FFFFFF;
   z-index: 2050;
-  transition: left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: left 0.38s cubic-bezier(0.16, 1, 0.3, 1);
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -655,15 +677,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.15rem 1.25rem;
-  border-bottom: 1px solid var(--color-gray-light);
+  padding: 1.1rem 1.25rem;
+  border-bottom: 1px solid #E8E3DC;
 }
 
 .tiffany-mobile-drawer__logo {
   font-family: "BlackGold", "BlackGoldRegular", serif;
-  font-size: 1.3rem;
-  letter-spacing: 0.08em;
-  color: var(--color-black);
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  color: #1A1A1A;
 }
 
 .tiffany-mobile-drawer__close {
@@ -674,17 +696,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-black);
+  color: #1A1A1A;
+  transition: color 0.2s ease;
 }
 
-/* Prominent top locale switchers in mobile drawer */
+.tiffany-mobile-drawer__close:hover {
+  color: #B8996A;
+}
+
+/* Locale switchers strip in mobile drawer */
 .tiffany-mobile-drawer__locale-top {
   display: flex;
   align-items: center;
   gap: 1rem;
   padding: 0.85rem 1.25rem;
   background-color: #FAF7F2;
-  border-bottom: 1px solid var(--color-gray-light);
+  border-bottom: 1px solid #E8E3DC;
 }
 
 .tiffany-mobile-drawer__body {
@@ -700,7 +727,7 @@
 }
 
 .tiffany-mobile-drawer__item {
-  border-bottom: 1px solid var(--color-gray-light);
+  border-bottom: 1px solid #E8E3DC;
 }
 
 .tiffany-mobile-drawer__item-bar {
@@ -713,18 +740,18 @@
 
 .tiffany-mobile-drawer__link {
   flex: 1;
-  font-family: var(--font-ui);
-  font-size: 0.82rem;
+  font-family: var(--font-ui, 'Montserrat', sans-serif);
+  font-size: 0.8rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-black);
+  color: #1A1A1A;
   text-decoration: none;
-  transition: color 0.25s ease;
+  transition: color 0.2s ease;
 }
 
 .tiffany-mobile-drawer__link:hover {
-  color: var(--color-accent);
+  color: #B8996A;
 }
 
 .tiffany-mobile-drawer__toggle {
@@ -735,7 +762,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-black);
+  color: #1A1A1A;
   transition: transform 0.3s ease;
 }
 
@@ -754,50 +781,52 @@
 .tiffany-mobile-sub-group {
   display: flex;
   flex-direction: column;
-  gap: 0.65rem;
+  gap: 0.6rem;
 }
 
 .tiffany-mobile-sub-heading {
-  font-family: var(--font-ui);
-  font-size: 0.68rem;
+  font-family: var(--font-ui, 'Montserrat', sans-serif);
+  font-size: 0.62rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: #B8996A;
   padding-bottom: 0.4rem;
-  border-bottom: 1px solid var(--color-gray-light);
+  border-bottom: 1px solid #E8E3DC;
 }
 
 .tiffany-mobile-sub-link {
-  font-family: var(--font-ui);
-  font-size: 0.82rem;
-  color: var(--color-black);
+  font-family: var(--font-ui, 'Montserrat', sans-serif);
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #1A1A1A;
   text-decoration: none;
-  padding: 0.25rem 0;
-  transition: color 0.25s ease;
+  padding: 0.2rem 0;
+  transition: color 0.2s ease;
 }
 
 .tiffany-mobile-sub-link:hover {
-  color: var(--color-accent);
+  color: #B8996A;
 }
 
 .tiffany-mobile-drawer__footer {
   padding: 1.5rem;
-  border-top: 1px solid var(--color-gray-light);
-  background-color: var(--color-white);
+  border-top: 1px solid #E8E3DC;
+  background-color: #FFFFFF;
 }
 
 .tiffany-header__utility-link {
-  font-family: var(--font-ui);
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
+  font-family: var(--font-ui, 'Montserrat', sans-serif);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-black);
+  color: #1A1A1A;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .tiffany-header__utility-link:hover {
-  color: var(--color-accent);
+  color: #B8996A;
 }
 
 .tiffany-mobile-backdrop {
@@ -810,25 +839,25 @@
   z-index: 2040;
 }
 
-/* ============================================================================
-   RESPONSIVE BREAKPOINTS
-   ============================================================================ */
-
+/* ── Responsive ── */
 @media (max-width: 1200px) {
   .tiffany-header__nav-list {
     gap: 2rem;
-  }
-  .tiffany-header__action-text-link {
-    display: none;
   }
 }
 
 @media (max-width: 1024px) {
   .tiffany-header__nav-list {
-    gap: 1.5rem;
+    gap: 1.4rem;
   }
   .tiffany-header__nav-link {
-    font-size: 0.72rem;
+    font-size: 0.68rem;
+  }
+  .tiffany-mega__columns {
+    gap: 2rem;
+  }
+  .tiffany-mega__feature {
+    width: 220px;
   }
   .tiffany-mega__cards-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -836,6 +865,11 @@
 }
 
 @media (max-width: 768px) {
+  .aviory-announce-bar {
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    padding: 6px 1rem;
+  }
   .tiffany-header__nav {
     display: none;
   }
@@ -843,45 +877,33 @@
   .tiffany-mega-backdrop {
     display: none !important;
   }
-
   .tiffany-header__top-left {
     display: none;
   }
-
   .tiffany-header__hamburger {
     display: flex;
   }
-
   .tiffany-header__top {
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
+    padding: 0.75rem 0;
   }
-
   .tiffany-header__logo-link {
     position: static;
     transform: none;
     margin: 0 auto;
   }
-
   .tiffany-header__logo-text {
-    font-size: 1.45rem;
+    font-size: 1.35rem;
   }
-
   .tiffany-header__logo-ampersand {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
-
   .tiffany-header__logo-co {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
   }
-
   .tiffany-header__actions {
     gap: 0.75rem;
   }
-
-  /* Keep locale switchers visible or easily accessible on mobile */
   .tiffany-header__locale {
     display: none;
   }
 }
-

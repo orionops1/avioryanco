@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react'
+import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import useCartStore from '../hooks/useCart'
 import { useLanguage } from '../hooks/useLanguage'
@@ -18,13 +18,6 @@ const SearchIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
     <circle cx="11" cy="11" r="8" />
     <line x1="21" y1="21" x2="16.65" y2="16.65" />
-  </svg>
-)
-
-const PinIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-    <circle cx="12" cy="10" r="3" />
   </svg>
 )
 
@@ -61,7 +54,7 @@ const ArrowRight = () => (
    ============================================================================ */
 
 function useMegaMenuData(t) {
-  return useMemo(() => 
+  return useMemo(() =>
     megaMenuData.map((item) => ({
       ...item,
       label: t(item.labelKey, item.label) || item.label,
@@ -143,20 +136,24 @@ export default function Header({ scrolled }) {
 
   return (
     <>
+      {/* Announcement Bar */}
+      <div className="aviory-announce-bar" role="banner">
+        <p>COMPLIMENTARY WORLDWIDE SHIPPING &nbsp;&middot;&nbsp; CERTIFIED UNHEATED CEYLON GEMSTONES &nbsp;&middot;&nbsp; PRIVATE CONSULTATIONS AVAILABLE</p>
+      </div>
+
       <header
         ref={headerRef}
         className={`tiffany-header ${scrolled ? 'tiffany-header--scrolled' : ''} ${activeMega ? 'tiffany-header--mega-open' : ''}`}
       >
         {/* ============================================================
             TOP ROW: Tiffany-standard Layout
-            Left: Atelier/Search | Center: Logo | Right: Contact/Locale/Bag
+            Left: Atelier/Search | Center: Logo | Right: Locale/Bag
             ============================================================ */}
         <div className="tiffany-header__top">
           <div className="container tiffany-header__top-inner">
             {/* Left Desktop: Atelier / Search */}
             <div className="tiffany-header__top-left">
-              <Link to="/our-house" className="tiffany-header__utility-btn" title="Atelier & Boutiques">
-                <PinIcon />
+              <Link to="/our-house" className="tiffany-header__utility-btn" title="Atelier &amp; Boutiques">
                 <span className="tiffany-header__utility-text">ATELIER</span>
               </Link>
               <button
@@ -167,7 +164,6 @@ export default function Header({ scrolled }) {
                 title="Search"
               >
                 <SearchIcon />
-                <span className="tiffany-header__utility-text">SEARCH</span>
               </button>
             </div>
 
@@ -184,11 +180,11 @@ export default function Header({ scrolled }) {
             </button>
 
             {/* Center: Prominent BlackGold Logo */}
-            <Link 
-              to="/" 
-              className="tiffany-header__logo-link" 
+            <Link
+              to="/"
+              className="tiffany-header__logo-link"
               onClick={handleNavClick}
-              aria-label="AVIORY & CO. Homepage"
+              aria-label="AVIORY &amp; CO. Homepage"
             >
               <span className="tiffany-header__logo-text">AVIORY</span>
               <span className="tiffany-header__logo-ampersand">&amp;</span>
@@ -197,19 +193,6 @@ export default function Header({ scrolled }) {
 
             {/* Right: Actions Cluster */}
             <div className="tiffany-header__actions">
-              <Link to="/contact" className="tiffany-header__action-text-link">
-                CONTACT US
-              </Link>
-
-              <button 
-                type="button" 
-                className="tiffany-header__action-text-link"
-                onClick={() => setAppointmentModalOpen(true)}
-                title="Book a Private Consultation"
-              >
-                CONSULTATION
-              </button>
-
               {/* Language & Currency Switchers */}
               <div className="tiffany-header__locale">
                 <CurrencySwitcher variant="light" />
@@ -252,7 +235,6 @@ export default function Header({ scrolled }) {
                     onClick={handleNavClick}
                   >
                     <span>{item.label}</span>
-                    {item.mega && <ChevronDown className="tiffany-nav-chevron" />}
                   </Link>
                 </li>
               ))}
@@ -292,8 +274,8 @@ export default function Header({ scrolled }) {
                     ))}
                   </div>
                   {item.mega.infoLink && (
-                    <Link 
-                      to={item.mega.infoLink.href} 
+                    <Link
+                      to={item.mega.infoLink.href}
                       className="tiffany-mega__subnav-info"
                       onClick={handleNavClick}
                     >
@@ -314,10 +296,10 @@ export default function Header({ scrolled }) {
                           onClick={handleNavClick}
                         >
                           <div className="tiffany-mega__card-media">
-                            <img 
-                              src={card.image} 
-                              alt={card.name} 
-                              loading="lazy" 
+                            <img
+                              src={card.image}
+                              alt={card.name}
+                              loading="lazy"
                               onError={(e) => {
                                 e.target.style.display = 'none'
                                 e.target.parentElement.classList.add('tiffany-card-fallback')
@@ -359,8 +341,10 @@ export default function Header({ scrolled }) {
 
                 {item.mega.feature && (
                   <div className={`tiffany-mega__feature tiffany-mega__feature--${item.mega.feature.accent}`}>
+                    <span className="tiffany-mega__feature-eyebrow">AVIORY &amp; CO.</span>
                     <h4 className="tiffany-mega__feature-title">{item.mega.feature.title}</h4>
                     <p className="tiffany-mega__feature-sub">{item.mega.feature.subtitle}</p>
+                    <div className="tiffany-mega__feature-rule" />
                     <Link
                       to={item.mega.feature.cta.href}
                       className="tiffany-mega__feature-cta"
@@ -492,7 +476,7 @@ export default function Header({ scrolled }) {
               {t('common.contact', 'Contact Us')}
             </Link>
             <Link to="/our-house" className="tiffany-header__utility-link" onClick={() => setMobileMenuOpen(false)}>
-              Atelier & Boutiques
+              Atelier &amp; Boutiques
             </Link>
           </div>
         </div>
@@ -511,4 +495,3 @@ export default function Header({ scrolled }) {
     </>
   )
 }
-
