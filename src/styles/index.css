@@ -166,6 +166,23 @@ h6 {
   color: var(--color-text);
 }
 
+/* Dark background paragraph color protection */
+[style*="background: #111"] p,
+[style*="background-color: #111"] p,
+[style*="background-color: #0D0D0D"] p,
+[style*="background-color: #0d0d0d"] p,
+[style*="background-color: #000"] p,
+[style*="background-color: var(--color-primary-black)"] p,
+[style*="background-color: var(--color-black)"] p,
+.dark-section p,
+.hero-dark p,
+.about-hero p,
+.blog-hero p,
+.love-hero p {
+  color: #EDE7DC !important;
+}
+
+
 /* H1 - HERO TITLES (INCREASED) */
 h1 {
   font-size: clamp(2.75rem, 7vw, 4.5rem);
@@ -232,6 +249,23 @@ p {
   color: var(--color-text);
 }
 
+/* Dark background paragraph color protection */
+[style*="background: #111"] p,
+[style*="background-color: #111"] p,
+[style*="background-color: #0D0D0D"] p,
+[style*="background-color: #0d0d0d"] p,
+[style*="background-color: #000"] p,
+[style*="background-color: var(--color-primary-black)"] p,
+[style*="background-color: var(--color-black)"] p,
+.dark-section p,
+.hero-dark p,
+.about-hero p,
+.blog-hero p,
+.love-hero p {
+  color: #EDE7DC !important;
+}
+
+
 p.intro,
 p.lead {
   font-size: 1.125rem;
@@ -294,6 +328,23 @@ li {
   border-color: var(--color-text);
 }
 
+/* Dark background paragraph color protection */
+[style*="background: #111"] p,
+[style*="background-color: #111"] p,
+[style*="background-color: #0D0D0D"] p,
+[style*="background-color: #0d0d0d"] p,
+[style*="background-color: #000"] p,
+[style*="background-color: var(--color-primary-black)"] p,
+[style*="background-color: var(--color-black)"] p,
+.dark-section p,
+.hero-dark p,
+.about-hero p,
+.blog-hero p,
+.love-hero p {
+  color: #EDE7DC !important;
+}
+
+
 .btn-primary:hover {
   background-color: var(--color-burgundy);
   border-color: var(--color-burgundy);
@@ -324,6 +375,23 @@ li {
   border-color: var(--color-text);
   color: var(--color-text);
 }
+
+/* Dark background paragraph color protection */
+[style*="background: #111"] p,
+[style*="background-color: #111"] p,
+[style*="background-color: #0D0D0D"] p,
+[style*="background-color: #0d0d0d"] p,
+[style*="background-color: #000"] p,
+[style*="background-color: var(--color-primary-black)"] p,
+[style*="background-color: var(--color-black)"] p,
+.dark-section p,
+.hero-dark p,
+.about-hero p,
+.blog-hero p,
+.love-hero p {
+  color: #EDE7DC !important;
+}
+
 
 .btn-outline:hover {
   background-color: var(--color-text);
@@ -430,6 +498,23 @@ label {
   letter-spacing: 0.05em;
   color: var(--color-text);
 }
+
+/* Dark background paragraph color protection */
+[style*="background: #111"] p,
+[style*="background-color: #111"] p,
+[style*="background-color: #0D0D0D"] p,
+[style*="background-color: #0d0d0d"] p,
+[style*="background-color: #000"] p,
+[style*="background-color: var(--color-primary-black)"] p,
+[style*="background-color: var(--color-black)"] p,
+.dark-section p,
+.hero-dark p,
+.about-hero p,
+.blog-hero p,
+.love-hero p {
+  color: #EDE7DC !important;
+}
+
 
 .form-group {
   margin-bottom: var(--spacing-lg);

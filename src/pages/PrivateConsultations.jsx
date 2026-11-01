@@ -17,7 +17,7 @@ export default function PrivateConsultations() {
       }}>
         <div className="container">
           <h1 style={{ color: '#D4AF7F' }}>{privateConsultations.title}</h1>
-          <p style={{ fontSize: '1.1rem', marginTop: 'var(--spacing-md)', opacity: 0.9 }}>
+          <p style={{ fontSize: '1.1rem', marginTop: 'var(--spacing-md)', color: '#EDE7DC', opacity: 0.95 }}>
             {privateConsultations.description}
           </p>
         </div>

@@ -14,7 +14,7 @@ export default function BespokeProcess() {
       }}>
         <div className="container">
           <h1 style={{ color: '#D4AF7F' }}>The Bespoke Process</h1>
-          <p style={{ fontSize: '1.1rem', marginTop: 'var(--spacing-md)', opacity: 0.9 }}>
+          <p style={{ fontSize: '1.1rem', marginTop: 'var(--spacing-md)', color: '#EDE7DC', opacity: 0.95 }}>
             A detailed look at how we create your masterpiece
           </p>
         </div>

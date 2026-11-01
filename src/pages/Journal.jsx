@@ -22,7 +22,7 @@ export default function Journal() {
       }}>
         <div className="container">
           <h1 style={{ color: 'var(--color-champagne)' }}>Journal</h1>
-          <p style={{ fontSize: '1.1rem', marginTop: 'var(--spacing-md)', opacity: 0.9 }}>
+          <p style={{ fontSize: '1.1rem', marginTop: 'var(--spacing-md)', color: '#EDE7DC', opacity: 0.95 }}>
             Insights, education, and inspiration from our experts
           </p>
         </div>

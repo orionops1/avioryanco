@@ -61,7 +61,7 @@ export default function FineJewellery() {
             MAISON ATELIER
           </span>
           <h1 style={{ color: '#ffffff', fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.4rem, 5vw, 3.5rem)' }}>Fine Jewellery</h1>
-          <p style={{ fontSize: '1.05rem', marginTop: 'var(--spacing-sm)', opacity: 0.9, maxWidth: '600px', margin: '0 auto' }}>
+          <p style={{ fontSize: '1.05rem', marginTop: 'var(--spacing-sm)', color: '#EDE7DC', opacity: 0.95, maxWidth: '600px', margin: '0 auto' }}>
             Exquisite pieces crafted with exceptional unheated gemstones and master metalwork.
           </p>
         </div>

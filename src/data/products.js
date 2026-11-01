@@ -536,7 +536,7 @@ export const engagementRings = [
     material: '18K White Gold',
     stone: 'Blue Sapphire 2.0 ct',
     description: 'Timeless solitaire engagement ring with a stunning Ceylon sapphire.',
-    image: '/images/rings/er-001.jpg',
+    image: '/images/products/ring-sapphire-solitaire.jpg',
     longDescription: 'The ultimate expression of elegance and sophistication, this classic solitaire showcases a magnificent sapphire in a beautifully proportioned setting.',
     specs: {
       ring_size: 'Available in all sizes',
@@ -558,7 +558,7 @@ export const engagementRings = [
     material: '18K Yellow Gold',
     stone: 'Burma Ruby 1.5 ct',
     description: 'Modern halo design with a radiant ruby center stone.',
-    image: '/images/rings/er-002.jpg',
+    image: '/images/products/ring-ruby-soleste.jpg',
     longDescription: 'A stunning contemporary design that makes a bold statement. The ruby is surrounded by a halo of natural gemstones that enhance its brilliance and fire.',
     specs: {
       ring_size: 'Available in all sizes',
@@ -580,7 +580,7 @@ export const engagementRings = [
     material: '18K White Gold',
     stone: 'Pink Sapphire 1.5 ct + White Sapphires',
     description: 'Classic three-stone engagement ring with a gorgeous pink sapphire.',
-    image: '/images/rings/er-003.jpg',
+    image: '/images/products/ring-emerald-solitaire.jpg',
     longDescription: 'Perfect balance of past, present, and future - this three-stone design features a beautiful pink sapphire complemented by white sapphire accents.',
     specs: {
       ring_size: 'Available in all sizes',
@@ -602,7 +602,7 @@ export const engagementRings = [
     material: '18K Platinum',
     stone: 'Sapphire 2.2 ct Cushion Cut',
     description: 'Luxurious cushion-cut sapphire in a platinum setting.',
-    image: '/images/rings/er-004.jpg',
+    image: '/images/products/ring-aviory-setting.jpg',
     longDescription: 'The cushion cut perfectly complements the deep blue of this exceptional sapphire, creating a timeless and romantic engagement ring.',
     specs: {
       ring_size: 'Available in all sizes',
@@ -624,7 +624,7 @@ export const engagementRings = [
     material: '18K Rose Gold',
     stone: 'Burma Ruby 1.8 ct Oval',
     description: 'Elegant oval-cut ruby in warm rose gold setting.',
-    image: '/images/rings/er-005.jpg',
+    image: '/images/products/ring-ruby-soleste.jpg',
     longDescription: 'The elongated oval cut makes this ruby appear larger and more dramatic, while the rose gold creates a romantic and warm aesthetic.',
     specs: {
       ring_size: 'Available in all sizes',
@@ -646,7 +646,7 @@ export const engagementRings = [
     material: '18K White Gold',
     stone: 'Sapphire 2.0 ct Emerald Cut',
     description: 'Sophisticated emerald-cut sapphire with step-cut brilliance.',
-    image: '/images/rings/er-006.jpg',
+    image: '/images/products/ring-emerald-solitaire.jpg',
     longDescription: 'The emerald cut showcases the sapphire\'s color with its unique step faceting, creating a sophisticated and vintage-inspired look.',
     specs: {
       ring_size: 'Available in all sizes',
@@ -668,7 +668,7 @@ export const engagementRings = [
     material: '18K White Gold',
     stone: 'Padparadscha 1.5 ct',
     description: 'Rare padparadscha sapphire in an elegant solitaire setting.',
-    image: '/images/rings/er-007.jpg',
+    image: '/images/products/ring-padparadscha.jpg',
     longDescription: 'Featuring one of the rarest of all sapphires, this engagement ring is truly unique and unforgettable.',
     specs: {
       ring_size: 'Available in all sizes',
@@ -690,7 +690,7 @@ export const engagementRings = [
     material: '18K Rose Gold',
     stone: 'Pink Sapphire 1.6 ct Pear Cut',
     description: 'Contemporary pear-shaped pink sapphire with distinctive elegance.',
-    image: '/images/rings/er-008.jpg',
+    image: '/images/products/ring-sapphire-solitaire.jpg',
     longDescription: 'The unique pear shape brings a modern twist to a classic design, while the pink sapphire adds a romantic and feminine touch.',
     specs: {
       ring_size: 'Available in all sizes',
