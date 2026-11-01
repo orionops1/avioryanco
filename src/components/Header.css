@@ -2,29 +2,8 @@
 
 /* ============================================================================
    AVIORY & CO. — TIFFANY-STANDARD LUXURY NAVIGATION SYSTEM
-   Architecture: Announce Bar → Logo/Utility Row → Nav Row → Mega Panel
+   Architecture: Logo/Utility Row only → Logo/Utility Row → Nav Row → Mega Panel
    ============================================================================ */
-
-/* ── Announcement Bar ── */
-.aviory-announce-bar {
-  background-color: #0E0E0E;
-  text-align: center;
-  padding: 10px 1rem;
-  font-family: var(--font-ui, 'Montserrat', sans-serif);
-  line-height: 1;
-  border-bottom: 1px solid rgba(201, 169, 110, 0.25);
-  position: relative;
-  z-index: 2050;
-}
-
-.aviory-announce-bar p {
-  margin: 0;
-  color: #DFBA73 !important;
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-}
 
 /* ── Header Shell ── */
 .tiffany-header {
@@ -902,12 +881,7 @@
 }
 
 @media (max-width: 768px) {
-  .aviory-announce-bar {
-    font-size: 0.58rem;
-    letter-spacing: 0.1em;
-    padding: 6px 1rem;
-  }
-  .tiffany-header__nav {
+.tiffany-header__nav {
     display: none;
   }
   .tiffany-mega,

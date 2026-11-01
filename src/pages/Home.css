@@ -8,6 +8,58 @@
   width: 100%;
   background-color: #FFFFFF;
 }
+/* --- USP TRUST STRIP (replaces announcement bar, Tiffany-standard) --- */
+.home-usp-strip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  background-color: #FAF7F2;
+  border-top: 1px solid #E8E3DC;
+  border-bottom: 1px solid #E8E3DC;
+  padding: 1rem 2rem;
+}
+
+.home-usp-strip__item {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-ui, 'Montserrat', sans-serif);
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #6B5F4A;
+  white-space: nowrap;
+}
+
+.home-usp-strip__icon {
+  color: #B8996A;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .home-usp-strip {
+    flex-direction: column;
+    gap: 0.7rem;
+    padding: 1.1rem 1.5rem;
+  }
+  .home-usp-strip__item {
+    white-space: normal;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .home-usp-strip__item {
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+  }
+}
+
+
 
 /* Eyebrow Label */
 .editorial-eyebrow {

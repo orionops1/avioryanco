@@ -37,6 +37,22 @@ export default function Home() {
         subtitle={heroVideo.subtitle}
         cta={heroVideo.cta}
       />
+      {/* USP Trust Strip */}
+      <div className="home-usp-strip">
+        <div className="home-usp-strip__item">
+          <span className="home-usp-strip__icon" aria-hidden="true">&#10022;</span>
+          <span>Complimentary Worldwide Shipping</span>
+        </div>
+        <div className="home-usp-strip__item">
+          <span className="home-usp-strip__icon" aria-hidden="true">&#9671;</span>
+          <span>Certified Unheated Ceylon Gemstones</span>
+        </div>
+        <div className="home-usp-strip__item">
+          <span className="home-usp-strip__icon" aria-hidden="true">&#10023;</span>
+          <span>Private Consultations Available</span>
+        </div>
+      </div>
+
 
       {/* 2. THE TWO PILLARS: LOVE COLLECTION + HIGH JEWELLERY */}
       <section className="home-editorial-two-up">
