@@ -23,8 +23,11 @@ export default function Home() {
     video: "/videos/hero-luxury.mp4",
     poster: "/images/hero-banner.jpg",
     title: t("hero.title", "AVIORY & CO."),
-    subtitle: t("hero.subtitle", "The Art of Natural Ceylon Gemstones & Fine Jewellery"),
-    cta: { label: "Explore The House", href: "/gemstones" }
+    tagline: t("hero.tagline", "BESPOKE INTIMACY"),
+    subtitle: t("hero.subtitle", "Every love has its own expression."),
+    description: t("hero.description", "Exceptional Ceylon gemstones. Fine jewellery. Personal creations made around the moments that matter."),
+    ctaPrimary: { label: "EXPLORE AVIORY", href: "/shop" },
+    ctaSecondary: { label: "CREATE SOMETHING PERSONAL", href: "/bespoke" }
   };
 
   return (
@@ -34,8 +37,11 @@ export default function Home() {
         video={heroVideo.video}
         poster={heroVideo.poster}
         title={heroVideo.title}
+        tagline={heroVideo.tagline}
         subtitle={heroVideo.subtitle}
-        cta={heroVideo.cta}
+        description={heroVideo.description}
+        ctaPrimary={heroVideo.ctaPrimary}
+        ctaSecondary={heroVideo.ctaSecondary}
       />
       {/* USP Trust Strip */}
       <div className="home-usp-strip">
