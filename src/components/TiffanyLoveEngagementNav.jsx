@@ -5,7 +5,7 @@
  * Usage: Place this below the primary header on Love & Celebration pages
  * 
  * Structure:
- * [ENGAGEMENT RINGS] [DIAMOND SHAPES] [WEDDING BANDS] [CELEBRATION] [The Tiffany Difference]
+ * [ENGAGEMENT RINGS] [GEMSTONE SHAPES] [WEDDING BANDS] [CELEBRATION] [The Tiffany Difference]
  *      ↓ (hover/active)
  *   Collection Grid (6-item showcase)
  */
@@ -23,15 +23,15 @@ const TiffanyLoveEngagementNav = ({ onTabChange, initialTab = 'engagement-rings'
       collections: [
         { name: 'Sixteen Stone by Tiffany', tagline: 'Signature classic' },
         { name: 'The Tiffany® Setting', tagline: 'Iconic raised setting' },
-        { name: 'Tiffany True®', tagline: 'Proprietary diamond cut' },
+        { name: 'Tiffany True®', tagline: 'Proprietary gemstone cut' },
         { name: 'Tiffany Forever', tagline: 'Timeless designs' },
         { name: 'Tiffany Soleste®', tagline: 'Halo setting' },
         { name: 'How to Choose', tagline: 'Educational guide' }
       ]
     },
     {
-      id: 'diamond-shapes',
-      label: 'DIAMOND SHAPES',
+      id: 'gemstone-shapes',
+      label: 'GEMSTONE SHAPES',
       shapes: [
         { name: 'Round Brilliant', tagline: 'Classic 58-facet cut' },
         { name: 'Oval', tagline: 'Elongated brilliant' },

@@ -13,28 +13,28 @@ export const megaMenuData = [
     mega: {
       columns: [
         {
-          heading: 'By Rare Hue',
+          heading: 'Ceylon Sapphires',
           links: [
             { label: 'Royal Blue Sapphires', href: '/gemstones?category=blue-sapphires' },
-            { label: 'Cornflower Sapphires', href: '/gemstones?category=blue-sapphires' },
-            { label: 'Padparadscha (Sunset Lotus)', href: '/gemstones?category=padparadscha' },
-            { label: 'Vivid Pink Sapphires', href: '/gemstones?category=pink-sapphires' },
-            { label: 'Canary Yellow Sapphires', href: '/gemstones?category=yellow-sapphires' },
-            { label: 'Pigeon Blood Rubies', href: '/gemstones?category=rubies' },
-            { label: 'Cobalt Spinels', href: '/gemstones?category=spinels' },
+            { label: 'Cornflower Blue Sapphires', href: '/gemstones?category=blue-sapphires' },
+            { label: 'Padparadscha Sapphires', href: '/gemstones?category=padparadscha' },
+            { label: 'Pink Sapphires', href: '/gemstones?category=pink-sapphires' },
+            { label: 'Yellow Sapphires', href: '/gemstones?category=yellow-sapphires' },
+            { label: 'Ceylon Rubies', href: '/gemstones?category=rubies' },
+            { label: 'Spinel & Other Coloured Gems', href: '/gemstones?category=spinels' },
           ],
         },
         {
           heading: 'Curated Selections',
           links: [
-            { label: 'Collector Vault Specimens', href: '/gemstones?category=collector' },
-            { label: 'Unheated Natural Gems', href: '/gemstones' },
-            { label: 'Rare Fancy Colored Gems', href: '/gemstones?category=other' },
+            { label: "Collector's Collection", href: '/gemstones?category=collector' },
+            { label: 'Unheated Gemstones', href: '/gemstones' },
+            { label: 'Fancy-Coloured Gemstones', href: '/gemstones?category=other' },
             { label: 'View All Gemstones', href: '/gemstones', accent: true },
           ],
         },
         {
-          heading: 'Provenance & Science',
+          heading: 'Gemmology & Provenance',
           links: [
             { label: 'Ceylon Provenance Assurance', href: '/journal/the-heritage-of-ceylon-gemstones' },
             { label: 'GRS, GIA & Lotus Certification', href: '/our-house' },
@@ -117,7 +117,7 @@ export const megaMenuData = [
             },
             {
               name: 'Sunset Padparadscha Halo',
-              desc: 'Rare lotus-hued sapphire enveloped in diamond micropavé',
+              desc: 'Rare lotus-hued sapphire enveloped in gemstone micropavé',
               image: '/images/products/ring-padparadscha.jpg',
               href: '/love-and-celebration?style=halo',
             },
@@ -143,8 +143,8 @@ export const megaMenuData = [
           ],
         },
         {
-          id: 'diamond-shapes',
-          label: 'DIAMOND SHAPES',
+          id: 'gemstone-shapes',
+          label: 'GEMSTONE SHAPES',
           items: [
             {
               name: 'Oval Cut',
@@ -195,7 +195,7 @@ export const megaMenuData = [
               href: '/love-and-celebration?category=bands',
             },
             {
-              name: 'Micropavé Diamond & Gold',
+              name: 'Micropavé Gemstone & Gold',
               desc: 'Delicate hand-set pavé in 18K solid yellow and rose gold',
               image: '/images/products/prod8.jpg',
               href: '/love-and-celebration?category=bands',
@@ -213,7 +213,7 @@ export const megaMenuData = [
               href: '/love-and-celebration?category=bands',
             },
             {
-              name: 'Crown Diamond Band',
+              name: 'Crown Gemstone Band',
               desc: 'Contoured chevron band designed to flush-fit solitaire engagement rings',
               image: '/images/products/portf1.jpg',
               href: '/love-and-celebration?category=bands',

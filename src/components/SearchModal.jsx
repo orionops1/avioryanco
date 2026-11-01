@@ -31,7 +31,7 @@ export default function SearchModal({ isOpen, onClose }) {
     'Padparadscha',
     'Solitaire Engagement',
     'Unheated Ruby',
-    'Diamond Eternity Band',
+    'Sapphire Eternity Band',
     'Bespoke Ring'
   ]
 

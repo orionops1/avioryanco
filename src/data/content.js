@@ -56,8 +56,8 @@ export const faqs = [
   {
     id: 3,
     category: 'Love & Celebration',
-    question: 'Why choose a sapphire engagement ring instead of a diamond?',
-    answer: 'Sapphires offer exceptional durability (9.0 Mohs hardness, second only to diamond), stunning color options, and a more unique and personal aesthetic. They often cost less than comparable diamonds, are more ethical to source, and offer deeper emotional significance. Many celebrities and royalty choose sapphire engagement rings for their individual beauty and meaning.'
+    question: 'Why choose an unheated Ceylon sapphire for an engagement ring?',
+    answer: 'Sapphires offer exceptional durability (9.0 Mohs hardness), stunning color options, and a more unique and personal aesthetic. They often cost unmatched rarity and value retention compared to commercial other stoness, are more ethical to source, and offer deeper emotional significance. Many celebrities and royalty choose sapphire engagement rings for their individual beauty and meaning.'
   },
   {
     id: 4,

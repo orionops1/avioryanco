@@ -6,7 +6,7 @@
  * Primary Navigation:
  *   LOVE & CELEBRATION (parent)
  *     ├─ ENGAGEMENT RINGS (sub-nav)
- *     ├─ DIAMOND SHAPES (sub-nav)
+ *     ├─ GEMSTONE SHAPES (sub-nav)
  *     ├─ WEDDING BANDS (sub-nav)
  *     ├─ CELEBRATION (sub-nav)
  *     └─ The Tiffany Difference (info)
@@ -39,12 +39,12 @@ export const tiffanyLoveEngagementMenu = {
         {
           name: "The Tiffany® Setting",
           image: "engagement-ring-2.jpg",
-          description: "Iconic raised setting showcasing the diamond"
+          description: "Iconic raised setting showcasing the rare gemstone"
         },
         {
           name: "Tiffany True®",
           image: "engagement-ring-3.jpg",
-          description: "Tiffany's proprietary diamond cut"
+          description: "Tiffany's proprietary gemstone cut"
         },
         {
           name: "Tiffany Forever",
@@ -54,7 +54,7 @@ export const tiffanyLoveEngagementMenu = {
         {
           name: "Tiffany Soleste®",
           image: "engagement-ring-5.jpg",
-          description: "Halo setting with surrounding diamonds"
+          description: "Halo setting with surrounding gemstones"
         },
         {
           name: "How to Choose an Engagement Ring",
@@ -64,8 +64,8 @@ export const tiffanyLoveEngagementMenu = {
       ]
     },
     {
-      label: "DIAMOND SHAPES",
-      slug: "diamond-shapes",
+      label: "GEMSTONE SHAPES",
+      slug: "gemstone-shapes",
       active: true, // Currently active tab in the image
       shapes: [
         {
@@ -171,7 +171,7 @@ export const tiffanyLoveEngagementMenu = {
    * 
    * Sub-sections:
    * • ENGAGEMENT RINGS         →    Engagement Rings (with Love & Celebration messaging)
-   * • DIAMOND SHAPES           →    Gemstone Shapes (Round, Oval, Emerald, Cushion, Princess, Pear) ✓
+   * • GEMSTONE SHAPES           →    Gemstone Shapes (Round, Oval, Emerald, Cushion, Princess, Pear) ✓
    * • WEDDING BANDS            →    Wedding Bands (new collection)
    * • CELEBRATION              →    Moments (By Moment filtering: Milestone, Anniversary, Wedding, Birthday)
    * 

@@ -626,7 +626,7 @@ export default function ProductDetail() {
                   <div className="pdp-cert-card">
                     <h4>
                       {productType === 'gemstone'
-                        ? 'GIA Diamond & Gemstone Laboratory'
+                        ? 'GIA Gemological Laboratory'
                         : 'Certificate of Authenticity'}
                     </h4>
                     <p>

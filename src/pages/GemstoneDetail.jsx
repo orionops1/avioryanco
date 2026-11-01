@@ -286,7 +286,7 @@ export default function GemstoneDetail() {
                       </tr>
                       <tr>
                         <td>Mohs Hardness Scale</td>
-                        <td><strong>{gem.specs.hardness} (Second only to diamond)</strong></td>
+                        <td><strong>{gem.specs.hardness} (Mohs Hardness 9.0 (Exceptional Durability))</strong></td>
                       </tr>
                       <tr>
                         <td>Geographic Origin</td>
@@ -300,7 +300,7 @@ export default function GemstoneDetail() {
               {activeTab === 'provenance' && (
                 <div className="pdp-tab-pane">
                   <div className="pdp-cert-card">
-                    <h4>{gem.certification} Diamond & Gemstone Laboratory</h4>
+                    <h4>{gem.certification} Gemological Laboratory</h4>
                     <p>
                       This unheated {gem.name} is verified for natural status, color authenticity, and absence of thermal enhancement. 
                       Official GIA documentation is presented with physical hallmark seal upon purchase.
