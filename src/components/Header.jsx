@@ -65,6 +65,7 @@ function useMegaMenuData(t) {
 
 /* ============================================================================
    Main Header Component
+   Mouseover / Hover navigation matching Tiffany & Co.
    ============================================================================ */
 
 export default function Header({ scrolled }) {
@@ -118,6 +119,7 @@ export default function Header({ scrolled }) {
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [])
 
+  // Mouseover / Hover handlers (Tiffany & Co. pattern)
   const handleMegaEnter = useCallback((key) => {
     clearTimeout(megaTimeoutRef.current)
     setActiveMega(key)
@@ -126,30 +128,10 @@ export default function Header({ scrolled }) {
   const handleMegaLeave = useCallback(() => {
     megaTimeoutRef.current = setTimeout(() => {
       setActiveMega(null)
-    }, 220)
+    }, 200)
   }, [])
 
-  // When clicking a top nav item with options (mega menu)
-  const handleNavItemClick = (e, item) => {
-    if (item.mega) {
-      // If options are not currently open for this item: open them so options appear!
-      if (activeMega !== item.key) {
-        e.preventDefault()
-        clearTimeout(megaTimeoutRef.current)
-        setActiveMega(item.key)
-        return
-      }
-      // If options are already open for this item: allow clicking to navigate to landing page
-      clearTimeout(megaTimeoutRef.current)
-      setActiveMega(null)
-    } else {
-      clearTimeout(megaTimeoutRef.current)
-      setActiveMega(null)
-    }
-  }
-
-  // When clicking an option inside the mega-menu
-  const handleOptionClick = () => {
+  const handleNavClick = () => {
     clearTimeout(megaTimeoutRef.current)
     setActiveMega(null)
   }
@@ -203,7 +185,7 @@ export default function Header({ scrolled }) {
             <Link
               to="/"
               className="tiffany-header__logo-link"
-              onClick={handleOptionClick}
+              onClick={handleNavClick}
               aria-label="AVIORY &amp; CO. Homepage"
             >
               <span className="tiffany-header__logo-text">AVIORY</span>
@@ -211,9 +193,8 @@ export default function Header({ scrolled }) {
               <span className="tiffany-header__logo-co">CO.</span>
             </Link>
 
-            {/* Right: Actions Cluster */}
+            {/* Right: Actions Cluster (Currency, Language & Bag clearly visible) */}
             <div className="tiffany-header__actions">
-              {/* Language & Currency Switchers */}
               <div className="tiffany-header__locale">
                 <CurrencySwitcher variant="light" />
                 <LanguageSwitcher variant="light" />
@@ -238,7 +219,7 @@ export default function Header({ scrolled }) {
 
         {/* ============================================================
             BOTTOM ROW: Navigation Menu (Centered)
-            Hover OR Click opens options!
+            Instant Mouseover / Hover menu (Tiffany & Co. Standard)
             ============================================================ */}
         <nav className="tiffany-header__nav" aria-label="Main Navigation">
           <div className="container">
@@ -247,13 +228,13 @@ export default function Header({ scrolled }) {
                 <li
                   key={item.key}
                   className={`tiffany-header__nav-item ${activeMega === item.key ? 'tiffany-header__nav-item--active' : ''}`}
-                  onMouseEnter={() => item.mega && handleMegaEnter(item.key)}
+                  onMouseEnter={() => item.mega ? handleMegaEnter(item.key) : setActiveMega(null)}
                   onMouseLeave={handleMegaLeave}
                 >
                   <Link
                     to={item.href}
                     className="tiffany-header__nav-link"
-                    onClick={(e) => handleNavItemClick(e, item)}
+                    onClick={handleNavClick}
                   >
                     <span>{item.label}</span>
                   </Link>
@@ -265,7 +246,7 @@ export default function Header({ scrolled }) {
 
         {/* ============================================================
             FULL-WIDTH MEGA-MENU PANELS
-            Includes Tabbed Tiffany Sub-Navigation for Love & Celebration
+            Mouseover-activated with 5 Tiffany Sub-Nav Tabs for Love & Celebration
             ============================================================ */}
         {menuItems.map((item) =>
           item.mega ? (
@@ -298,7 +279,7 @@ export default function Header({ scrolled }) {
                       <Link
                         to={item.mega.infoLink.href}
                         className="tiffany-mega__subnav-info"
-                        onClick={handleOptionClick}
+                        onClick={handleNavClick}
                       >
                         {item.mega.infoLink.label} &rarr;
                       </Link>
@@ -314,7 +295,7 @@ export default function Header({ scrolled }) {
                             key={idx}
                             to={card.href}
                             className={`tiffany-mega__card ${card.guide ? 'tiffany-mega__card--guide' : ''}`}
-                            onClick={handleOptionClick}
+                            onClick={handleNavClick}
                           >
                             <div className="tiffany-mega__card-media">
                               <img
@@ -348,7 +329,7 @@ export default function Header({ scrolled }) {
                               <Link
                                 to={link.href}
                                 className={`tiffany-mega__link ${link.accent ? 'tiffany-mega__link--accent' : ''}`}
-                                onClick={handleOptionClick}
+                                onClick={handleNavClick}
                               >
                                 {link.label}
                                 {link.accent && <ArrowRight />}
@@ -369,7 +350,7 @@ export default function Header({ scrolled }) {
                       <Link
                         to={item.mega.feature.cta.href}
                         className="tiffany-mega__feature-cta"
-                        onClick={handleOptionClick}
+                        onClick={handleNavClick}
                       >
                         {item.mega.feature.cta.label}
                         <ArrowRight />
@@ -391,7 +372,6 @@ export default function Header({ scrolled }) {
 
       {/* ============================================================
           MOBILE DRAWER NAVIGATION
-          Tapping on category expands options immediately!
           ============================================================ */}
       <div className={`tiffany-mobile-drawer ${mobileMenuOpen ? 'tiffany-mobile-drawer--open' : ''}`}>
         <div className="tiffany-mobile-drawer__header">

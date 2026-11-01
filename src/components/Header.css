@@ -44,7 +44,7 @@
   padding: 1.1rem 0;
   border-bottom: 1px solid #E8E3DC;
   position: relative;
-  z-index: 10;
+  z-index: 2020;
 }
 
 .tiffany-header__top-inner {
@@ -932,6 +932,11 @@
     gap: 0.75rem;
   }
   .tiffany-header__locale {
-    display: none;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding-left: 0.5rem;
+    margin-left: 0.25rem;
+    border-left: 1px solid #E8E3DC;
   }
 }
