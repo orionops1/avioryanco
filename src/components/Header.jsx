@@ -275,15 +275,6 @@ export default function Header({ scrolled }) {
                         </button>
                       ))}
                     </div>
-                    {item.mega.infoLink && (
-                      <Link
-                        to={item.mega.infoLink.href}
-                        className="tiffany-mega__subnav-info"
-                        onClick={handleNavClick}
-                      >
-                        {item.mega.infoLink.label} &rarr;
-                      </Link>
-                    )}
                   </div>
 
                   {/* Tab Cards Content Grid: 6 Cards per Tab */}
@@ -309,7 +300,6 @@ export default function Header({ scrolled }) {
                               />
                             </div>
                             <h4 className="tiffany-mega__card-title">{card.name}</h4>
-                            <p className="tiffany-mega__card-desc">{card.desc}</p>
                           </Link>
                         ))}
                       </div>

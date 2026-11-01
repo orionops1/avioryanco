@@ -71,7 +71,7 @@ export const megaMenuData = [
           heading: 'Signature Collections',
           links: [
             { label: 'Limited Atelier Masterpieces', href: '/fine-jewellery?collection=Limited+Edition' },
-            { label: 'The Love Collection', href: '/love-and-celebration' },
+            { label: 'Atelier Statement Suites', href: '/fine-jewellery?collection=Rings' },
             { label: 'View All Fine Jewellery', href: '/fine-jewellery', accent: true },
           ],
         },
@@ -106,37 +106,37 @@ export const megaMenuData = [
             {
               name: 'Royal Sapphire Solitaire',
               desc: 'Classic four-prong platinum setting showcasing unheated Ceylon sapphire',
-              image: '/images/products/prod1.jpg',
+              image: '/images/products/ring-sapphire-solitaire.jpg',
               href: '/love-and-celebration?style=solitaire',
             },
             {
               name: 'The Aviory Setting',
               desc: 'Iconic cathedral setting elevating the gem for maximum optical radiance',
-              image: '/images/products/prod2.jpg',
+              image: '/images/products/ring-aviory-setting.jpg',
               href: '/love-and-celebration?style=solitaire',
             },
             {
               name: 'Sunset Padparadscha Halo',
               desc: 'Rare lotus-hued sapphire enveloped in diamond micropavé',
-              image: '/images/products/prod3.jpg',
+              image: '/images/products/ring-padparadscha.jpg',
               href: '/love-and-celebration?style=halo',
             },
             {
               name: 'Trilogy Three-Stone',
               desc: 'Past, present, and lifetime commitment in three certified gems',
-              image: '/images/products/prod4.jpg',
+              image: '/images/products/ring-emerald-solitaire.jpg',
               href: '/love-and-celebration?style=three-stone',
             },
             {
               name: 'Pigeon Blood Ruby Soleste',
               desc: 'Fiery Burma & Ceylon ruby with cushion halo brilliance',
-              image: '/images/products/prod5.jpg',
+              image: '/images/products/ring-ruby-soleste.jpg',
               href: '/love-and-celebration?style=halo',
             },
             {
               name: 'How to Choose Your Ring',
               desc: 'An expert guide to selecting a rare gemstone engagement ring',
-              image: '/images/products/prod6.jpg',
+              image: '/images/products/ring-guide.jpg',
               href: '/journal/designing-your-dream-ring',
               guide: true,
             },
@@ -314,11 +314,6 @@ export const megaMenuData = [
           ],
         },
       ],
-      infoLink: {
-        label: 'The Aviory Difference',
-        href: '/our-house',
-        desc: '100% Unheated Ceylon Provenance & Ethical Direct Mine Custody',
-      },
       columns: [
         {
           heading: 'By Moment',

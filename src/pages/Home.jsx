@@ -9,6 +9,7 @@ import "./Home.css";
 export default function Home() {
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
+  const [highlightTab, setHighlightTab] = useState("all");
   const { t } = useLanguage();
 
   const handleNewsletterSubmit = (e) => {
@@ -45,7 +46,7 @@ export default function Home() {
             <div className="editorial-panel">
               <div 
                 className="editorial-panel-image" 
-                style={{ backgroundImage: "url(/images/most-popular-gifts.jpg)" }}
+                style={{ backgroundImage: "url(/images/rings-for-every-love-story.jpg)" }}
               >
                 <div className="editorial-panel-overlay" />
               </div>
@@ -65,7 +66,7 @@ export default function Home() {
             <div className="editorial-panel">
               <div 
                 className="editorial-panel-image" 
-                style={{ backgroundImage: "url(/images/gifts-for-her.jpg)" }}
+                style={{ backgroundImage: "url(/images/atelier-masterpieces.jpg)" }}
               >
                 <div className="editorial-panel-overlay" />
               </div>
@@ -84,27 +85,27 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. FEATURED STORY: WE DESIGN VALUE FOR EVERY LOVE STORY */}
+      {/* 3. FEATURED STORY: WE DESIGN VALUE FOR EVERY LOVE STORY (Bespoke Focus) */}
       <section className="home-value-hero">
         <div className="home-value-hero-grid">
           <div 
             className="home-value-hero-image" 
-            style={{ backgroundImage: "url(/images/gifts-to-engrave.jpg)" }}
+            style={{ backgroundImage: "url(/images/we-design-value.jpg)" }}
           >
             <div className="home-value-hero-overlay" />
           </div>
           <div className="home-value-hero-content">
-            <span className="editorial-eyebrow">BESPOKE ATELIER COMMISSIONS</span>
+            <span className="editorial-eyebrow">BESPOKE COMMISSIONS &amp; VALUE</span>
             <h2>We Design Value for Every Love Story</h2>
             <p>
-              We believe every love story deserves an exceptional beginning. Each creation in the AVIORY Love Collection is handcrafted to celebrate the moments that matter most—from first meetings to lifetime commitments. Handcrafting rare unheated Ceylon sapphires and certified gemstones into heirloom pieces that outlast generations.
+              From natural rough gemstone custody in the historic gravels of Ceylon to master goldsmith hand-forging in 950 platinum and 18K solid gold, each bespoke commission is engineered as an immutable generational store of beauty and enduring value.
             </p>
             <div className="home-value-hero-actions">
-              <Link to="/love-and-celebration" className="btn btn-primary">
-                EXPLORE LOVE COLLECTION
-              </Link>
-              <Link to="/bespoke" className="btn btn-outline">
+              <Link to="/bespoke" className="btn btn-primary">
                 START YOUR COMMISSION
+              </Link>
+              <Link to="/our-house" className="btn btn-outline">
+                DISCOVER OUR PROVENANCE
               </Link>
             </div>
           </div>
@@ -116,7 +117,7 @@ export default function Home() {
         <div className="home-gift-grid">
           <div 
             className="home-gift-image" 
-            style={{ backgroundImage: "url(/images/art-of-gifting.jpg)" }}
+            style={{ backgroundImage: "url(/images/the-art-of-the-gift.jpg)" }}
           >
             <div className="home-gift-overlay" />
           </div>
@@ -179,30 +180,47 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. FEATURED CREATIONS (LIVE PRODUCTS & LIVE CURRENCY) */}
+      {/* 6. CURATED HIGHLIGHTS SHOWCASE (Single Tabbed Section - Eliminates Duplication & Scrolling) */}
       <section className="featured-products">
         <div className="container">
           <div className="section-title-wrap">
             <span className="editorial-eyebrow">CURATED HIGHLIGHTS</span>
             <h2 className="section-heading">Featured Creations</h2>
+            <div className="highlight-tabs" style={{ display: "flex", gap: "1rem", justifyContent: "center", marginTop: "1.25rem" }}>
+              <button
+                type="button"
+                className={`btn btn-small ${highlightTab === "all" ? "btn-primary" : "btn-outline"}`}
+                onClick={() => setHighlightTab("all")}
+              >
+                ALL HIGHLIGHTS
+              </button>
+              <button
+                type="button"
+                className={`btn btn-small ${highlightTab === "gemstones" ? "btn-primary" : "btn-outline"}`}
+                onClick={() => setHighlightTab("gemstones")}
+              >
+                RARE GEMSTONES
+              </button>
+              <button
+                type="button"
+                className={`btn btn-small ${highlightTab === "jewellery" ? "btn-primary" : "btn-outline"}`}
+                onClick={() => setHighlightTab("jewellery")}
+              >
+                HAUTE JOAILLERIE
+              </button>
+            </div>
           </div>
           <div className="products-showcase">
-            {gemstones.slice(0, 4).map(gem => (
+            {highlightTab === "all" && [
+              ...gemstones.slice(0, 2).map(g => ({ ...g, _type: "gemstone" })),
+              ...fineJewellery.slice(0, 2).map(j => ({ ...j, _type: "jewellery" }))
+            ].map(item => (
+              <ProductCard key={item.id} product={item} type={item._type} />
+            ))}
+            {highlightTab === "gemstones" && gemstones.slice(0, 4).map(gem => (
               <ProductCard key={gem.id} product={gem} type="gemstone" />
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 7. HAUTE JOAILLERIE SHOWCASE */}
-      <section className="jewellery-showcase">
-        <div className="container">
-          <div className="section-title-wrap">
-            <span className="editorial-eyebrow">HANDCRAFTED ATELIER</span>
-            <h2 className="section-heading">Haute Joaillerie</h2>
-          </div>
-          <div className="products-showcase">
-            {fineJewellery.slice(0, 4).map(item => (
+            {highlightTab === "jewellery" && fineJewellery.slice(0, 4).map(item => (
               <ProductCard key={item.id} product={item} type="jewellery" />
             ))}
           </div>

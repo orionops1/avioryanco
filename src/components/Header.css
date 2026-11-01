@@ -31,6 +31,7 @@
   right: 0;
   z-index: 2000;
   background-color: #FFFFFF;
+  overflow: visible !important;
   transition: box-shadow 0.3s ease;
 }
 
@@ -321,8 +322,8 @@
 .tiffany-mega__inner {
   display: flex;
   gap: 0;
-  padding-top: 2.5rem;
-  padding-bottom: 3rem;
+  padding-top: 1.35rem;
+  padding-bottom: 1.5rem;
   align-items: flex-start;
 }
 
@@ -493,8 +494,8 @@
 
 /* ── LOVE & CELEBRATION Tabbed Mega ── */
 .tiffany-mega__tabbed-container {
-  padding-top: 0;
-  padding-bottom: 2.75rem;
+  padding-top: 0.25rem;
+  padding-bottom: 1.35rem;
 }
 
 /* Sub-nav tab bar */
@@ -503,7 +504,7 @@
   align-items: flex-end;
   justify-content: space-between;
   border-bottom: 1px solid #E8E3DC;
-  margin-bottom: 2rem;
+  margin-bottom: 1.15rem;
 }
 
 .tiffany-mega__subnav-tabs {
@@ -580,9 +581,10 @@
 .tiffany-mega__card-media {
   width: 100%;
   aspect-ratio: 1 / 1;
+  max-width: 130px;
+  margin: 0 auto 0.45rem auto;
   background-color: #F4F0EA;
   overflow: hidden;
-  margin-bottom: 0.65rem;
   position: relative;
 }
 
