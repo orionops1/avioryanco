@@ -143,8 +143,8 @@ export const megaMenuData = [
           ],
         },
         {
-          id: 'gemstone-cuts',
-          label: 'GEMSTONE SHAPES',
+          id: 'diamond-shapes',
+          label: 'DIAMOND SHAPES',
           items: [
             {
               name: 'Oval Cut',
@@ -212,6 +212,19 @@ export const megaMenuData = [
               image: '/images/products/prod10.jpg',
               href: '/love-and-celebration?category=bands',
             },
+            {
+              name: 'Crown Diamond Band',
+              desc: 'Contoured chevron band designed to flush-fit solitaire engagement rings',
+              image: '/images/products/portf1.jpg',
+              href: '/love-and-celebration?category=bands',
+            },
+            {
+              name: 'Explore All Bands',
+              desc: 'Discover our complete bridal wedding band suite in platinum & 18K gold',
+              image: '/images/products/portf2.jpg',
+              href: '/love-and-celebration?category=bands',
+              guide: true,
+            },
           ],
         },
         {
@@ -241,6 +254,62 @@ export const megaMenuData = [
               desc: 'Co-design an heirloom that captures your journey together',
               image: '/images/gifts-to-engrave.jpg',
               href: '/bespoke',
+            },
+            {
+              name: 'Milestone Heirlooms',
+              desc: 'Certified collector sapphires to commemorate monumental lifetime achievements',
+              image: '/images/products/portf3.jpg',
+              href: '/gemstones?category=collector',
+            },
+            {
+              name: 'Push Presents & Eternity',
+              desc: 'Cherish new chapters with bespoke eternity bands and coloured gem pendants',
+              image: '/images/products/portf4.jpg',
+              href: '/love-and-celebration?category=bands',
+              guide: true,
+            },
+          ],
+        },
+        {
+          id: 'the-difference',
+          label: 'THE AVIORY DIFFERENCE',
+          items: [
+            {
+              name: '100% Unheated Provenance',
+              desc: 'Natural earth-mined Ceylon sapphires with certified unheated custodial origin',
+              image: '/images/categories/cat1.jpg',
+              href: '/our-house',
+            },
+            {
+              name: 'Direct Mine Custody',
+              desc: 'Ethical direct custody from the historic gem-bearing gravels of Ratnapura',
+              image: '/images/journal/ja-003.jpg',
+              href: '/journal/sustainable-luxury-and-ethical-sourcing',
+            },
+            {
+              name: 'Master Certification',
+              desc: 'Independent certificates from GRS, GIA, and Lotus verifying lack of thermal treatment',
+              image: '/images/journal/ja-001.jpg',
+              href: '/our-house',
+            },
+            {
+              name: 'Master Goldsmith Artistry',
+              desc: 'Hand-forged in 950 platinum and 18K solid gold by multi-generational Ceylon artisans',
+              image: '/images/art-of-gifting.jpg',
+              href: '/journal/the-art-of-bespoke-jewellery',
+            },
+            {
+              name: 'Bespoke Atelier Concierge',
+              desc: 'One-on-one consultation with gemmologists to co-design your custom love story',
+              image: '/images/gifts-to-engrave.jpg',
+              href: '/bespoke',
+            },
+            {
+              name: 'Lifetime Heirlooms Promise',
+              desc: 'Complimentary annual inspection, ultrasonic cleaning, and permanent provenance custody',
+              image: '/images/journal/ja-002.jpg',
+              href: '/contact?subject=care',
+              guide: true,
             },
           ],
         },

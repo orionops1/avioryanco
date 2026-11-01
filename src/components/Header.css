@@ -516,7 +516,7 @@
   border: none;
   border-bottom: 2px solid transparent;
   cursor: pointer;
-  padding: 1rem 1.5rem 0.85rem 1.5rem;
+  padding: 0.85rem 1.15rem 0.75rem 1.15rem;
   font-family: var(--font-ui, 'Montserrat', sans-serif);
   font-size: 0.72rem;
   font-weight: 500;
@@ -736,6 +736,34 @@
   justify-content: space-between;
   padding: 1rem 1.25rem;
   gap: 1rem;
+}
+
+.tiffany-mobile-drawer__item-bar--btn {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.tiffany-mobile-chevron {
+  transition: transform 0.3s ease;
+  color: #1A1A1A;
+  flex-shrink: 0;
+}
+
+.tiffany-mobile-chevron.open {
+  transform: rotate(180deg);
+}
+
+.tiffany-mobile-sub-link--view-all {
+  font-weight: 700 !important;
+  color: #B8996A !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.74rem !important;
+  padding-bottom: 0.6rem !important;
+  border-bottom: 1px dashed #E8E3DC;
 }
 
 .tiffany-mobile-drawer__link {

@@ -30,7 +30,7 @@ const BagIcon = () => (
 )
 
 const ChevronDown = ({ className }) => (
-  <svg className={className} width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg className={className} width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <polyline points="6 9 12 15 18 9" />
   </svg>
 )
@@ -54,7 +54,7 @@ const ArrowRight = () => (
    ============================================================================ */
 
 function useMegaMenuData(t) {
-  return useMemo(() =>
+  return useMemo(() => 
     megaMenuData.map((item) => ({
       ...item,
       label: t(item.labelKey, item.label) || item.label,
@@ -126,10 +126,30 @@ export default function Header({ scrolled }) {
   const handleMegaLeave = useCallback(() => {
     megaTimeoutRef.current = setTimeout(() => {
       setActiveMega(null)
-    }, 200)
+    }, 220)
   }, [])
 
-  const handleNavClick = () => {
+  // When clicking a top nav item with options (mega menu)
+  const handleNavItemClick = (e, item) => {
+    if (item.mega) {
+      // If options are not currently open for this item: open them so options appear!
+      if (activeMega !== item.key) {
+        e.preventDefault()
+        clearTimeout(megaTimeoutRef.current)
+        setActiveMega(item.key)
+        return
+      }
+      // If options are already open for this item: allow clicking to navigate to landing page
+      clearTimeout(megaTimeoutRef.current)
+      setActiveMega(null)
+    } else {
+      clearTimeout(megaTimeoutRef.current)
+      setActiveMega(null)
+    }
+  }
+
+  // When clicking an option inside the mega-menu
+  const handleOptionClick = () => {
     clearTimeout(megaTimeoutRef.current)
     setActiveMega(null)
   }
@@ -183,7 +203,7 @@ export default function Header({ scrolled }) {
             <Link
               to="/"
               className="tiffany-header__logo-link"
-              onClick={handleNavClick}
+              onClick={handleOptionClick}
               aria-label="AVIORY &amp; CO. Homepage"
             >
               <span className="tiffany-header__logo-text">AVIORY</span>
@@ -218,6 +238,7 @@ export default function Header({ scrolled }) {
 
         {/* ============================================================
             BOTTOM ROW: Navigation Menu (Centered)
+            Hover OR Click opens options!
             ============================================================ */}
         <nav className="tiffany-header__nav" aria-label="Main Navigation">
           <div className="container">
@@ -232,7 +253,7 @@ export default function Header({ scrolled }) {
                   <Link
                     to={item.href}
                     className="tiffany-header__nav-link"
-                    onClick={handleNavClick}
+                    onClick={(e) => handleNavItemClick(e, item)}
                   >
                     <span>{item.label}</span>
                   </Link>
@@ -242,124 +263,124 @@ export default function Header({ scrolled }) {
           </div>
         </nav>
 
-      {/* ============================================================
-          FULL-WIDTH MEGA-MENU PANELS
-          Includes Tabbed Tiffany Sub-Navigation for Love & Celebration
-          ============================================================ */}
-      {menuItems.map((item) =>
-        item.mega ? (
-          <div
-            key={item.key}
-            className={`tiffany-mega ${activeMega === item.key ? 'tiffany-mega--visible' : ''}`}
-            onMouseEnter={() => clearTimeout(megaTimeoutRef.current)}
-            onMouseLeave={handleMegaLeave}
-            role="menu"
-          >
-            {item.mega.tabs ? (
-              /* TABBED SUB-NAVIGATION (Tiffany & Co. Love & Celebration Pattern) */
-              <div className="container tiffany-mega__tabbed-container">
-                {/* Horizontal Tab Headers */}
-                <div className="tiffany-mega__subnav-bar">
-                  <div className="tiffany-mega__subnav-tabs">
-                    {item.mega.tabs.map((tab) => (
-                      <button
-                        key={tab.id}
-                        type="button"
-                        className={`tiffany-mega__subnav-tab ${activeLoveTab === tab.id ? 'tiffany-mega__subnav-tab--active' : ''}`}
-                        onMouseEnter={() => setActiveLoveTab(tab.id)}
-                        onClick={() => setActiveLoveTab(tab.id)}
-                      >
-                        <span>{tab.label}</span>
-                      </button>
-                    ))}
-                  </div>
-                  {item.mega.infoLink && (
-                    <Link
-                      to={item.mega.infoLink.href}
-                      className="tiffany-mega__subnav-info"
-                      onClick={handleNavClick}
-                    >
-                      {item.mega.infoLink.label} &rarr;
-                    </Link>
-                  )}
-                </div>
-
-                {/* Tab Cards Content Grid */}
-                {item.mega.tabs.map((tab) =>
-                  tab.id === activeLoveTab ? (
-                    <div key={tab.id} className="tiffany-mega__cards-grid">
-                      {tab.items.map((card, idx) => (
-                        <Link
-                          key={idx}
-                          to={card.href}
-                          className={`tiffany-mega__card ${card.guide ? 'tiffany-mega__card--guide' : ''}`}
-                          onClick={handleNavClick}
+        {/* ============================================================
+            FULL-WIDTH MEGA-MENU PANELS
+            Includes Tabbed Tiffany Sub-Navigation for Love & Celebration
+            ============================================================ */}
+        {menuItems.map((item) =>
+          item.mega ? (
+            <div
+              key={item.key}
+              className={`tiffany-mega ${activeMega === item.key ? 'tiffany-mega--visible' : ''}`}
+              onMouseEnter={() => clearTimeout(megaTimeoutRef.current)}
+              onMouseLeave={handleMegaLeave}
+              role="menu"
+            >
+              {item.mega.tabs ? (
+                /* TABBED SUB-NAVIGATION (Tiffany & Co. Love & Celebration 5-Tab Pattern) */
+                <div className="container tiffany-mega__tabbed-container">
+                  {/* Horizontal Tab Headers: 5 Tiffany Sections */}
+                  <div className="tiffany-mega__subnav-bar">
+                    <div className="tiffany-mega__subnav-tabs">
+                      {item.mega.tabs.map((tab) => (
+                        <button
+                          key={tab.id}
+                          type="button"
+                          className={`tiffany-mega__subnav-tab ${activeLoveTab === tab.id ? 'tiffany-mega__subnav-tab--active' : ''}`}
+                          onMouseEnter={() => setActiveLoveTab(tab.id)}
+                          onClick={() => setActiveLoveTab(tab.id)}
                         >
-                          <div className="tiffany-mega__card-media">
-                            <img
-                              src={card.image}
-                              alt={card.name}
-                              loading="lazy"
-                              onError={(e) => {
-                                e.target.style.display = 'none'
-                                e.target.parentElement.classList.add('tiffany-card-fallback')
-                              }}
-                            />
-                          </div>
-                          <h4 className="tiffany-mega__card-title">{card.name}</h4>
-                          <p className="tiffany-mega__card-desc">{card.desc}</p>
-                        </Link>
+                          <span>{tab.label}</span>
+                        </button>
                       ))}
                     </div>
-                  ) : null
-                )}
-              </div>
-            ) : (
-              /* STANDARD 3-COLUMN + FEATURE EDITORIAL LAYOUT */
-              <div className="container tiffany-mega__inner">
-                <div className="tiffany-mega__columns">
-                  {item.mega.columns?.map((col, ci) => (
-                    <div key={ci} className="tiffany-mega__column">
-                      <h3 className="tiffany-mega__heading">{col.heading}</h3>
-                      <ul className="tiffany-mega__links">
-                        {col.links.map((link, li) => (
-                          <li key={li}>
-                            <Link
-                              to={link.href}
-                              className={`tiffany-mega__link ${link.accent ? 'tiffany-mega__link--accent' : ''}`}
-                              onClick={handleNavClick}
-                            >
-                              {link.label}
-                              {link.accent && <ArrowRight />}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-
-                {item.mega.feature && (
-                  <div className={`tiffany-mega__feature tiffany-mega__feature--${item.mega.feature.accent}`}>
-                    <span className="tiffany-mega__feature-eyebrow">AVIORY &amp; CO.</span>
-                    <h4 className="tiffany-mega__feature-title">{item.mega.feature.title}</h4>
-                    <p className="tiffany-mega__feature-sub">{item.mega.feature.subtitle}</p>
-                    <div className="tiffany-mega__feature-rule" />
-                    <Link
-                      to={item.mega.feature.cta.href}
-                      className="tiffany-mega__feature-cta"
-                      onClick={handleNavClick}
-                    >
-                      {item.mega.feature.cta.label}
-                      <ArrowRight />
-                    </Link>
+                    {item.mega.infoLink && (
+                      <Link
+                        to={item.mega.infoLink.href}
+                        className="tiffany-mega__subnav-info"
+                        onClick={handleOptionClick}
+                      >
+                        {item.mega.infoLink.label} &rarr;
+                      </Link>
+                    )}
                   </div>
-                )}
-              </div>
-            )}
-          </div>
-        ) : null
-      )}
+
+                  {/* Tab Cards Content Grid: 6 Cards per Tab */}
+                  {item.mega.tabs.map((tab) =>
+                    tab.id === activeLoveTab ? (
+                      <div key={tab.id} className="tiffany-mega__cards-grid">
+                        {tab.items.map((card, idx) => (
+                          <Link
+                            key={idx}
+                            to={card.href}
+                            className={`tiffany-mega__card ${card.guide ? 'tiffany-mega__card--guide' : ''}`}
+                            onClick={handleOptionClick}
+                          >
+                            <div className="tiffany-mega__card-media">
+                              <img
+                                src={card.image}
+                                alt={card.name}
+                                loading="lazy"
+                                onError={(e) => {
+                                  e.target.style.display = 'none'
+                                  e.target.parentElement.classList.add('tiffany-card-fallback')
+                                }}
+                              />
+                            </div>
+                            <h4 className="tiffany-mega__card-title">{card.name}</h4>
+                            <p className="tiffany-mega__card-desc">{card.desc}</p>
+                          </Link>
+                        ))}
+                      </div>
+                    ) : null
+                  )}
+                </div>
+              ) : (
+                /* STANDARD 3-COLUMN + FEATURE EDITORIAL LAYOUT */
+                <div className="container tiffany-mega__inner">
+                  <div className="tiffany-mega__columns">
+                    {item.mega.columns?.map((col, ci) => (
+                      <div key={ci} className="tiffany-mega__column">
+                        <h3 className="tiffany-mega__heading">{col.heading}</h3>
+                        <ul className="tiffany-mega__links">
+                          {col.links.map((link, li) => (
+                            <li key={li}>
+                              <Link
+                                to={link.href}
+                                className={`tiffany-mega__link ${link.accent ? 'tiffany-mega__link--accent' : ''}`}
+                                onClick={handleOptionClick}
+                              >
+                                {link.label}
+                                {link.accent && <ArrowRight />}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+
+                  {item.mega.feature && (
+                    <div className={`tiffany-mega__feature tiffany-mega__feature--${item.mega.feature.accent}`}>
+                      <span className="tiffany-mega__feature-eyebrow">AVIORY &amp; CO.</span>
+                      <h4 className="tiffany-mega__feature-title">{item.mega.feature.title}</h4>
+                      <p className="tiffany-mega__feature-sub">{item.mega.feature.subtitle}</p>
+                      <div className="tiffany-mega__feature-rule" />
+                      <Link
+                        to={item.mega.feature.cta.href}
+                        className="tiffany-mega__feature-cta"
+                        onClick={handleOptionClick}
+                      >
+                        {item.mega.feature.cta.label}
+                        <ArrowRight />
+                      </Link>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          ) : null
+        )}
       </header>
 
       {/* Mega Backdrop */}
@@ -370,7 +391,7 @@ export default function Header({ scrolled }) {
 
       {/* ============================================================
           MOBILE DRAWER NAVIGATION
-          Currency & Language Switchers Prominently Placed at the Top
+          Tapping on category expands options immediately!
           ============================================================ */}
       <div className={`tiffany-mobile-drawer ${mobileMenuOpen ? 'tiffany-mobile-drawer--open' : ''}`}>
         <div className="tiffany-mobile-drawer__header">
@@ -395,30 +416,38 @@ export default function Header({ scrolled }) {
           <ul className="tiffany-mobile-drawer__list">
             {menuItems.map((item) => (
               <li key={item.key} className="tiffany-mobile-drawer__item">
-                <div className="tiffany-mobile-drawer__item-bar">
-                  <Link
-                    to={item.href}
-                    className="tiffany-mobile-drawer__link"
-                    onClick={() => {
-                      if (!item.mega) setMobileMenuOpen(false)
-                    }}
+                {item.mega ? (
+                  <button
+                    type="button"
+                    className="tiffany-mobile-drawer__item-bar tiffany-mobile-drawer__item-bar--btn"
+                    onClick={() => setMobileAccordion(mobileAccordion === item.key ? null : item.key)}
+                    aria-expanded={mobileAccordion === item.key}
                   >
-                    {item.label}
-                  </Link>
-                  {item.mega && (
-                    <button
-                      type="button"
-                      className="tiffany-mobile-drawer__toggle"
-                      onClick={() => setMobileAccordion(mobileAccordion === item.key ? null : item.key)}
-                      aria-label="Expand submenu"
+                    <span className="tiffany-mobile-drawer__link">{item.label}</span>
+                    <ChevronDown className={`tiffany-mobile-chevron ${mobileAccordion === item.key ? 'open' : ''}`} />
+                  </button>
+                ) : (
+                  <div className="tiffany-mobile-drawer__item-bar">
+                    <Link
+                      to={item.href}
+                      className="tiffany-mobile-drawer__link"
+                      onClick={() => setMobileMenuOpen(false)}
                     >
-                      <ChevronDown className={mobileAccordion === item.key ? 'open' : ''} />
-                    </button>
-                  )}
-                </div>
+                      {item.label}
+                    </Link>
+                  </div>
+                )}
 
                 {item.mega && mobileAccordion === item.key && (
                   <div className="tiffany-mobile-drawer__sub">
+                    <Link
+                      to={item.href}
+                      className="tiffany-mobile-sub-link tiffany-mobile-sub-link--view-all"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      View All {item.label} &rarr;
+                    </Link>
+
                     {item.mega.tabs ? (
                       item.mega.tabs.map((tab) => (
                         <div key={tab.id} className="tiffany-mobile-sub-group">
