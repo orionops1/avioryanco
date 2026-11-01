@@ -1,4 +1,4 @@
-@import "../styles/fonts.css";
+﻿@import "../styles/fonts.css";
 
 /* ============================================================================
    TIFFANY & CO. STANDARD LUXURY HEADER & NAVIGATION SYSTEM
@@ -306,20 +306,21 @@
    ============================================================================ */
 
 .tiffany-mega {
-  position: fixed;
-  top: 0;
+  position: absolute;
+  top: 100%;
   left: 0;
   right: 0;
-  z-index: 1999;
+  z-index: 2005;
   background-color: var(--color-white);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
   border-bottom: 1px solid var(--color-gray-light);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.14);
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-20px);
-  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  transform: translateY(-8px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
   pointer-events: none;
-  margin-top: 110px;
+  margin-top: 0;
 }
 
 .tiffany-mega--visible {
@@ -882,3 +883,4 @@
     display: none;
   }
 }
+

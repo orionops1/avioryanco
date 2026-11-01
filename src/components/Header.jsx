@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react'
+﻿import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import useCartStore from '../hooks/useCart'
 import { useLanguage } from '../hooks/useLanguage'
@@ -259,7 +259,6 @@ export default function Header({ scrolled }) {
             </ul>
           </div>
         </nav>
-      </header>
 
       {/* ============================================================
           FULL-WIDTH MEGA-MENU PANELS
@@ -377,6 +376,7 @@ export default function Header({ scrolled }) {
           </div>
         ) : null
       )}
+      </header>
 
       {/* Mega Backdrop */}
       <div
@@ -511,3 +511,4 @@ export default function Header({ scrolled }) {
     </>
   )
 }
+

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+﻿import React, { useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import useCartStore from '../hooks/useCart'
 import { useLanguage } from '../hooks/useLanguage'
@@ -88,7 +88,14 @@ export default function ProductDetail() {
       : product
     addItem(cartItem)
     setAdded(true)
-    setTimeout(() => setAdded(false), 2500)
+    setTimeout(() => setAdded(false), 3000)
+
+    // Send item details to WhatsApp
+    const priceStr = typeof cartItem.price === 'number' ? `$${cartItem.price.toLocaleString()}` : cartItem.price
+    const sizeStr = cartItem.selectedSize ? `\n*Selected Size:* US ${cartItem.selectedSize}` : ''
+    const metalStr = cartItem.selectedMetal ? `\n*Selected Metal:* ${cartItem.selectedMetal}` : ''
+    const text = `Hello AVIORY & CO., I have selected and added this creation to my shopping bag:\n\n*Piece:* ${cartItem.name}\n*Category:* ${cartItem.category || cartItem.collection || 'Fine Jewellery'}\n*Price:* ${priceStr}${sizeStr}${metalStr}\n*Ref:* ${cartItem.id}\n\nPlease confirm availability and concierge purchase details.`
+    window.open(`https://wa.me/94776100099?text=${encodeURIComponent(text)}`, '_blank')
   }
 
   const handleInquirySubmit = (e) => {
@@ -241,7 +248,7 @@ export default function ProductDetail() {
           {/* Header */}
           <div className="pdp-info__header">
             <span className="pdp-info__subtitle">
-              {getCategoryLabel()} • REF: {product.id.toUpperCase()}
+              {getCategoryLabel()} â€¢ REF: {product.id.toUpperCase()}
             </span>
             <h1 className="pdp-info__title">{product.name}</h1>
             <div className="pdp-info__price">{formatPrice(product.price, currency)}</div>
@@ -405,7 +412,7 @@ export default function ProductDetail() {
               className="btn btn-secondary pdp-btn--cart"
               onClick={handleAddToCart}
             >
-              {added ? 'Added to Bag ✓' : 'Add to Shopping Bag'}
+              {added ? 'Added to Bag âœ“' : 'Add to Shopping Bag'}
             </button>
           </div>
 
@@ -422,21 +429,21 @@ export default function ProductDetail() {
             {productType === 'gemstone' && (
               <>
                 <div className="pdp-assurance-item">
-                  <span className="pdp-assurance-icon">✦</span>
+                  <span className="pdp-assurance-icon">âœ¦</span>
                   <div>
                     <strong>Certified Authenticity</strong>
                     <p>100% natural, unheated stone with independent GIA certification.</p>
                   </div>
                 </div>
                 <div className="pdp-assurance-item">
-                  <span className="pdp-assurance-icon">✦</span>
+                  <span className="pdp-assurance-icon">âœ¦</span>
                   <div>
                     <strong>Direct Mine Provenance</strong>
                     <p>Sourced directly from established operations in Sri Lanka and beyond.</p>
                   </div>
                 </div>
                 <div className="pdp-assurance-item">
-                  <span className="pdp-assurance-icon">✦</span>
+                  <span className="pdp-assurance-icon">âœ¦</span>
                   <div>
                     <strong>Bespoke Setting Integration</strong>
                     <p>Commission our master goldsmiths to mount this stone into a custom creation.</p>
@@ -447,21 +454,21 @@ export default function ProductDetail() {
             {productType === 'jewellery' && (
               <>
                 <div className="pdp-assurance-item">
-                  <span className="pdp-assurance-icon">✦</span>
+                  <span className="pdp-assurance-icon">âœ¦</span>
                   <div>
                     <strong>Master Craftsmanship</strong>
                     <p>Handcrafted by our atelier of master artisans with decades of expertise.</p>
                   </div>
                 </div>
                 <div className="pdp-assurance-item">
-                  <span className="pdp-assurance-icon">✦</span>
+                  <span className="pdp-assurance-icon">âœ¦</span>
                   <div>
                     <strong>Premium Materials</strong>
                     <p>Fine precious metals and certified gemstones in every piece.</p>
                   </div>
                 </div>
                 <div className="pdp-assurance-item">
-                  <span className="pdp-assurance-icon">✦</span>
+                  <span className="pdp-assurance-icon">âœ¦</span>
                   <div>
                     <strong>Lifetime Guarantee</strong>
                     <p>Complimentary annual inspection and professional cleaning included.</p>
@@ -472,21 +479,21 @@ export default function ProductDetail() {
             {productType === 'ring' && (
               <>
                 <div className="pdp-assurance-item">
-                  <span className="pdp-assurance-icon">✦</span>
+                  <span className="pdp-assurance-icon">âœ¦</span>
                   <div>
                     <strong>Lifetime Guarantee</strong>
                     <p>Complimentary sizing, inspection, and professional cleaning included.</p>
                   </div>
                 </div>
                 <div className="pdp-assurance-item">
-                  <span className="pdp-assurance-icon">✦</span>
+                  <span className="pdp-assurance-icon">âœ¦</span>
                   <div>
                     <strong>Certified Gemstones</strong>
                     <p>All center stones certified by independent laboratory.</p>
                   </div>
                 </div>
                 <div className="pdp-assurance-item">
-                  <span className="pdp-assurance-icon">✦</span>
+                  <span className="pdp-assurance-icon">âœ¦</span>
                   <div>
                     <strong>Expert Bridal Support</strong>
                     <p>Personalized consultation with our bridal specialists.</p>
@@ -672,7 +679,7 @@ export default function ProductDetail() {
               onClick={() => setInquiryModalOpen(false)}
               aria-label="Close modal"
             >
-              ✕
+              âœ•
             </button>
             <span className="pdp-info__subtitle">
               {productType === 'gemstone'
@@ -683,8 +690,8 @@ export default function ProductDetail() {
             </span>
             <h3 className="pdp-modal__title">{product.name}</h3>
             <p className="pdp-modal__meta">
-              Ref: {product.id.toUpperCase()} • {formatPrice(product.price, currency)}
-              {productType === 'ring' && ` • Size ${selectedSize}`}
+              Ref: {product.id.toUpperCase()} â€¢ {formatPrice(product.price, currency)}
+              {productType === 'ring' && ` â€¢ Size ${selectedSize}`}
             </p>
 
             {inquirySent ? (
@@ -749,3 +756,4 @@ export default function ProductDetail() {
     </div>
   )
 }
+

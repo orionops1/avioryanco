@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap");
+﻿@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap");
 @import "./fonts.css";
 
 /* ============================================================================
@@ -26,6 +26,8 @@
   --color-champagne: #D4AF7F;
   --color-charcoal: #2B2B2B;
   --color-light-gray: #E8E3DC;
+  --color-gray-light: #E8E3DC;
+  --color-gray-medium: #D0CCBE;
   --color-medium-gray: #D0CCBE;
   --color-accent-brown: #A68563;
   --color-gold-dark: #8B7355;
@@ -606,3 +608,4 @@ footer {
   background-color: var(--color-black);
   color: var(--color-ivory);
 }
+

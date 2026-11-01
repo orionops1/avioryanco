@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+﻿import React, { useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import useCartStore from '../hooks/useCart'
 import { useLanguage } from '../hooks/useLanguage'
@@ -39,7 +39,12 @@ export default function GemstoneDetail() {
   const handleAddToCart = () => {
     addItem(gem)
     setAdded(true)
-    setTimeout(() => setAdded(false), 2500)
+    setTimeout(() => setAdded(false), 3000)
+
+    // Send item details to WhatsApp
+    const priceStr = typeof gem.price === 'number' ? `$${gem.price.toLocaleString()}` : gem.price
+    const text = `Hello AVIORY & CO., I have selected and added this gemstone to my shopping bag:\n\n*Piece:* ${gem.name}\n*Category:* ${gem.category || 'Gemstone'}\n*Carat Weight:* ${gem.caratWeight ? gem.caratWeight + ' ct' : 'Unheated Specimen'}\n*Origin:* ${gem.origin || 'Ceylon'}\n*Price:* ${priceStr}\n*Ref:* ${gem.id}\n\nPlease confirm availability and concierge purchase details.`
+    window.open(`https://wa.me/94776100099?text=${encodeURIComponent(text)}`, '_blank')
   }
 
   const handleInquirySubmit = (e) => {
@@ -113,12 +118,12 @@ export default function GemstoneDetail() {
                   <line x1="26" y1="102" x2="42" y2="90" stroke="rgba(212,175,127,0.5)" strokeWidth="1.2" />
                   <line x1="26" y1="38" x2="42" y2="50" stroke="rgba(212,175,127,0.5)" strokeWidth="1.2" />
                 </svg>
-                <span className="pdp-gallery__fallback-caption">{angles[selectedAngle].label} • {gem.color}</span>
+                <span className="pdp-gallery__fallback-caption">{angles[selectedAngle].label} â€¢ {gem.color}</span>
               </div>
             </div>
 
             <div className="pdp-gallery__angle-desc">
-              <span>View: <strong>{angles[selectedAngle].label}</strong> — {angles[selectedAngle].desc}</span>
+              <span>View: <strong>{angles[selectedAngle].label}</strong> â€” {angles[selectedAngle].desc}</span>
             </div>
           </div>
 
@@ -151,7 +156,7 @@ export default function GemstoneDetail() {
         {/* Right Column: Gemstone Details & Actions */}
         <div className="pdp-info">
           <div className="pdp-info__header">
-            <span className="pdp-info__subtitle">{gem.category} • REF: {gem.id.toUpperCase()}</span>
+            <span className="pdp-info__subtitle">{gem.category} â€¢ REF: {gem.id.toUpperCase()}</span>
             <h1 className="pdp-info__title">{gem.name}</h1>
             <div className="pdp-info__price">{formatPrice(gem.price, currency)}</div>
             <p className="pdp-info__taxes">Complimentary worldwide insured delivery & taxes included</p>
@@ -192,7 +197,7 @@ export default function GemstoneDetail() {
               className="btn btn-secondary pdp-btn--cart"
               onClick={handleAddToCart}
             >
-              {added ? 'Added to Bag ✓' : 'Add to Shopping Bag'}
+              {added ? 'Added to Bag âœ“' : 'Add to Shopping Bag'}
             </button>
           </div>
 
@@ -205,21 +210,21 @@ export default function GemstoneDetail() {
           {/* Concierge Assurance Badges */}
           <div className="pdp-assurances">
             <div className="pdp-assurance-item">
-              <span className="pdp-assurance-icon">✦</span>
+              <span className="pdp-assurance-icon">âœ¦</span>
               <div>
                 <strong>Ceylon Provenance Guarantee</strong>
                 <p>100% natural, unheated stone sourced directly from Ratnapura gem deposits.</p>
               </div>
             </div>
             <div className="pdp-assurance-item">
-              <span className="pdp-assurance-icon">✦</span>
+              <span className="pdp-assurance-icon">âœ¦</span>
               <div>
                 <strong>Independent GIA Documentation</strong>
                 <p>Accompanied by verified international laboratory certification.</p>
               </div>
             </div>
             <div className="pdp-assurance-item">
-              <span className="pdp-assurance-icon">✦</span>
+              <span className="pdp-assurance-icon">âœ¦</span>
               <div>
                 <strong>Bespoke Setting Integration</strong>
                 <p>Commission our master goldsmiths to mount this stone into a bespoke creation.</p>
@@ -301,7 +306,7 @@ export default function GemstoneDetail() {
                       Official GIA documentation is presented with physical hallmark seal upon purchase.
                     </p>
                     <Link to="/journal/the-heritage-of-ceylon-gemstones" className="pdp-cert-link">
-                      Learn About Ceylon Gemological Heritage →
+                      Learn About Ceylon Gemological Heritage â†’
                     </Link>
                   </div>
                 </div>
@@ -326,11 +331,11 @@ export default function GemstoneDetail() {
               onClick={() => setInquiryModalOpen(false)}
               aria-label="Close modal"
             >
-              ✕
+              âœ•
             </button>
             <span className="pdp-info__subtitle">PRIVATE CONCIERGE INQUIRY</span>
             <h3 className="pdp-modal__title">{gem.name}</h3>
-            <p className="pdp-modal__meta">Ref: {gem.id.toUpperCase()} • {formatPrice(gem.price, currency)} • {gem.specs.weight}</p>
+            <p className="pdp-modal__meta">Ref: {gem.id.toUpperCase()} â€¢ {formatPrice(gem.price, currency)} â€¢ {gem.specs.weight}</p>
 
             {inquirySent ? (
               <div className="alert alert-success" style={{ margin: '2rem 0' }}>
@@ -395,3 +400,4 @@ export default function GemstoneDetail() {
     </div>
   )
 }
+

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+﻿import React, { useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import useCartStore from '../hooks/useCart'
 import { useLanguage } from '../hooks/useLanguage'
@@ -33,7 +33,12 @@ export default function JewelleryDetail() {
   const handleAddToCart = () => {
     addItem(item)
     setAdded(true)
-    setTimeout(() => setAdded(false), 2500)
+    setTimeout(() => setAdded(false), 3000)
+
+    // Send jewellery details to WhatsApp
+    const priceStr = typeof item.price === 'number' ? `$${item.price.toLocaleString()}` : item.price
+    const text = `Hello AVIORY & CO., I have selected and added this fine jewellery creation to my shopping bag:\n\n*Piece:* ${item.name}\n*Collection:* ${item.category || item.collection || 'High Jewellery'}\n*Price:* ${priceStr}\n*Ref:* ${item.id}\n\nPlease confirm availability and concierge purchase details.`
+    window.open(`https://wa.me/94776100099?text=${encodeURIComponent(text)}`, '_blank')
   }
 
   const handleInquirySubmit = (e) => {
@@ -93,12 +98,12 @@ export default function JewelleryDetail() {
         {/* Info */}
         <div className="pdp-info">
           <div className="pdp-info__header">
-            <span className="pdp-info__subtitle">{item.collection} • REF: {item.id.toUpperCase()}</span>
+            <span className="pdp-info__subtitle">{item.collection} â€¢ REF: {item.id.toUpperCase()}</span>
             <h1 className="pdp-info__title">{item.name}</h1>
             <div className="pdp-info__price">
               {typeof item.price === 'number' ? formatPrice(item.price, currency) : item.price}
             </div>
-            <p className="pdp-info__taxes">Handcrafted in {item.material} • Worldwide Armoured Courier</p>
+            <p className="pdp-info__taxes">Handcrafted in {item.material} â€¢ Worldwide Armoured Courier</p>
           </div>
 
           {/* Action Buttons */}
@@ -115,7 +120,7 @@ export default function JewelleryDetail() {
               className="btn btn-secondary pdp-btn--cart"
               onClick={handleAddToCart}
             >
-              {added ? 'Added to Bag ✓' : 'Add to Shopping Bag'}
+              {added ? 'Added to Bag âœ“' : 'Add to Shopping Bag'}
             </button>
           </div>
 
@@ -160,11 +165,11 @@ export default function JewelleryDetail() {
               className="pdp-modal__close" 
               onClick={() => setInquiryModalOpen(false)}
             >
-              ✕
+              âœ•
             </button>
             <span className="pdp-info__subtitle">PRIVATE ATELIER INQUIRY</span>
             <h3 className="pdp-modal__title">{item.name}</h3>
-            <p className="pdp-modal__meta">{item.collection} • {item.material}</p>
+            <p className="pdp-modal__meta">{item.collection} â€¢ {item.material}</p>
 
             {inquirySent ? (
               <div className="alert alert-success">
@@ -229,3 +234,4 @@ export default function JewelleryDetail() {
     </div>
   )
 }
+

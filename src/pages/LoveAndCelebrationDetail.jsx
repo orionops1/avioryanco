@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+﻿import React, { useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import useCartStore from '../hooks/useCart'
 import { useLanguage } from '../hooks/useLanguage'
@@ -35,7 +35,12 @@ export default function LoveAndCelebrationDetail() {
   const handleAddToCart = () => {
     addItem({ ...ring, selectedSize, selectedMetal })
     setAdded(true)
-    setTimeout(() => setAdded(false), 2500)
+    setTimeout(() => setAdded(false), 3000)
+
+    // Send ring details to WhatsApp
+    const priceStr = typeof ring.price === 'number' ? `$${ring.price.toLocaleString()}` : ring.price
+    const text = `Hello AVIORY & CO., I have selected and added this ring to my shopping bag:\n\n*Piece:* ${ring.name}\n*Style:* ${ring.style || 'Engagement Ring'}\n*Stone:* ${ring.stoneType || 'Ceylon Sapphire'}\n*Shape:* ${ring.shape || ''}\n*Selected Size:* US ${selectedSize}\n*Selected Metal:* ${selectedMetal}\n*Price:* ${priceStr}\n*Ref:* ${ring.id}\n\nPlease confirm creation timeline and private salon consultation.`
+    window.open(`https://wa.me/94776100099?text=${encodeURIComponent(text)}`, '_blank')
   }
 
   const handleInquirySubmit = (e) => {
@@ -81,7 +86,7 @@ export default function LoveAndCelebrationDetail() {
                     <circle cx="70" cy="26" r="14" stroke="rgba(255,255,255,0.9)" strokeWidth="2" />
                     <polygon points="70,16 78,26 70,36 62,26" fill="rgba(212,175,127,0.7)" />
                   </svg>
-                  <span className="pdp-gallery__fallback-caption">{ring.style} • {ring.stone}</span>
+                  <span className="pdp-gallery__fallback-caption">{ring.style} â€¢ {ring.stone}</span>
                 </div>
               )}
             </div>
@@ -99,10 +104,10 @@ export default function LoveAndCelebrationDetail() {
         {/* Info */}
         <div className="pdp-info">
           <div className="pdp-info__header">
-            <span className="pdp-info__subtitle">{ring.style} • REF: {ring.id.toUpperCase()}</span>
+            <span className="pdp-info__subtitle">{ring.style} â€¢ REF: {ring.id.toUpperCase()}</span>
             <h1 className="pdp-info__title">{ring.name}</h1>
             <div className="pdp-info__price">{formatPrice(ring.price, currency)}</div>
-            <p className="pdp-info__taxes">Mounted in {selectedMetal} • Certified Ceylon Gemstone</p>
+            <p className="pdp-info__taxes">Mounted in {selectedMetal} â€¢ Certified Ceylon Gemstone</p>
           </div>
 
           {/* Metal Selector */}
@@ -186,7 +191,7 @@ export default function LoveAndCelebrationDetail() {
               className="btn btn-secondary pdp-btn--cart"
               onClick={handleAddToCart}
             >
-              {added ? 'Added to Bag ✓' : 'Add to Shopping Bag'}
+              {added ? 'Added to Bag âœ“' : 'Add to Shopping Bag'}
             </button>
           </div>
 
@@ -227,11 +232,11 @@ export default function LoveAndCelebrationDetail() {
               className="pdp-modal__close" 
               onClick={() => setInquiryModalOpen(false)}
             >
-              ✕
+              âœ•
             </button>
             <span className="pdp-info__subtitle">BRIDAL APPOINTMENT & INQUIRY</span>
             <h3 className="pdp-modal__title">{ring.name}</h3>
-            <p className="pdp-modal__meta">{formatPrice(ring.price, currency)} • Size {selectedSize} • {selectedMetal}</p>
+            <p className="pdp-modal__meta">{formatPrice(ring.price, currency)} â€¢ Size {selectedSize} â€¢ {selectedMetal}</p>
 
             {inquirySent ? (
               <div className="alert alert-success">
@@ -296,3 +301,4 @@ export default function LoveAndCelebrationDetail() {
     </div>
   )
 }
+

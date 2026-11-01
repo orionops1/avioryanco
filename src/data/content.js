@@ -1,4 +1,4 @@
-// ============================================================================
+﻿// ============================================================================
 // AVIORY & CO - CONTENT MANAGEMENT
 // ============================================================================
 
@@ -104,7 +104,7 @@ export const about = {
     <p>Our deep roots in Sri Lanka give us access to the world's finest gemstone sources. Generations of expertise have taught us to identify exceptional stones that others might overlook. We work directly with select mining operations and gemstone dealers, building relationships based on shared values and mutual respect.</p>
     
     <h3>Artisanal Excellence</h3>
-    <p>Our team includes master artisans trained in traditional jewelry-making techniques refined over centuries. Each piece is crafted with meticulous attention to detail, combining time-honored methods with contemporary design sensibilities. Our craftspeople are not just technically skilled – they are artists who understand that jewelry represents personal meaning and lasting memories.</p>
+    <p>Our team includes master artisans trained in traditional jewelry-making techniques refined over centuries. Each piece is crafted with meticulous attention to detail, combining time-honored methods with contemporary design sensibilities. Our craftspeople are not just technically skilled â€“ they are artists who understand that jewelry represents personal meaning and lasting memories.</p>
     
     <h3>Commitment to Quality</h3>
     <p>We never compromise on quality. Every gemstone is hand-selected and certified by GIA. Every piece of jewelry is inspected multiple times during creation and before delivery. We stand behind our work completely, offering lifetime warranties on all bespoke pieces.</p>
@@ -165,7 +165,7 @@ export const ceylonHeritage = {
   sections: [
     {
       title: 'The Geology of Perfection',
-      content: `The gemstone deposits of Sri Lanka formed millions of years ago through extraordinary geological processes. The island's location at the intersection of multiple tectonic plates created the perfect conditions for sapphire formation. The specific mineral content in Sri Lankan soil – particularly the concentrations of trace elements like iron and titanium – produces stones with unparalleled color and clarity.`
+      content: `The gemstone deposits of Sri Lanka formed millions of years ago through extraordinary geological processes. The island's location at the intersection of multiple tectonic plates created the perfect conditions for sapphire formation. The specific mineral content in Sri Lankan soil â€“ particularly the concentrations of trace elements like iron and titanium â€“ produces stones with unparalleled color and clarity.`
     },
     {
       title: 'Ancient Trade and Recognition',
@@ -221,7 +221,7 @@ export const shopInfo = {
       name: 'Main Atelier',
       address: 'Colombo, Sri Lanka',
       hours: 'By appointment',
-      contact: '+94 11 XXX XXXX',
+      contact: '+94 77 610 0099 / +94 77 610 0075',
       services: ['Consultations', 'Private Showings', 'Bespoke Design']
     }
   ],
@@ -243,7 +243,10 @@ export const shopInfo = {
  */
 export const contactInfo = {
   email: 'concierge@aviory.com',
-  phone: '+94 11 234 5678',
+  phone: '+94 77 610 0099',
+  phone2: '+94 77 610 0075',
+  whatsapp2: '+94776100075',
+  phones: ['+94 77 610 0099', '+94 77 610 0075'],
   whatsapp: '+94776100099',
   address: 'Colombo 03',
   city: 'Colombo',
@@ -285,32 +288,32 @@ export const socialMedia = {
  */
 export const trustSignals = [
   {
-    icon: '✓',
+    icon: 'âœ“',
     title: 'GIA Certified',
     description: 'Every gemstone independently certified by the Gemological Institute of America'
   },
   {
-    icon: '🛡',
+    icon: 'ðŸ›¡',
     title: 'Ethical Sourcing',
     description: 'Direct relationships with select mining operations ensuring fair practices'
   },
   {
-    icon: '🚚',
+    icon: 'ðŸšš',
     title: 'Armoured Delivery',
     description: 'Complimentary secure courier for all orders over specified amount'
   },
   {
-    icon: '♾',
+    icon: 'â™¾',
     title: 'Lifetime Guarantee',
     description: 'Lifetime warranty on craftsmanship for all bespoke pieces'
   },
   {
-    icon: '💎',
+    icon: 'ðŸ’Ž',
     title: 'Master Craftsmen',
     description: 'Bespoke creation by award-winning artisans with 35+ years experience'
   },
   {
-    icon: '🌍',
+    icon: 'ðŸŒ',
     title: 'Ceylon Heritage',
     description: 'Unheated natural sapphires sourced directly from Sri Lanka'
   }
@@ -325,36 +328,37 @@ export const navigationLinks = [
     key: 'gemstones',
     label: 'Gemstones',
     href: '/gemstones',
-    icon: '💎'
+    icon: 'ðŸ’Ž'
   },
   {
     key: 'fine-jewellery',
     label: 'Fine Jewellery',
     href: '/fine-jewellery',
-    icon: '✨'
+    icon: 'âœ¨'
   },
   {
     key: 'love-and-celebration',
     label: 'Love & Celebration',
     href: '/love-and-celebration',
-    icon: '💍'
+    icon: 'ðŸ’'
   },
   {
     key: 'bespoke',
     label: 'Bespoke',
     href: '/bespoke',
-    icon: '🎨'
+    icon: 'ðŸŽ¨'
   },
   {
     key: 'about',
     label: 'The Maison',
     href: '/our-house',
-    icon: '🏛'
+    icon: 'ðŸ›'
   },
   {
     key: 'journal',
     label: 'Journal',
     href: '/journal',
-    icon: '📖'
+    icon: 'ðŸ“–'
   }
 ];
+
