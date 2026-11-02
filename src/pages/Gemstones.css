@@ -49,10 +49,7 @@
 .gemstones-controls {
   border-bottom: 1px solid var(--color-gray-light);
   background-color: var(--color-white);
-  position: sticky;
-  top: var(--header-height, 140px);
-  z-index: 50;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
 }
 
 .gemstones-controls__inner {
