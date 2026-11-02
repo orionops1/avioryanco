@@ -6,11 +6,11 @@ export default function HeroVideo({
   video,
   poster,
   title = "AVIORY & CO.",
-  tagline = "BESPOKE INTIMACY",
-  subtitle = "Every love has its own expression.",
-  description = "Exceptional Ceylon gemstones. Fine jewellery. Personal creations made around the moments that matter.",
-  ctaPrimary = { label: "EXPLORE AVIORY", href: "/gemstones" },
-  ctaSecondary = { label: "CREATE SOMETHING PERSONAL", href: "/bespoke" }
+  slogan = "DESIRE, MADE REAL.",
+  subtitle = "Every love has its own expression. Exceptional Ceylon gemstones, fine jewellery, and personal creations made around the moments that define you.",
+  cta = { label: "Begin Your Story", href: "/love-and-celebration" },
+  ctaPrimary,
+  ctaSecondary
 }) {
   const videoRef = useRef(null)
 
@@ -25,6 +25,8 @@ export default function HeroVideo({
       })
     }
   }, [])
+
+  const primaryBtn = cta || ctaPrimary
 
   return (
     <section className="hero-video" aria-label="Hero Showcase">
@@ -67,17 +69,15 @@ export default function HeroVideo({
               </h2>
             )}
             
-            <p className="hero-video__tagline">{tagline}</p>
+            {subtitle && (
+              <p className="hero-video__subtitle">{subtitle}</p>
+            )}
             
-            <p className="hero-video__subtitle">{subtitle}</p>
-
-            <p className="hero-video__description">{description}</p>
-            
-            {(ctaPrimary || ctaSecondary) && (
+            {(primaryBtn || ctaSecondary) && (
               <div className="hero-video__cta">
-                {ctaPrimary && (
-                  <Link to={ctaPrimary.href} className="btn btn-primary">
-                    {ctaPrimary.label}
+                {primaryBtn && (
+                  <Link to={primaryBtn.href} className="btn btn-primary">
+                    {primaryBtn.label}
                   </Link>
                 )}
                 {ctaSecondary && (
