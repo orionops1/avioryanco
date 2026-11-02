@@ -100,13 +100,16 @@ export default function Gemstones() {
 
   return (
     <div className="gemstones-page">
-      {/* Luxury Editorial Header */}
+      {/* Luxury Editorial Header — Intimate & Feeling-First */}
       <section className="gemstones-hero">
-        <div className="container">
-          <span className="gemstones-hero__tag">CEYLON GEMSTONE VAULT</span>
-          <h1 className="gemstones-hero__title">Exceptional Gemstones</h1>
-          <p className="gemstones-hero__subtitle">
-            Unheated Ceylon sapphires, rubies, and collector stones selected for their rare saturation, clarity, and certified provenance.
+        <div className="container" style={{ maxWidth: '780px' }}>
+          <span className="gemstones-hero__tag">CEYLON &bull; HIGH JEWELLERY VAULT &bull; EST. 2009</span>
+          <h1 className="gemstones-hero__title">A Heritage Written in Colour</h1>
+          <p style={{ fontFamily: 'var(--font-serif-body)', fontStyle: 'italic', fontSize: '1.25rem', color: '#D4AF7F', margin: '0.5rem 0 0.75rem', letterSpacing: '0.04em' }}>
+            DESIRE, MADE REAL.
+          </p>
+          <p className="gemstones-hero__subtitle" style={{ maxWidth: '580px', margin: '0 auto' }}>
+            Two billion years of natural heat and pressure, untouched by human furnace. Certified unheated Ceylon sapphires and rubies chosen for extraordinary character.
           </p>
         </div>
       </section>

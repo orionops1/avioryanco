@@ -75,15 +75,34 @@
 /* Center Logo — Absolute Centered */
 .tiffany-header__logo-link {
   display: flex;
-  align-items: baseline;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   text-decoration: none;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  gap: 0.25rem;
   z-index: 5;
   white-space: nowrap;
+}
+
+.tiffany-header__logo-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.tiffany-header__descriptor {
+  display: block;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.52rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: #B8996A;
+  text-transform: uppercase;
+  margin-top: 0.15rem;
+  line-height: 1;
 }
 
 .tiffany-header__logo-text {

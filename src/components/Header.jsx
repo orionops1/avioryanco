@@ -178,16 +178,19 @@ export default function Header({ scrolled }) {
               <span className={`tiffany-hamburger-bar ${mobileMenuOpen ? 'open' : ''}`} />
             </button>
 
-            {/* Center: Prominent BlackGold Logo */}
+            {/* Center: Prominent BlackGold Logo & Brand Descriptor */}
             <Link
               to="/"
               className="tiffany-header__logo-link"
               onClick={handleNavClick}
               aria-label="AVIORY &amp; CO. Homepage"
             >
-              <span className="tiffany-header__logo-text">AVIORY</span>
-              <span className="tiffany-header__logo-ampersand">&amp;</span>
-              <span className="tiffany-header__logo-co">CO.</span>
+              <div className="tiffany-header__logo-row">
+                <span className="tiffany-header__logo-text">AVIORY</span>
+                <span className="tiffany-header__logo-ampersand">&amp;</span>
+                <span className="tiffany-header__logo-co">CO.</span>
+              </div>
+              <span className="tiffany-header__descriptor">CEYLON &bull; HIGH JEWELLERY &bull; EST. 2009</span>
             </Link>
 
             {/* Right: Actions Cluster (Currency, Language & Bag clearly visible) */}

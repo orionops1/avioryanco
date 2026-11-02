@@ -24,8 +24,18 @@ export default function Footer() {
               <span className="footer-hallmark">
                 CEYLON &bull; HIGH JEWELLERY &bull; EST. 2009
               </span>
+              <p className="footer-slogan" style={{
+                fontFamily: 'var(--font-serif-display)',
+                fontStyle: 'italic',
+                fontSize: '1.05rem',
+                color: '#D4AF7F',
+                letterSpacing: '0.08em',
+                margin: '0.4rem 0 0.6rem'
+              }}>
+                DESIRE, MADE REAL.
+              </p>
               <p className="footer-tagline">
-                Maison de Haute Joaillerie specializing in rare unheated Ceylon sapphires, natural rubies, and bespoke commissions. Ethically mined and handcrafted to become timeless heirlooms.
+                We do not believe in jewellery made for everyone. We believe in jewellery made for someone. Rare unheated Ceylon sapphires and bespoke creations designed around feeling.
               </p>
               <div className="social-links" aria-label="Social Media">
                 <a href="https://instagram.com/avioryco" target="_blank" rel="noopener noreferrer" title="Instagram" className="social-icon">IG</a>

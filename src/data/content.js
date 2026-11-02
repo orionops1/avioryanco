@@ -5,38 +5,43 @@
 export const bespokeProcess = [
   {
     id: 1,
-    number: '1',
-    title: 'Consultation',
-    description: 'Meet with our design consultants to discuss your vision, preferences, and requirements for your bespoke piece.',
-    fullDescription: 'During your initial consultation, we spend time understanding your unique needs and desires. We discuss your lifestyle, personal aesthetic, budget, and timeline. We show you examples of our previous work and discuss the possibilities available to you.'
+    number: '01',
+    title: 'The Intimate Dialogue',
+    subtitle: 'Where desire takes form',
+    description: 'A private conversation about feeling, devotion, and the singular memory this piece will embody.',
+    fullDescription: 'We do not ask for a spec sheet. We ask about the emotion — the unspoken vows, the private glance, the weight of the moment you are honouring.'
   },
   {
     id: 2,
-    number: '2',
-    title: 'Design',
-    description: 'Our master designers create detailed sketches and digital renderings of your bespoke piece.',
-    fullDescription: 'Our design team translates your vision into detailed technical drawings and digital renderings. You can visualize exactly what your piece will look like before we begin crafting. We make any adjustments needed until the design is perfect.'
+    number: '02',
+    title: 'Gemstone Awakening',
+    subtitle: 'The soul of the piece',
+    description: 'Selecting an unheated Ceylon sapphire or ruby that carries the exact fire and character of your story.',
+    fullDescription: 'From our private vault, we curate stones untouched by thermal treatment — pure, earth-born singularities chosen specifically for your commission.'
   },
   {
     id: 3,
-    number: '3',
-    title: 'Prototyping',
-    description: 'For complex designs, we create detailed prototypes or wax models to ensure perfect execution.',
-    fullDescription: 'For intricate or innovative designs, we create tangible prototypes. This might involve wax models or detailed mockups that let you hold and examine your piece before final crafting begins.'
+    number: '03',
+    title: 'Sculptural Render',
+    subtitle: 'Architecture of longing',
+    description: 'Proportioning platinum and 18K gold around your gemstone, balanced to rest intimately against the skin.',
+    fullDescription: 'Sketches and hand-rendered forms evolve until the metal feels less like jewellery and more like a second pulse.'
   },
   {
     id: 4,
-    number: '4',
-    title: 'Crafting',
-    description: 'Our master artisans meticulously craft your piece using traditional techniques and modern precision.',
-    fullDescription: 'Our skilled craftsmen bring your design to life, carefully working the metal, setting the gemstones, and adding all finishing touches. This is where artistry meets precision, creating your unique masterpiece.'
+    number: '04',
+    title: 'Master Metier',
+    subtitle: 'Hand-forged devotion',
+    description: 'Ceylon master goldsmiths hand-forge every claw, collet, and secret pulse-point gemstone.',
+    fullDescription: 'Centuries of artisanal tradition meet unwavering patience. Nothing is hurried; every curve is calibrated for skin contact.'
   },
   {
     id: 5,
-    number: '5',
-    title: 'Completion',
-    description: 'Final inspection, polishing, and presentation of your completed bespoke creation.',
-    fullDescription: 'Every piece undergoes rigorous quality inspection before receiving the AVIORY & CO hallmark. Your completed piece is presented in elegant packaging, ready to treasure for a lifetime.'
+    number: '05',
+    title: 'The Presentation',
+    subtitle: 'Desire, made real',
+    description: 'Presented in bespoke leather and velvet, sealed with certified provenance and eternal custody.',
+    fullDescription: 'A creation that belongs only to you and the person who wears it. Irreplaceable. Unrepeatable. Remembered forever.'
   }
 ];
 
@@ -92,25 +97,20 @@ export const faqs = [
 ];
 
 export const about = {
-  title: 'Our House of Heritage',
-  tagline: 'Luxury Gemstones and Fine Jewellery with Ceylon Heritage',
-  description: 'AVIORY & CO represents the pinnacle of luxury gemstone and fine jewellery expertise. Built on a foundation of Ceylon heritage, master craftsmanship, and an unwavering commitment to excellence, we curate the world\'s most exceptional gemstones and create timeless bespoke pieces for discerning clients.',
+  title: 'Our House',
+  tagline: 'CEYLON • HIGH JEWELLERY • EST. 2009',
+  slogan: 'DESIRE, MADE REAL.',
+  credo: 'We do not believe in jewellery made for everyone. We believe in jewellery made for someone.',
+  description: 'Born in Sri Lanka in 2009, AVIORY & CO. transforms invisible emotion into physical permanence. We curate rare unheated Ceylon sapphires and hand-craft high jewellery designed to be worn against bare skin, felt intimately, and remembered across generations.',
   
   story: `
-    <h2>Our Story</h2>
-    <p>Founded over 50 years ago, AVIORY & CO began as a small gemstone trading house in the heart of Sri Lanka. Our founders recognized the extraordinary beauty and rarity of Ceylon sapphires and committed to sharing these treasures with the world. What began as a passion has grown into a world-renowned luxury brand recognized for uncompromising quality and integrity.</p>
+    <h2>The Manifesto</h2>
+    <p class="story-lead">Jewellery is not an ornament. It is a confession worn where blood beats closest to the surface.</p>
     
-    <h3>Heritage and Expertise</h3>
-    <p>Our deep roots in Sri Lanka give us access to the world's finest gemstone sources. Generations of expertise have taught us to identify exceptional stones that others might overlook. We work directly with select mining operations and gemstone dealers, building relationships based on shared values and mutual respect.</p>
+    <p>Since 2009, AVIORY & CO. has operated on a singular conviction: jewellery should make someone ache with beauty, not merely impress from across a room. Sri Lanka is the cradle of the world's most luminous unheated sapphires — stones that slept under riverbeds for two billion years before finding the hand of a master artisan.</p>
     
-    <h3>Artisanal Excellence</h3>
-    <p>Our team includes master artisans trained in traditional jewelry-making techniques refined over centuries. Each piece is crafted with meticulous attention to detail, combining time-honored methods with contemporary design sensibilities. Our craftspeople are not just technically skilled â€“ they are artists who understand that jewelry represents personal meaning and lasting memories.</p>
-    
-    <h3>Commitment to Quality</h3>
-    <p>We never compromise on quality. Every gemstone is hand-selected and certified by GIA. Every piece of jewelry is inspected multiple times during creation and before delivery. We stand behind our work completely, offering lifetime warranties on all bespoke pieces.</p>
-    
-    <h3>Ethical Responsibility</h3>
-    <p>Luxury means responsibility. We are committed to ethical gemstone sourcing, sustainable practices, and fair compensation for all partners in our supply chain. Our clients can wear their AVIORY & CO pieces with the knowledge that they represent not just beauty, but integrity.</p>
+    <h3>Pure Intimacy</h3>
+    <p>Every piece we create begins with feeling — love, obsession, gratitude, devotion. We do not mass-produce gestures. We shape precious metals and rare gemstones around the exact curvature of a human life.</p>
   `,
 
   artisans: [
@@ -136,24 +136,20 @@ export const about = {
 
   values: [
     {
-      title: 'Uncompromising Quality',
-      description: 'Every gemstone, every piece, every detail meets the highest standards of excellence.'
+      title: 'Feeling Over Product',
+      description: 'We do not sell stones. We immortalize passion, tenderness, and devotion in precious form.'
     },
     {
-      title: 'Ethical Sourcing',
-      description: 'We know where every gemstone comes from and ensure ethical practices throughout our supply chain.'
+      title: 'Untouched by Artificial Fire',
+      description: 'Exclusively natural, unheated Ceylon sapphires and rubies in their raw geological purity.'
     },
     {
-      title: 'Artisanal Craftsmanship',
-      description: 'Traditional skills combined with contemporary design create timeless pieces.'
+      title: 'Pure Intimacy',
+      description: 'Every commission is private, personal, and sculpted for a single pulse.'
     },
     {
-      title: 'Personal Connection',
-      description: 'We work closely with clients to create pieces that reflect their unique stories and dreams.'
-    },
-    {
-      title: 'Sustainability',
-      description: 'We invest in communities and practices that ensure a positive environmental and social impact.'
+      title: 'Ceylon Provenance',
+      description: 'Ethical direct custody from historic Ratnapura gravels, certified by GIA and Lotus.'
     }
   ]
 };

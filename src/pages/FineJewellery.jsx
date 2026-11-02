@@ -53,16 +53,21 @@ export default function FineJewellery() {
       <section style={{
         backgroundColor: '#111111',
         color: '#F8F4EF',
-        padding: 'var(--spacing-3xl) 0',
+        padding: 'clamp(3.5rem, 7vw, 5.5rem) 0',
         textAlign: 'center'
       }}>
-        <div className="container">
-          <span style={{ display: 'block', fontSize: '0.72rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--color-champagne)', marginBottom: '0.5rem', fontWeight: 700 }}>
-            MAISON ATELIER
+        <div className="container" style={{ maxWidth: '780px' }}>
+          <span style={{ display: 'block', fontSize: '0.72rem', letterSpacing: '0.24em', textTransform: 'uppercase', color: '#D4AF7F', marginBottom: '0.75rem', fontWeight: 600 }}>
+            HAUTE JOAILLERIE &bull; ATELIER CREATIONS
           </span>
-          <h1 style={{ color: '#ffffff', fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.4rem, 5vw, 3.5rem)' }}>Fine Jewellery</h1>
-          <p style={{ fontSize: '1.05rem', marginTop: 'var(--spacing-sm)', color: '#EDE7DC', opacity: 0.95, maxWidth: '600px', margin: '0 auto' }}>
-            Exquisite pieces crafted with exceptional unheated gemstones and master metalwork.
+          <h1 style={{ color: '#ffffff', fontFamily: 'var(--font-serif-display)', fontSize: 'clamp(2.4rem, 5vw, 3.8rem)', fontWeight: 400, marginBottom: '0.75rem' }}>
+            Beauty That Becomes Part of You
+          </h1>
+          <p style={{ fontFamily: 'var(--font-serif-body)', fontStyle: 'italic', fontSize: '1.25rem', color: '#D4AF7F', marginBottom: '0.75rem', letterSpacing: '0.04em' }}>
+            DESIRE, MADE REAL.
+          </p>
+          <p style={{ fontSize: '0.98rem', color: '#D0CCBE', opacity: 0.95, maxWidth: '560px', margin: '0 auto', lineHeight: 1.65 }}>
+            Each creation is sculpted around rare unheated Ceylon sapphires and gold — designed to be worn against bare skin and remembered forever.
           </p>
         </div>
       </section>

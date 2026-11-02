@@ -15,15 +15,20 @@ export default function Journal() {
   return (
     <>
       <section style={{
-        backgroundColor: 'var(--color-primary-black)',
-        color: 'var(--color-ivory)',
-        padding: 'var(--spacing-3xl) 0',
+        backgroundColor: '#111111',
+        color: '#F8F4EF',
+        padding: 'clamp(3.5rem, 7vw, 5.5rem) 0',
         textAlign: 'center'
       }}>
-        <div className="container">
-          <h1 style={{ color: 'var(--color-champagne)' }}>Journal</h1>
-          <p style={{ fontSize: '1.1rem', marginTop: 'var(--spacing-md)', color: '#EDE7DC', opacity: 0.95 }}>
-            Insights, education, and inspiration from our experts
+        <div className="container" style={{ maxWidth: '780px' }}>
+          <span style={{ display: 'block', fontSize: '0.72rem', letterSpacing: '0.24em', textTransform: 'uppercase', color: '#D4AF7F', marginBottom: '0.75rem', fontWeight: 600 }}>
+            THE AVIORY CHRONICLES &bull; EST. 2009
+          </span>
+          <h1 style={{ color: '#FFFFFF', fontFamily: 'var(--font-serif-display)', fontSize: 'clamp(2.4rem, 5vw, 3.8rem)', fontWeight: 400, marginBottom: '0.75rem' }}>
+            The Journal
+          </h1>
+          <p style={{ fontFamily: 'var(--font-serif-body)', fontStyle: 'italic', fontSize: '1.25rem', color: '#D4AF7F', marginBottom: '0.75rem', letterSpacing: '0.04em' }}>
+            Stories of devotion, earth-born colour, and high jewellery craft.
           </p>
         </div>
       </section>
