@@ -60,6 +60,12 @@ export default function HeroVideo({
               <span className="hero-video__logo-amp">&amp;</span>
               <span className="hero-video__logo-co">CO.</span>
             </h1>
+
+            {slogan && (
+              <h2 className="hero-video__slogan">
+                {slogan}
+              </h2>
+            )}
             
             <p className="hero-video__tagline">{tagline}</p>
             

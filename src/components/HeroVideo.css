@@ -109,6 +109,19 @@
   text-transform: uppercase;
 }
 
+
+.hero-video__slogan {
+  font-family: var(--font-serif-display, 'Playfair Display', Georgia, serif);
+  font-size: clamp(1.4rem, 3.2vw, 2.5rem);
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #DFBA73;
+  margin: 0.25rem 0 0.5rem 0;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7);
+  display: block;
+}
+
 .hero-video__subtitle {
   font-family: 'Montserrat', var(--font-ui), sans-serif;
   font-size: clamp(0.78rem, 1.8vw, 0.98rem);
@@ -176,7 +189,20 @@
     gap: 1rem;
   }
 
-  .hero-video__subtitle {
+  
+.hero-video__slogan {
+  font-family: var(--font-serif-display, 'Playfair Display', Georgia, serif);
+  font-size: clamp(1.4rem, 3.2vw, 2.5rem);
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #DFBA73;
+  margin: 0.25rem 0 0.5rem 0;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7);
+  display: block;
+}
+
+.hero-video__subtitle {
     letter-spacing: 0.14em;
     font-size: 0.72rem;
   }

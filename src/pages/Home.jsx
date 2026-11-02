@@ -23,11 +23,9 @@ export default function Home() {
     video: "/videos/hero-luxury.mp4",
     poster: "/images/hero-banner.jpg",
     title: t("hero.title", "AVIORY & CO."),
-    tagline: t("hero.tagline", "BESPOKE INTIMACY"),
-    subtitle: t("hero.subtitle", "Every love has its own expression."),
-    description: t("hero.description", "Exceptional Ceylon gemstones. Fine jewellery. Personal creations made around the moments that matter."),
-    ctaPrimary: { label: "EXPLORE AVIORY", href: "/shop" },
-    ctaSecondary: { label: "CREATE SOMETHING PERSONAL", href: "/bespoke" }
+    slogan: "DESIRE, MADE REAL.",
+    subtitle: "Every love has its own expression. Exceptional Ceylon gemstones and fine jewellery, created around the moments that define you.",
+    cta: { label: "Begin Your Story", href: "/love-and-celebration" }
   };
 
   return (
@@ -37,13 +35,12 @@ export default function Home() {
         video={heroVideo.video}
         poster={heroVideo.poster}
         title={heroVideo.title}
-        tagline={heroVideo.tagline}
+        slogan={heroVideo.slogan}
         subtitle={heroVideo.subtitle}
-        description={heroVideo.description}
-        ctaPrimary={heroVideo.ctaPrimary}
-        ctaSecondary={heroVideo.ctaSecondary}
+        cta={heroVideo.cta}
       />
-      {/* USP Trust Strip */}
+
+      {/* USP Trust Strip — Tiffany-standard subtle pillar row */}
       <div className="home-usp-strip">
         <div className="home-usp-strip__item">
           <span className="home-usp-strip__icon" aria-hidden="true">&#10022;</span>
@@ -59,8 +56,7 @@ export default function Home() {
         </div>
       </div>
 
-
-      {/* 2. THE TWO PILLARS: LOVE COLLECTION + HIGH JEWELLERY */}
+      {/* 2. LOVE & CELEBRATION — For the Moments Too Large for Words */}
       <section className="home-editorial-two-up">
         <div className="container">
           <div className="editorial-two-up-grid">
@@ -73,18 +69,18 @@ export default function Home() {
                 <div className="editorial-panel-overlay" />
               </div>
               <div className="editorial-panel-content">
-                <span className="editorial-eyebrow">THE LOVE COLLECTION</span>
-                <h3>Rings for Every Love Story</h3>
+                <span className="editorial-eyebrow">LOVE &amp; CELEBRATION</span>
+                <h3>For the Moments Too Large for Words</h3>
                 <p>
-                  She will say "Yes" to handcrafted engagement rings set with rare, unheated Ceylon sapphires and certified natural gemstones.
+                  Some moments cannot be explained &mdash; only felt. A question asked in a quiet room. A promise made in front of everyone you love. Discover engagement rings and fine jewellery created to hold the weight of those moments.
                 </p>
                 <Link to="/love-and-celebration" className="btn btn-primary btn-small">
-                  EXPLORE LOVE COLLECTION
+                  EXPLORE LOVE &amp; CELEBRATION
                 </Link>
               </div>
             </div>
 
-            {/* RIGHT PILLAR: HIGH JEWELLERY & RARE GEMS */}
+            {/* RIGHT PILLAR: HIGH JEWELLERY & ATELIER */}
             <div className="editorial-panel">
               <div 
                 className="editorial-panel-image" 
@@ -94,9 +90,9 @@ export default function Home() {
               </div>
               <div className="editorial-panel-content">
                 <span className="editorial-eyebrow">HIGH JEWELLERY ATELIER</span>
-                <h3>Atelier Masterpieces</h3>
+                <h3>Beauty That Becomes Part of Your Story</h3>
                 <p>
-                  One-of-a-kind statement necklaces, drop earrings, cuffs, and collector-grade natural gemstones hand-wrought by Ceylon goldsmiths.
+                  The pieces we wear daily become part of who we are. From considered everyday silhouettes to extraordinary statements &mdash; crafted with certified unheated gemstones, made to be worn, not kept away.
                 </p>
                 <Link to="/fine-jewellery" className="btn btn-primary btn-small">
                   EXPLORE FINE JEWELLERY
@@ -107,7 +103,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. FEATURED STORY: WE DESIGN VALUE FOR EVERY LOVE STORY (Bespoke Focus) */}
+      {/* 3. BESPOKE CREATIONS (Elevated Position: High-Value Collaboration) */}
       <section className="home-value-hero">
         <div className="home-value-hero-grid">
           <div 
@@ -117,24 +113,27 @@ export default function Home() {
             <div className="home-value-hero-overlay" />
           </div>
           <div className="home-value-hero-content">
-            <span className="editorial-eyebrow">BESPOKE COMMISSIONS &amp; VALUE</span>
-            <h2>We Design Value for Every Love Story</h2>
+            <span className="editorial-eyebrow">PURE INTIMACY &bull; THE BESPOKE PROGRAMME</span>
+            <h2>A Piece That Belongs Only to You</h2>
             <p>
-              From natural rough gemstone custody in the historic gravels of Ceylon to master goldsmith hand-forging in 950 platinum and 18K solid gold, each bespoke commission is engineered as an immutable generational store of beauty and enduring value.
+              Some feelings are difficult to put into words. Tell us about the person. The memory. The moment you want to make permanent.
+            </p>
+            <p style={{ marginTop: "-1rem", fontStyle: "italic", color: "#8E6F3E" }}>
+              Together, we will select an unheated gemstone and develop a design that feels personal, meaningful &mdash; and entirely yours. This is not a purchase. It is a collaboration.
             </p>
             <div className="home-value-hero-actions">
               <Link to="/bespoke" className="btn btn-primary">
-                START YOUR COMMISSION
+                BEGIN A BESPOKE CONVERSATION
               </Link>
               <Link to="/our-house" className="btn btn-outline">
-                DISCOVER OUR PROVENANCE
+                DISCOVER OUR HOUSE
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 4. THE ART OF THE GIFT (Curated Gifts & Milestones) */}
+      {/* 4. MILESTONES & GIVING (For the People Who Deserve More Than a Gesture) */}
       <section className="home-gift-section">
         <div className="home-gift-grid">
           <div 
@@ -144,34 +143,42 @@ export default function Home() {
             <div className="home-gift-overlay" />
           </div>
           <div className="home-gift-content">
-            <span className="editorial-eyebrow">MILESTONES &amp; CELEBRATIONS</span>
-            <h2>The Art of the Gift</h2>
+            <span className="editorial-eyebrow">MILESTONES &amp; GIVING</span>
+            <h2>For the People Who Deserve More Than a Gesture</h2>
             <p>
-              Celebrate every milestone of the ones you cherish. From proposal rings and wedding day heirlooms to anniversary milestones and birthday tributes, discover creations presented in our signature bespoke luxury packaging.
+              A birthday. An anniversary. An unexpected Tuesday when you simply wanted them to know.
             </p>
-            <Link to="/fine-jewellery" className="btn btn-primary">
-              DISCOVER CURATED GIFTS
-            </Link>
+            <p style={{ marginTop: "-1rem", fontWeight: "500", color: "#111111" }}>
+              Find something that says: <em>I thought of you, specifically.</em>
+            </p>
+            <div style={{ marginTop: "1rem" }}>
+              <Link to="/fine-jewellery" className="btn btn-primary">
+                DISCOVER MEANINGFUL GIFTS
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* 5. CEYLON SAPPHIRES: THE ISLAND OF GEMS */}
+      {/* 5. CEYLON GEMSTONES: A HERITAGE WRITTEN IN COLOUR */}
       <section className="home-heritage-section">
         <div className="container">
           <div className="home-heritage-grid">
             <div className="home-heritage-content">
-              <span className="editorial-eyebrow">CEYLON HERITAGE VAULT</span>
-              <h2>Rare Natural Gemstones</h2>
+              <span className="editorial-eyebrow">CEYLON PROVENANCE &amp; SCIENCE</span>
+              <h2>A Heritage Written in Colour</h2>
               <p>
-                For more than two millennia, Sri Lanka has yielded the most extraordinary unheated royal blue sapphires, padparadschas, and rare spinels. Each stone is ethically mined in Ratnapura and Balangoda and certified by the world's premier laboratories: GRS, GIA, and Lotus.
+                Sri Lanka is one of the oldest gemstone origins on earth &mdash; a legendary island that has yielded extraordinary sapphires, rubies, and spinels for more than two millennia.
+              </p>
+              <p>
+                At Aviory, we bring this heritage closer through a rigorous curation of 100% natural, unheated Ceylon gemstones, accompanied by international reports from Lotus, GRS, and GIA.
               </p>
               <div className="home-heritage-actions">
-                <Link to="/gemstones?category=blue-sapphires" className="btn btn-primary">
-                  EXPLORE SAPPHIRES
+                <Link to="/gemstones" className="btn btn-primary">
+                  EXPLORE CEYLON GEMSTONES
                 </Link>
                 <Link to="/our-house" className="btn btn-outline">
-                  OUR PROVENANCE
+                  OUR GEMSTONE HERITAGE
                 </Link>
               </div>
             </div>
@@ -187,13 +194,14 @@ export default function Home() {
                   <span className="heritage-gemstone-tag">LOTUS &amp; GRS CERTIFIED</span>
                 </div>
                 <div className="heritage-gemstone-details">
+                  <span className="editorial-eyebrow" style={{ fontSize: "0.62rem", marginBottom: "0.25rem" }}>A CLOSER LOOK</span>
                   <h4>Royal Ceylon Sapphire</h4>
-                  <p className="heritage-gemstone-meta">7.42 Carats &bull; Cushion Cut &bull; Unheated</p>
+                  <p className="heritage-gemstone-meta">7.42 Carats &bull; Cushion Cut &bull; Unheated &bull; Natural</p>
                   <p className="heritage-gemstone-desc">
-                    Direct mine-to-atelier custody from Balangoda, Ceylon. Ethically mined and certified untreated natural crystalline purity.
+                    The colour of a clear evening sky, just after the light changes. Unheated, unaltered, and accompanied by full gemmological documentation.
                   </p>
                   <Link to="/gemstones?category=blue-sapphires" className="heritage-card-link">
-                    EXPLORE VAULT SPECIMENS &rarr;
+                    DISCOVER THIS SAPPHIRE &rarr;
                   </Link>
                 </div>
               </div>
@@ -202,7 +210,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. CURATED HIGHLIGHTS SHOWCASE (Single Tabbed Section - Eliminates Duplication & Scrolling) */}
+      {/* 6. CURATED HIGHLIGHTS SHOWCASE */}
       <section className="featured-products">
         <div className="container">
           <div className="section-title-wrap">
@@ -249,7 +257,60 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 8. FROM OUR JOURNAL (Editorial Knowledge) */}
+      {/* 7. OUR HOUSE & THE BRAND CREDO */}
+      <section className="home-credo-section" style={{
+        backgroundColor: "#111111",
+        color: "#FAF7F2",
+        padding: "clamp(4rem, 8vw, 6.5rem) 1.5rem",
+        textAlign: "center"
+      }}>
+        <div className="container" style={{ maxWidth: "860px", margin: "0 auto" }}>
+          <span className="editorial-eyebrow" style={{ color: "#DFBA73" }}>OUR HOUSE &bull; THE CREDO</span>
+          <h2 style={{
+            fontFamily: "var(--font-serif-display, 'Playfair Display', serif)",
+            fontSize: "clamp(2rem, 3.8vw, 3rem)",
+            fontWeight: 400,
+            color: "#FFFFFF",
+            lineHeight: 1.25,
+            marginBottom: "1.5rem"
+          }}>
+            More Than Jewellery.<br />A Personal Expression.
+          </h2>
+          <p style={{
+            fontFamily: "var(--font-serif-body, 'Cormorant Garamond', Georgia, serif)",
+            fontSize: "clamp(1.15rem, 2vw, 1.35rem)",
+            lineHeight: 1.8,
+            color: "#EDE7DC",
+            marginBottom: "2rem"
+          }}>
+            Born in Sri Lanka &mdash; a country with one of the world's most celebrated gemstone heritages &mdash; Aviory brings together the beauty of Ceylon gemstones, gemmological knowledge, and master goldsmith artistry. Every gemstone has its own character, and every creation has the opportunity to mean something different to the person who carries it.
+          </p>
+          <div style={{
+            display: "inline-block",
+            padding: "1.25rem 2.5rem",
+            border: "1px solid rgba(223, 186, 115, 0.4)",
+            backgroundColor: "rgba(255, 255, 255, 0.03)",
+            marginBottom: "2.5rem"
+          }}>
+            <p style={{
+              margin: 0,
+              fontFamily: "var(--font-serif-display, 'Playfair Display', serif)",
+              fontSize: "clamp(1.2rem, 2.2vw, 1.5rem)",
+              fontStyle: "italic",
+              color: "#DFBA73"
+            }}>
+              &ldquo;We do not believe in jewellery made for everyone.<br />We believe in jewellery made for someone.&rdquo;
+            </p>
+          </div>
+          <div>
+            <Link to="/our-house" className="btn btn-primary" style={{ backgroundColor: "#DFBA73", color: "#111111", border: "none" }}>
+              DISCOVER THE AVIORY STORY
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. FROM OUR JOURNAL */}
       <section className="journal-preview">
         <div className="container">
           <div className="section-title-wrap">
