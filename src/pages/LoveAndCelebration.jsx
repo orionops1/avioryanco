@@ -115,36 +115,36 @@ export default function LoveAndCelebration() {
   }
 
   const bridalWhatsAppUrl = `https://wa.me/94776100099?text=${encodeURIComponent(
-    "Hello AVIORY Atelier, I would love to explore engagement rings and bespoke bridal creations for our love story."
+    "Hello AVIORY Atelier, I am seeking a creation for an intimate love story. I would love to explore your bespoke bridal rings and rare unheated Ceylon gemstones."
   )}`
 
   return (
     <div className="love-page">
       {/* ============================================================
-          1. CINEMATIC ROMANCE EDITORIAL HERO
+          1. CINEMATIC SENSUAL HERO — CLOSER THAN WORDS
           ============================================================ */}
       <section className="love-hero">
         <div className="container love-hero__grid">
-          {/* Left Editorial Narrative */}
+          {/* Left Intimate Editorial Narrative */}
           <div className="love-hero__content">
-            <span className="love-hero__eyebrow">AVIORY &amp; CO. &middot; HAUTE JOAILLERIE BRIDAL</span>
-            <h1 className="love-hero__title">Rings for Every Love Story</h1>
+            <span className="love-hero__eyebrow">AVIORY &amp; CO. &middot; DESIRE, MADE REAL.</span>
+            <h1 className="love-hero__title">Closer Than Words</h1>
             <p className="love-hero__quote">
-              &ldquo;Written in the stars, forged in the earth: where rare unheated Ceylon sapphires meet an eternal promise.&rdquo;
+              &ldquo;Before the question is asked, there is a silence so full it needs a body to hold it. We do not sell jewellery. We make desire real.&rdquo;
             </p>
             <p className="love-hero__narrative">
-              We believe every great love begins with a singular truth. In our Colombo atelier, master goldsmiths hand-sculpt 950 platinum and 18K solid gold around certified unheated Ceylon sapphires and rare natural gems &mdash; crafting talismans of devotion that outlast generations.
+              Real passion refuses to be rushed, manufactured, or copied. In our Colombo atelier, master goldsmiths forge 950 platinum and 18K solid gold around singular, unheated Ceylon sapphires and rare natural gems &mdash; permanent talismans of longing, devotion, and private devotion.
             </p>
 
             <div className="love-hero__badges">
               <span className="love-badge">
-                <span className="love-badge__dot" /> 100% Unheated Ceylon Provenance
+                <span className="love-badge__dot" /> 100% Certified Unheated Ceylon Gemstones
               </span>
               <span className="love-badge">
-                <span className="love-badge__dot" /> Hand-Forged 950 Platinum &amp; 18K Gold
+                <span className="love-badge__dot" /> Pure Intimacy &bull; Hand-Forged 950 Platinum
               </span>
               <span className="love-badge">
-                <span className="love-badge__dot" /> Private Bespoke Engraving
+                <span className="love-badge__dot" /> Secret Inner Gemstone &amp; Private Engraving
               </span>
             </div>
 
@@ -154,7 +154,7 @@ export default function LoveAndCelebration() {
                 className="love-btn love-btn--primary"
                 onClick={scrollToRings}
               >
-                Explore Engagement Rings &darr;
+                Explore Rings of Devotion &darr;
               </button>
               <a
                 href={bridalWhatsAppUrl}
@@ -162,7 +162,7 @@ export default function LoveAndCelebration() {
                 rel="noopener noreferrer"
                 className="love-btn love-btn--gold"
               >
-                WhatsApp Bridal Concierge
+                Begin Private Consultation
               </a>
             </div>
           </div>
@@ -176,9 +176,9 @@ export default function LoveAndCelebration() {
                 className="love-hero__image"
               />
               <div className="love-hero__caption-card">
-                <span className="love-caption__tag">ICONIC CREATION</span>
+                <span className="love-caption__tag">TALISMAN OF DESIRE</span>
                 <h4 className="love-caption__title">The Royal Solitaire</h4>
-                <p className="love-caption__desc">Unheated Ceylon Blue Sapphire in Hand-Wrought 950 Platinum</p>
+                <p className="love-caption__desc">7.42ct Unheated Ceylon Sapphire resting in Hand-Wrought 950 Platinum</p>
                 <Link to="/bespoke" className="love-caption__link">
                   Commission Yours &rarr;
                 </Link>
@@ -189,20 +189,20 @@ export default function LoveAndCelebration() {
       </section>
 
       {/* ============================================================
-          2. THE FOUR CHAPTERS OF LOVE & CELEBRATION
+          2. THE FOUR INTIMATE CHAPTERS OF YOUR DESIRE
           ============================================================ */}
       <section className="love-chapters">
         <div className="container">
           <div className="love-chapters__header">
-            <span className="love-section-tag">MILESTONES OF ROMANCE</span>
-            <h2 className="love-section-title">The Four Chapters of Your Journey</h2>
+            <span className="love-section-tag">CHRONICLES OF DEVOTION</span>
+            <h2 className="love-section-title">The Four Chapters of Your Story</h2>
             <p className="love-section-subtitle">
-              From the breath before the question to the decades celebrated together, explore bridal creations curated for each intimate chapter.
+              From the breathless confession in the quiet to a lifetime lived skin to skin &mdash; explore creations designed for the moments language cannot reach.
             </p>
           </div>
 
           <div className="love-chapters__grid">
-            {/* Chapter 1: The Proposal */}
+            {/* Chapter 1: The Confession */}
             <div
               className="love-chapter-card"
               onClick={() => handleChapterClick('solitaire')}
@@ -210,19 +210,19 @@ export default function LoveAndCelebration() {
               tabIndex={0}
             >
               <div className="love-chapter-card__image-box">
-                <img src="/images/products/ring-sapphire-solitaire.jpg" alt="The Proposal Engagement Ring" />
+                <img src="/images/products/ring-sapphire-solitaire.jpg" alt="The Confession Ring" />
                 <span className="love-chapter-num">CHAPTER I</span>
               </div>
               <div className="love-chapter-card__body">
-                <h3 className="love-chapter-card__title">The Proposal</h3>
+                <h3 className="love-chapter-card__title">The Confession</h3>
                 <p className="love-chapter-card__desc">
-                  Iconic solitaires and cathedral settings showcasing unheated Ceylon sapphires &mdash; the question that changes everything forever.
+                  Iconic cathedral solitaires bearing solitary unheated Ceylon sapphires. The moment when words stop and everything changes.
                 </p>
                 <span className="love-chapter-card__link">Discover Solitaires &rarr;</span>
               </div>
             </div>
 
-            {/* Chapter 2: The Devotion */}
+            {/* Chapter 2: The Burning Circle */}
             <div
               className="love-chapter-card"
               onClick={() => handleChapterClick('halo')}
@@ -230,19 +230,19 @@ export default function LoveAndCelebration() {
               tabIndex={0}
             >
               <div className="love-chapter-card__image-box">
-                <img src="/images/products/ring-ruby-soleste.jpg" alt="The Devotion Halo Ring" />
+                <img src="/images/products/ring-ruby-soleste.jpg" alt="The Burning Circle Halo Ring" />
                 <span className="love-chapter-num">CHAPTER II</span>
               </div>
               <div className="love-chapter-card__body">
-                <h3 className="love-chapter-card__title">The Halo of Devotion</h3>
+                <h3 className="love-chapter-card__title">The Burning Circle</h3>
                 <p className="love-chapter-card__desc">
-                  Intricate halos of hand-set gemstones enveloping rare pigeon blood rubies and padparadscha sapphires with luminous radiance.
+                  Luminous halos embracing Ceylon rubies and rare sunset padparadschas &mdash; passion given a radiant, unbroken crown.
                 </p>
-                <span className="love-chapter-card__link">Explore Halo Designs &rarr;</span>
+                <span className="love-chapter-card__link">Explore Halos &rarr;</span>
               </div>
             </div>
 
-            {/* Chapter 3: Trilogy */}
+            {/* Chapter 3: An Unbroken Life */}
             <div
               className="love-chapter-card"
               onClick={() => handleChapterClick('three-stone')}
@@ -250,19 +250,19 @@ export default function LoveAndCelebration() {
               tabIndex={0}
             >
               <div className="love-chapter-card__image-box">
-                <img src="/images/products/ring-emerald-solitaire.jpg" alt="Trilogy Three-Stone Ring" />
+                <img src="/images/products/ring-emerald-solitaire.jpg" alt="An Unbroken Life Trilogy Ring" />
                 <span className="love-chapter-num">CHAPTER III</span>
               </div>
               <div className="love-chapter-card__body">
-                <h3 className="love-chapter-card__title">Past, Present &amp; Future</h3>
+                <h3 className="love-chapter-card__title">An Unbroken Life</h3>
                 <p className="love-chapter-card__desc">
-                  The Trilogy setting: three harmonious certified gemstones honoring the journey you have walked and the lifetime ahead.
+                  The Trilogy setting: three harmonious unheated gemstones honouring what you were, who you are together, and what will outlive you both.
                 </p>
                 <span className="love-chapter-card__link">View Trilogy Rings &rarr;</span>
               </div>
             </div>
 
-            {/* Chapter 4: Bespoke */}
+            {/* Chapter 4: Pure Intimacy */}
             <div
               className="love-chapter-card"
               onClick={() => handleChapterClick('bespoke')}
@@ -270,15 +270,15 @@ export default function LoveAndCelebration() {
               tabIndex={0}
             >
               <div className="love-chapter-card__image-box">
-                <img src="/images/products/ring-padparadscha.jpg" alt="Bespoke Love Story" />
+                <img src="/images/products/ring-padparadscha.jpg" alt="Pure Intimacy Bespoke Ring" />
                 <span className="love-chapter-num">CHAPTER IV</span>
               </div>
               <div className="love-chapter-card__body">
-                <h3 className="love-chapter-card__title">Your Private Love Story</h3>
+                <h3 className="love-chapter-card__title">Pure Intimacy</h3>
                 <p className="love-chapter-card__desc">
-                  Co-design your dream ring with our master gemmologists, incorporating secret inner gemstones and personal dates.
+                  One-of-one bespoke design. Secret birthstones set against the pulse point, hand-engraved love notes, and custom metalwork.
                 </p>
-                <span className="love-chapter-card__link">Co-Design With Us &rarr;</span>
+                <span className="love-chapter-card__link">Begin Bespoke Collaboration &rarr;</span>
               </div>
             </div>
           </div>
@@ -286,41 +286,41 @@ export default function LoveAndCelebration() {
       </section>
 
       {/* ============================================================
-          3. ROMANCE MANIFESTO: THE POETRY OF CEYLON SAPPHIRES
+          3. ROMANCE & SENSUALITY MANIFESTO: UNHEATED & UNCOMPROMISED
           ============================================================ */}
       <section className="love-manifesto">
         <div className="container">
           <div className="love-manifesto__header">
-            <span className="love-manifesto__tag">THE TALISMAN OF DEVOTION</span>
-            <h2 className="love-manifesto__title">The Poetry of Ceylon Sapphires</h2>
+            <span className="love-manifesto__tag">THE ANATOMY OF REAL DEVOTION</span>
+            <h2 className="love-manifesto__title">Untouched by Artificial Fire</h2>
             <div className="love-manifesto__rule" />
             <p className="love-manifesto__sub">
-              Why lovers through antiquity have pledged their eternal devotion with the sacred Ceylon gem
+              Why lovers through antiquity choose Ceylon&rsquo;s unheated gemstones: because real love refuses to be manufactured
             </p>
           </div>
 
           <div className="love-manifesto__pillars">
             <div className="love-pillar">
-              <div className="love-pillar__icon">&hearts;</div>
-              <h3 className="love-pillar__title">Celestial Fidelity</h3>
+              <div className="love-pillar__icon">&#10022;</div>
+              <h3 className="love-pillar__title">Pure &amp; Unaltered</h3>
               <p className="love-pillar__text">
-                For over two millennia, royalty and romantics have chosen the royal blue sapphire as the timeless symbol of loyalty, truth, and unbroken devotion.
+                More than 99% of global sapphires are heated and artificially treated. We work exclusively with the unheated miracle &mdash; as pure, raw, and unapologetic as real desire.
+              </p>
+            </div>
+
+            <div className="love-pillar">
+              <div className="love-pillar__icon">&hearts;</div>
+              <h3 className="love-pillar__title">Worn Where You Are Felt</h3>
+              <p className="love-pillar__text">
+                Crafted not to impress a crowd from across a room, but to live against the warmth of skin. Jewellery designed for the one person allowed close enough to touch it.
               </p>
             </div>
 
             <div className="love-pillar">
               <div className="love-pillar__icon">&#9671;</div>
-              <h3 className="love-pillar__title">Untouched by Artificial Fire</h3>
+              <h3 className="love-pillar__title">Cosmic Singularity</h3>
               <p className="love-pillar__text">
-                Every sapphire in the AVIORY Love Suite is 100% natural and certified unheated &mdash; completely unaltered by human interference, pure and enduring like true love.
-              </p>
-            </div>
-
-            <div className="love-pillar">
-              <div className="love-pillar__icon">&#10022;</div>
-              <h3 className="love-pillar__title">One of One in the Cosmos</h3>
-              <p className="love-pillar__text">
-                Formed deep in Sri Lanka&rsquo;s historic gravels over 500 million years, no two natural gemstones share the exact same crystal fire &mdash; an irreplaceable match for your soulmate.
+                Formed 50 million years ago in Ceylon&rsquo;s crystalline earth, no two natural unheated stones share the same heart. An irreplaceable reflection of the person you chose.
               </p>
             </div>
           </div>
@@ -337,7 +337,7 @@ export default function LoveAndCelebration() {
             <div className="love-filters-header">
               <div>
                 <span className="love-filter-eyebrow">CURATE YOUR LOVE TALISMAN</span>
-                <h3 className="love-filter-title">Filter by Moment, Gemstone &amp; Cut</h3>
+                <h3 className="love-filter-title">Find the Ring of Your Story</h3>
               </div>
               {(selectedStyle !== 'all' || selectedStone !== 'all' || selectedShape !== 'all') && (
                 <button
@@ -361,7 +361,7 @@ export default function LoveAndCelebration() {
                     className={`love-filter-pill ${selectedStyle.toLowerCase() === style.toLowerCase() ? 'love-filter-pill--active' : ''}`}
                     onClick={() => handleStyleChange(style)}
                   >
-                    {style === 'all' ? 'All Settings' : style}
+                    {style === 'all' ? 'All Silhouettes' : style}
                   </button>
                 ))}
               </div>
@@ -395,7 +395,7 @@ export default function LoveAndCelebration() {
                     className={`love-filter-pill ${selectedShape.toLowerCase() === shape.toLowerCase() ? 'love-filter-pill--active' : ''}`}
                     onClick={() => handleShapeChange(shape)}
                   >
-                    {shape === 'all' ? 'All Shapes' : shape}
+                    {shape === 'all' ? 'All Cuts' : shape}
                   </button>
                 ))}
               </div>
@@ -407,12 +407,12 @@ export default function LoveAndCelebration() {
         <div className="container love-catalog">
           <div className="love-meta-bar">
             <span className="love-count-text">
-              Showing <strong>{filtered.length}</strong> {filtered.length === 1 ? 'handcrafted ring' : 'handcrafted rings'} in the Love Collection
+              Showing <strong>{filtered.length}</strong> {filtered.length === 1 ? 'creation' : 'creations'} in the Love Collection
             </span>
             <div className="love-concierge-pill">
-              <span>Need guidance selecting your stone?</span>
+              <span>Have a specific stone in mind?</span>
               <a href={bridalWhatsAppUrl} target="_blank" rel="noopener noreferrer">
-                Speak with a Specialist &rarr;
+                Speak with a Gemmologist &rarr;
               </a>
             </div>
           </div>
@@ -425,8 +425,8 @@ export default function LoveAndCelebration() {
             </div>
           ) : (
             <div className="love-empty-state">
-              <h3>No Rings Match Your Selection</h3>
-              <p>We craft bespoke engagement rings to your exact gemstone, metal, and silhouette specifications.</p>
+              <h3>Every Love is One of One</h3>
+              <p>No existing ring matches this exact combination. Through our Pure Intimacy bespoke service, we will hand-craft it specifically for you.</p>
               <div className="love-empty-actions">
                 <button
                   type="button"
@@ -436,7 +436,7 @@ export default function LoveAndCelebration() {
                   Clear Filters
                 </button>
                 <Link to="/bespoke" className="love-btn love-btn--gold">
-                  Start a Bespoke Commission
+                  Start Bespoke Collaboration
                 </Link>
               </div>
             </div>
@@ -445,29 +445,29 @@ export default function LoveAndCelebration() {
       </section>
 
       {/* ============================================================
-          5. "WHISPERS IN PLATINUM & GOLD" - BESPOKE LOVE TOUCH
+          5. PURE INTIMACY — WHISPERS IN PLATINUM & GOLD
           ============================================================ */}
       <section id="whispers-section" className="love-whispers">
         <div className="container love-whispers__inner">
           <div className="love-whispers__content">
-            <span className="love-section-tag">BESPOKE INTIMACY</span>
+            <span className="love-section-tag">PURE INTIMACY &bull; THE BESPOKE PROGRAMME</span>
             <h2 className="love-whispers__title">Whispers in Platinum &amp; Gold</h2>
             <p className="love-whispers__lead">
-              A private love language etched into eternal metal.
+              A private language etched into metal, hidden where only skin can feel it.
             </p>
             <p className="love-whispers__body">
-              At AVIORY &amp; CO., our master goldsmiths can discreetly set a private birthstone or secret gemstone inside the inner ring band &mdash; touching only the wearer&rsquo;s skin. Complement this with hand-engraved initials, coordinates, or a secret date that only the two of you share.
+              True intimacy is never performative. At AVIORY &amp; CO., our master goldsmiths can discreetly set a private gemstone &mdash; a Ceylon ruby or sapphire &mdash; inside the inner band of your ring, resting directly against the wearer&rsquo;s pulse. Add hand-chiseled coordinates of where your hands first met, or a date that belongs to nobody else on earth.
             </p>
 
             <ul className="love-whispers__features">
               <li>
-                <strong>Secret Inner Gemstone:</strong> A hidden Ceylon ruby or sapphire resting against the pulse.
+                <strong>Secret Inner Gemstone:</strong> A hidden Ceylon jewel resting unseen against the pulse point.
               </li>
               <li>
-                <strong>Master Calligraphy Engraving:</strong> Hand-chiseled script in platinum or solid gold.
+                <strong>Private Hand Engraving:</strong> Micro-chiseled script in 950 platinum or 18K solid gold.
               </li>
               <li>
-                <strong>Direct Custodial Provenance:</strong> A certified provenance dossier tracing your gem from the mine to your hand.
+                <strong>Direct Provenance Dossier:</strong> Unheated laboratory certificates tracing your stone from Ceylon earth to your hand.
               </li>
             </ul>
 
@@ -478,10 +478,10 @@ export default function LoveAndCelebration() {
                 rel="noopener noreferrer"
                 className="love-btn love-btn--gold"
               >
-                Inquire on WhatsApp (+94 77 610 0099)
+                Begin Bespoke Conversation
               </a>
               <Link to="/bespoke" className="love-btn love-btn--outline">
-                Explore Bespoke Atelier
+                Explore The Bespoke Atelier
               </Link>
             </div>
           </div>
