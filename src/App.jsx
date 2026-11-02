@@ -1,13 +1,12 @@
 import React, { useState, useEffect, useCallback } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { LanguageProvider } from './hooks/useLanguage'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 
-// Pages
+// Canonical Pages
 import Home from './pages/Home'
-import About from './pages/About'
 import Shop from './pages/Shop'
 import Gemstones from './pages/Gemstones'
 import GemstoneDetail from './pages/GemstoneDetail'
@@ -16,13 +15,11 @@ import JewelleryDetail from './pages/JewelleryDetail'
 import LoveAndCelebration from './pages/LoveAndCelebration'
 import LoveAndCelebrationDetail from './pages/LoveAndCelebrationDetail'
 import ProductDetail from './pages/ProductDetail'
-import Love from './pages/Love'
 import Bespoke from './pages/Bespoke'
 import BespokeProcess from './pages/BespokeProcess'
 import BespokeEnquiry from './pages/BespokeEnquiry'
 import Journal from './pages/Journal'
 import JournalArticle from './pages/JournalArticle'
-import Blog from './pages/Blog'
 import OurHouse from './pages/OurHouse'
 import PrivateConsultations from './pages/PrivateConsultations'
 import Contact from './pages/Contact'
@@ -66,9 +63,6 @@ export default function App() {
               {/* Home */}
               <Route path="/" element={<Home />} />
 
-              {/* About */}
-              <Route path="/about" element={<About />} />
-
               {/* Shop */}
               <Route path="/shop" element={<Shop />} />
 
@@ -84,11 +78,8 @@ export default function App() {
               <Route path="/love-and-celebration" element={<LoveAndCelebration />} />
               <Route path="/love-and-celebration/:id" element={<LoveAndCelebrationDetail />} />
 
-              {/* Universal Product Detail (fallback for any product type) */}
+              {/* Universal Product Detail */}
               <Route path="/products/:id" element={<ProductDetail />} />
-
-              {/* Love Collection */}
-              <Route path="/love" element={<Love />} />
 
               {/* Bespoke */}
               <Route path="/bespoke" element={<Bespoke />} />
@@ -99,14 +90,19 @@ export default function App() {
               <Route path="/journal" element={<Journal />} />
               <Route path="/journal/:slug" element={<JournalArticle />} />
 
-              {/* Blog */}
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:slug" element={<JournalArticle />} />
-
-              {/* Other Pages */}
+              {/* The Maison / Our House */}
               <Route path="/our-house" element={<OurHouse />} />
+
+              {/* Consultations & Contact */}
               <Route path="/private-consultations" element={<PrivateConsultations />} />
               <Route path="/contact" element={<Contact />} />
+
+              {/* Duplicate / Legacy Route Redirects */}
+              <Route path="/about" element={<Navigate to="/our-house" replace />} />
+              <Route path="/love" element={<Navigate to="/love-and-celebration" replace />} />
+              <Route path="/blog" element={<Navigate to="/journal" replace />} />
+              <Route path="/blog/:slug" element={<Navigate to="/journal" replace />} />
+              <Route path="/engagement-rings" element={<Navigate to="/love-and-celebration" replace />} />
             </Routes>
           </main>
           <Footer />

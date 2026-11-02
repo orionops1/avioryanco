@@ -694,3 +694,30 @@ footer {
   color: var(--color-ivory);
 }
 
+
+/* Clean hide Google Translate top banner while preserving translations */
+.goog-te-banner-frame, 
+.goog-te-banner-frame.skiptranslate,
+iframe.goog-te-banner-frame {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+body {
+  top: 0px !important;
+  position: static !important;
+}
+
+.goog-te-gadget {
+  display: none !important;
+}
+
+.goog-tooltip, 
+.goog-tooltip:hover {
+  display: none !important;
+}
+
+.goog-text-highlight {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
