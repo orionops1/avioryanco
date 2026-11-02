@@ -8,6 +8,7 @@ export default function Gemstones() {
   const [searchParams, setSearchParams] = useSearchParams()
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [selectedColor, setSelectedColor] = useState('all')
+  const [selectedShape, setSelectedShape] = useState('all')
   const [sortBy, setSortBy] = useState('featured')
 
   const categories = [
@@ -31,6 +32,16 @@ export default function Gemstones() {
     { id: 'Sunset Orange-Pink', label: 'Sunset Padparadscha' },
     { id: 'Pigeon Blood Red', label: 'Ruby Red' },
     { id: 'Cobalt Blue', label: 'Cobalt' }
+  ]
+
+  const shapes = [
+    { id: 'all', label: 'All Shapes' },
+    { id: 'Round Brilliant', label: 'Round Brilliant' },
+    { id: 'Oval', label: 'Oval' },
+    { id: 'Emerald', label: 'Emerald' },
+    { id: 'Cushion', label: 'Cushion' },
+    { id: 'Pear', label: 'Pear' },
+    { id: 'Princess', label: 'Princess' }
   ]
 
   // Synchronize category with URL search parameters
@@ -72,6 +83,7 @@ export default function Gemstones() {
     let result = gemstones.filter(gem => {
       if (selectedCategory !== 'all' && gem.category !== selectedCategory) return false
       if (selectedColor !== 'all' && !gem.color.toLowerCase().includes(selectedColor.toLowerCase())) return false
+      if (selectedShape !== 'all' && gem.cut !== selectedShape) return false
       return true
     })
 
@@ -84,7 +96,7 @@ export default function Gemstones() {
     }
 
     return result
-  }, [selectedCategory, selectedColor, sortBy])
+  }, [selectedCategory, selectedColor, selectedShape, sortBy])
 
   return (
     <div className="gemstones-page">
@@ -135,6 +147,18 @@ export default function Gemstones() {
                 ))}
               </select>
 
+              {/* Shape filter */}
+              <select 
+                className="gemstones-select"
+                value={selectedShape}
+                onChange={(e) => setSelectedShape(e.target.value)}
+                aria-label="Filter by shape"
+              >
+                {shapes.map(shape => (
+                  <option key={shape.id} value={shape.id}>{shape.label}</option>
+                ))}
+              </select>
+
               {/* Sort By */}
               <select
                 className="gemstones-select"
@@ -148,13 +172,14 @@ export default function Gemstones() {
                 <option value="carat">Carat: Largest First</option>
               </select>
 
-              {(selectedCategory !== 'all' || selectedColor !== 'all') && (
+              {(selectedCategory !== 'all' || selectedColor !== 'all' || selectedShape !== 'all') && (
                 <button
                   type="button"
                   className="gemstones-reset-btn"
                   onClick={() => {
                     handleCategoryChange('all')
                     setSelectedColor('all')
+                    setSelectedShape('all')
                     setSortBy('featured')
                   }}
                 >
@@ -186,6 +211,7 @@ export default function Gemstones() {
               onClick={() => {
                 handleCategoryChange('all')
                 setSelectedColor('all')
+                setSelectedShape('all')
                 setSortBy('featured')
               }}
             >

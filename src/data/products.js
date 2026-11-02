@@ -30,6 +30,7 @@ export const gemstones = [
     clarity: 'VVS1',
     treatment: 'Unheated',
     certification: 'GIA',
+    cut: 'Cushion',
     description: 'Exceptional 2.15 carat Ceylon sapphire with deep royal blue hue and remarkable transparency. Unheated and untreated.',
     specs: {
       weight: '2.15 ct',
@@ -54,6 +55,7 @@ export const gemstones = [
     clarity: 'VS1',
     treatment: 'Unheated',
     certification: 'GIA',
+    cut: 'Oval',
     description: 'Stunning 1.68 carat cornflower blue sapphire from Ceylon with excellent brilliance.',
     specs: {
       weight: '1.68 ct',
@@ -78,6 +80,7 @@ export const gemstones = [
     clarity: 'VVS2',
     treatment: 'Unheated',
     certification: 'GIA',
+    cut: 'Round Brilliant',
     description: 'Rare 2.89 carat Burma sapphire with Kashmir-style deep blue coloration and exceptional clarity.',
     specs: {
       weight: '2.89 ct',
@@ -104,6 +107,7 @@ export const gemstones = [
     clarity: 'VVS1',
     treatment: 'Unheated',
     certification: 'GIA',
+    cut: 'Emerald',
     description: 'Exquisite 1.85 carat pink sapphire with vivid pink color and exceptional purity.',
     specs: {
       weight: '1.85 ct',
@@ -128,6 +132,7 @@ export const gemstones = [
     clarity: 'VS1',
     treatment: 'Unheated',
     certification: 'GIA',
+    cut: 'Pear',
     description: '1.42 carat rose pink sapphire with delicate hue and good transparency.',
     specs: {
       weight: '1.42 ct',
@@ -154,6 +159,7 @@ export const gemstones = [
     clarity: 'VVS2',
     treatment: 'Unheated',
     certification: 'GIA',
+    cut: 'Princess',
     description: '1.95 carat golden yellow sapphire with rich saturation and excellent clarity.',
     specs: {
       weight: '1.95 ct',
@@ -180,6 +186,7 @@ export const gemstones = [
     clarity: 'VVS1',
     treatment: 'Unheated',
     certification: 'GIA',
+    cut: 'Cushion',
     description: 'Rare 1.58 carat padparadscha with the classic pink-orange lotus flower hue.',
     specs: {
       weight: '1.58 ct',
@@ -206,6 +213,7 @@ export const gemstones = [
     clarity: 'VS1',
     treatment: 'Unheated',
     certification: 'GIA',
+    cut: 'Oval',
     description: 'Exceptional 1.75 carat Burma ruby with the legendary pigeon\'s blood red color.',
     specs: {
       weight: '1.75 ct',
@@ -230,6 +238,7 @@ export const gemstones = [
     clarity: 'VVS2',
     treatment: 'Unheated',
     certification: 'GIA',
+    cut: 'Cushion',
     description: '1.42 carat crimson ruby with deep, saturated color and excellent clarity.',
     specs: {
       weight: '1.42 ct',
@@ -256,6 +265,7 @@ export const gemstones = [
     clarity: 'VVS1',
     treatment: 'Unheated',
     certification: 'GIA',
+    cut: 'Round Brilliant',
     description: '2.10 carat vivid red spinel with exceptional brightness and clarity.',
     specs: {
       weight: '2.10 ct',
@@ -280,6 +290,7 @@ export const gemstones = [
     clarity: 'VVS2',
     treatment: 'Unheated',
     certification: 'GIA',
+    cut: 'Emerald',
     description: '1.85 carat hot pink spinel with vibrant color saturation.',
     specs: {
       weight: '1.85 ct',
@@ -306,6 +317,7 @@ export const gemstones = [
     clarity: 'VVS1',
     treatment: 'Unheated',
     certification: 'GIA',
+    cut: 'Pear',
     description: '2.45 carat vivid green tourmaline with exceptional saturation.',
     specs: {
       weight: '2.45 ct',
@@ -330,6 +342,7 @@ export const gemstones = [
     clarity: 'VVS2',
     treatment: 'Unheated',
     certification: 'GIA',
+    cut: 'Round Brilliant',
     description: '2.15 carat sky blue zircon with excellent brilliance.',
     specs: {
       weight: '2.15 ct',
@@ -356,6 +369,7 @@ export const gemstones = [
     clarity: 'VVS1',
     treatment: 'Unheated',
     certification: 'GIA',
+    cut: 'Cushion',
     description: 'Ultra-rare 1.23 carat Paraiba tourmaline with mesmerizing electric blue hue.',
     specs: {
       weight: '1.23 ct',
@@ -380,6 +394,7 @@ export const gemstones = [
     clarity: 'VVS2',
     treatment: 'Unheated',
     certification: 'GIA',
+    cut: 'Emerald',
     description: '1.08 carat fine alexandrite showing strong color change properties.',
     specs: {
       weight: '1.08 ct',
