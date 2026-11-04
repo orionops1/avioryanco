@@ -2,14 +2,14 @@
 
 /* ============================================================================
    AVIORY & CO. — MASTER BLUEPRINT HEADER
-   Palette: Deep Obsidian Navy (#0A0E17), Champagne Gold (#C5A880), Pure White (#FFFFFF)
+   Palette: Deep Obsidian Navy (var(--color-primary-black)), Champagne Gold (var(--color-champagne)), Pure White (var(--color-white))
    Architecture: Glassmorphic Fixed Strip -> Micro-Tagline -> 4-Col Zero-Scroll Mega
    ============================================================================ */
 
 /* ── Announcement Bar ── */
 .aviory-announce-bar {
-  background-color: #070A10;
-  color: #C5A880;
+  background-color: var(--color-primary-black);
+  color: var(--color-champagne);
   text-align: center;
   padding: 8px 1rem;
   font-family: var(--font-ui, 'Montserrat', sans-serif);
@@ -18,14 +18,14 @@
   letter-spacing: 0.22em;
   text-transform: uppercase;
   line-height: 1;
-  border-bottom: 1px solid rgba(197, 168, 128, 0.14);
+  border-bottom: 1px solid rgba(212, 175, 127, 0.14);
 }
 
 .aviory-announce-bar p {
   margin: 0;
 }
 
-/* ── Fixed #0A0E17 Glassmorphic Strip ── */
+/* ── Fixed Glassmorphic Strip ── */
 header,
 .tiffany-header {
   position: sticky;
@@ -33,24 +33,24 @@ header,
   left: 0;
   right: 0;
   z-index: 2000;
-  background-color: rgba(10, 14, 23, 0.94);
+  background-color: rgba(17, 17, 17, 0.94);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(197, 168, 128, 0.18);
+  border-bottom: 1px solid rgba(212, 175, 127, 0.18);
   transition: box-shadow 0.3s ease, background-color 0.3s ease;
   overflow: visible !important;
 }
 
 .tiffany-header--scrolled {
-  background-color: rgba(10, 14, 23, 0.98);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+  background-color: rgba(17, 17, 17, 0.98);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
 }
 
 /* ── Top Row: Left ATELIER | Center Logo + Tagline | Right Utilities ── */
 .tiffany-header__top {
   background-color: transparent;
   padding: 0.95rem 0;
-  border-bottom: 1px solid rgba(197, 168, 128, 0.14);
+  border-bottom: 1px solid rgba(212, 175, 127, 0.14);
   position: relative;
   z-index: 10;
   overflow: visible;
@@ -79,7 +79,7 @@ header,
   background: none;
   border: none;
   padding: 0;
-  color: #FFFFFF;
+  color: var(--color-white);
   text-decoration: none;
   cursor: pointer;
   font-family: var(--font-ui, 'Montserrat', sans-serif);
@@ -92,7 +92,7 @@ header,
 }
 
 .tiffany-header__utility-btn:hover {
-  color: #C5A880;
+  color: var(--color-champagne);
 }
 
 .tiffany-header__utility-text {
@@ -138,7 +138,7 @@ header,
   font-size: clamp(1.5rem, 2.7vw, 2.25rem);
   font-weight: normal;
   letter-spacing: 0.1em;
-  color: #FFFFFF;
+  color: var(--color-white);
   line-height: 1;
   text-transform: uppercase;
 }
@@ -148,7 +148,7 @@ header,
   font-style: italic;
   font-size: clamp(1.2rem, 2.2vw, 1.85rem);
   font-weight: 400;
-  color: #C5A880;
+  color: var(--color-champagne);
   margin: 0 0.25rem;
 }
 
@@ -157,17 +157,17 @@ header,
   font-size: clamp(1.2rem, 2.3vw, 1.85rem);
   font-weight: normal;
   letter-spacing: 0.12em;
-  color: #FFFFFF;
+  color: var(--color-white);
   line-height: 1;
   text-transform: uppercase;
 }
 
-/* Micro-Tagline: 9px tracked champagne gold (#C5A880) */
+/* Micro-Tagline: tracked champagne gold */
 .tiffany-header__logo-tagline {
   font-family: var(--font-ui, 'Montserrat', sans-serif);
   font-size: 9px;
   letter-spacing: 0.28em;
-  color: #C5A880;
+  color: var(--color-champagne);
   font-weight: 500;
   text-transform: uppercase;
   text-align: center;
@@ -195,7 +195,7 @@ header,
   display: block;
   width: 22px;
   height: 1.5px;
-  background-color: #FFFFFF;
+  background-color: var(--color-white);
   transition: all 0.3s ease;
 }
 
@@ -232,7 +232,7 @@ header,
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #FFFFFF;
+  color: var(--color-white);
   cursor: pointer;
   padding: 0;
   min-width: 20px;
@@ -243,7 +243,7 @@ header,
 }
 
 .tiffany-header__action-btn:hover {
-  color: #C5A880;
+  color: var(--color-champagne);
   transform: scale(1.08);
 }
 
@@ -251,8 +251,8 @@ header,
   position: absolute;
   top: -6px;
   right: -7px;
-  background-color: #C5A880;
-  color: #0A0E17;
+  background-color: var(--color-champagne);
+  color: var(--color-primary-black);
   font-family: var(--font-ui, 'Montserrat', sans-serif);
   font-size: 10px;
   font-weight: 700;
@@ -262,7 +262,7 @@ header,
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1.5px solid #0A0E17;
+  border: 1.5px solid var(--color-primary-black);
 }
 
 /* ── Bottom Row: Main Menu Navigation (Centered) ──
@@ -298,7 +298,7 @@ header,
   font-weight: 400;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: var(--color-white);
   text-decoration: none;
   white-space: nowrap;
   transition: color 0.2s ease;
@@ -313,14 +313,14 @@ header,
   left: 0;
   right: 0;
   height: 2px;
-  background-color: #C5A880;
+  background-color: var(--color-champagne);
   transform: scaleX(0);
   transition: transform 0.25s ease;
   transform-origin: center;
 }
 
 .tiffany-header__nav-link:hover {
-  color: #C5A880;
+  color: var(--color-champagne);
 }
 
 .tiffany-header__nav-link:hover::after {
@@ -328,19 +328,19 @@ header,
 }
 
 .tiffany-header__nav-item--active .tiffany-header__nav-link {
-  color: #C5A880;
+  color: var(--color-champagne);
   font-weight: 500;
 }
 
 .tiffany-header__nav-item--active .tiffany-header__nav-link::after {
   transform: scaleX(1);
-  background-color: #C5A880;
+  background-color: var(--color-champagne);
 }
 
 /* ── Full-Width Deep Obsidian Mega Menu Panel (Zero-Scroll Blueprint) ──
    1. Grid Setup: display: grid; grid-template-columns: repeat(4, 1fr); gap: 3rem;
    2. Padding & Max Height: padding: 2.25rem 4rem; max-height: 420px; overflow: hidden;
-   3. Background & Border: background-color: #0A0E17; border-bottom: 1px solid rgba(197, 168, 128, 0.2);
+   3. Background & Border: background-color: var(--color-primary-black); border-bottom: 1px solid rgba(197, 168, 128, 0.2);
    ─────────────────────────────────────────────────── */
 .tiffany-mega {
   position: absolute;
@@ -348,7 +348,7 @@ header,
   left: 0;
   right: 0;
   z-index: 2004;
-  background-color: #0A0E17;
+  background-color: var(--color-primary-black);
   border-top: 1px solid rgba(197, 168, 128, 0.2);
   border-bottom: 1px solid rgba(197, 168, 128, 0.2);
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65);
@@ -401,14 +401,14 @@ header,
   flex-direction: column;
 }
 
-/* Category Headers (Column Titles): 11px uppercase, tracked wide (letter-spacing: 0.15em), color #C5A880, font-weight 600 */
+/* Category Headers (Column Titles): 11px uppercase, tracked wide (letter-spacing: 0.15em), color var(--color-champagne), font-weight 600 */
 .tiffany-mega__heading {
   font-family: var(--font-ui, 'Montserrat', sans-serif);
   font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  color: #C5A880;
+  color: var(--color-champagne);
   margin: 0 0 0.85rem 0;
   padding-bottom: 0.45rem;
   border-bottom: 1px solid rgba(197, 168, 128, 0.2);
@@ -422,12 +422,12 @@ header,
   flex-direction: column;
 }
 
-/* Category Sub-links: 13px sentence case, color #B8BCC6, hover color #C5A880, line-height 2.2 */
+/* Category Sub-links: 13px sentence case, color var(--color-text-secondary), hover color var(--color-champagne), line-height 2.2 */
 .tiffany-mega__link {
   font-family: var(--font-ui, 'Montserrat', sans-serif);
   font-size: 13px;
   font-weight: 400;
-  color: #B8BCC6;
+  color: var(--color-text-secondary);
   line-height: 2.2;
   text-decoration: none;
   display: block;
@@ -438,7 +438,7 @@ header,
 }
 
 .tiffany-mega__link:hover {
-  color: #C5A880;
+  color: var(--color-champagne);
 }
 
 /* Column 4: Campaign Spotlight (Image Card) */
@@ -461,7 +461,7 @@ header,
   height: 155px;
   overflow: hidden;
   border-radius: 2px;
-  background-color: #121824;
+  background-color: rgba(17, 24, 36, 1);
   margin-bottom: 0.75rem;
   position: relative;
   border: 1px solid rgba(197, 168, 128, 0.25);
@@ -479,7 +479,7 @@ header,
 }
 
 .tiffany-card-fallback {
-  background: linear-gradient(135deg, #121824 0%, #1c2538 100%);
+  background: linear-gradient(135deg, rgba(17, 24, 36, 1) 0%, #1c2538 100%);
 }
 
 .tiffany-mega__spotlight-content {
@@ -493,7 +493,7 @@ header,
   font-style: italic;
   font-size: 14px;
   line-height: 1.35;
-  color: #FFFFFF;
+  color: var(--color-white);
   margin: 0;
 }
 
@@ -502,7 +502,7 @@ header,
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #C5A880;
+  color: var(--color-champagne);
   font-weight: 600;
   display: inline-flex;
   align-items: center;
@@ -512,7 +512,7 @@ header,
 }
 
 .tiffany-mega__spotlight-card:hover .tiffany-mega__spotlight-cta {
-  color: #FFFFFF;
+  color: var(--color-white);
   gap: 0.55rem;
 }
 
@@ -545,7 +545,7 @@ header,
   width: 100%;
   max-width: 380px;
   height: 100vh;
-  background-color: #0A0E17;
+  background-color: var(--color-primary-black);
   border-right: 1px solid rgba(197, 168, 128, 0.2);
   z-index: 2050;
   transition: left 0.38s cubic-bezier(0.16, 1, 0.3, 1);
@@ -570,7 +570,7 @@ header,
   font-family: "BlackGold", "BlackGoldRegular", serif;
   font-size: 1.2rem;
   letter-spacing: 0.1em;
-  color: #FFFFFF;
+  color: var(--color-white);
 }
 
 .tiffany-mobile-drawer__close {
@@ -581,12 +581,12 @@ header,
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #FFFFFF;
+  color: var(--color-white);
   transition: color 0.2s ease;
 }
 
 .tiffany-mobile-drawer__close:hover {
-  color: #C5A880;
+  color: var(--color-champagne);
 }
 
 /* Locale switchers strip in mobile drawer */
@@ -595,7 +595,7 @@ header,
   align-items: center;
   gap: 1rem;
   padding: 0.85rem 1.25rem;
-  background-color: #070A10;
+  background-color: var(--color-black);
   border-bottom: 1px solid rgba(197, 168, 128, 0.15);
 }
 
@@ -630,13 +630,13 @@ header,
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: var(--color-white);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .tiffany-mobile-drawer__link:hover {
-  color: #C5A880;
+  color: var(--color-champagne);
 }
 
 .tiffany-mobile-drawer__toggle {
@@ -647,7 +647,7 @@ header,
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #FFFFFF;
+  color: var(--color-white);
   transition: transform 0.3s ease;
 }
 
@@ -656,7 +656,7 @@ header,
 }
 
 .tiffany-mobile-drawer__sub {
-  background-color: #070A10;
+  background-color: var(--color-black);
   padding: 1.25rem;
   display: flex;
   flex-direction: column;
@@ -675,7 +675,7 @@ header,
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #C5A880;
+  color: var(--color-champagne);
   padding-bottom: 0.4rem;
   border-bottom: 1px solid rgba(197, 168, 128, 0.18);
 }
@@ -684,14 +684,14 @@ header,
   font-family: var(--font-ui, 'Montserrat', sans-serif);
   font-size: 13px;
   font-weight: 400;
-  color: #B8BCC6;
+  color: var(--color-text-secondary);
   text-decoration: none;
   padding: 0.2rem 0;
   transition: color 0.2s ease;
 }
 
 .tiffany-mobile-sub-link:hover {
-  color: #C5A880;
+  color: var(--color-champagne);
 }
 
 .tiffany-mobile-sub-spotlight {
@@ -705,14 +705,14 @@ header,
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #C5A880;
+  color: var(--color-champagne);
   text-decoration: none;
 }
 
 .tiffany-mobile-drawer__footer {
   padding: 1.5rem;
   border-top: 1px solid rgba(197, 168, 128, 0.18);
-  background-color: #070A10;
+  background-color: var(--color-black);
 }
 
 .tiffany-header__utility-link {
@@ -720,13 +720,13 @@ header,
   font-size: 0.72rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: var(--color-white);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .tiffany-header__utility-link:hover {
-  color: #C5A880;
+  color: var(--color-champagne);
 }
 
 .tiffany-mobile-backdrop {
