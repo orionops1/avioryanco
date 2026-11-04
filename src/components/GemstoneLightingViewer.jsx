@@ -111,3 +111,4 @@ export default function GemstoneLightingViewer({ gem }) {
     </div>
   )
 }
+

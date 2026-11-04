@@ -10,7 +10,7 @@ export default function PrivateConsultations() {
     <>
       {/* HERO */}
       <section style={{
-        backgroundColor: '#111111',
+        backgroundColor: "var(--color-ivory)",
         color: '#F8F4EF',
         padding: 'var(--spacing-3xl) 0',
         textAlign: 'center'
@@ -33,7 +33,7 @@ export default function PrivateConsultations() {
       </section>
 
       {/* CONSULTATION OPTIONS */}
-      <section style={{ backgroundColor: '#F8F4EF', paddingTop: 'var(--spacing-3xl)', paddingBottom: 'var(--spacing-3xl)' }}>
+      <section style={{ backgroundColor: "var(--color-ivory)", paddingTop: 'var(--spacing-3xl)', paddingBottom: 'var(--spacing-3xl)' }}>
         <div className="container">
           <h2 style={{ marginBottom: 'var(--spacing-2xl)', textAlign: 'center' }}>Consultation Options</h2>
 
@@ -48,7 +48,7 @@ export default function PrivateConsultations() {
                 key={idx}
                 onClick={() => setSelectedOption(selectedOption === idx ? null : idx)}
                 style={{
-                  backgroundColor: '#FFFFFF',
+                  backgroundColor: "var(--color-ivory)",
                   border: selectedOption === idx ? '2px solid #D4AF7F' : '1px solid #D0CCBE',
                   padding: 'var(--spacing-lg)',
                   cursor: 'pointer',
@@ -102,7 +102,7 @@ export default function PrivateConsultations() {
       </section>
 
       {/* WHAT TO EXPECT */}
-      <section style={{ backgroundColor: '#F8F4EF', paddingTop: 'var(--spacing-3xl)', paddingBottom: 'var(--spacing-3xl)' }}>
+      <section style={{ backgroundColor: "var(--color-ivory)", paddingTop: 'var(--spacing-3xl)', paddingBottom: 'var(--spacing-3xl)' }}>
         <div className="container">
           <h2 style={{ marginBottom: 'var(--spacing-2xl)', textAlign: 'center' }}>What to Expect</h2>
 
@@ -138,7 +138,7 @@ export default function PrivateConsultations() {
               }
             ].map((item, idx) => (
               <div key={idx} style={{
-                backgroundColor: '#FFFFFF',
+                backgroundColor: "var(--color-ivory)",
                 padding: 'var(--spacing-lg)',
                 border: '1px solid #D0CCBE'
               }}>
@@ -174,7 +174,7 @@ export default function PrivateConsultations() {
             }
           ].map((testimonial, idx) => (
             <div key={idx} style={{
-              backgroundColor: '#F8F4EF',
+              backgroundColor: "var(--color-ivory)",
               padding: 'var(--spacing-lg)',
               border: '1px solid #D0CCBE',
               borderLeft: '4px solid #D4AF7F'
@@ -203,3 +203,4 @@ export default function PrivateConsultations() {
     </>
   )
 }
+

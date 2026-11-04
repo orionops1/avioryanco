@@ -1,4 +1,4 @@
-﻿import React, { useState, useMemo, useEffect } from 'react'
+import React, { useState, useMemo, useEffect } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import ProductCard from '../components/ProductCard'
 import { engagementRings } from '../data/products'
@@ -207,3 +207,4 @@ export default function LoveAndCelebration() {
     </div>
   )
 }
+

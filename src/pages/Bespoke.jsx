@@ -10,7 +10,7 @@ export default function Bespoke() {
     <>
       {/* HERO */}
       <section style={{
-        backgroundColor: '#0A0E17',
+        backgroundColor: "var(--color-ivory)",
         color: '#F8F4EF',
         padding: 'var(--spacing-3xl) 0',
         textAlign: 'center'
@@ -37,7 +37,7 @@ export default function Bespoke() {
       </div>
 
       {/* 5-STAGE PROCESS */}
-      <section style={{ backgroundColor: '#F8F4EF', paddingTop: 'var(--spacing-3xl)', paddingBottom: 'var(--spacing-3xl)' }}>
+      <section style={{ backgroundColor: "var(--color-ivory)", paddingTop: 'var(--spacing-3xl)', paddingBottom: 'var(--spacing-3xl)' }}>
         <div className="container">
           <div className="section-title">
             <h2>Our 5-Stage Bespoke Process</h2>
@@ -97,7 +97,7 @@ export default function Bespoke() {
             }
           ].map((item, idx) => (
             <div key={idx} style={{
-              backgroundColor: '#F8F4EF',
+              backgroundColor: "var(--color-ivory)",
               padding: 'var(--spacing-lg)',
               border: '1px solid #D0CCBE'
             }}>
@@ -109,7 +109,7 @@ export default function Bespoke() {
       </div>
 
       {/* TESTIMONIALS */}
-      <section style={{ backgroundColor: '#F8F4EF', paddingTop: 'var(--spacing-3xl)', paddingBottom: 'var(--spacing-3xl)' }}>
+      <section style={{ backgroundColor: "var(--color-ivory)", paddingTop: 'var(--spacing-3xl)', paddingBottom: 'var(--spacing-3xl)' }}>
         <div className="container">
           <h2 style={{ marginBottom: 'var(--spacing-2xl)', textAlign: 'center' }}>What Our Clients Say</h2>
 
@@ -133,7 +133,7 @@ export default function Bespoke() {
               }
             ].map((testimonial, idx) => (
               <div key={idx} style={{
-                backgroundColor: '#FFFFFF',
+                backgroundColor: "var(--color-ivory)",
                 padding: 'var(--spacing-lg)',
                 border: '1px solid #D0CCBE',
                 borderLeft: '4px solid #D4AF7F'
@@ -204,3 +204,4 @@ export default function Bespoke() {
     </>
   )
 }
+

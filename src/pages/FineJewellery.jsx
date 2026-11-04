@@ -51,7 +51,7 @@ export default function FineJewellery() {
   return (
     <>
       <section style={{
-        backgroundColor: '#111111',
+        backgroundColor: "var(--color-ivory)",
         color: '#F8F4EF',
         padding: 'var(--spacing-3xl) 0',
         textAlign: 'center'
@@ -128,3 +128,4 @@ export default function FineJewellery() {
     </>
   )
 }
+

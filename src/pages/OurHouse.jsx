@@ -8,7 +8,7 @@ export default function OurHouse() {
     <>
       {/* HERO */}
       <section style={{
-        backgroundColor: '#111111',
+        backgroundColor: "var(--color-ivory)",
         color: '#F8F4EF',
         padding: 'var(--spacing-3xl) 0',
         textAlign: 'center'
@@ -32,7 +32,7 @@ export default function OurHouse() {
       </section>
 
       {/* VALUES */}
-      <section style={{ backgroundColor: '#F8F4EF', paddingTop: 'var(--spacing-3xl)', paddingBottom: 'var(--spacing-3xl)' }}>
+      <section style={{ backgroundColor: "var(--color-ivory)", paddingTop: 'var(--spacing-3xl)', paddingBottom: 'var(--spacing-3xl)' }}>
         <div className="container">
           <h2 style={{ marginBottom: 'var(--spacing-2xl)', textAlign: 'center' }}>Our Values</h2>
           <div style={{
@@ -42,7 +42,7 @@ export default function OurHouse() {
           }}>
             {about.values.map((value, idx) => (
               <div key={idx} style={{
-                backgroundColor: '#FFFFFF',
+                backgroundColor: "var(--color-ivory)",
                 padding: 'var(--spacing-lg)',
                 border: '1px solid #D0CCBE',
                 borderLeft: '4px solid #D4AF7F'
@@ -65,14 +65,14 @@ export default function OurHouse() {
         }}>
           {about.artisans.map((artisan, idx) => (
             <div key={idx} style={{
-              backgroundColor: '#F8F4EF',
+              backgroundColor: "var(--color-ivory)",
               padding: 'var(--spacing-lg)',
               border: '1px solid #D0CCBE'
             }}>
               <div style={{
                 width: '100%',
                 height: '200px',
-                backgroundColor: '#D0CCBE',
+                backgroundColor: "var(--color-ivory)",
                 marginBottom: 'var(--spacing-lg)',
                 borderRadius: '4px'
               }} />
@@ -98,7 +98,7 @@ export default function OurHouse() {
       </section>
 
       {/* CEYLON HERITAGE */}
-      <section style={{ backgroundColor: '#111111', color: '#F8F4EF', paddingTop: 'var(--spacing-3xl)', paddingBottom: 'var(--spacing-3xl)' }}>
+      <section style={{ backgroundColor: "var(--color-ivory)", color: '#F8F4EF', paddingTop: 'var(--spacing-3xl)', paddingBottom: 'var(--spacing-3xl)' }}>
         <div className="container">
           <h2 style={{ color: '#D4AF7F', marginBottom: 'var(--spacing-lg)', textAlign: 'center' }}>
             {ceylonHeritage.title}
@@ -122,7 +122,7 @@ export default function OurHouse() {
           }}>
             {ceylonHeritage.sections.map((section, idx) => (
               <div key={idx} style={{
-                backgroundColor: '#2B2B2B',
+                backgroundColor: "var(--color-ivory)",
                 padding: 'var(--spacing-lg)',
                 border: '1px solid #D4AF7F'
               }}>
@@ -158,7 +158,7 @@ export default function OurHouse() {
                 left: 0,
                 width: '2px',
                 height: '100%',
-                backgroundColor: '#D4AF7F',
+                backgroundColor: "var(--color-ivory)",
                 top: 0
               }} />
               <div style={{
@@ -167,7 +167,7 @@ export default function OurHouse() {
                 top: '0',
                 width: '16px',
                 height: '16px',
-                backgroundColor: '#D4AF7F',
+                backgroundColor: "var(--color-ivory)",
                 borderRadius: '50%',
                 border: '2px solid #F8F4EF'
               }} />
@@ -196,3 +196,4 @@ export default function OurHouse() {
     </>
   )
 }
+

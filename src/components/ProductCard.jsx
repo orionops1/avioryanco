@@ -125,3 +125,4 @@ export default function ProductCard({ product, type = 'gemstone' }) {
     </article>
   )
 }
+

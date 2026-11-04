@@ -125,3 +125,4 @@ export default function SearchModal({ isOpen, onClose }) {
     </div>
   )
 }
+

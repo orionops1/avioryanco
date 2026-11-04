@@ -153,3 +153,4 @@ export default function AppointmentModal({ isOpen, onClose }) {
     </div>
   )
 }
+

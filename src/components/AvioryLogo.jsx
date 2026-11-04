@@ -27,3 +27,4 @@ export default function AvioryLogo({ variant = 'standard', className = '', showS
     </div>
   )
 }
+

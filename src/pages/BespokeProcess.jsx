@@ -7,7 +7,7 @@ export default function BespokeProcess() {
   return (
     <>
       <section style={{
-        backgroundColor: '#111111',
+        backgroundColor: "var(--color-ivory)",
         color: '#F8F4EF',
         padding: 'var(--spacing-3xl) 0',
         textAlign: 'center'
@@ -34,7 +34,7 @@ export default function BespokeProcess() {
                   width: '100px',
                   height: '100px',
                   borderRadius: '50%',
-                  backgroundColor: '#111111',
+                  backgroundColor: "var(--color-ivory)",
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -53,7 +53,7 @@ export default function BespokeProcess() {
               <div style={{
                 order: index % 2 === 0 ? 2 : 1,
                 aspectRatio: '1',
-                backgroundColor: '#E8E3DC',
+                backgroundColor: "var(--color-ivory)",
                 borderRadius: '4px',
                 display: 'flex',
                 alignItems: 'center',
@@ -68,7 +68,7 @@ export default function BespokeProcess() {
       </div>
 
       {/* PROCESS TIMELINE */}
-      <section style={{ backgroundColor: '#F8F4EF', paddingTop: 'var(--spacing-3xl)', paddingBottom: 'var(--spacing-3xl)' }}>
+      <section style={{ backgroundColor: "var(--color-ivory)", paddingTop: 'var(--spacing-3xl)', paddingBottom: 'var(--spacing-3xl)' }}>
         <div className="container">
           <h2 style={{ marginBottom: 'var(--spacing-2xl)', textAlign: 'center' }}>Timeline</h2>
           <div style={{
@@ -91,7 +91,7 @@ export default function BespokeProcess() {
                   left: 0,
                   width: '2px',
                   height: '100%',
-                  backgroundColor: '#D4AF7F',
+                  backgroundColor: "var(--color-ivory)",
                   top: 0
                 }} />
                 <div style={{
@@ -100,7 +100,7 @@ export default function BespokeProcess() {
                   top: '0',
                   width: '16px',
                   height: '16px',
-                  backgroundColor: '#D4AF7F',
+                  backgroundColor: "var(--color-ivory)",
                   borderRadius: '50%',
                   border: '2px solid #F8F4EF'
                 }} />
@@ -148,7 +148,7 @@ export default function BespokeProcess() {
             }
           ].map((item, idx) => (
             <div key={idx} style={{
-              backgroundColor: '#F8F4EF',
+              backgroundColor: "var(--color-ivory)",
               padding: 'var(--spacing-lg)',
               border: '1px solid #D0CCBE'
             }}>
@@ -174,3 +174,4 @@ export default function BespokeProcess() {
     </>
   )
 }
+

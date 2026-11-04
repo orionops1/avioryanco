@@ -1,4 +1,4 @@
-﻿import React, { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { contactInfo } from '../data/content'
 import useContactForm from '../hooks/useContactForm'
@@ -256,12 +256,12 @@ export default function Contact() {
             gap: 'var(--spacing-xl)'
           }}>
             {[
-              { icon: 'ðŸ’', title: 'Bespoke Enquiry', desc: 'Start your custom jewelry creation journey' },
-              { icon: 'ðŸ‘¨â€ðŸ”¬', title: 'Gemologist Concierge', desc: 'Expert consultation on gemstone selection' },
-              { icon: 'ðŸ’Ž', title: 'Gemstone Questions', desc: 'Learn more about our collection' },
-              { icon: 'ðŸ—“', title: 'Schedule Consultation', desc: 'Book a virtual or in-person meeting' },
-              { icon: 'ðŸ”§', title: 'Jewelry Care', desc: 'Get advice on caring for your pieces' },
-              { icon: 'â“', title: 'General Questions', desc: 'Any other questions about AVIORY & CO' }
+              { icon: '💍', title: 'Bespoke Enquiry', desc: 'Start your custom jewelry creation journey' },
+              { icon: '👨‍🔬', title: 'Gemologist Concierge', desc: 'Expert consultation on gemstone selection' },
+              { icon: '💎', title: 'Gemstone Questions', desc: 'Learn more about our collection' },
+              { icon: '🗓', title: 'Schedule Consultation', desc: 'Book a virtual or in-person meeting' },
+              { icon: '🔧', title: 'Jewelry Care', desc: 'Get advice on caring for your pieces' },
+              { icon: '❓', title: 'General Questions', desc: 'Any other questions about AVIORY & CO' }
             ].map((item, idx) => (
               <div key={idx} style={{
                 backgroundColor: 'var(--color-white)',
@@ -302,4 +302,5 @@ export default function Contact() {
     </>
   )
 }
+
 

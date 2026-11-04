@@ -269,7 +269,7 @@ export default function Home() {
                     className={`heartbeat-btn ${activeHeartbeatGem === 'sapphire' ? 'heartbeat-btn--active' : ''}`}
                     onClick={() => handleHeartbeatSelect('sapphire')}
                   >
-                    <span className="heartbeat-btn__swatch" style={{ backgroundColor: '#254E8C' }} />
+                    <span className="heartbeat-btn__swatch" style={{ backgroundColor: "var(--color-ivory)" }} />
                     <span className="heartbeat-btn__title">Royal Ceylon Sapphire</span>
                   </button>
 
@@ -278,7 +278,7 @@ export default function Home() {
                     className={`heartbeat-btn ${activeHeartbeatGem === 'ruby' ? 'heartbeat-btn--active' : ''}`}
                     onClick={() => handleHeartbeatSelect('ruby')}
                   >
-                    <span className="heartbeat-btn__swatch" style={{ backgroundColor: '#8C1D32' }} />
+                    <span className="heartbeat-btn__swatch" style={{ backgroundColor: "var(--color-ivory)" }} />
                     <span className="heartbeat-btn__title">Ceylon Pigeon Ruby</span>
                   </button>
 
@@ -287,7 +287,7 @@ export default function Home() {
                     className={`heartbeat-btn ${activeHeartbeatGem === 'padparadscha' ? 'heartbeat-btn--active' : ''}`}
                     onClick={() => handleHeartbeatSelect('padparadscha')}
                   >
-                    <span className="heartbeat-btn__swatch" style={{ backgroundColor: '#C56B55' }} />
+                    <span className="heartbeat-btn__swatch" style={{ backgroundColor: "var(--color-ivory)" }} />
                     <span className="heartbeat-btn__title">Sunset Padparadscha</span>
                   </button>
                 </div>
@@ -771,3 +771,4 @@ export default function Home() {
     </div>
   )
 }
+
