@@ -1,5 +1,6 @@
 /* ============================================================================
-   APPOINTMENT MODAL STYLING
+   APPOINTMENT MODAL STYLING - OBSIDIAN LUXURY SANCTUARY
+   Deep Obsidian Navy (#0A0E17), Champagne Gold (#C5A880), Pure White (#FFFFFF)
    ============================================================================ */
 
 .appt-backdrop {
@@ -8,8 +9,9 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(5px);
+  background-color: rgba(5, 7, 12, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   z-index: 5000;
   display: flex;
   align-items: center;
@@ -18,82 +20,91 @@
 }
 
 .appt-modal {
-  background-color: var(--color-white);
-  max-width: 620px;
+  background-color: #0A0E17;
+  border: 1px solid rgba(197, 168, 128, 0.3);
+  max-width: 640px;
   width: 100%;
-  padding: 3rem 2.75rem;
+  padding: 3.5rem 3rem;
   position: relative;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
   max-height: 90vh;
   overflow-y: auto;
-  animation: apptPop 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: apptPop 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @keyframes apptPop {
-  from { opacity: 0; transform: scale(0.96) translateY(10px); }
+  from { opacity: 0; transform: scale(0.96) translateY(12px); }
   to { opacity: 1; transform: scale(1) translateY(0); }
 }
 
 .appt-modal__close {
   position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
+  top: 1.75rem;
+  right: 1.75rem;
   background: none;
   border: none;
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   cursor: pointer;
-  color: var(--color-black);
-  transition: color 0.2s ease;
+  color: #C5A880;
+  transition: all 0.25s ease;
+  line-height: 1;
 }
 
 .appt-modal__close:hover {
-  color: var(--color-champagne);
+  color: #FFFFFF;
+  transform: rotate(90deg);
 }
 
 .appt-modal__tag {
   display: block;
-  font-family: var(--font-ui);
-  font-size: 0.68rem;
+  font-family: var(--font-sans, -apple-system, sans-serif);
+  font-size: 0.65rem;
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.26em;
   text-transform: uppercase;
-  color: var(--color-champagne);
-  margin-bottom: 0.5rem;
+  color: #C5A880;
+  margin-bottom: 0.75rem;
 }
 
 .appt-modal__title {
-  font-family: var(--font-serif);
-  font-size: clamp(1.8rem, 4vw, 2.3rem);
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: var(--color-black);
+  font-family: var(--font-serif-display, 'Playfair Display', serif);
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-weight: 400;
+  margin-bottom: 0.6rem;
+  color: #FFFFFF;
+  letter-spacing: 0.02em;
 }
 
 .appt-modal__subtitle {
-  font-family: var(--font-body);
-  font-size: 0.92rem;
+  font-family: var(--font-serif-body, 'Cormorant Garamond', serif);
+  font-size: 1.05rem;
   line-height: 1.6;
-  color: var(--color-charcoal);
+  color: #A3ABB8;
   margin-bottom: 2rem;
 }
 
 .appt-types {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
+  gap: 0.85rem;
+  margin-bottom: 1.75rem;
 }
 
 .appt-type-card {
-  border: 1px solid var(--color-gray-light);
-  padding: 1rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.15rem 0.85rem;
   text-align: center;
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
-  background-color: var(--color-ivory);
-  transition: all 0.25s ease;
+  gap: 0.35rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.appt-type-card:hover {
+  border-color: rgba(197, 168, 128, 0.4);
+  background-color: rgba(197, 168, 128, 0.05);
 }
 
 .appt-type-card input {
@@ -101,60 +112,98 @@
 }
 
 .appt-type-card strong {
-  font-family: var(--font-ui);
-  font-size: 0.75rem;
+  font-family: var(--font-sans, -apple-system, sans-serif);
+  font-size: 0.72rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--color-black);
+  letter-spacing: 0.08em;
+  color: #FFFFFF;
 }
 
 .appt-type-card span {
-  font-family: var(--font-body);
-  font-size: 0.7rem;
-  color: var(--color-charcoal);
-  opacity: 0.8;
+  font-family: var(--font-serif-body, 'Cormorant Garamond', serif);
+  font-size: 0.85rem;
+  color: #8E95A5;
 }
 
 .appt-type-card--active {
-  background-color: var(--color-white);
-  border-color: var(--color-champagne);
-  box-shadow: 0 4px 12px rgba(212, 175, 127, 0.2);
+  background-color: rgba(197, 168, 128, 0.12);
+  border-color: #C5A880;
+  box-shadow: 0 0 20px rgba(197, 168, 128, 0.18);
 }
 
 .appt-type-card--active strong {
-  color: var(--color-champagne);
+  color: #C5A880;
+}
+
+.appt-type-card--active span {
+  color: #E2E8F0;
 }
 
 .appt-form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.15rem;
 }
 
 .appt-form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  gap: 1.15rem;
 }
 
 .appt-form input,
 .appt-select,
 .appt-form textarea {
   width: 100%;
-  padding: 0.9rem 1.15rem;
-  border: 1px solid var(--color-gray-light);
-  font-family: var(--font-ui);
+  padding: 0.95rem 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-family: var(--font-sans, -apple-system, sans-serif);
   font-size: 0.82rem;
-  background-color: var(--color-white);
+  background-color: #0E1420;
+  color: #FFFFFF;
   border-radius: 0;
   outline: none;
+  transition: all 0.25s ease;
+}
+
+.appt-form input::placeholder,
+.appt-form textarea::placeholder {
+  color: #64748B;
 }
 
 .appt-form input:focus,
 .appt-select:focus,
 .appt-form textarea:focus {
-  border-color: var(--color-champagne);
+  border-color: #C5A880;
+  background-color: #121929;
+  box-shadow: 0 0 10px rgba(197, 168, 128, 0.15);
+}
+
+.appt-select option {
+  background-color: #0A0E17;
+  color: #FFFFFF;
+}
+
+.appt-modal .btn-primary {
+  width: 100%;
+  padding: 1.1rem;
+  background: transparent;
+  border: 1px solid #C5A880;
+  color: #C5A880;
+  font-family: var(--font-sans, -apple-system, sans-serif);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.appt-modal .btn-primary:hover {
+  background: #C5A880;
+  color: #0A0E17;
 }
 
 @media (max-width: 600px) {
@@ -165,6 +214,6 @@
     grid-template-columns: 1fr;
   }
   .appt-modal {
-    padding: 2rem 1.5rem;
+    padding: 2.5rem 1.5rem;
   }
 }

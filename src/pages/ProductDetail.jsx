@@ -412,7 +412,7 @@ export default function ProductDetail() {
               className="btn btn-secondary pdp-btn--cart"
               onClick={handleAddToCart}
             >
-              {added ? 'Added to Bag âœ“' : 'Add to Shopping Bag'}
+              {added ? 'Selection Confirmed ✓' : (productType === 'ring' ? 'Begin the Vow' : productType === 'gemstone' ? 'Request Private Access' : 'Commission This Piece')}
             </button>
           </div>
 
@@ -518,7 +518,7 @@ export default function ProductDetail() {
                 className={`pdp-tab-btn ${activeTab === 'specs' ? 'pdp-tab-btn--active' : ''}`}
                 onClick={() => setActiveTab('specs')}
               >
-                {productType === 'gemstone' ? 'The Stone' : 'Specifications'}
+                {productType === 'gemstone' ? 'Provenance & Stone' : 'Craft & Provenance'}
               </button>
               {productType !== 'jewellery' && (
                 <button

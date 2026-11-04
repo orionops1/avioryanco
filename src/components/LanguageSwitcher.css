@@ -1,6 +1,5 @@
 /* ============================================================================
-   HAUTE JOAILLERIE DISCREET 11PX LANGUAGE SWITCHER
-   Clean, robust positioning across Desktop, Mobile, and Drawer
+   HAUTE JOAILLERIE DISCREET 11PX LANGUAGE SWITCHER (OBSIDIAN & GOLD)
    ============================================================================ */
 
 .language-switcher {
@@ -16,8 +15,8 @@
   gap: 0.35rem;
   padding: 0.35rem 0.55rem;
   background-color: transparent;
-  border: 1px solid rgba(22, 22, 22, 0.16);
-  color: #161616;
+  border: 1px solid rgba(197, 168, 128, 0.3);
+  color: #FFFFFF;
   cursor: pointer;
   font-family: var(--font-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif);
   font-size: 11px;
@@ -29,8 +28,8 @@
 }
 
 .language-toggle:hover {
-  border-color: #C5A059;
-  color: #C5A059;
+  border-color: #C5A880;
+  color: #C5A880;
 }
 
 .language-flag {
@@ -52,25 +51,25 @@
 }
 
 .language-switcher--dark .language-toggle {
-  color: #161616;
-  border-color: rgba(22, 22, 22, 0.16);
+  color: #FFFFFF;
+  border-color: rgba(197, 168, 128, 0.3);
 }
 
 .language-switcher--light .language-toggle {
-  color: #161616;
-  border-color: rgba(22, 22, 22, 0.16);
+  color: #FFFFFF;
+  border-color: rgba(197, 168, 128, 0.3);
 }
 
 /* ──────────────────────────────────────────────────────────
-   Dropdown Menu - Always absolute directly beneath the toggle
+   Dropdown Menu - Deep Obsidian Navy Surface
    ────────────────────────────────────────────────────────── */
 .language-dropdown {
   position: absolute;
   top: calc(100% + 6px);
   right: 0;
-  background-color: #FFFFFF;
-  border: 1px solid rgba(22, 22, 22, 0.12);
-  box-shadow: 0 12px 32px rgba(22, 22, 22, 0.12);
+  background-color: #0A0E17;
+  border: 1px solid rgba(197, 168, 128, 0.3);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
   min-width: 175px;
   z-index: 999999;
   overflow: hidden;
@@ -84,14 +83,14 @@
 
 .language-dropdown__header {
   padding: 0.5rem 0.85rem;
-  background-color: #FAF7F2;
+  background-color: #070A10;
   font-family: var(--font-ui, sans-serif);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #C5A059;
-  border-bottom: 1px solid rgba(22, 22, 22, 0.08);
+  color: #C5A880;
+  border-bottom: 1px solid rgba(197, 168, 128, 0.18);
 }
 
 .language-option {
@@ -102,8 +101,8 @@
   padding: 0.65rem 0.85rem;
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid rgba(22, 22, 22, 0.05);
-  color: #161616;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: #E4E7ED;
   cursor: pointer;
   font-family: var(--font-ui, sans-serif);
   font-size: 11px;
@@ -116,18 +115,18 @@
 }
 
 .language-option:hover {
-  background-color: #FAF7F2;
-  color: #C5A059;
+  background-color: #121824;
+  color: #C5A880;
 }
 
 .language-option.active {
-  background-color: #161616;
+  background-color: #162032;
   color: #FFFFFF;
   font-weight: 600;
 }
 
 .language-option.active .option-code {
-  color: #C5A059;
+  color: #C5A880;
 }
 
 .option-flag {

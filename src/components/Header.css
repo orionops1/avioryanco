@@ -1,31 +1,31 @@
 @import "../styles/fonts.css";
 
 /* ============================================================================
-   AVIORY & CO. — TIFFANY & CO. ARCHITECTURAL BLUEPRINT
-   Soft Ivory (#FBF9F6), Deep Charcoal (#161616), Champagne Gold (#C5A059)
-   Header System: Announce Bar -> Top Utility/Logo Row -> Nav Row -> 4-Col Mega Panel
-   Zero Scrollbars Guaranteed: overflow visible on header, overflow hidden on mega
+   AVIORY & CO. — MASTER BLUEPRINT HEADER
+   Palette: Deep Obsidian Navy (#0A0E17), Champagne Gold (#C5A880), Pure White (#FFFFFF)
+   Architecture: Glassmorphic Fixed Strip -> Micro-Tagline -> 4-Col Zero-Scroll Mega
    ============================================================================ */
 
 /* ── Announcement Bar ── */
 .aviory-announce-bar {
-  background-color: #111111;
-  color: #C5A059;
+  background-color: #070A10;
+  color: #C5A880;
   text-align: center;
   padding: 8px 1rem;
   font-family: var(--font-ui, 'Montserrat', sans-serif);
   font-size: 0.65rem;
   font-weight: 500;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   line-height: 1;
+  border-bottom: 1px solid rgba(197, 168, 128, 0.14);
 }
 
 .aviory-announce-bar p {
   margin: 0;
 }
 
-/* ── Header Shell (Soft Ivory #FBF9F6 with 85% Blur) ── */
+/* ── Fixed #0A0E17 Glassmorphic Strip ── */
 header,
 .tiffany-header {
   position: sticky;
@@ -33,23 +33,24 @@ header,
   left: 0;
   right: 0;
   z-index: 2000;
-  background-color: rgba(251, 249, 246, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background-color: rgba(10, 14, 23, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(197, 168, 128, 0.18);
   transition: box-shadow 0.3s ease, background-color 0.3s ease;
   overflow: visible !important;
 }
 
 .tiffany-header--scrolled {
-  background-color: rgba(251, 249, 246, 0.95);
-  box-shadow: 0 4px 24px rgba(22, 22, 22, 0.08);
+  background-color: rgba(10, 14, 23, 0.98);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
 }
 
-/* ── Top Row: Left ATELIER | Center AVIORY & CO. | Right $ USD, EN, Search, Bag ── */
+/* ── Top Row: Left ATELIER | Center Logo + Tagline | Right Utilities ── */
 .tiffany-header__top {
   background-color: transparent;
-  padding: 1.15rem 0;
-  border-bottom: 1px solid rgba(229, 224, 216, 0.85);
+  padding: 0.95rem 0;
+  border-bottom: 1px solid rgba(197, 168, 128, 0.14);
   position: relative;
   z-index: 10;
   overflow: visible;
@@ -78,7 +79,7 @@ header,
   background: none;
   border: none;
   padding: 0;
-  color: #161616;
+  color: #FFFFFF;
   text-decoration: none;
   cursor: pointer;
   font-family: var(--font-ui, 'Montserrat', sans-serif);
@@ -91,7 +92,7 @@ header,
 }
 
 .tiffany-header__utility-btn:hover {
-  color: #C5A059;
+  color: #C5A880;
 }
 
 .tiffany-header__utility-text {
@@ -99,16 +100,15 @@ header,
   font-size: 11px;
 }
 
-/* Top Bar (Center): AVIORY & CO. Custom Gold/Charcoal Serif */
+/* Top Bar (Center): AVIORY & CO. + WHERE THE VOW LIVES. */
 .tiffany-header__logo-link {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: center;
   text-decoration: none;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  gap: 0.25rem;
   z-index: 5;
   white-space: nowrap;
   transition: opacity 0.2s ease;
@@ -118,12 +118,27 @@ header,
   opacity: 0.92;
 }
 
+.tiffany-header__logo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tiffany-header__logo-group {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  line-height: 1;
+  gap: 0.2rem;
+}
+
 .tiffany-header__logo-text {
   font-family: "BlackGold", "BlackGoldRegular", serif !important;
-  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+  font-size: clamp(1.5rem, 2.7vw, 2.25rem);
   font-weight: normal;
   letter-spacing: 0.1em;
-  color: #161616;
+  color: #FFFFFF;
   line-height: 1;
   text-transform: uppercase;
 }
@@ -131,20 +146,34 @@ header,
 .tiffany-header__logo-ampersand {
   font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif !important;
   font-style: italic;
-  font-size: clamp(1.3rem, 2.3vw, 2rem);
+  font-size: clamp(1.2rem, 2.2vw, 1.85rem);
   font-weight: 400;
-  color: #C5A059;
-  margin: 0 0.3rem;
+  color: #C5A880;
+  margin: 0 0.25rem;
 }
 
 .tiffany-header__logo-co {
   font-family: "BlackGold", "BlackGoldRegular", serif !important;
-  font-size: clamp(1.3rem, 2.4vw, 2rem);
+  font-size: clamp(1.2rem, 2.3vw, 1.85rem);
   font-weight: normal;
   letter-spacing: 0.12em;
-  color: #161616;
+  color: #FFFFFF;
   line-height: 1;
   text-transform: uppercase;
+}
+
+/* Micro-Tagline: 9px tracked champagne gold (#C5A880) */
+.tiffany-header__logo-tagline {
+  font-family: var(--font-ui, 'Montserrat', sans-serif);
+  font-size: 9px;
+  letter-spacing: 0.28em;
+  color: #C5A880;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 5px;
+  line-height: 1;
+  display: block;
 }
 
 /* Mobile Hamburger */
@@ -166,7 +195,7 @@ header,
   display: block;
   width: 22px;
   height: 1.5px;
-  background-color: #161616;
+  background-color: #FFFFFF;
   transition: all 0.3s ease;
 }
 
@@ -203,7 +232,7 @@ header,
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #161616;
+  color: #FFFFFF;
   cursor: pointer;
   padding: 0;
   min-width: 20px;
@@ -214,7 +243,7 @@ header,
 }
 
 .tiffany-header__action-btn:hover {
-  color: #C5A059;
+  color: #C5A880;
   transform: scale(1.08);
 }
 
@@ -222,8 +251,8 @@ header,
   position: absolute;
   top: -6px;
   right: -7px;
-  background-color: #C5A059;
-  color: #FFFFFF;
+  background-color: #C5A880;
+  color: #0A0E17;
   font-family: var(--font-ui, 'Montserrat', sans-serif);
   font-size: 10px;
   font-weight: 700;
@@ -233,7 +262,7 @@ header,
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1.5px solid #FBF9F6;
+  border: 1.5px solid #0A0E17;
 }
 
 /* ── Bottom Row: Main Menu Navigation (Centered) ──
@@ -241,7 +270,7 @@ header,
    ─────────────────────────────────────────────────── */
 .tiffany-header__nav {
   background-color: transparent;
-  border-bottom: 1px solid rgba(229, 224, 216, 0.85);
+  border-bottom: 1px solid rgba(197, 168, 128, 0.12);
   position: relative;
   z-index: 2005;
   overflow: visible;
@@ -263,13 +292,13 @@ header,
 .tiffany-header__nav-link {
   display: flex;
   align-items: center;
-  padding: 0.95rem 0;
+  padding: 0.85rem 0;
   font-family: var(--font-ui, 'Montserrat', sans-serif);
   font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.16em;
+  font-weight: 400;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #161616;
+  color: #FFFFFF;
   text-decoration: none;
   white-space: nowrap;
   transition: color 0.2s ease;
@@ -284,14 +313,14 @@ header,
   left: 0;
   right: 0;
   height: 2px;
-  background-color: #C5A059;
+  background-color: #C5A880;
   transform: scaleX(0);
   transition: transform 0.25s ease;
   transform-origin: center;
 }
 
 .tiffany-header__nav-link:hover {
-  color: #C5A059;
+  color: #C5A880;
 }
 
 .tiffany-header__nav-link:hover::after {
@@ -299,20 +328,19 @@ header,
 }
 
 .tiffany-header__nav-item--active .tiffany-header__nav-link {
-  color: #C5A059;
-  font-weight: 600;
+  color: #C5A880;
+  font-weight: 500;
 }
 
 .tiffany-header__nav-item--active .tiffany-header__nav-link::after {
   transform: scaleX(1);
-  background-color: #C5A059;
+  background-color: #C5A880;
 }
 
-/* ── Full-Width Ivory Mega Menu Panel (Zero-Scroll Technical Blueprint) ──
+/* ── Full-Width Deep Obsidian Mega Menu Panel (Zero-Scroll Blueprint) ──
    1. Grid Setup: display: grid; grid-template-columns: repeat(4, 1fr); gap: 3rem;
    2. Padding & Max Height: padding: 2.25rem 4rem; max-height: 420px; overflow: hidden;
-   3. Background & Border: background-color: #FBF9F6; border-bottom: 1px solid #E5E0D8;
-   4. Absolutely zero scrollbar on panel, grid, or header
+   3. Background & Border: background-color: #0A0E17; border-bottom: 1px solid rgba(197, 168, 128, 0.2);
    ─────────────────────────────────────────────────── */
 .tiffany-mega {
   position: absolute;
@@ -320,10 +348,10 @@ header,
   left: 0;
   right: 0;
   z-index: 2004;
-  background-color: #FBF9F6;
-  border-top: 1px solid #E5E0D8;
-  border-bottom: 1px solid #E5E0D8;
-  box-shadow: 0 16px 48px rgba(22, 22, 22, 0.08);
+  background-color: #0A0E17;
+  border-top: 1px solid rgba(197, 168, 128, 0.2);
+  border-bottom: 1px solid rgba(197, 168, 128, 0.2);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65);
   opacity: 0;
   visibility: hidden;
   transform: translateY(-4px);
@@ -373,17 +401,17 @@ header,
   flex-direction: column;
 }
 
-/* Category Headers (Column Titles): 11px uppercase, tracked wide (letter-spacing: 0.15em), color #161616, font-weight 600 */
+/* Category Headers (Column Titles): 11px uppercase, tracked wide (letter-spacing: 0.15em), color #C5A880, font-weight 600 */
 .tiffany-mega__heading {
   font-family: var(--font-ui, 'Montserrat', sans-serif);
   font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  color: #161616;
+  color: #C5A880;
   margin: 0 0 0.85rem 0;
   padding-bottom: 0.45rem;
-  border-bottom: 1px solid #E5E0D8;
+  border-bottom: 1px solid rgba(197, 168, 128, 0.2);
 }
 
 .tiffany-mega__links {
@@ -394,12 +422,12 @@ header,
   flex-direction: column;
 }
 
-/* Category Sub-links: 13px sentence case, color #555555, hover color #C5A059, line-height 2.2 */
+/* Category Sub-links: 13px sentence case, color #B8BCC6, hover color #C5A880, line-height 2.2 */
 .tiffany-mega__link {
   font-family: var(--font-ui, 'Montserrat', sans-serif);
   font-size: 13px;
   font-weight: 400;
-  color: #555555;
+  color: #B8BCC6;
   line-height: 2.2;
   text-decoration: none;
   display: block;
@@ -410,7 +438,7 @@ header,
 }
 
 .tiffany-mega__link:hover {
-  color: #C5A059;
+  color: #C5A880;
 }
 
 /* Column 4: Campaign Spotlight (Image Card) */
@@ -433,9 +461,10 @@ header,
   height: 155px;
   overflow: hidden;
   border-radius: 2px;
-  background-color: #EFECE6;
+  background-color: #121824;
   margin-bottom: 0.75rem;
   position: relative;
+  border: 1px solid rgba(197, 168, 128, 0.25);
 }
 
 .tiffany-mega__spotlight-media img {
@@ -450,7 +479,7 @@ header,
 }
 
 .tiffany-card-fallback {
-  background: linear-gradient(135deg, #F4F0EA 0%, #EAE4D8 100%);
+  background: linear-gradient(135deg, #121824 0%, #1c2538 100%);
 }
 
 .tiffany-mega__spotlight-content {
@@ -464,7 +493,7 @@ header,
   font-style: italic;
   font-size: 14px;
   line-height: 1.35;
-  color: #161616;
+  color: #FFFFFF;
   margin: 0;
 }
 
@@ -473,7 +502,7 @@ header,
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #C5A059;
+  color: #C5A880;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
@@ -483,7 +512,7 @@ header,
 }
 
 .tiffany-mega__spotlight-card:hover .tiffany-mega__spotlight-cta {
-  color: #161616;
+  color: #FFFFFF;
   gap: 0.55rem;
 }
 
@@ -495,7 +524,7 @@ header,
   right: 0;
   bottom: 0;
   z-index: 1998;
-  background-color: rgba(22, 22, 22, 0.22);
+  background-color: rgba(0, 0, 0, 0.5);
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -516,7 +545,8 @@ header,
   width: 100%;
   max-width: 380px;
   height: 100vh;
-  background-color: #FBF9F6;
+  background-color: #0A0E17;
+  border-right: 1px solid rgba(197, 168, 128, 0.2);
   z-index: 2050;
   transition: left 0.38s cubic-bezier(0.16, 1, 0.3, 1);
   overflow-y: auto;
@@ -533,14 +563,14 @@ header,
   align-items: center;
   justify-content: space-between;
   padding: 1.1rem 1.25rem;
-  border-bottom: 1px solid #E5E0D8;
+  border-bottom: 1px solid rgba(197, 168, 128, 0.18);
 }
 
 .tiffany-mobile-drawer__logo {
   font-family: "BlackGold", "BlackGoldRegular", serif;
   font-size: 1.2rem;
   letter-spacing: 0.1em;
-  color: #161616;
+  color: #FFFFFF;
 }
 
 .tiffany-mobile-drawer__close {
@@ -551,12 +581,12 @@ header,
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #161616;
+  color: #FFFFFF;
   transition: color 0.2s ease;
 }
 
 .tiffany-mobile-drawer__close:hover {
-  color: #C5A059;
+  color: #C5A880;
 }
 
 /* Locale switchers strip in mobile drawer */
@@ -565,8 +595,8 @@ header,
   align-items: center;
   gap: 1rem;
   padding: 0.85rem 1.25rem;
-  background-color: #F4F0EA;
-  border-bottom: 1px solid #E5E0D8;
+  background-color: #070A10;
+  border-bottom: 1px solid rgba(197, 168, 128, 0.15);
 }
 
 .tiffany-mobile-drawer__body {
@@ -582,7 +612,7 @@ header,
 }
 
 .tiffany-mobile-drawer__item {
-  border-bottom: 1px solid #E5E0D8;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .tiffany-mobile-drawer__item-bar {
@@ -597,16 +627,16 @@ header,
   flex: 1;
   font-family: var(--font-ui, 'Montserrat', sans-serif);
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #161616;
+  color: #FFFFFF;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .tiffany-mobile-drawer__link:hover {
-  color: #C5A059;
+  color: #C5A880;
 }
 
 .tiffany-mobile-drawer__toggle {
@@ -617,7 +647,7 @@ header,
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #161616;
+  color: #FFFFFF;
   transition: transform 0.3s ease;
 }
 
@@ -626,7 +656,7 @@ header,
 }
 
 .tiffany-mobile-drawer__sub {
-  background-color: #F4F0EA;
+  background-color: #070A10;
   padding: 1.25rem;
   display: flex;
   flex-direction: column;
@@ -645,28 +675,28 @@ header,
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #161616;
+  color: #C5A880;
   padding-bottom: 0.4rem;
-  border-bottom: 1px solid #E5E0D8;
+  border-bottom: 1px solid rgba(197, 168, 128, 0.18);
 }
 
 .tiffany-mobile-sub-link {
   font-family: var(--font-ui, 'Montserrat', sans-serif);
   font-size: 13px;
   font-weight: 400;
-  color: #555555;
+  color: #B8BCC6;
   text-decoration: none;
   padding: 0.2rem 0;
   transition: color 0.2s ease;
 }
 
 .tiffany-mobile-sub-link:hover {
-  color: #C5A059;
+  color: #C5A880;
 }
 
 .tiffany-mobile-sub-spotlight {
   padding-top: 0.5rem;
-  border-top: 1px solid #E5E0D8;
+  border-top: 1px solid rgba(197, 168, 128, 0.18);
 }
 
 .tiffany-mobile-sub-spotlight-cta {
@@ -675,14 +705,14 @@ header,
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #C5A059;
+  color: #C5A880;
   text-decoration: none;
 }
 
 .tiffany-mobile-drawer__footer {
   padding: 1.5rem;
-  border-top: 1px solid #E5E0D8;
-  background-color: #FBF9F6;
+  border-top: 1px solid rgba(197, 168, 128, 0.18);
+  background-color: #070A10;
 }
 
 .tiffany-header__utility-link {
@@ -690,13 +720,13 @@ header,
   font-size: 0.72rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #161616;
+  color: #FFFFFF;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .tiffany-header__utility-link:hover {
-  color: #C5A059;
+  color: #C5A880;
 }
 
 .tiffany-mobile-backdrop {
@@ -705,7 +735,7 @@ header,
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(22, 22, 22, 0.4);
+  background-color: rgba(0, 0, 0, 0.65);
   z-index: 2040;
 }
 
@@ -756,7 +786,7 @@ header,
     display: flex;
   }
   .tiffany-header__top {
-    padding: 0.85rem 0;
+    padding: 0.75rem 0;
   }
   .tiffany-header__logo-link {
     position: static;

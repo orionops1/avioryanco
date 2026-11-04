@@ -18,12 +18,25 @@
    UNIFIED CSS VARIABLE SYSTEM - COMPREHENSIVE DESIGN TOKENS
    ============================================================================ */
 :root {
+  /* MASTER BLUEPRINT: DARK ROMANTIC LUXURY PALETTE */
+  --color-obsidian: #0A0E17;
+  --color-obsidian-dark: #070A10;
+  --color-obsidian-light: #121824;
+  --color-obsidian-card: #0E131E;
+  --color-champagne: #C5A880;
+  --color-gold: #C5A880;
+  --color-gold-hover: #D8BA92;
+  --color-pure-white: #FFFFFF;
+  --color-text-light: #F0F2F6;
+  --color-text-muted: #8E95A5;
+  --color-border-gold: rgba(197, 168, 128, 0.22);
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
   /* =========================================================================
      PRIMARY COLORS (Luxury Palette)
      ========================================================================= */
   --color-primary-black: #111111;
   --color-ivory: #F8F4EF;
-  --color-champagne: #D4AF7F;
+  --color-champagne: #C5A880;
   --color-charcoal: #2B2B2B;
   --color-light-gray: #E8E3DC;
   --color-gray-light: #E8E3DC;

@@ -197,7 +197,7 @@ export default function GemstoneDetail() {
               className="btn btn-secondary pdp-btn--cart"
               onClick={handleAddToCart}
             >
-              {added ? 'Added to Bag âœ“' : 'Add to Shopping Bag'}
+              {added ? 'Commission Registered ✓' : 'Commission This Piece'}
             </button>
           </div>
 

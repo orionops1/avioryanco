@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom'
 import './HeroVideo.css'
 
 export default function HeroVideo({
-  video,
-  poster,
-  title = "AVIORY & CO.",
-  subtitle = "Exceptional Gemstones & Fine Jewellery",
-  cta = { label: "Explore The House", href: "/gemstones" }
+  video = "/videos/hero-luxury.mp4",
+  poster = "/images/hero-banner.jpg",
+  eyebrow = "WHERE THE VOW LIVES",
+  headline = "Forged for the skin that remembers you.",
+  subtitle = "A vow isn't spoken once. It is carried daily against your pulse. Untreated Ceylon sapphires and hand-wrought gold, born deep beneath Sri Lankan earth.",
+  primaryCta = { label: "BEGIN THE BESPOKE INTIMACY™ COMMISSION", href: "/bespoke/enquiry" },
+  secondaryCta = { label: "ENTER THE PRIVATE VAULT →", href: "#private-vault" }
 }) {
   const videoRef = useRef(null)
 
@@ -23,12 +25,22 @@ export default function HeroVideo({
     }
   }, [])
 
+  const handleScrollToVault = (e) => {
+    if (secondaryCta.href.startsWith('#')) {
+      e.preventDefault()
+      const target = document.querySelector(secondaryCta.href)
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+  }
+
   return (
-    <section className="hero-video" aria-label="Hero Showcase">
-      {/* VIDEO BACKGROUND */}
+    <section className="hero-atmospheric" aria-label="Atmospheric Hero Experience">
+      {/* BACKGROUND VIDEO */}
       <video
         ref={videoRef}
-        className="hero-video__video"
+        className="hero-atmospheric__video"
         poster={poster}
         loop
         muted
@@ -36,37 +48,54 @@ export default function HeroVideo({
         playsInline
       >
         <source src={video} type="video/mp4" />
-        <img src={poster} alt="Hero" className="hero-video__fallback-img" />
+        <img src={poster} alt="Atmospheric Jewelry" className="hero-atmospheric__fallback-img" />
       </video>
 
-      {/* FALLBACK IMAGE */}
+      {/* FALLBACK POSTER */}
       <div 
-        className="hero-video__fallback"
+        className="hero-atmospheric__fallback"
         style={{ backgroundImage: `url(${poster})` }}
       />
 
-      {/* LUXURY VIGNETTE OVERLAY */}
-      <div className="hero-video__overlay" />
+      {/* DEEP OBSIDIAN CHIAROSCURO VIGNETTE (Fading smoothly into #0A0E17) */}
+      <div className="hero-atmospheric__vignette" />
 
-      {/* CONTENT WITH BLACKGOLD LOGO */}
-      <div className="hero-video__content">
+      {/* HERO ATMOSPHERIC CONTENT */}
+      <div className="hero-atmospheric__content">
         <div className="container">
-          <div className="hero-video__text">
-            <h1 className="hero-video__title" aria-label="AVIORY & CO.">
-              <span className="hero-video__logo-text">AVIORY</span>
-              <span className="hero-video__logo-amp">&amp;</span>
-              <span className="hero-video__logo-co">CO.</span>
+          <div className="hero-atmospheric__text">
+            {eyebrow && (
+              <span className="hero-atmospheric__eyebrow">
+                {eyebrow}
+              </span>
+            )}
+            
+            <h1 className="hero-atmospheric__headline">
+              {headline}
             </h1>
             
-            <p className="hero-video__subtitle">{subtitle}</p>
-            
-            {cta && (
-              <div className="hero-video__cta">
-                <Link to={cta.href} className="btn btn-primary">
-                  {cta.label}
-                </Link>
-              </div>
+            {subtitle && (
+              <p className="hero-atmospheric__subtitle">
+                {subtitle}
+              </p>
             )}
+            
+            <div className="hero-atmospheric__actions">
+              {primaryCta && (
+                <Link to={primaryCta.href} className="hero-atmospheric__btn-primary">
+                  {primaryCta.label}
+                </Link>
+              )}
+              {secondaryCta && (
+                <a 
+                  href={secondaryCta.href} 
+                  className="hero-atmospheric__btn-secondary"
+                  onClick={handleScrollToVault}
+                >
+                  {secondaryCta.label}
+                </a>
+              )}
+            </div>
           </div>
         </div>
       </div>

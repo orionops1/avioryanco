@@ -10,15 +10,16 @@ export default function Bespoke() {
     <>
       {/* HERO */}
       <section style={{
-        backgroundColor: '#111111',
+        backgroundColor: '#0A0E17',
         color: '#F8F4EF',
         padding: 'var(--spacing-3xl) 0',
         textAlign: 'center'
       }}>
         <div className="container">
-          <h1 style={{ color: '#D4AF7F' }}>Bespoke Jewellery</h1>
+          <span style={{ display: 'block', fontFamily: 'var(--font-sans)', fontSize: '0.65rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: '#C5A880', marginBottom: '0.6rem' }}>THE PRIVATE COVENANT</span>
+          <h1 style={{ color: '#FFFFFF', fontFamily: 'var(--font-serif-display)', fontSize: 'clamp(2.2rem, 4.5vw, 3.4rem)' }}>Bespoke Intimacy™</h1>
           <p style={{ fontSize: '1.1rem', marginTop: 'var(--spacing-md)', opacity: 0.9 }}>
-            Create a truly unique piece that reflects your individual vision and story
+            Forged for the skin that remembers you. Hand-wrought gold, rare unheated Ceylon stones, and the signature secret Heartbeat Gem™
           </p>
         </div>
       </section>

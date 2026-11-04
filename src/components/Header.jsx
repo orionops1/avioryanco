@@ -184,17 +184,22 @@ export default function Header({ scrolled }) {
               onClick={handleNavClick}
               aria-label="AVIORY &amp; CO. Homepage"
             >
-              <span className="tiffany-header__logo-text">AVIORY</span>
-              <span className="tiffany-header__logo-ampersand">&amp;</span>
-              <span className="tiffany-header__logo-co">CO.</span>
+              <div className="tiffany-header__logo-wrapper">
+                <div className="tiffany-header__logo-group">
+                  <span className="tiffany-header__logo-text">AVIORY</span>
+                  <span className="tiffany-header__logo-ampersand">&amp;</span>
+                  <span className="tiffany-header__logo-co">CO.</span>
+                </div>
+                <span className="tiffany-header__logo-tagline">WHERE THE VOW LIVES.</span>
+              </div>
             </Link>
 
             {/* Top Bar (Right): $ USD | EN | Search | Bag */}
             <div className="tiffany-header__actions">
               {/* Currency & Language Switchers */}
               <div className="tiffany-header__locale">
-                <CurrencySwitcher variant="light" />
-                <LanguageSwitcher variant="light" />
+                <CurrencySwitcher variant="dark" />
+                <LanguageSwitcher variant="dark" />
               </div>
 
               {/* Search Icon [Q] */}
