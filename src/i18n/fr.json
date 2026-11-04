@@ -1,7 +1,8 @@
 {
   "common": {
     "home": "Accueil",
-    "gemstones": "Pierres précieuses",
+    "atelier": "Atelier",
+    "gemstones": "Pierres Précieuses Naturelles",
     "fineJewellery": "Joaillerie fine",
     "loveAndCelebration": "Amour & Célébration",
     "loveandcelebration": "Amour & Célébration",
@@ -18,7 +19,9 @@
     "bookConsultation": "Réserver une consultation",
     "giftsForHer": "Cadeaux pour Elle",
     "engagement": "Fiançailles",
+    "naturalGemstones": "Pierres Précieuses Naturelles",
     "madeOnlyForYou": "Fait Exclusivement pour Vous",
+    "worldOfAviory": "Le Monde d'Aviory",
     "ourStory": "Notre Histoire",
     "ourPrivateRoom": "Notre Salon Privé"
   },

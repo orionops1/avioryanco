@@ -64,13 +64,12 @@ function useMegaMenuData(t) {
 }
 
 /* ============================================================================
-   Main Header Component
+   Main Header Component — Tiffany & Co. Architectural Blueprint
    ============================================================================ */
 
 export default function Header({ scrolled }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeMega, setActiveMega] = useState(null)
-  const [activeLoveTab, setActiveLoveTab] = useState('engagement-rings')
   const [mobileAccordion, setMobileAccordion] = useState(null)
   const [cartDrawerOpen, setCartDrawerOpen] = useState(false)
   const [searchModalOpen, setSearchModalOpen] = useState(false)
@@ -146,30 +145,23 @@ export default function Header({ scrolled }) {
         className={`tiffany-header ${scrolled ? 'tiffany-header--scrolled' : ''} ${activeMega ? 'tiffany-header--mega-open' : ''}`}
       >
         {/* ============================================================
-            TOP ROW: Tiffany-standard Layout
-            Left: Our Private Room (Colombo Salon) / Search
-            Center: Logo
-            Right: Locale ($ USD / EN) / Bag
+            TOP NAVIGATION ROW (Tiffany Blueprint)
+            Left: ATELIER (Opens Colombo salon booking modal)
+            Center: AVIORY & CO. (Custom gold/charcoal serif)
+            Right: $ USD | EN | Search [Q] | Shopping Bag [BAG]
             ============================================================ */}
         <div className="tiffany-header__top">
           <div className="container tiffany-header__top-inner">
-            {/* Left Desktop: Our Private Room (Colombo Salon Booking) / Search */}
+            {/* Top Bar (Left): ATELIER */}
             <div className="tiffany-header__top-left">
-              <Link
-                to="/private-consultations"
-                className="tiffany-header__utility-btn"
-                title="Our Private Room — Colombo Salon Booking"
-              >
-                <span className="tiffany-header__utility-text">{t('common.ourPrivateRoom', 'OUR PRIVATE ROOM')}</span>
-              </Link>
               <button
                 type="button"
                 className="tiffany-header__utility-btn"
-                onClick={() => setSearchModalOpen(true)}
-                aria-label="Search"
-                title="Search"
+                onClick={() => setAppointmentModalOpen(true)}
+                title="Book an Appointment at our Colombo Salon"
+                aria-label="Atelier Colombo Salon Booking"
               >
-                <SearchIcon />
+                <span className="tiffany-header__utility-text">{t('common.atelier', 'ATELIER')}</span>
               </button>
             </div>
 
@@ -185,7 +177,7 @@ export default function Header({ scrolled }) {
               <span className={`tiffany-hamburger-bar ${mobileMenuOpen ? 'open' : ''}`} />
             </button>
 
-            {/* Center: Prominent Custom Serif Gold/Charcoal Logo */}
+            {/* Top Bar (Center): AVIORY & CO. */}
             <Link
               to="/"
               className="tiffany-header__logo-link"
@@ -197,7 +189,7 @@ export default function Header({ scrolled }) {
               <span className="tiffany-header__logo-co">CO.</span>
             </Link>
 
-            {/* Right: Discreet 11px Utilities Cluster ($ USD, EN, Bag) */}
+            {/* Top Bar (Right): $ USD | EN | Search | Bag */}
             <div className="tiffany-header__actions">
               {/* Currency & Language Switchers */}
               <div className="tiffany-header__locale">
@@ -205,7 +197,18 @@ export default function Header({ scrolled }) {
                 <LanguageSwitcher variant="light" />
               </div>
 
-              {/* Shopping Bag Button */}
+              {/* Search Icon [Q] */}
+              <button
+                type="button"
+                className="tiffany-header__action-btn"
+                onClick={() => setSearchModalOpen(true)}
+                aria-label="Search"
+                title="Search"
+              >
+                <SearchIcon />
+              </button>
+
+              {/* Shopping Bag Icon [BAG] */}
               <button
                 type="button"
                 className="tiffany-header__action-btn tiffany-header__action-btn--bag"
@@ -223,8 +226,8 @@ export default function Header({ scrolled }) {
         </div>
 
         {/* ============================================================
-            BOTTOM ROW: Navigation Menu (Centered)
-            GIFTS FOR HER | ENGAGEMENT | MADE ONLY FOR YOU | OUR STORY
+            BOTTOM ROW: 5 Category Navigation (Centered)
+            GIFTS FOR HER | LOVE & CELEBRATION | NATURAL GEMSTONES | MADE ONLY FOR YOU | WORLD OF AVIORY
             ============================================================ */}
         <nav className="tiffany-header__nav" aria-label="Main Navigation">
           <div className="container">
@@ -250,8 +253,8 @@ export default function Header({ scrolled }) {
         </nav>
 
         {/* ============================================================
-            FULL-WIDTH MEGA-MENU PANELS
-            Tabbed Layout for Engagement | Columns + Feature for Others
+            FULL-WIDTH 4-COLUMN MEGA-MENU PANELS
+            Ivory White (#FBF9F6), Max Height 420px, Zero Vertical Scrolling
             ============================================================ */}
         {menuItems.map((item) =>
           item.mega ? (
@@ -262,108 +265,58 @@ export default function Header({ scrolled }) {
               onMouseLeave={handleMegaLeave}
               role="menu"
             >
-              {item.mega.tabs ? (
-                /* TABBED SUB-NAVIGATION (Haute Joaillerie Engagement Standard) */
-                <div className="container tiffany-mega__tabbed-container">
-                  {/* Horizontal Tab Headers */}
-                  <div className="tiffany-mega__subnav-bar">
-                    <div className="tiffany-mega__subnav-tabs">
-                      {item.mega.tabs.map((tab) => (
-                        <button
-                          key={tab.id}
-                          type="button"
-                          className={`tiffany-mega__subnav-tab ${activeLoveTab === tab.id ? 'tiffany-mega__subnav-tab--active' : ''}`}
-                          onMouseEnter={() => setActiveLoveTab(tab.id)}
-                          onClick={() => setActiveLoveTab(tab.id)}
-                        >
-                          <span>{tab.label}</span>
-                        </button>
-                      ))}
-                    </div>
-                    {item.mega.infoLink && (
-                      <Link
-                        to={item.mega.infoLink.href}
-                        className="tiffany-mega__subnav-info"
-                        onClick={handleNavClick}
-                      >
-                        {item.mega.infoLink.label} &rarr;
-                      </Link>
-                    )}
-                  </div>
-
-                  {/* Tab Cards Content Grid */}
-                  {item.mega.tabs.map((tab) =>
-                    tab.id === activeLoveTab ? (
-                      <div key={tab.id} className="tiffany-mega__cards-grid">
-                        {tab.items.map((card, idx) => (
+              <div className="tiffany-mega__grid">
+                {/* Columns 1, 2, 3: Editorial Link Categories */}
+                {item.mega.columns?.map((col, ci) => (
+                  <div key={ci} className="tiffany-mega__column">
+                    <h3 className="tiffany-mega__heading">{col.heading}</h3>
+                    <ul className="tiffany-mega__links">
+                      {col.links.map((link, li) => (
+                        <li key={li}>
                           <Link
-                            key={idx}
-                            to={card.href}
-                            className={`tiffany-mega__card ${card.guide ? 'tiffany-mega__card--guide' : ''}`}
+                            to={link.href}
+                            className="tiffany-mega__link"
                             onClick={handleNavClick}
                           >
-                            <div className="tiffany-mega__card-media">
-                              <img
-                                src={card.image}
-                                alt={card.name}
-                                loading="lazy"
-                                onError={(e) => {
-                                  e.target.style.display = 'none'
-                                  e.target.parentElement.classList.add('tiffany-card-fallback')
-                                }}
-                              />
-                            </div>
-                            <h4 className="tiffany-mega__card-title">{card.name}</h4>
-                            <p className="tiffany-mega__card-desc">{card.desc}</p>
+                            {link.label}
                           </Link>
-                        ))}
-                      </div>
-                    ) : null
-                  )}
-                </div>
-              ) : (
-                /* STANDARD 3-COLUMN + FEATURE EDITORIAL LAYOUT */
-                <div className="container tiffany-mega__inner">
-                  <div className="tiffany-mega__columns">
-                    {item.mega.columns?.map((col, ci) => (
-                      <div key={ci} className="tiffany-mega__column">
-                        <h3 className="tiffany-mega__heading">{col.heading}</h3>
-                        <ul className="tiffany-mega__links">
-                          {col.links.map((link, li) => (
-                            <li key={li}>
-                              <Link
-                                to={link.href}
-                                className={`tiffany-mega__link ${link.accent ? 'tiffany-mega__link--accent' : ''}`}
-                                onClick={handleNavClick}
-                              >
-                                {link.label}
-                                {link.accent && <ArrowRight />}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
+                ))}
 
-                  {item.mega.feature && (
-                    <div className={`tiffany-mega__feature tiffany-mega__feature--${item.mega.feature.accent}`}>
-                      <span className="tiffany-mega__feature-eyebrow">AVIORY &amp; CO.</span>
-                      <h4 className="tiffany-mega__feature-title">{item.mega.feature.title}</h4>
-                      <p className="tiffany-mega__feature-sub">{item.mega.feature.subtitle}</p>
-                      <div className="tiffany-mega__feature-rule" />
-                      <Link
-                        to={item.mega.feature.cta.href}
-                        className="tiffany-mega__feature-cta"
-                        onClick={handleNavClick}
-                      >
-                        {item.mega.feature.cta.label}
-                        <ArrowRight />
-                      </Link>
-                    </div>
-                  )}
-                </div>
-              )}
+                {/* Column 4: Campaign Spotlight (Image Card) */}
+                {item.mega.spotlight && (
+                  <div className="tiffany-mega__spotlight">
+                    <Link
+                      to={item.mega.spotlight.cta.href}
+                      className="tiffany-mega__spotlight-card"
+                      onClick={handleNavClick}
+                    >
+                      <div className="tiffany-mega__spotlight-media">
+                        <img
+                          src={item.mega.spotlight.image}
+                          alt={item.mega.spotlight.imageAlt || item.mega.spotlight.quote}
+                          loading="lazy"
+                          onError={(e) => {
+                            e.target.style.display = 'none'
+                            e.target.parentElement.classList.add('tiffany-card-fallback')
+                          }}
+                        />
+                      </div>
+                      <div className="tiffany-mega__spotlight-content">
+                        <p className="tiffany-mega__spotlight-quote">
+                          &ldquo;{item.mega.spotlight.quote}&rdquo;
+                        </p>
+                        <span className="tiffany-mega__spotlight-cta">
+                          {item.mega.spotlight.cta.label} &rarr;
+                        </span>
+                      </div>
+                    </Link>
+                  </div>
+                )}
+              </div>
             </div>
           ) : null
         )}
@@ -377,7 +330,6 @@ export default function Header({ scrolled }) {
 
       {/* ============================================================
           MOBILE DRAWER NAVIGATION
-          Currency & Language Switchers Prominently Placed at the Top
           ============================================================ */}
       <div className={`tiffany-mobile-drawer ${mobileMenuOpen ? 'tiffany-mobile-drawer--open' : ''}`}>
         <div className="tiffany-mobile-drawer__header">
@@ -426,38 +378,31 @@ export default function Header({ scrolled }) {
 
                 {item.mega && mobileAccordion === item.key && (
                   <div className="tiffany-mobile-drawer__sub">
-                    {item.mega.tabs ? (
-                      item.mega.tabs.map((tab) => (
-                        <div key={tab.id} className="tiffany-mobile-sub-group">
-                          <span className="tiffany-mobile-sub-heading">{tab.label}</span>
-                          {tab.items.map((card, ci) => (
-                            <Link
-                              key={ci}
-                              to={card.href}
-                              className="tiffany-mobile-sub-link"
-                              onClick={() => setMobileMenuOpen(false)}
-                            >
-                              {card.name}
-                            </Link>
-                          ))}
-                        </div>
-                      ))
-                    ) : (
-                      item.mega.columns?.map((col, ci) => (
-                        <div key={ci} className="tiffany-mobile-sub-group">
-                          <span className="tiffany-mobile-sub-heading">{col.heading}</span>
-                          {col.links.map((link, li) => (
-                            <Link
-                              key={li}
-                              to={link.href}
-                              className="tiffany-mobile-sub-link"
-                              onClick={() => setMobileMenuOpen(false)}
-                            >
-                              {link.label}
-                            </Link>
-                          ))}
-                        </div>
-                      ))
+                    {item.mega.columns?.map((col, ci) => (
+                      <div key={ci} className="tiffany-mobile-sub-group">
+                        <span className="tiffany-mobile-sub-heading">{col.heading}</span>
+                        {col.links.map((link, li) => (
+                          <Link
+                            key={li}
+                            to={link.href}
+                            className="tiffany-mobile-sub-link"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {link.label}
+                          </Link>
+                        ))}
+                      </div>
+                    ))}
+                    {item.mega.spotlight && (
+                      <div className="tiffany-mobile-sub-spotlight">
+                        <Link
+                          to={item.mega.spotlight.cta.href}
+                          className="tiffany-mobile-sub-spotlight-cta"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {item.mega.spotlight.cta.label} &rarr;
+                        </Link>
+                      </div>
                     )}
                   </div>
                 )}
@@ -482,9 +427,17 @@ export default function Header({ scrolled }) {
             <Link to="/contact" className="tiffany-header__utility-link" onClick={() => setMobileMenuOpen(false)}>
               {t('common.contact', 'Contact Us')}
             </Link>
-            <Link to="/private-consultations" className="tiffany-header__utility-link" onClick={() => setMobileMenuOpen(false)}>
-              {t('common.ourPrivateRoom', 'Our Private Room')}
-            </Link>
+            <button
+              type="button"
+              className="tiffany-header__utility-link"
+              style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
+              onClick={() => {
+                setMobileMenuOpen(false)
+                setAppointmentModalOpen(true)
+              }}
+            >
+              Colombo Atelier
+            </button>
           </div>
         </div>
       </div>

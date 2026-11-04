@@ -1,7 +1,8 @@
 {
   "common": {
     "home": "Home",
-    "gemstones": "Gemstones",
+    "atelier": "Atelier",
+    "gemstones": "Natural Gemstones",
     "fineJewellery": "Fine Jewellery",
     "loveAndCelebration": "Love & Celebration",
     "loveandcelebration": "Love & Celebration",
@@ -18,7 +19,9 @@
     "bookConsultation": "Book Consultation",
     "giftsForHer": "Gifts For Her",
     "engagement": "Engagement",
+    "naturalGemstones": "Natural Gemstones",
     "madeOnlyForYou": "Made Only For You",
+    "worldOfAviory": "World of Aviory",
     "ourStory": "Our Story",
     "ourPrivateRoom": "Our Private Room"
   },
