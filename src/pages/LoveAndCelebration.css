@@ -3,14 +3,14 @@
    ============================================================================ */
 
 .love-page {
-  background-color: #FFFFFF;
+  background-color: var(--color-white);
   min-height: 100vh;
 }
 
 /* Dark Editorial Hero */
 .love-hero {
   background-color: #111111;
-  color: #FFFFFF;
+  color: var(--color-white);
   padding: clamp(3.5rem, 6vw, 5rem) 0;
   text-align: center;
   position: relative;
@@ -32,7 +32,7 @@
   font-family: var(--font-serif-display, 'Playfair Display', Georgia, serif);
   font-size: clamp(2.4rem, 5vw, 3.8rem);
   font-weight: 400;
-  color: #FFFFFF;
+  color: var(--color-white);
   margin-bottom: 1rem;
   line-height: 1.15;
 }
@@ -119,7 +119,7 @@
 }
 
 .love-filter-pill {
-  background: #FFFFFF;
+  background: var(--color-white);
   border: 1px solid #D5CFC7;
   padding: 0.45rem 1rem;
   font-family: var(--font-sans, 'Montserrat', sans-serif);
@@ -142,7 +142,7 @@
 .love-filter-pill--active {
   background-color: #111111;
   border-color: #111111;
-  color: #FFFFFF;
+  color: var(--color-white);
   font-weight: 600;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
@@ -215,3 +215,4 @@
     grid-template-columns: 1fr;
   }
 }
+

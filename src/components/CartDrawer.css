@@ -26,7 +26,7 @@
   bottom: 0;
   width: 100%;
   max-width: 460px;
-  background-color: var(--color-white, #FFFFFF);
+  background-color: var(--color-white, var(--color-white));
   z-index: 4001;
   display: flex;
   flex-direction: column;
@@ -302,7 +302,7 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   background-color: #25D366 !important;
-  color: #FFFFFF !important;
+  color: var(--color-white) !important;
   border: 1px solid #25D366 !important;
   display: flex;
   align-items: center;
@@ -345,3 +345,4 @@
     max-width: 100%;
   }
 }
+

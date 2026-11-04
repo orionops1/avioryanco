@@ -1,6 +1,6 @@
 /* ============================================================================
    APPOINTMENT MODAL STYLING - OBSIDIAN LUXURY SANCTUARY
-   Deep Obsidian Navy (#0A0E17), Champagne Gold (#C5A880), Pure White (#FFFFFF)
+   Deep Obsidian Navy (var(--color-primary-black)), Champagne Gold (var(--color-champagne)), Pure White (var(--color-white))
    ============================================================================ */
 
 .appt-backdrop {
@@ -20,7 +20,7 @@
 }
 
 .appt-modal {
-  background-color: #0A0E17;
+  background-color: var(--color-primary-black);
   border: 1px solid rgba(197, 168, 128, 0.3);
   max-width: 640px;
   width: 100%;
@@ -45,13 +45,13 @@
   border: none;
   font-size: 1.35rem;
   cursor: pointer;
-  color: #C5A880;
+  color: var(--color-champagne);
   transition: all 0.25s ease;
   line-height: 1;
 }
 
 .appt-modal__close:hover {
-  color: #FFFFFF;
+  color: var(--color-white);
   transform: rotate(90deg);
 }
 
@@ -62,7 +62,7 @@
   font-weight: 700;
   letter-spacing: 0.26em;
   text-transform: uppercase;
-  color: #C5A880;
+  color: var(--color-champagne);
   margin-bottom: 0.75rem;
 }
 
@@ -71,7 +71,7 @@
   font-size: clamp(1.8rem, 3.5vw, 2.4rem);
   font-weight: 400;
   margin-bottom: 0.6rem;
-  color: #FFFFFF;
+  color: var(--color-white);
   letter-spacing: 0.02em;
 }
 
@@ -117,7 +117,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #FFFFFF;
+  color: var(--color-white);
 }
 
 .appt-type-card span {
@@ -128,12 +128,12 @@
 
 .appt-type-card--active {
   background-color: rgba(197, 168, 128, 0.12);
-  border-color: #C5A880;
+  border-color: var(--color-champagne);
   box-shadow: 0 0 20px rgba(197, 168, 128, 0.18);
 }
 
 .appt-type-card--active strong {
-  color: #C5A880;
+  color: var(--color-champagne);
 }
 
 .appt-type-card--active span {
@@ -161,7 +161,7 @@
   font-family: var(--font-sans, -apple-system, sans-serif);
   font-size: 0.82rem;
   background-color: #0E1420;
-  color: #FFFFFF;
+  color: var(--color-white);
   border-radius: 0;
   outline: none;
   transition: all 0.25s ease;
@@ -175,22 +175,22 @@
 .appt-form input:focus,
 .appt-select:focus,
 .appt-form textarea:focus {
-  border-color: #C5A880;
+  border-color: var(--color-champagne);
   background-color: #121929;
   box-shadow: 0 0 10px rgba(197, 168, 128, 0.15);
 }
 
 .appt-select option {
-  background-color: #0A0E17;
-  color: #FFFFFF;
+  background-color: var(--color-primary-black);
+  color: var(--color-white);
 }
 
 .appt-modal .btn-primary {
   width: 100%;
   padding: 1.1rem;
   background: transparent;
-  border: 1px solid #C5A880;
-  color: #C5A880;
+  border: 1px solid var(--color-champagne);
+  color: var(--color-champagne);
   font-family: var(--font-sans, -apple-system, sans-serif);
   font-size: 0.75rem;
   font-weight: 600;
@@ -202,8 +202,8 @@
 }
 
 .appt-modal .btn-primary:hover {
-  background: #C5A880;
-  color: #0A0E17;
+  background: var(--color-champagne);
+  color: var(--color-primary-black);
 }
 
 @media (max-width: 600px) {
@@ -217,3 +217,4 @@
     padding: 2.5rem 1.5rem;
   }
 }
+

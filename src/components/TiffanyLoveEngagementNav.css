@@ -4,7 +4,7 @@
  */
 
 .tiffany-love-engagement-nav {
-  background: var(--color-white, #ffffff);
+  background: var(--color-white, var(--color-white));
   border-top: 1px solid var(--color-border, #e8e8e8);
   border-bottom: 1px solid var(--color-border, #e8e8e8);
   margin: 0;
@@ -18,7 +18,7 @@
   justify-content: center;
   gap: 2rem;
   padding: 1rem 2rem;
-  background: var(--color-white, #ffffff);
+  background: var(--color-white, var(--color-white));
   overflow-x: auto;
 }
 
@@ -97,7 +97,7 @@
 
 /* Collection Card */
 .collection-card {
-  background: var(--color-white, #ffffff);
+  background: var(--color-white, var(--color-white));
   border: 1px solid var(--color-border, #e8e8e8);
   padding: 1rem;
   text-align: center;
@@ -217,3 +217,4 @@
     font-size: 0.75rem;
   }
 }
+

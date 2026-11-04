@@ -1,4 +1,4 @@
-﻿@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap");
 @import "./fonts.css";
 
 /* ============================================================================
@@ -23,14 +23,14 @@
      ========================================================================= */
   --color-primary-black: #111111;
   --color-black: #0d0d0d;
-  --color-white: #ffffff;
+  --color-white: var(--color-white);
   --color-ivory: #F8F4EF;
   --color-soft-cream: #faf8f5;
   
   /* CHAMPAGNE & GOLD - Your Signature Colors */
   --color-champagne: #D4AF7F;
   --color-gold: #D4AF7F;
-  --color-accent-gold: #C5A880;
+  --color-accent-gold: var(--color-champagne);
   --color-warm-gold: #d4a574;
   --color-gold-dark: #8B7355;
   
@@ -42,12 +42,10 @@
   --color-medium-gray: #D0CCBE;
   --color-accent-brown: #A68563;
   
-  /* TEXT & ACCENTS */
-  --color-text: #2c1810;
-  --color-dark-brown: #2c1810;
-  --color-rich-charcoal: #241c14;
-  --color-burgundy: #5e2e1f;
-  --color-rose-gold: #B76E79;
+  /* SUPPORTING NEUTRALS & SECONDARY */
+  --color-text-secondary: #6B7280;
+  --color-obsidian-card: #1a2a3a;
+  --color-obsidian-light: rgba(26, 42, 58, 0.8);
 
   /* =========================================================================
      TYPOGRAPHY SYSTEM (Clean & Minimal)
@@ -605,4 +603,5 @@ footer {
   background-color: var(--color-black);
   color: var(--color-ivory);
 }
+
 

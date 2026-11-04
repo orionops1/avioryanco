@@ -51,7 +51,7 @@
   font-family: "BlackGold", "BlackGoldRegular", serif !important;
   font-size: 1.85rem;
   letter-spacing: 0.1em;
-  color: #FFFFFF;
+  color: var(--color-white);
   text-transform: uppercase;
 }
 
@@ -67,7 +67,7 @@
   font-family: "BlackGold", "BlackGoldRegular", serif !important;
   font-size: 1.65rem;
   letter-spacing: 0.12em;
-  color: #FFFFFF;
+  color: var(--color-white);
   text-transform: uppercase;
 }
 
@@ -154,7 +154,7 @@
 }
 
 .contact-link:hover {
-  color: #FFFFFF !important;
+  color: var(--color-white) !important;
   text-decoration: underline;
 }
 
@@ -279,3 +279,4 @@
     flex-direction: column;
   }
 }
+
