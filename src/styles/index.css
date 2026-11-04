@@ -16,33 +16,31 @@
 
 :root {
   /* =========================================================================
-     MASTER COLOR PALETTE - Single Source of Truth
+     MASTER COLOR PALETTE - Ivory Light Luxury Aesthetic
+     Museum-gallery elegance, warm parchment, editorial sophistication
      ========================================================================= */
   
-  /* CORE NEUTRALS */
-  --color-white: #FFFFFF;
-  --color-ivory: #F8F4EF;
-  --color-cream: #faf8f5;
-  --color-black: #111111;
-  --color-charcoal: #2B2B2B;
-  --color-gray-dark: #4A4A4A;
-  --color-gray-medium: #6B6B6B;
-  --color-gray-light: #D0CCBE;
-  --color-gray-xlight: #E8E3DC;
+  /* PRIMARY CANVAS */
+  --color-canvas: #F8F4EF;           /* Warm ivory parchment base */
+  --color-canvas-tint: #F0EAE1;      /* Soft ivory tint for announcements */
+  
+  /* TEXT & STRUCTURE */
+  --color-text-primary: #111111;     /* Deep black for authority */
+  --color-text-secondary: #555555;   /* Medium gray for body copy */
+  --color-text-muted: #999999;       /* Light gray for supporting text */
   
   /* LUXURY ACCENTS */
-  --color-champagne: #D4AF7F;
-  --color-champagne-dark: #C5A880;
-  --color-champagne-light: #E8BA8F;
-  --color-bronze: #A68563;
-  --color-gold-dark: #8B7355;
+  --color-accent: #D4AF7F;           /* Champagne - signature accent */
+  --color-accent-muted: #D4AF7F;     /* Champagne at lower opacity */
   
-  /* TEXT COLORS */
-  --color-text-primary: #111111;
-  --color-text-secondary: #4A4A4A;
-  --color-text-tertiary: #6B6B6B;
-  --color-text-light: #F8F4EF;
-  --color-text-muted: #999999;
+  /* STRUCTURE & BORDERS */
+  --color-border: #E6E1DA;           /* Hairline dividers */
+  --color-border-subtle: #E6E1DA;    /* Subtle structural lines */
+  
+  /* SUPPORTING NEUTRALS - rarely used */
+  --color-white: #FFFFFF;
+  --color-black: #111111;
+  --color-charcoal: #2B2B2B;
   
   /* =========================================================================
      TYPOGRAPHY SYSTEM
@@ -77,11 +75,8 @@
      EFFECTS SYSTEM - MINIMAL, REFINED
      ========================================================================= */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.12);
-  
-  --border-color: rgba(212, 175, 127, 0.2);
-  --border-color-subtle: rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
   
   /* =========================================================================
      TRANSITIONS
@@ -109,8 +104,8 @@ body {
   font-family: var(--font-sans);
   font-size: 16px;
   line-height: 1.7;
-  color: var(--color-text-primary);
-  background-color: var(--color-ivory);
+  color: var(--color-text-secondary);
+  background-color: var(--color-canvas);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -177,7 +172,7 @@ a {
 }
 
 a:hover {
-  color: var(--color-champagne);
+  color: var(--color-accent);
 }
 
 /* ============================================================================
@@ -206,7 +201,7 @@ a:hover {
 
 .btn:hover {
   background-color: var(--color-text-primary);
-  color: var(--color-ivory);
+  color: var(--color-canvas);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
@@ -217,23 +212,23 @@ a:hover {
 
 .btn-primary {
   background-color: var(--color-text-primary);
-  color: var(--color-ivory);
+  color: var(--color-canvas);
   border-color: var(--color-text-primary);
 }
 
 .btn-primary:hover {
-  background-color: var(--color-champagne);
-  border-color: var(--color-champagne);
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
   color: var(--color-text-primary);
 }
 
 .btn-secondary {
-  border-color: var(--color-champagne);
-  color: var(--color-champagne);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
 }
 
 .btn-secondary:hover {
-  background-color: var(--color-champagne);
+  background-color: var(--color-accent);
   color: var(--color-text-primary);
 }
 
@@ -329,15 +324,15 @@ section {
    ============================================================================ */
 
 .card {
-  background-color: var(--color-white);
-  border: 1px solid var(--color-gray-xlight);
+  background-color: var(--color-canvas);
+  border: 1px solid var(--color-border);
   padding: var(--spacing-lg);
   transition: var(--transition-base);
 }
 
 .card:hover {
   box-shadow: var(--shadow-md);
-  border-color: var(--color-champagne);
+  border-color: var(--color-accent);
   transform: translateY(-2px);
 }
 
@@ -385,7 +380,7 @@ header {
 }
 
 footer {
-  background-color: var(--color-black);
-  color: var(--color-text-light);
+  background-color: var(--color-text-primary);
+  color: var(--color-canvas);
   margin-top: auto;
 }
