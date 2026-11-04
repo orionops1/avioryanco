@@ -135,11 +135,7 @@ export default function Header({ scrolled }) {
 
   return (
     <>
-      {/* Announcement Bar */}
-      <div className="aviory-announce-bar" role="banner">
-        <p>COMPLIMENTARY WORLDWIDE SHIPPING &nbsp;&middot;&nbsp; CERTIFIED UNHEATED CEYLON GEMSTONES &nbsp;&middot;&nbsp; PRIVATE CONSULTATIONS AVAILABLE</p>
-      </div>
-
+      {/* Header Navigation */}
       <header
         ref={headerRef}
         className={`tiffany-header ${scrolled ? 'tiffany-header--scrolled' : ''} ${activeMega ? 'tiffany-header--mega-open' : ''}`}

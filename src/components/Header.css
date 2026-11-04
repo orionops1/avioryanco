@@ -285,12 +285,14 @@ header,
 
 .tiffany-header__nav-item {
   position: relative;
+  transition: all 0.22s ease;
 }
 
 .tiffany-header__nav-link {
   display: flex;
   align-items: center;
-  padding: 0.85rem 0;
+  padding: 0.85rem 0.95rem;
+  margin: 0 -0.95rem;
   font-family: var(--font-sans, 'Montserrat', sans-serif);
   font-size: 0.72rem;
   font-weight: 400;
@@ -299,17 +301,18 @@ header,
   color: var(--color-text-primary);
   text-decoration: none;
   white-space: nowrap;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease;
   position: relative;
   cursor: pointer;
+  border-radius: 2px;
 }
 
 .tiffany-header__nav-link::after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0;
-  right: 0;
+  left: 0.95rem;
+  right: 0.95rem;
   height: 2px;
   background-color: var(--color-accent);
   transform: scaleX(0);
@@ -319,6 +322,7 @@ header,
 
 .tiffany-header__nav-link:hover {
   color: var(--color-accent);
+  background-color: rgba(212, 175, 127, 0.04);
 }
 
 .tiffany-header__nav-link:hover::after {
@@ -328,6 +332,7 @@ header,
 .tiffany-header__nav-item--active .tiffany-header__nav-link {
   color: var(--color-accent);
   font-weight: 500;
+  background-color: rgba(212, 175, 127, 0.06);
 }
 
 .tiffany-header__nav-item--active .tiffany-header__nav-link::after {
@@ -349,11 +354,11 @@ header,
   background-color: var(--color-canvas);
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-4px);
-  transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+  transform: translateY(-8px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
   pointer-events: none;
   overflow: hidden !important;
   scrollbar-width: none !important;
@@ -407,9 +412,10 @@ header,
   text-transform: uppercase;
   letter-spacing: 0.15em;
   color: var(--color-accent);
-  margin: 0 0 0.85rem 0;
-  padding-bottom: 0.45rem;
+  margin: 0 0 1rem 0;
+  padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--color-border);
+  transition: color 0.22s ease;
 }
 
 .tiffany-mega__links {
@@ -418,6 +424,7 @@ header,
   padding: 0;
   display: flex;
   flex-direction: column;
+  gap: 0.25rem;
 }
 
 /* Category Sub-links: 13px, black text, champagne on hover */
@@ -426,17 +433,19 @@ header,
   font-size: 13px;
   font-weight: 400;
   color: var(--color-text-primary);
-  line-height: 2.2;
+  line-height: 2;
   text-decoration: none;
   display: block;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  transition: color 0.18s ease;
+  transition: color 0.18s ease, padding-left 0.18s ease;
+  padding-left: 0;
 }
 
 .tiffany-mega__link:hover {
   color: var(--color-accent);
+  padding-left: 4px;
 }
 
 /* Column 4: Campaign Spotlight (Image Card) */
@@ -505,13 +514,13 @@ header,
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  margin-top: 0.2rem;
-  transition: gap 0.2s ease, color 0.2s ease;
+  margin-top: 0.25rem;
+  transition: gap 0.22s ease, color 0.22s ease;
 }
 
 .tiffany-mega__spotlight-card:hover .tiffany-mega__spotlight-cta {
   color: var(--color-text-primary);
-  gap: 0.55rem;
+  gap: 0.6rem;
 }
 
 /* ── Backdrop ── */
@@ -522,10 +531,10 @@ header,
   right: 0;
   bottom: 0;
   z-index: 1998;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.16);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
   pointer-events: none;
 }
 

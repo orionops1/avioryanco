@@ -103,6 +103,15 @@ export default function Footer() {
         </div>
       </div>
 
+      {/* Announcement Bar */}
+      <div className="footer-announcement">
+        <div className="container">
+          <p className="footer-announcement__text">
+            COMPLIMENTARY WORLDWIDE SHIPPING · CERTIFIED UNHEATED CEYLON GEMSTONES · PRIVATE CONSULTATIONS AVAILABLE
+          </p>
+        </div>
+      </div>
+
       {/* Footer Bottom Bar */}
       <div className="footer-bottom">
         <div className="container">
