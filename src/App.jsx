@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import { LanguageProvider } from './hooks/useLanguage'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -27,6 +27,66 @@ import OurHouse from './pages/OurHouse'
 import PrivateConsultations from './pages/PrivateConsultations'
 import Contact from './pages/Contact'
 
+function AppLayout({ scrolled }) {
+  const location = useLocation()
+  const isHome = location.pathname === '/'
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', position: 'relative' }}>
+      <Header scrolled={scrolled} />
+      <main style={{ flex: 1, paddingTop: isHome ? 0 : 'var(--header-height, 120px)' }}>
+        <Routes>
+          {/* Home */}
+          <Route path="/" element={<Home />} />
+
+          {/* About */}
+          <Route path="/about" element={<About />} />
+
+          {/* Shop */}
+          <Route path="/shop" element={<Shop />} />
+
+          {/* Gemstones */}
+          <Route path="/gemstones" element={<Gemstones />} />
+          <Route path="/gemstones/:id" element={<GemstoneDetail />} />
+
+          {/* Fine Jewellery */}
+          <Route path="/fine-jewellery" element={<FineJewellery />} />
+          <Route path="/fine-jewellery/:id" element={<JewelleryDetail />} />
+
+          {/* Love & Celebration Collection */}
+          <Route path="/love-and-celebration" element={<LoveAndCelebration />} />
+          <Route path="/love-and-celebration/:id" element={<LoveAndCelebrationDetail />} />
+
+          {/* Universal Product Detail (fallback for any product type) */}
+          <Route path="/products/:id" element={<ProductDetail />} />
+
+          {/* Love Collection */}
+          <Route path="/love" element={<Love />} />
+
+          {/* Bespoke */}
+          <Route path="/bespoke" element={<Bespoke />} />
+          <Route path="/bespoke/process" element={<BespokeProcess />} />
+          <Route path="/bespoke/enquiry" element={<BespokeEnquiry />} />
+
+          {/* Journal */}
+          <Route path="/journal" element={<Journal />} />
+          <Route path="/journal/:slug" element={<JournalArticle />} />
+
+          {/* Blog */}
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<JournalArticle />} />
+
+          {/* Other Pages */}
+          <Route path="/our-house" element={<OurHouse />} />
+          <Route path="/private-consultations" element={<PrivateConsultations />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </main>
+      <Footer />
+    </div>
+  )
+}
+
 export default function App() {
   const [scrolled, setScrolled] = useState(false)
 
@@ -35,11 +95,11 @@ export default function App() {
       setScrolled(window.scrollY > 20)
     }
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  /* Measure header height and expose as CSS variable for mega-menu positioning */
+  /* Measure header height and expose as CSS variable for mega-menu and layout positioning */
   const updateHeaderHeight = useCallback(() => {
     const header = document.querySelector('.tiffany-header, .header')
     if (header) {
@@ -59,60 +119,8 @@ export default function App() {
     <LanguageProvider>
       <Router>
         <ScrollToTop />
-        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', position: 'relative' }}>
-          <Header scrolled={scrolled} />
-          <main style={{ flex: 1 }}>
-            <Routes>
-              {/* Home */}
-              <Route path="/" element={<Home />} />
-
-              {/* About */}
-              <Route path="/about" element={<About />} />
-
-              {/* Shop */}
-              <Route path="/shop" element={<Shop />} />
-
-              {/* Gemstones */}
-              <Route path="/gemstones" element={<Gemstones />} />
-              <Route path="/gemstones/:id" element={<GemstoneDetail />} />
-
-              {/* Fine Jewellery */}
-              <Route path="/fine-jewellery" element={<FineJewellery />} />
-              <Route path="/fine-jewellery/:id" element={<JewelleryDetail />} />
-
-              {/* Love & Celebration Collection */}
-              <Route path="/love-and-celebration" element={<LoveAndCelebration />} />
-              <Route path="/love-and-celebration/:id" element={<LoveAndCelebrationDetail />} />
-
-              {/* Universal Product Detail (fallback for any product type) */}
-              <Route path="/products/:id" element={<ProductDetail />} />
-
-              {/* Love Collection */}
-              <Route path="/love" element={<Love />} />
-
-              {/* Bespoke */}
-              <Route path="/bespoke" element={<Bespoke />} />
-              <Route path="/bespoke/process" element={<BespokeProcess />} />
-              <Route path="/bespoke/enquiry" element={<BespokeEnquiry />} />
-
-              {/* Journal */}
-              <Route path="/journal" element={<Journal />} />
-              <Route path="/journal/:slug" element={<JournalArticle />} />
-
-              {/* Blog */}
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:slug" element={<JournalArticle />} />
-
-              {/* Other Pages */}
-              <Route path="/our-house" element={<OurHouse />} />
-              <Route path="/private-consultations" element={<PrivateConsultations />} />
-              <Route path="/contact" element={<Contact />} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
+        <AppLayout scrolled={scrolled} />
       </Router>
     </LanguageProvider>
   )
 }
-

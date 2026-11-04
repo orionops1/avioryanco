@@ -93,7 +93,7 @@ export default function ProductCard({ product, type = 'gemstone' }) {
           {/* Quick-action overlay appearing on hover */}
           <div className={`luxury-card__overlay ${isHovered ? 'luxury-card__overlay--visible' : ''}`}>
             <span className="luxury-card__action-btn">
-              {type === 'ring' ? 'Begin the Vow' : type === 'gemstone' ? 'Request Private Access' : 'Commission This Piece'}
+              {type === 'ring' ? 'Explore Ring' : type === 'gemstone' ? 'View Gemstone' : 'Explore Piece'}
             </span>
           </div>
         </div>
@@ -125,4 +125,3 @@ export default function ProductCard({ product, type = 'gemstone' }) {
     </article>
   )
 }
-

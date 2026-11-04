@@ -1,1185 +1,704 @@
 /* ============================================================================
-   AVIORY & CO. - MASTER BLUEPRINT: DARK ROMANTIC LUXURY HOME
-   Deep Obsidian Navy (var(--color-primary-black)), Champagne Gold (var(--color-champagne)), Pure White (var(--color-white))
-   Chiaroscuro low-key lighting, massive spatial breathing room, zero clutter
+   AVIORY & CO. - HOMEPAGE DESIGN SYSTEM
+   Exact Palette:
+   - Background: #F8F4EF (Warm Ivory)
+   - Text (Primary): #111111 (Deep Black)
+   - Text (Secondary): #555555 (Medium Gray)
+   - Text (Muted): #999999 (Light Gray)
+   - Accent: #D4AF7F (Champagne Gold)
+   - Borders: #E6E1DA (Hairline Gray)
    ============================================================================ */
 
-.aviory-dark-home {
+.aviory-home {
   width: 100%;
-  background-color: var(--color-primary-black);
-  color: var(--color-white);
+  background-color: #F8F4EF;
+  color: #111111;
   overflow-x: hidden;
   position: relative;
 }
 
-/* ============================================================================
-   SHARED TYPOGRAPHY & BUTTON STYLES
-   ============================================================================ */
+/* ── SHARED TYPOGRAPHY & BUTTON STYLES ── */
 
 .editorial-eyebrow {
   display: block;
-  font-family: var(--font-sans, -apple-system, sans-serif);
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
   font-size: 0.65rem;
   font-weight: 700;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--color-champagne);
-  margin-bottom: 0.85rem;
+  color: #D4AF7F;
+  margin-bottom: 0.75rem;
 }
 
-.section-headline-serif {
-  font-family: var(--font-serif-display, 'Playfair Display', serif);
-  font-size: clamp(2rem, 3.8vw, 3.2rem);
+.section-header-centered {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto clamp(3rem, 5vw, 4.5rem);
+}
+
+.section-title {
+  font-family: var(--font-serif-display, 'Playfair Display', Georgia, serif);
+  font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 1.25;
   letter-spacing: 0.02em;
-  color: var(--color-white);
+  color: #111111;
   margin: 0 0 1rem;
 }
 
-.section-narrative-lead {
+.section-subtitle {
   font-family: var(--font-serif-body, 'Cormorant Garamond', Georgia, serif);
-  font-size: clamp(1.1rem, 1.4vw, 1.35rem);
-  line-height: 1.65;
-  color: var(--color-text-secondary);
-  max-width: 680px;
+  font-size: clamp(1.1rem, 1.35vw, 1.25rem);
+  line-height: 1.7;
+  color: #555555;
   margin: 0 auto;
 }
 
-.section-header-minimal {
-  text-align: center;
-  max-width: 820px;
-  margin: 0 auto clamp(3.5rem, 6vw, 5.5rem);
-}
-
-/* Custom Buttons */
-.btn-obsidian-gold {
+/* Luxury Action Buttons */
+.btn-luxury-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: transparent;
-  color: var(--color-champagne);
-  border: 1px solid var(--color-champagne);
-  padding: 0.95rem 2rem;
-  font-family: var(--font-sans, -apple-system, sans-serif);
+  background-color: #111111;
+  color: #FFFFFF;
+  border: 1px solid #111111;
+  padding: 0.95rem 2.25rem;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
   font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.btn-obsidian-gold:hover {
-  background-color: var(--color-champagne);
-  color: var(--color-primary-black);
-  box-shadow: 0 0 24px rgba(197, 168, 128, 0.3);
-}
-
-.btn-obsidian-ghost {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-  color: var(--color-white);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 0.95rem 2rem;
-  font-family: var(--font-sans, -apple-system, sans-serif);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.btn-obsidian-ghost:hover {
-  border-color: var(--color-white);
-  background-color: rgba(255, 255, 255, 0.06);
-}
-
-.link-subtle-gold {
-  display: inline-block;
-  font-family: var(--font-sans, -apple-system, sans-serif);
-  font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--color-champagne);
   text-decoration: none;
-  border-bottom: 1px solid rgba(197, 168, 128, 0.35);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-luxury-primary:hover {
+  background-color: #D4AF7F;
+  color: #111111;
+  border-color: #D4AF7F;
+}
+
+.btn-luxury-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: #111111;
+  border: 1px solid #E6E1DA;
+  padding: 0.95rem 2.25rem;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-luxury-outline:hover {
+  border-color: #D4AF7F;
+  color: #D4AF7F;
+  background-color: #FFFFFF;
+}
+
+.link-text-gold {
+  display: inline-block;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #D4AF7F;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(212, 175, 127, 0.4);
   padding-bottom: 3px;
   transition: all 0.25s ease;
 }
 
-.link-subtle-gold:hover {
-  color: var(--color-white);
-  border-bottom-color: var(--color-white);
+.link-text-gold:hover {
+  color: #111111;
+  border-bottom-color: #111111;
 }
 
 /* ============================================================================
-   2. THE EMOTIONAL ENGINE: 4 PILLARS OF DEVOTION
+   2. TWO SIGNATURE HOUSES (TIFFANY-STYLE 2-COLUMN SPLIT)
    ============================================================================ */
 
-.home-pillars-section {
-  padding: clamp(5rem, 8vw, 8rem) 0;
-  background-color: var(--color-primary-black);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+.home-two-houses-section {
+  padding: clamp(4.5rem, 7vw, 7rem) 0;
+  background-color: #F8F4EF;
+  border-bottom: 1px solid #E6E1DA;
 }
 
-.pillars-asym-grid {
+.two-houses-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: clamp(2rem, 5vw, 4.5rem);
-  row-gap: clamp(3rem, 6vw, 5.5rem);
+  gap: clamp(2rem, 4vw, 3.5rem);
 }
 
-.pillar-card {
+.house-card {
   display: flex;
   flex-direction: column;
+  background-color: #FFFFFF;
+  border: 1px solid #E6E1DA;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
 }
 
-.pillar-card--offset {
-  margin-top: clamp(1.5rem, 4vw, 3.5rem);
+.house-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.05);
 }
 
-.pillar-card__media {
+.house-card__image-wrap {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 3.2;
   background-size: cover;
   background-position: center;
-  background-color: var(--color-obsidian-card);
+  background-color: #F8F4EF;
   overflow: hidden;
-  margin-bottom: 1.75rem;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
 }
 
-.pillar-card:hover .pillar-card__media {
-  transform: translateY(-4px);
-  border-color: rgba(197, 168, 128, 0.3);
-}
-
-.pillar-card__overlay {
+.house-card__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(10, 14, 23, 0.85) 0%, rgba(10, 14, 23, 0.2) 60%, rgba(10, 14, 23, 0.4) 100%);
-  transition: opacity 0.4s ease;
+  background: rgba(0, 0, 0, 0.04);
+  transition: background 0.3s ease;
 }
 
-.pillar-card:hover .pillar-card__overlay {
-  opacity: 0.8;
+.house-card:hover .house-card__overlay {
+  background: rgba(0, 0, 0, 0.08);
 }
 
-.pillar-card__num {
-  position: absolute;
-  top: 1.25rem;
-  left: 1.25rem;
-  font-family: var(--font-sans, -apple-system, sans-serif);
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.24em;
-  color: var(--color-champagne);
-  background: rgba(10, 14, 23, 0.7);
-  backdrop-filter: blur(8px);
-  padding: 0.35rem 0.75rem;
-  border: 1px solid rgba(197, 168, 128, 0.2);
-}
-
-.pillar-card__content {
+.house-card__content {
+  padding: clamp(2rem, 3.5vw, 2.75rem);
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  align-items: flex-start;
+  flex: 1;
 }
 
-.pillar-card__tag {
-  font-family: var(--font-sans, -apple-system, sans-serif);
+.house-card__eyebrow {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.2em;
-  color: var(--color-champagne);
+  color: #999999;
   text-transform: uppercase;
+  margin-bottom: 0.6rem;
 }
 
-.pillar-card__quote {
-  font-family: var(--font-serif-display, 'Playfair Display', serif);
-  font-size: clamp(1.3rem, 1.8vw, 1.65rem);
-  font-style: italic;
+.house-card__title {
+  font-family: var(--font-serif-display, 'Playfair Display', Georgia, serif);
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
   font-weight: 400;
-  line-height: 1.35;
-  color: var(--color-white);
-  margin: 0;
+  color: #111111;
+  margin: 0 0 1rem;
+  line-height: 1.3;
 }
 
-.pillar-card__desc {
+.house-card__desc {
   font-family: var(--font-serif-body, 'Cormorant Garamond', Georgia, serif);
-  font-size: 1.05rem;
-  line-height: 1.6;
-  color: #8E95A5;
-  margin: 0;
-}
-
-.pillar-card__link {
-  display: inline-block;
-  font-family: var(--font-sans, -apple-system, sans-serif);
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--color-champagne);
-  text-decoration: none;
-  margin-top: 0.5rem;
-  transition: color 0.25s ease, transform 0.25s ease;
-}
-
-.pillar-card__link:hover {
-  color: var(--color-white);
-  transform: translateX(4px);
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: #555555;
+  margin: 0 0 2rem;
+  flex: 1;
 }
 
 /* ============================================================================
-   3. THE BESPOKE INTIMACY™ SIGNATURE: THE HEARTBEAT GEM
+   3. THE BESPOKE EXPERIENCE (3-STEP CLEAN CRAFT)
    ============================================================================ */
 
-.home-heartbeat-section {
-  padding: clamp(5.5rem, 9vw, 9rem) 0;
-  background: radial-gradient(circle at 30% 50%, #111726 0%, var(--color-primary-black) 70%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  position: relative;
+.home-bespoke-section {
+  padding: clamp(5rem, 8vw, 8rem) 0;
+  background-color: #F8F4EF;
+  border-bottom: 1px solid #E6E1DA;
 }
 
-.heartbeat-grid {
+.bespoke-intro-box {
+  text-align: center;
+  max-width: 740px;
+  margin: 0 auto clamp(3rem, 5vw, 4.5rem);
+}
+
+.bespoke-steps-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(2.5rem, 6vw, 6rem);
-  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  margin-bottom: 3.5rem;
 }
 
-.heartbeat-visual-wrapper {
+.bespoke-step-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E6E1DA;
+  padding: clamp(2rem, 3vw, 2.75rem);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  transition: all 0.3s ease;
 }
 
-.heartbeat-ring-canvas {
-  position: relative;
-  width: 100%;
-  max-width: 420px;
-  aspect-ratio: 1 / 1;
+.bespoke-step-card:hover {
+  border-color: #D4AF7F;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+}
+
+.bespoke-step-number {
+  font-family: var(--font-serif-display, 'Playfair Display', serif);
+  font-size: 2rem;
+  font-weight: 400;
+  color: #D4AF7F;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.bespoke-step-title {
+  font-family: var(--font-serif-display, 'Playfair Display', Georgia, serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #111111;
+  margin: 0 0 0.85rem;
+}
+
+.bespoke-step-desc {
+  font-family: var(--font-serif-body, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #555555;
+  margin: 0;
+}
+
+.bespoke-action-row {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.heartbeat-ring-svg {
-  width: 100%;
-  height: 100%;
-  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.8));
-}
-
-@keyframes pulseGlow {
-  0% { transform: scale(1); opacity: 0.9; }
-  50% { transform: scale(1.35); opacity: 1; }
-  100% { transform: scale(1); opacity: 0.9; }
-}
-
-.heartbeat-gem-pulse {
-  transform-origin: 160px 266px;
-  animation: pulseGlow 1.8s infinite ease-in-out;
-}
-
-/* Annotations */
-.heartbeat-annotation {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: rgba(10, 14, 23, 0.85);
-  backdrop-filter: blur(8px);
-  padding: 0.4rem 0.85rem;
-  border: 1px solid rgba(197, 168, 128, 0.25);
-}
-
-.heartbeat-annotation--public {
-  top: 6%;
-  right: -5%;
-}
-
-.heartbeat-annotation--secret {
-  bottom: 4%;
-  left: -8%;
-}
-
-.heartbeat-annotation__dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: var(--color-white);
-}
-
-.heartbeat-annotation__pulse-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  box-shadow: 0 0 10px currentColor;
-}
-
-.heartbeat-annotation__label {
-  font-family: var(--font-sans, -apple-system, sans-serif);
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-white);
-}
-
-.heartbeat-annotation__sub {
-  display: block;
-  font-family: var(--font-serif-body, 'Cormorant Garamond', Georgia, serif);
-  font-size: 0.8rem;
-  color: #8E95A5;
-}
-
-.heartbeat-preview-pill {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin-top: 1.5rem;
-  padding: 0.5rem 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.02);
-}
-
-.heartbeat-pill-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
-
-.heartbeat-pill-text {
-  font-family: var(--font-sans, -apple-system, sans-serif);
-  font-size: 0.7rem;
-  color: #A3ABB8;
-}
-
-.heartbeat-pill-text strong {
-  color: var(--color-white);
-}
-
-/* Narrative Side */
-.heartbeat-narrative {
-  display: flex;
-  flex-direction: column;
-}
-
-.heartbeat-quote {
-  font-family: var(--font-serif-display, 'Playfair Display', serif);
-  font-size: clamp(1.25rem, 1.8vw, 1.6rem);
-  font-style: italic;
-  font-weight: 400;
-  line-height: 1.4;
-  color: var(--color-champagne);
-  margin: 1.25rem 0 1.5rem;
-  padding-left: 1.25rem;
-  border-left: 2px solid var(--color-champagne);
-}
-
-.heartbeat-text {
-  font-family: var(--font-serif-body, 'Cormorant Garamond', Georgia, serif);
-  font-size: 1.15rem;
-  line-height: 1.7;
-  color: #A3ABB8;
-  margin: 0 0 1rem;
-}
-
-.heartbeat-selector-group {
-  margin: 1.75rem 0 1.25rem;
-}
-
-.heartbeat-selector-label {
-  display: block;
-  font-family: var(--font-sans, -apple-system, sans-serif);
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  color: #8E95A5;
-  margin-bottom: 0.75rem;
-}
-
-.heartbeat-buttons {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.65rem;
-}
-
-.heartbeat-btn {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 0.75rem 0.6rem;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  text-align: left;
-}
-
-.heartbeat-btn:hover {
-  border-color: rgba(197, 168, 128, 0.4);
-}
-
-.heartbeat-btn--active {
-  background: rgba(197, 168, 128, 0.12);
-  border-color: var(--color-champagne);
-}
-
-.heartbeat-btn__swatch {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.heartbeat-btn__title {
-  font-family: var(--font-sans, -apple-system, sans-serif);
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  color: var(--color-white);
-}
-
-.heartbeat-meaning-box {
-  background: rgba(10, 14, 23, 0.6);
-  border: 1px solid rgba(197, 168, 128, 0.18);
-  padding: 1rem 1.25rem;
-  margin-bottom: 2rem;
-}
-
-.heartbeat-meaning-title {
-  display: block;
-  font-family: var(--font-sans, -apple-system, sans-serif);
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  color: var(--color-champagne);
-  margin-bottom: 0.35rem;
-}
-
-.heartbeat-meaning-quote {
-  font-family: var(--font-serif-body, 'Cormorant Garamond', Georgia, serif);
-  font-size: 1.1rem;
-  font-style: italic;
-  color: var(--color-white);
-  margin: 0;
-}
-
-.heartbeat-actions {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-/* ============================================================================
-   4. ASYMMETRICAL 2-COLUMN MUSEUM GALLERY (py-24 RHYTHM)
-   ============================================================================ */
-
-.home-museum-section {
-  padding: clamp(6rem, 10vw, 10rem) 0;
-  background-color: var(--color-primary-black);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.museum-exhibits-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(5rem, 8vw, 8rem);
-}
-
-.museum-exhibit {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: clamp(2.5rem, 6vw, 6rem);
-  align-items: center;
-  padding: clamp(2rem, 4vw, 3.5rem) 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-}
-
-.museum-exhibit--right {
-  grid-template-columns: 0.9fr 1.1fr;
-}
-
-.museum-exhibit--right .museum-exhibit__media-wrap {
-  order: 2;
-}
-
-.museum-exhibit--right .museum-exhibit__meta {
-  order: 1;
-}
-
-.museum-exhibit__media-wrap {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 4 / 3.4;
-  overflow: hidden;
-  background-color: var(--color-obsidian-card);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.museum-exhibit__img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.museum-exhibit:hover .museum-exhibit__img {
-  transform: scale(1.04);
-}
-
-.museum-exhibit__badge {
-  position: absolute;
-  top: 1.25rem;
-  left: 1.25rem;
-  font-family: var(--font-sans, -apple-system, sans-serif);
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  color: var(--color-primary-black);
-  background: var(--color-champagne);
-  padding: 0.35rem 0.75rem;
-}
-
-.museum-exhibit__meta {
-  display: flex;
-  flex-direction: column;
-}
-
-.museum-exhibit__num {
-  font-family: var(--font-sans, -apple-system, sans-serif);
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.26em;
-  color: var(--color-champagne);
-  margin-bottom: 0.4rem;
-}
-
-.museum-exhibit__category {
-  font-family: var(--font-sans, -apple-system, sans-serif);
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  color: #8E95A5;
-  text-transform: uppercase;
-  margin-bottom: 0.75rem;
-}
-
-.museum-exhibit__title {
-  font-family: var(--font-serif-display, 'Playfair Display', serif);
-  font-size: clamp(1.8rem, 2.8vw, 2.4rem);
-  font-weight: 400;
-  line-height: 1.25;
-  color: var(--color-white);
-  margin: 0 0 1rem;
-}
-
-.museum-exhibit__story {
-  font-family: var(--font-serif-body, 'Cormorant Garamond', Georgia, serif);
-  font-size: 1.15rem;
-  line-height: 1.7;
-  color: var(--color-text-secondary);
-  margin: 0 0 1.5rem;
-}
-
-.museum-exhibit__specs {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-family: var(--font-sans, -apple-system, sans-serif);
-  font-size: 0.68rem;
-  color: var(--color-champagne);
-  letter-spacing: 0.1em;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-}
-
-.museum-exhibit__footer {
-  display: flex;
-  align-items: center;
   gap: 2rem;
   flex-wrap: wrap;
 }
 
-.museum-exhibit__price {
-  font-family: var(--font-sans, -apple-system, sans-serif);
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: var(--color-white);
-  letter-spacing: 0.05em;
-}
-
 /* ============================================================================
-   5. HOW AVIORY & CO. OUTPERFORMS LEGACY HOUSES
+   4. CURATED CEYLON GEMSTONES & HIGH JEWELLERY
    ============================================================================ */
 
-.home-ethos-section {
-  padding: clamp(5.5rem, 8vw, 8rem) 0;
-  background-color: var(--color-black);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+.home-curated-gems-section {
+  padding: clamp(5rem, 8vw, 8rem) 0;
+  background-color: #F8F4EF;
+  border-bottom: 1px solid #E6E1DA;
 }
 
-.ethos-cards-grid {
+.curated-gems-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(1.5rem, 3vw, 2.5rem);
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  margin-bottom: 3.5rem;
 }
 
-.ethos-card {
-  background-color: var(--color-primary-black);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: clamp(2rem, 3.5vw, 3rem) clamp(1.5rem, 2.5vw, 2.25rem);
+.gem-product-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E6E1DA;
   display: flex;
   flex-direction: column;
-  transition: all 0.35s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-.ethos-card:hover {
-  border-color: rgba(197, 168, 128, 0.35);
+.gem-product-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.06);
 }
 
-.ethos-card--highlight {
-  border-color: rgba(197, 168, 128, 0.3);
-  background: linear-gradient(180deg, rgba(197, 168, 128, 0.04) 0%, rgba(10, 14, 23, 1) 100%);
-}
-
-.ethos-card__eyebrow {
-  font-family: var(--font-sans, -apple-system, sans-serif);
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  color: var(--color-champagne);
-  margin-bottom: 0.6rem;
-}
-
-.ethos-card__title {
-  font-family: var(--font-serif-display, 'Playfair Display', serif);
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: var(--color-white);
-  margin: 0 0 1.5rem;
-}
-
-.ethos-card__flaw {
-  font-family: var(--font-serif-body, 'Cormorant Garamond', Georgia, serif);
-  font-size: 1.05rem;
-  line-height: 1.6;
-  color: #717887;
-  margin: 0 0 1.25rem;
-}
-
-.ethos-card__flaw strong {
-  display: block;
-  font-family: var(--font-sans, -apple-system, sans-serif);
-  font-size: 0.62rem;
-  letter-spacing: 0.16em;
-  color: #A3ABB8;
-  margin-bottom: 0.3rem;
-}
-
-.ethos-card__advantage {
-  font-family: var(--font-serif-body, 'Cormorant Garamond', Georgia, serif);
-  font-size: 1.05rem;
-  line-height: 1.6;
-  color: #E2E8F0;
-  margin: 0;
-}
-
-.ethos-card__advantage strong {
-  display: block;
-  font-family: var(--font-sans, -apple-system, sans-serif);
-  font-size: 0.62rem;
-  letter-spacing: 0.16em;
-  color: var(--color-champagne);
-  margin-bottom: 0.3rem;
-}
-
-/* ============================================================================
-   6. THE PRIVATE VAULT (CIPHER-GATED ACCESS)
-   ============================================================================ */
-
-.home-vault-section {
-  padding: clamp(6rem, 10vw, 10rem) 0;
-  background: radial-gradient(circle at 50% 30%, #131A29 0%, var(--color-primary-black) 80%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.vault-frame {
-  max-width: 980px;
-  margin: 0 auto;
-  border: 1px solid rgba(197, 168, 128, 0.25);
-  background-color: rgba(10, 14, 23, 0.85);
-  padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem);
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
-}
-
-.vault-header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.vault-subtext {
-  font-family: var(--font-serif-body, 'Cormorant Garamond', Georgia, serif);
-  font-size: 1.15rem;
-  color: var(--color-text-secondary);
-  max-width: 620px;
-  margin: 0 auto;
-}
-
-.vault-gate-panel {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  max-width: 580px;
-  margin: 0 auto;
-}
-
-.vault-gate-icon {
-  width: 48px;
-  height: 48px;
-  margin-bottom: 1.5rem;
-}
-
-.vault-gate-title {
-  font-family: var(--font-serif-display, 'Playfair Display', serif);
-  font-size: 1.6rem;
-  font-weight: 400;
-  color: var(--color-white);
-  margin: 0 0 0.75rem;
-}
-
-.vault-gate-desc {
-  font-family: var(--font-serif-body, 'Cormorant Garamond', Georgia, serif);
-  font-size: 1.05rem;
-  color: #8E95A5;
-  margin: 0 0 2rem;
-  line-height: 1.6;
-}
-
-.vault-cipher-form {
-  display: flex;
+.gem-product-card__media {
+  position: relative;
   width: 100%;
-  max-width: 460px;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+  aspect-ratio: 1 / 1;
+  background-color: #F8F4EF;
+  overflow: hidden;
 }
 
-.vault-cipher-input {
-  flex: 1;
-  background-color: #0E1420;
-  border: 1px solid rgba(197, 168, 128, 0.35);
-  padding: 0.95rem 1.25rem;
-  color: var(--color-white);
-  font-family: var(--font-sans, -apple-system, sans-serif);
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  outline: none;
+.gem-product-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.vault-cipher-input:focus {
-  border-color: var(--color-champagne);
-  box-shadow: 0 0 12px rgba(197, 168, 128, 0.25);
+.gem-product-card:hover .gem-product-card__img {
+  transform: scale(1.05);
 }
 
-.vault-cipher-btn {
-  white-space: nowrap;
-}
-
-.vault-cipher-error {
-  font-family: var(--font-sans, -apple-system, sans-serif);
-  font-size: 0.72rem;
-  color: #E57373;
-  margin: 0.5rem 0 1rem;
-}
-
-.vault-gate-footer {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-sans, -apple-system, sans-serif);
-  font-size: 0.7rem;
-  color: #717887;
-  margin-top: 1.5rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.vault-request-link {
-  background: none;
-  border: none;
-  color: var(--color-champagne);
-  font-family: inherit;
-  font-size: inherit;
-  cursor: pointer;
-  text-decoration: underline;
-  padding: 0;
-}
-
-.vault-request-link:hover {
-  color: var(--color-white);
-}
-
-/* Unlocked Vault Panel */
-.vault-unlocked-banner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: rgba(197, 168, 128, 0.08);
-  border: 1px solid rgba(197, 168, 128, 0.25);
-  padding: 1rem 1.5rem;
-  margin-bottom: 2.5rem;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.vault-status-indicator {
-  font-family: var(--font-sans, -apple-system, sans-serif);
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  color: var(--color-champagne);
-}
-
-.vault-unlocked-banner p {
-  font-family: var(--font-serif-body, 'Cormorant Garamond', Georgia, serif);
-  font-size: 0.95rem;
-  color: #A3ABB8;
-  margin: 0;
-}
-
-.vault-relock-btn {
-  background: none;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: var(--color-white);
-  font-family: var(--font-sans, -apple-system, sans-serif);
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  padding: 0.4rem 0.85rem;
-  cursor: pointer;
-}
-
-.vault-relock-btn:hover {
-  border-color: var(--color-champagne);
-  color: var(--color-champagne);
-}
-
-.vault-specimens-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-}
-
-.vault-specimen-card {
-  background: #0E1420;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 1.75rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.vault-specimen-badge {
-  font-family: var(--font-sans, -apple-system, sans-serif);
+.gem-product-card__badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
   font-size: 0.6rem;
   font-weight: 700;
-  letter-spacing: 0.2em;
-  color: var(--color-champagne);
-  margin-bottom: 0.5rem;
+  letter-spacing: 0.16em;
+  color: #111111;
+  background-color: rgba(255, 255, 255, 0.94);
+  border: 1px solid #E6E1DA;
+  padding: 0.3rem 0.65rem;
+  text-transform: uppercase;
 }
 
-.vault-specimen-title {
-  font-family: var(--font-serif-display, 'Playfair Display', serif);
-  font-size: 1.25rem;
-  font-weight: 400;
-  color: var(--color-white);
+.gem-product-card__body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.gem-product-card__category {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #999999;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.gem-product-card__title {
+  font-family: var(--font-serif-display, 'Playfair Display', Georgia, serif);
+  font-size: 1.15rem;
+  font-weight: 500;
+  line-height: 1.35;
   margin: 0 0 0.5rem;
-  line-height: 1.3;
 }
 
-.vault-specimen-meta {
-  font-family: var(--font-sans, -apple-system, sans-serif);
-  font-size: 0.65rem;
-  color: var(--color-champagne);
-  letter-spacing: 0.08em;
-  margin-bottom: 0.85rem;
+.gem-product-card__title a {
+  color: #111111;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-.vault-specimen-desc {
+.gem-product-card__title a:hover {
+  color: #D4AF7F;
+}
+
+.gem-product-card__specs {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.7rem;
+  color: #999999;
+  margin: 0 0 0.65rem;
+}
+
+.gem-product-card__desc {
   font-family: var(--font-serif-body, 'Cormorant Garamond', Georgia, serif);
   font-size: 0.95rem;
   line-height: 1.55;
-  color: #8E95A5;
-  margin: 0 0 1.5rem;
+  color: #555555;
+  margin: 0 0 1.25rem;
   flex: 1;
 }
 
-.vault-specimen-footer {
+.gem-product-card__footer {
   display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #E6E1DA;
+  padding-top: 1rem;
 }
 
-.vault-price {
-  font-family: var(--font-sans, -apple-system, sans-serif);
-  font-size: 0.75rem;
+.gem-product-card__price {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.95rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
-  color: var(--color-white);
+  color: #111111;
+  letter-spacing: 0.04em;
 }
 
-.btn-small {
-  padding: 0.65rem 1rem !important;
-  font-size: 0.65rem !important;
+.gem-product-card__btn {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: #D4AF7F;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-/* ============================================================================
-   7. PRIVATE TWILIGHT SANCTUARY: COLOMBO SALON
-   ============================================================================ */
-
-.home-sanctuary-section {
-  position: relative;
-  padding: clamp(6.5rem, 11vw, 11rem) 0;
-  background-image: url(/images/editorial/bg-4-call-to-action-copyright.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+.gem-product-card__btn:hover {
+  color: #111111;
 }
 
-.home-sanctuary-section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(10, 14, 23, 0.88);
-  backdrop-filter: blur(2px);
-}
-
-.sanctuary-panel {
-  position: relative;
-  max-width: 780px;
-  margin: 0 auto;
+.gems-view-all-wrap {
   text-align: center;
 }
 
-.sanctuary-lead {
-  font-family: var(--font-serif-body, 'Cormorant Garamond', Georgia, serif);
-  font-size: clamp(1.2rem, 1.6vw, 1.45rem);
-  line-height: 1.65;
-  color: #E2E8F0;
-  margin: 1.5rem 0 1rem;
+/* ============================================================================
+   5. WHY AVIORY & CO. (HERITAGE & PROVENANCE)
+   ============================================================================ */
+
+.home-heritage-section {
+  padding: clamp(5rem, 8vw, 8rem) 0;
+  background-color: #F8F4EF;
+  border-bottom: 1px solid #E6E1DA;
 }
 
-.sanctuary-sub {
-  font-family: var(--font-serif-body, 'Cormorant Garamond', Georgia, serif);
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: var(--color-text-secondary);
-  margin: 0 0 2.5rem;
+.heritage-hallmarks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
 }
 
-.sanctuary-actions {
+.hallmark-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E6E1DA;
+  padding: clamp(2.25rem, 3.5vw, 3rem) clamp(1.75rem, 2.5vw, 2.5rem);
   display: flex;
+  flex-direction: column;
+  transition: border-color 0.3s ease;
+}
+
+.hallmark-card:hover {
+  border-color: #D4AF7F;
+}
+
+.hallmark-card__tag {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: #D4AF7F;
+  margin-bottom: 0.75rem;
+}
+
+.hallmark-card__title {
+  font-family: var(--font-serif-display, 'Playfair Display', Georgia, serif);
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: #111111;
+  margin: 0 0 1rem;
+}
+
+.hallmark-card__desc {
+  font-family: var(--font-serif-body, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #555555;
+  margin: 0;
+}
+
+/* ============================================================================
+   6. VISIT OUR ATELIER & PRIVATE CONSULTATIONS
+   ============================================================================ */
+
+.home-consultation-section {
+  padding: clamp(5rem, 8vw, 8rem) 0;
+  background-color: #F8F4EF;
+  border-bottom: 1px solid #E6E1DA;
+}
+
+.consultation-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E6E1DA;
+  padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 3.5rem);
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.03);
+}
+
+.consultation-title {
+  font-family: var(--font-serif-display, 'Playfair Display', Georgia, serif);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 400;
+  color: #111111;
+  margin: 0 0 1.25rem;
+}
+
+.consultation-lead {
+  font-family: var(--font-serif-body, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.1rem, 1.4vw, 1.25rem);
+  line-height: 1.7;
+  color: #555555;
+  max-width: 680px;
+  margin: 0 auto 2.5rem;
+}
+
+.consultation-actions {
+  display: flex;
+  align-items: center;
   justify-content: center;
   gap: 1.5rem;
   flex-wrap: wrap;
 }
 
 /* ============================================================================
-   8. FROM OUR JOURNAL (EDITORIAL LORE)
+   7. FROM OUR JOURNAL
    ============================================================================ */
 
 .home-journal-section {
-  padding: clamp(5.5rem, 8vw, 8rem) 0;
-  background-color: var(--color-primary-black);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: clamp(5rem, 8vw, 8rem) 0;
+  background-color: #F8F4EF;
+  border-bottom: 1px solid #E6E1DA;
 }
 
-.journal-cards-grid {
+.journal-articles-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: clamp(1.5rem, 3vw, 2.5rem);
+  margin-bottom: 3.5rem;
 }
 
-.journal-dark-card {
-  background: #0E1420;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+.journal-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E6E1DA;
   padding: clamp(2rem, 3vw, 2.5rem);
   display: flex;
   flex-direction: column;
-  transition: all 0.35s ease;
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.journal-dark-card:hover {
-  border-color: rgba(197, 168, 128, 0.35);
+.journal-card:hover {
   transform: translateY(-4px);
+  border-color: #D4AF7F;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.04);
 }
 
-.journal-dark-tag {
-  font-family: var(--font-sans, -apple-system, sans-serif);
+.journal-card__category {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
   font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 0.2em;
-  color: var(--color-champagne);
+  color: #D4AF7F;
   margin-bottom: 0.75rem;
 }
 
-.journal-dark-title {
-  font-family: var(--font-serif-display, 'Playfair Display', serif);
-  font-size: 1.35rem;
-  font-weight: 400;
+.journal-card__title {
+  font-family: var(--font-serif-display, 'Playfair Display', Georgia, serif);
+  font-size: 1.3rem;
+  font-weight: 500;
   line-height: 1.35;
   margin: 0 0 1rem;
 }
 
-.journal-dark-title a {
-  color: var(--color-white);
+.journal-card__title a {
+  color: #111111;
   text-decoration: none;
-  transition: color 0.25s ease;
+  transition: color 0.2s ease;
 }
 
-.journal-dark-title a:hover {
-  color: var(--color-champagne);
+.journal-card__title a:hover {
+  color: #D4AF7F;
 }
 
-.journal-dark-excerpt {
+.journal-card__excerpt {
   font-family: var(--font-serif-body, 'Cormorant Garamond', Georgia, serif);
   font-size: 1.05rem;
-  line-height: 1.6;
-  color: #8E95A5;
+  line-height: 1.65;
+  color: #555555;
   margin: 0 0 1.5rem;
   flex: 1;
 }
 
-.journal-dark-meta {
-  font-family: var(--font-sans, -apple-system, sans-serif);
-  font-size: 0.65rem;
-  color: #64748B;
-  letter-spacing: 0.08em;
+.journal-card__meta {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.68rem;
+  color: #999999;
+  letter-spacing: 0.04em;
 }
 
-.journal-all-link-wrap {
+.journal-footer-wrap {
   text-align: center;
-  margin-top: 3.5rem;
 }
 
 /* ============================================================================
-   9. THE PRIVATE CIRCLE OF DEVOTION
+   8. THE AVIORY CIRCLE (NEWSLETTER)
    ============================================================================ */
 
-.home-circle-section {
-  padding: clamp(5.5rem, 8vw, 8rem) 0;
-  background-color: var(--color-black);
+.home-newsletter-section {
+  padding: clamp(5rem, 8vw, 8rem) 0;
+  background-color: #F8F4EF;
 }
 
-.circle-inner-wrap {
-  max-width: 680px;
+.newsletter-inner {
+  max-width: 640px;
   margin: 0 auto;
   text-align: center;
 }
 
-.circle-narrative {
+.newsletter-title {
+  font-family: var(--font-serif-display, 'Playfair Display', Georgia, serif);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 400;
+  color: #111111;
+  margin: 0 0 1rem;
+}
+
+.newsletter-desc {
   font-family: var(--font-serif-body, 'Cormorant Garamond', Georgia, serif);
   font-size: 1.15rem;
   line-height: 1.65;
-  color: var(--color-text-secondary);
-  margin: 0 auto 2.5rem;
+  color: #555555;
+  margin: 0 0 2.25rem;
 }
 
-.circle-form {
+.newsletter-form {
   display: flex;
   gap: 0.75rem;
-  max-width: 520px;
+  max-width: 500px;
   margin: 0 auto;
 }
 
-.circle-input {
+.newsletter-input {
   flex: 1;
-  background-color: #0E1420;
-  border: 1px solid rgba(197, 168, 128, 0.3);
+  background-color: #FFFFFF;
+  border: 1px solid #E6E1DA;
   padding: 0.95rem 1.25rem;
-  color: var(--color-white);
-  font-family: var(--font-sans, -apple-system, sans-serif);
-  font-size: 0.8rem;
+  color: #111111;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.82rem;
   outline: none;
+  transition: border-color 0.25s ease;
 }
 
-.circle-input:focus {
-  border-color: var(--color-champagne);
-  box-shadow: 0 0 12px rgba(197, 168, 128, 0.2);
+.newsletter-input:focus {
+  border-color: #D4AF7F;
 }
 
-.circle-success-msg {
-  background: rgba(197, 168, 128, 0.1);
-  border: 1px solid var(--color-champagne);
+.newsletter-success {
+  background-color: #FFFFFF;
+  border: 1px solid #D4AF7F;
   padding: 1.25rem;
-  color: var(--color-champagne);
+  color: #111111;
   font-family: var(--font-serif-body, 'Cormorant Garamond', Georgia, serif);
-  font-size: 1.1rem;
+  font-size: 1.15rem;
 }
 
 /* ============================================================================
    RESPONSIVE MEDIA QUERIES
    ============================================================================ */
 
-@media (max-width: 992px) {
-  .heartbeat-grid {
-    grid-template-columns: 1fr;
-    gap: 3.5rem;
-  }
-  .museum-exhibit {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  .museum-exhibit--right {
-    grid-template-columns: 1fr;
-  }
-  .museum-exhibit--right .museum-exhibit__media-wrap {
-    order: 1;
-  }
-  .museum-exhibit--right .museum-exhibit__meta {
-    order: 2;
-  }
-  .ethos-cards-grid,
-  .vault-specimens-grid,
-  .journal-cards-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 1024px) {
+  .curated-gems-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
-  .pillars-asym-grid {
+  .two-houses-grid,
+  .bespoke-steps-grid,
+  .curated-gems-grid,
+  .heritage-hallmarks-grid,
+  .journal-articles-grid {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 2rem;
   }
-  .pillar-card--offset {
-    margin-top: 0;
-  }
-  .heartbeat-buttons {
-    grid-template-columns: 1fr;
-  }
-  .heartbeat-annotation {
-    display: none;
-  }
-  .circle-form {
+
+  .newsletter-form {
     flex-direction: column;
   }
-  .vault-cipher-form {
+
+  .consultation-actions {
     flex-direction: column;
+    width: 100%;
+  }
+
+  .consultation-actions .btn-luxury-primary,
+  .consultation-actions .btn-luxury-outline {
+    width: 100%;
   }
 }
-

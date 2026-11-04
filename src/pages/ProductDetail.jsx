@@ -412,7 +412,7 @@ export default function ProductDetail() {
               className="btn btn-secondary pdp-btn--cart"
               onClick={handleAddToCart}
             >
-              {added ? 'Selection Confirmed ✓' : (productType === 'ring' ? 'Begin the Vow' : productType === 'gemstone' ? 'Request Private Access' : 'Commission This Piece')}
+              {added ? 'Added to Bag ✓' : 'Add to Shopping Bag'}
             </button>
           </div>
 

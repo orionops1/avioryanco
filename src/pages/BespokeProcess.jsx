@@ -8,7 +8,7 @@ export default function BespokeProcess() {
     <>
       <section style={{
         backgroundColor: "var(--color-ivory)",
-        color: '#F8F4EF',
+        color: '#555555',
         padding: 'var(--spacing-3xl) 0',
         textAlign: 'center'
       }}>

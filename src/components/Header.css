@@ -1,260 +1,268 @@
 @import "../styles/fonts.css";
 
 /* ============================================================================
-   AVIORY & CO. — MASTER BLUEPRINT HEADER
-   Palette: Deep Obsidian Navy (var(--color-primary-black)), Champagne Gold (var(--color-champagne)), Pure White (var(--color-white))
-   Architecture: Glassmorphic Fixed Strip -> Micro-Tagline -> 4-Col Zero-Scroll Mega
+   AVIORY & CO. HEADER — TIFFANY & CO. TRANSPARENT-TO-WHITE HOVER PATTERN
+   
+   Default (homepage): Fixed transparent header, white text, overlaying hero.
+   On mouse hover / mega menu open: Solid white background (#FFFFFF), black text (#111111).
+   On scroll (past top): Solid white background (#FFFFFF), black text (#111111).
+   On non-home pages: Solid white background (#FFFFFF), black text (#111111).
    ============================================================================ */
 
-/* ── Announcement Bar ── */
-.aviory-announce-bar {
-  background-color: var(--color-canvas-tint);
-  color: var(--color-accent);
-  text-align: center;
-  padding: 8px 1rem;
-  font-family: var(--font-sans, 'Montserrat', sans-serif);
-  font-size: 0.65rem;
-  font-weight: 500;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  line-height: 1;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.aviory-announce-bar p {
-  margin: 0;
-}
-
-/* ── Fixed Glassmorphic Strip ── */
+/* ── BASE: Fixed header, full width ── */
 header,
 .tiffany-header {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 2000;
-  background-color: rgba(248, 244, 239, 0.95);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--color-border);
-  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  transition: background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: visible !important;
-}
-
-.tiffany-header--scrolled {
-  background-color: rgba(248, 244, 239, 0.98);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-/* ── Top Row: Left ATELIER | Center Logo + Tagline | Right Utilities ── */
-.tiffany-header__top {
-  background-color: transparent;
-  padding: 0.95rem 0;
-  border-bottom: 1px solid var(--color-border);
-  position: relative;
-  z-index: 10;
-  overflow: visible;
-}
-
-.tiffany-header__top-inner {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   width: 100%;
 }
 
-/* Top Bar (Left): ATELIER */
-.tiffany-header__top-left {
+/* ── SOLID STATE (non-home pages, scrolled down, or active mega menu) ── */
+.tiffany-header--solid {
+  background-color: #FFFFFF !important;
+  border-bottom: 1px solid #E6E1DA;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.tiffany-header--solid .tiffany-header__util-btn,
+.tiffany-header--solid .tiffany-header__util-text,
+.tiffany-header--solid .tiffany-header__util-text-btn,
+.tiffany-header--solid .tiffany-header__mobile-menu-btn {
+  color: #111111 !important;
+}
+
+.tiffany-header--solid .tiffany-header__logo-text,
+.tiffany-header--solid .tiffany-header__logo-amp {
+  color: #111111 !important;
+}
+
+.tiffany-header--solid .tiffany-header__nav-link {
+  color: #111111 !important;
+}
+
+.tiffany-header--solid .tiffany-header__top-row {
+  border-bottom-color: #E6E1DA !important;
+}
+
+.tiffany-header--solid .tiffany-header__nav {
+  border-bottom-color: #E6E1DA !important;
+}
+
+/* Hover highlights in solid state */
+.tiffany-header--solid .tiffany-header__util-btn:hover,
+.tiffany-header--solid .tiffany-header__util-text-btn:hover {
+  color: #D4AF7F !important;
+}
+
+.tiffany-header--solid .tiffany-header__nav-link:hover,
+.tiffany-header--solid .tiffany-header__nav-link.active {
+  color: #D4AF7F !important;
+}
+
+/* ── TRANSPARENT STATE (homepage, at top of page, no hover) ── */
+.tiffany-header--transparent {
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+}
+
+.tiffany-header--transparent .tiffany-header__util-btn,
+.tiffany-header--transparent .tiffany-header__util-text,
+.tiffany-header--transparent .tiffany-header__util-text-btn,
+.tiffany-header--transparent .tiffany-header__mobile-menu-btn {
+  color: #FFFFFF;
+}
+
+.tiffany-header--transparent .tiffany-header__logo-text,
+.tiffany-header--transparent .tiffany-header__logo-amp {
+  color: #FFFFFF;
+}
+
+.tiffany-header--transparent .tiffany-header__nav-link {
+  color: #FFFFFF;
+}
+
+.tiffany-header--transparent .tiffany-header__top-row {
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+.tiffany-header--transparent .tiffany-header__nav {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Hover highlights in transparent state (before entire header turns white) */
+.tiffany-header--transparent .tiffany-header__util-btn:hover,
+.tiffany-header--transparent .tiffany-header__util-text-btn:hover {
+  color: #D4AF7F;
+}
+
+/* ── PURE CSS HOVER TRIGGER: INSTANT SMOOTH FLIP TO WHITE ON MOUSEOVER ── */
+.tiffany-header--transparent:hover {
+  background-color: #FFFFFF !important;
+  border-bottom: 1px solid #E6E1DA !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.tiffany-header--transparent:hover .tiffany-header__util-btn,
+.tiffany-header--transparent:hover .tiffany-header__util-text,
+.tiffany-header--transparent:hover .tiffany-header__util-text-btn,
+.tiffany-header--transparent:hover .tiffany-header__mobile-menu-btn {
+  color: #111111 !important;
+}
+
+.tiffany-header--transparent:hover .tiffany-header__logo-text,
+.tiffany-header--transparent:hover .tiffany-header__logo-amp {
+  color: #111111 !important;
+}
+
+.tiffany-header--transparent:hover .tiffany-header__nav-link {
+  color: #111111 !important;
+}
+
+.tiffany-header--transparent:hover .tiffany-header__top-row {
+  border-bottom-color: #E6E1DA !important;
+}
+
+.tiffany-header--transparent:hover .tiffany-header__nav {
+  border-bottom-color: #E6E1DA !important;
+}
+
+.tiffany-header--transparent:hover .tiffany-header__nav-link:hover,
+.tiffany-header--transparent:hover .tiffany-header__nav-link.active {
+  color: #D4AF7F !important;
+}
+
+/* ── TOP ROW: Utilities & Logo ── */
+.tiffany-header__top-row {
+  border-bottom: 1px solid transparent;
+  padding: 1.15rem 0;
+  transition: border-color 0.35s ease;
+}
+
+.tiffany-header__top-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  position: relative;
+}
+
+/* LEFT: Location + Search */
+.tiffany-header__left {
   display: flex;
   align-items: center;
   gap: 1.5rem;
   flex: 0 0 auto;
 }
 
-.tiffany-header__utility-btn {
-  display: inline-flex;
+/* RIGHT: Contact + Account + Bag */
+.tiffany-header__right {
+  display: flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 1.5rem;
+  flex: 0 0 auto;
+}
+
+/* Utility Buttons */
+.tiffany-header__util-btn {
   background: none;
   border: none;
-  padding: 0;
-  color: var(--color-text-primary);
-  text-decoration: none;
   cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.25s ease, transform 0.2s ease;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.tiffany-header__util-btn:hover {
+  transform: translateY(-1px);
+}
+
+.tiffany-header__util-text {
   font-family: var(--font-sans, 'Montserrat', sans-serif);
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  transition: color 0.2s ease;
-  line-height: 1;
+  margin-left: 0.5rem;
+  display: none;
 }
 
-.tiffany-header__utility-btn:hover {
-  color: var(--color-accent);
+@media (min-width: 768px) {
+  .tiffany-header__util-text {
+    display: inline-block;
+  }
 }
 
-.tiffany-header__utility-text {
-  display: inline-block;
+.tiffany-header__util-text-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
   font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: color 0.25s ease;
 }
 
-/* Top Bar (Center): AVIORY & CO. + WHERE THE VOW LIVES. */
-.tiffany-header__logo-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
+/* CENTER: Logo (Large, Serif, Tiffany Architecture) */
+.tiffany-header__logo {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 5;
-  white-space: nowrap;
-  transition: opacity 0.2s ease;
-}
-
-.tiffany-header__logo-link:hover {
-  opacity: 0.92;
-}
-
-.tiffany-header__logo-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.tiffany-header__logo-group {
   display: flex;
   align-items: baseline;
-  justify-content: center;
-  line-height: 1;
-  gap: 0.2rem;
+  gap: 0.25rem;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+}
+
+.tiffany-header__logo:hover {
+  opacity: 0.82;
 }
 
 .tiffany-header__logo-text {
-  font-family: "BlackGold", "BlackGoldRegular", serif !important;
-  font-size: clamp(1.5rem, 2.7vw, 2.25rem);
-  font-weight: normal;
-  letter-spacing: 0.1em;
-  color: var(--color-text-primary);
-  line-height: 1;
-  text-transform: uppercase;
-}
-
-.tiffany-header__logo-ampersand {
-  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif !important;
-  font-style: italic;
-  font-size: clamp(1.2rem, 2.2vw, 1.85rem);
-  font-weight: 400;
-  color: var(--color-accent);
-  margin: 0 0.25rem;
-}
-
-.tiffany-header__logo-co {
-  font-family: "BlackGold", "BlackGoldRegular", serif !important;
-  font-size: clamp(1.2rem, 2.3vw, 1.85rem);
-  font-weight: normal;
-  letter-spacing: 0.12em;
-  color: var(--color-text-primary);
-  line-height: 1;
-  text-transform: uppercase;
-}
-
-/* Micro-Tagline: tracked champagne gold */
-.tiffany-header__logo-tagline {
-  font-family: var(--font-sans, 'Montserrat', sans-serif);
-  font-size: 9px;
-  letter-spacing: 0.28em;
-  color: var(--color-accent);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.8rem, 2.5vw, 2.25rem);
   font-weight: 500;
-  text-transform: uppercase;
-  text-align: center;
-  margin-top: 5px;
+  letter-spacing: 0.14em;
   line-height: 1;
-  display: block;
+  transition: color 0.35s ease;
 }
 
-/* Mobile Hamburger */
-.tiffany-header__hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  width: 26px;
-  height: 26px;
-  z-index: 10;
+.tiffany-header__logo-amp {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  margin: 0 0.15rem;
+  line-height: 1;
+  transition: color 0.35s ease;
 }
 
-.tiffany-hamburger-bar {
-  display: block;
-  width: 22px;
-  height: 1.5px;
-  background-color: var(--color-text-primary);
-  transition: all 0.3s ease;
-}
-
-.tiffany-hamburger-bar.open:nth-child(1) {
-  transform: translateY(6.5px) rotate(45deg);
-}
-
-.tiffany-hamburger-bar.open:nth-child(2) {
-  opacity: 0;
-}
-
-.tiffany-hamburger-bar.open:nth-child(3) {
-  transform: translateY(-6.5px) rotate(-45deg);
-}
-
-/* Top Bar (Right): $ USD | EN | Search [Q] | Shopping Bag [BAG] */
-.tiffany-header__actions {
-  display: flex;
-  align-items: center;
-  gap: 1.15rem;
-  flex: 0 0 auto;
-  z-index: 10;
-}
-
-.tiffany-header__locale {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-}
-
-.tiffany-header__action-btn {
-  background: none;
-  border: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-text-primary);
-  cursor: pointer;
-  padding: 0;
-  min-width: 20px;
-  min-height: 20px;
-  transition: color 0.2s ease, transform 0.2s ease;
+/* Shopping Bag Badge */
+.tiffany-header__bag-btn {
   position: relative;
-  line-height: 1;
-}
-
-.tiffany-header__action-btn:hover {
-  color: var(--color-accent);
-  transform: scale(1.08);
 }
 
 .tiffany-header__bag-badge {
   position: absolute;
   top: -6px;
-  right: -7px;
-  background-color: var(--color-accent);
-  color: var(--color-primary-black);
-  font-family: var(--font-sans, 'Montserrat', sans-serif);
-  font-size: 10px;
+  right: -8px;
+  background-color: #D4AF7F;
+  color: #FFFFFF;
+  font-size: 9px;
   font-weight: 700;
   width: 16px;
   height: 16px;
@@ -262,16 +270,52 @@ header,
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1.5px solid var(--color-primary-black);
+  line-height: 1;
 }
 
-/* ── Bottom Row: Main Menu Navigation (Centered) ── */
+/* Mobile Menu Button */
+.tiffany-header__mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.25s ease;
+}
+
+@media (max-width: 1024px) {
+  .tiffany-header__mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tiffany-header__left,
+  .tiffany-header__right {
+    display: none;
+  }
+
+  .tiffany-header__logo-text {
+    font-size: 1.45rem;
+  }
+
+  .tiffany-header__logo-amp {
+    font-size: 1.15rem;
+  }
+}
+
+/* ── NAVIGATION ROW ── */
 .tiffany-header__nav {
-  background-color: transparent;
-  border-bottom: 1px solid var(--color-border);
+  padding: 0.75rem 0;
+  border-bottom: 1px solid transparent;
   position: relative;
-  z-index: 2005;
-  overflow: visible;
+  transition: border-color 0.35s ease;
+}
+
+@media (max-width: 1024px) {
+  .tiffany-header__nav {
+    display: none;
+  }
 }
 
 .tiffany-header__nav-list {
@@ -280,98 +324,64 @@ header,
   margin: 0;
   padding: 0;
   justify-content: center;
-  gap: 2.8rem;
+  gap: 2.75rem;
+  flex-wrap: wrap;
 }
 
 .tiffany-header__nav-item {
   position: relative;
-  transition: all 0.22s ease;
 }
 
 .tiffany-header__nav-link {
-  display: flex;
-  align-items: center;
-  padding: 0.85rem 0.95rem;
-  margin: 0 -0.95rem;
   font-family: var(--font-sans, 'Montserrat', sans-serif);
-  font-size: 0.72rem;
+  font-size: 12px;
   font-weight: 400;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--color-text-primary);
   text-decoration: none;
-  white-space: nowrap;
-  transition: color 0.2s ease, background-color 0.2s ease;
+  transition: color 0.25s ease;
+  display: block;
+  padding: 0.5rem 0;
   position: relative;
-  cursor: pointer;
-  border-radius: 2px;
 }
 
 .tiffany-header__nav-link::after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0.95rem;
-  right: 0.95rem;
-  height: 2px;
-  background-color: var(--color-accent);
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background-color: #D4AF7F;
   transform: scaleX(0);
-  transition: transform 0.25s ease;
-  transform-origin: center;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: left;
 }
 
-.tiffany-header__nav-link:hover {
-  color: var(--color-accent);
-  background-color: rgba(212, 175, 127, 0.04);
-}
-
-.tiffany-header__nav-link:hover::after {
+.tiffany-header__nav-link:hover::after,
+.tiffany-header__nav-link.active::after {
   transform: scaleX(1);
 }
 
-.tiffany-header__nav-item--active .tiffany-header__nav-link {
-  color: var(--color-accent);
-  font-weight: 500;
-  background-color: rgba(212, 175, 127, 0.06);
-}
-
-.tiffany-header__nav-item--active .tiffany-header__nav-link::after {
-  transform: scaleX(1);
-  background-color: var(--color-accent);
-}
-
-/* ── Full-Width Deep Obsidian Mega Menu Panel (Zero-Scroll Blueprint) ──
-   1. Grid Setup: display: grid; grid-template-columns: repeat(4, 1fr); gap: 3rem;
-   2. Padding & Max Height: padding: 2.25rem 4rem; max-height: 420px; overflow: hidden;
-   3. Background & Border: background-color: var(--color-primary-black); border-bottom: 1px solid rgba(197, 168, 128, 0.2);
-   ─────────────────────────────────────────────────── */
+/* ── MEGA MENU: FULL-WIDTH, 4-COLUMN WITH SPOTLIGHT ── */
 .tiffany-mega {
   position: absolute;
   top: 100%;
   left: 0;
   right: 0;
-  z-index: 2004;
-  background-color: var(--color-canvas);
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #E6E1DA;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-8px);
-  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+  transform: translateY(-6px);
+  transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
   pointer-events: none;
+  z-index: 2001;
   overflow: hidden !important;
-  scrollbar-width: none !important;
-  -ms-overflow-style: none !important;
 }
 
-.tiffany-mega::-webkit-scrollbar {
-  display: none !important;
-  width: 0 !important;
-  height: 0 !important;
-}
-
-.tiffany-mega--visible {
+.tiffany-mega.visible {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
@@ -379,43 +389,36 @@ header,
 }
 
 .tiffany-mega__grid {
-  max-width: 1360px;
-  margin: 0 auto;
-  box-sizing: border-box;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 3rem;
-  padding: 2.25rem 4rem;
-  max-height: 420px;
+  grid-template-columns: repeat(3, 1fr) 1.2fr;
+  gap: 2.5rem;
+  padding: 3rem 1.5rem;
   overflow: hidden !important;
-  scrollbar-width: none !important;
-  -ms-overflow-style: none !important;
 }
 
-.tiffany-mega__grid::-webkit-scrollbar {
-  display: none !important;
-  width: 0 !important;
-  height: 0 !important;
+@media (max-width: 1200px) {
+  .tiffany-mega__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
 }
 
-/* Columns 1, 2, 3: Editorial Links */
 .tiffany-mega__column {
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
 }
 
-/* Category Headers (Column Titles): 11px uppercase, tracked wide, champagne color */
 .tiffany-mega__heading {
   font-family: var(--font-sans, 'Montserrat', sans-serif);
   font-size: 11px;
   font-weight: 600;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--color-accent);
+  color: #111111;
   margin: 0 0 1rem 0;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--color-border);
-  transition: color 0.22s ease;
+  border-bottom: 1px solid #E6E1DA;
 }
 
 .tiffany-mega__links {
@@ -424,160 +427,145 @@ header,
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.45rem;
 }
 
-/* Category Sub-links: 13px, black text, champagne on hover */
 .tiffany-mega__link {
   font-family: var(--font-sans, 'Montserrat', sans-serif);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 400;
-  color: var(--color-text-primary);
-  line-height: 2;
+  color: #555555;
   text-decoration: none;
-  display: block;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transition: color 0.18s ease, padding-left 0.18s ease;
-  padding-left: 0;
+  line-height: 1.7;
+  transition: color 0.18s ease, transform 0.18s ease;
+  display: inline-block;
 }
 
 .tiffany-mega__link:hover {
-  color: var(--color-accent);
-  padding-left: 4px;
+  color: #D4AF7F;
+  transform: translateX(3px);
 }
 
-/* Column 4: Campaign Spotlight (Image Card) */
+/* Column 4: Campaign Spotlight Card */
 .tiffany-mega__spotlight {
+  border-left: 1px solid #E6E1DA;
+  padding-left: 2rem;
   display: flex;
   flex-direction: column;
-  height: 100%;
 }
 
-.tiffany-mega__spotlight-card {
-  display: flex;
-  flex-direction: column;
+.tiffany-mega__spotlight-link {
   text-decoration: none;
   color: inherit;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: opacity 0.25s ease;
+}
+
+.tiffany-mega__spotlight-link:hover {
+  opacity: 0.92;
 }
 
 .tiffany-mega__spotlight-media {
-  width: 100%;
-  height: 155px;
-  overflow: hidden;
-  border-radius: 2px;
-  background-color: var(--color-border), 1);
-  margin-bottom: 0.75rem;
   position: relative;
-  border: 1px solid var(--color-border);
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: #F8F4EF;
 }
 
-.tiffany-mega__spotlight-media img {
+.tiffany-mega__spotlight-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.tiffany-mega__spotlight-card:hover .tiffany-mega__spotlight-media img {
+.tiffany-mega__spotlight-link:hover .tiffany-mega__spotlight-img {
   transform: scale(1.04);
-}
-
-.tiffany-card-fallback {
-  background: linear-gradient(135deg, rgba(17, 24, 36, 1) 0%, #1c2538 100%);
-}
-
-.tiffany-mega__spotlight-content {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
 }
 
 .tiffany-mega__spotlight-quote {
   font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  font-size: 0.95rem;
   font-style: italic;
-  font-size: 14px;
-  line-height: 1.35;
-  color: var(--color-text-primary);
+  line-height: 1.45;
+  color: #111111;
   margin: 0;
 }
 
 .tiffany-mega__spotlight-cta {
   font-family: var(--font-sans, 'Montserrat', sans-serif);
   font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-accent);
   font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  margin-top: 0.25rem;
-  transition: gap 0.22s ease, color 0.22s ease;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #D4AF7F;
+  border-bottom: 1px solid rgba(197, 168, 128, 0.4);
+  align-self: flex-start;
+  padding-bottom: 2px;
+  transition: border-color 0.2s ease, color 0.2s ease;
 }
 
-.tiffany-mega__spotlight-card:hover .tiffany-mega__spotlight-cta {
-  color: var(--color-text-primary);
-  gap: 0.6rem;
+.tiffany-mega__spotlight-link:hover .tiffany-mega__spotlight-cta {
+  color: #111111;
+  border-color: #111111;
 }
 
-/* ── Backdrop ── */
+/* Mega Menu Backdrop */
 .tiffany-mega-backdrop {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 1998;
-  background-color: rgba(0, 0, 0, 0.16);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.25s ease, visibility 0.25s ease;
-  pointer-events: none;
-}
-
-.tiffany-mega-backdrop--visible {
-  opacity: 1;
-  visibility: visible;
+  background-color: rgba(0, 0, 0, 0.15);
+  z-index: 1999;
   pointer-events: auto;
 }
 
-/* ── Mobile Drawer Navigation ── */
+/* ── MOBILE DRAWER ── */
 .tiffany-mobile-drawer {
   position: fixed;
   top: 0;
-  left: -100%;
+  left: 0;
   width: 100%;
-  max-width: 380px;
+  max-width: 360px;
   height: 100vh;
-  background-color: var(--color-primary-black);
-  border-right: 1px solid rgba(197, 168, 128, 0.2);
-  z-index: 2050;
-  transition: left 0.38s cubic-bezier(0.16, 1, 0.3, 1);
-  overflow-y: auto;
+  background-color: #FFFFFF;
+  border-right: 1px solid #E6E1DA;
+  z-index: 2100;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
+  animation: slideInLeft 0.3s ease;
 }
 
-.tiffany-mobile-drawer--open {
-  left: 0;
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 .tiffany-mobile-drawer__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.1rem 1.25rem;
-  border-bottom: 1px solid rgba(197, 168, 128, 0.18);
+  padding: 1.5rem;
+  border-bottom: 1px solid #E6E1DA;
 }
 
 .tiffany-mobile-drawer__logo {
-  font-family: "BlackGold", "BlackGoldRegular", serif;
-  font-size: 1.2rem;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.3rem;
+  color: #111111;
+  text-decoration: none;
+  font-weight: 500;
   letter-spacing: 0.1em;
-  color: var(--color-text-primary);
 }
 
 .tiffany-mobile-drawer__close {
@@ -585,155 +573,63 @@ header,
   border: none;
   cursor: pointer;
   padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-text-primary);
+  color: #111111;
   transition: color 0.2s ease;
 }
 
 .tiffany-mobile-drawer__close:hover {
-  color: var(--color-accent);
+  color: #D4AF7F;
 }
 
-/* Locale switchers strip in mobile drawer */
-.tiffany-mobile-drawer__locale-top {
+.tiffany-mobile-drawer__nav {
+  flex: 1;
   display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 0.85rem 1.25rem;
-  background-color: var(--color-black);
-  border-bottom: 1px solid rgba(197, 168, 128, 0.15);
-}
-
-.tiffany-mobile-drawer__body {
-  flex: 1 1 auto;
-  overflow-y: auto;
-  padding: 0;
-}
-
-.tiffany-mobile-drawer__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.tiffany-mobile-drawer__item {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.tiffany-mobile-drawer__item-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 1.25rem;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 0;
+  padding: 1rem 0;
 }
 
 .tiffany-mobile-drawer__link {
-  flex: 1;
   font-family: var(--font-sans, 'Montserrat', sans-serif);
-  font-size: 0.8rem;
+  font-size: 12px;
   font-weight: 500;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-text-primary);
+  color: #111111;
   text-decoration: none;
-  transition: color 0.2s ease;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #E6E1DA;
+  transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 .tiffany-mobile-drawer__link:hover {
-  color: var(--color-accent);
-}
-
-.tiffany-mobile-drawer__toggle {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-text-primary);
-  transition: transform 0.3s ease;
-}
-
-.tiffany-mobile-drawer__toggle.open {
-  transform: rotate(180deg);
-}
-
-.tiffany-mobile-drawer__sub {
-  background-color: var(--color-black);
-  padding: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.tiffany-mobile-sub-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-
-.tiffany-mobile-sub-heading {
-  font-family: var(--font-sans, 'Montserrat', sans-serif);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  padding-bottom: 0.4rem;
-  border-bottom: 1px solid rgba(197, 168, 128, 0.18);
-}
-
-.tiffany-mobile-sub-link {
-  font-family: var(--font-sans, 'Montserrat', sans-serif);
-  font-size: 13px;
-  font-weight: 400;
-  color: var(--color-text-secondary);
-  text-decoration: none;
-  padding: 0.2rem 0;
-  transition: color 0.2s ease;
-}
-
-.tiffany-mobile-sub-link:hover {
-  color: var(--color-accent);
-}
-
-.tiffany-mobile-sub-spotlight {
-  padding-top: 0.5rem;
-  border-top: 1px solid rgba(197, 168, 128, 0.18);
-}
-
-.tiffany-mobile-sub-spotlight-cta {
-  font-family: var(--font-sans, 'Montserrat', sans-serif);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  text-decoration: none;
+  color: #D4AF7F;
+  background-color: rgba(197, 168, 128, 0.04);
 }
 
 .tiffany-mobile-drawer__footer {
   padding: 1.5rem;
-  border-top: 1px solid rgba(197, 168, 128, 0.18);
-  background-color: var(--color-black);
+  border-top: 1px solid #E6E1DA;
 }
 
-.tiffany-header__utility-link {
+.tiffany-mobile-drawer__btn {
+  width: 100%;
+  padding: 1rem;
+  background-color: #111111;
+  color: #FFFFFF;
+  border: none;
   font-family: var(--font-sans, 'Montserrat', sans-serif);
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-text-primary);
-  text-decoration: none;
-  transition: color 0.2s ease;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.tiffany-header__utility-link:hover {
-  color: var(--color-accent);
+.tiffany-mobile-drawer__btn:hover {
+  background-color: #D4AF7F;
+  color: #111111;
 }
 
 .tiffany-mobile-backdrop {
@@ -742,78 +638,33 @@ header,
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.65);
-  z-index: 2040;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 2050;
 }
 
-/* ── Responsive ── */
-@media (max-width: 1200px) {
-  .tiffany-header__nav-list {
-    gap: 2rem;
-  }
-  .tiffany-mega__grid {
-    padding: 2rem 2.5rem;
-    gap: 2rem;
-  }
-}
-
-@media (max-width: 1024px) {
-  .tiffany-header__nav-list {
-    gap: 1.4rem;
-  }
-  .tiffany-header__nav-link {
-    font-size: 0.68rem;
-  }
-  .tiffany-mega__grid {
-    grid-template-columns: repeat(2, 1fr);
-    max-height: 480px;
-    gap: 1.5rem;
-    padding: 1.5rem 2rem;
-    overflow: hidden !important;
-  }
-}
-
+/* ── RESPONSIVE ── */
 @media (max-width: 768px) {
-  .aviory-announce-bar {
-    font-size: 0.58rem;
-    letter-spacing: 0.1em;
-    padding: 6px 1rem;
+  .tiffany-header__top-row {
+    padding: 0.85rem 0;
   }
-  .tiffany-header__nav {
+
+  .tiffany-header__top-inner {
+    gap: 1rem;
+  }
+
+  .tiffany-header__left {
     display: none;
   }
-  .tiffany-mega,
-  .tiffany-mega-backdrop {
-    display: none !important;
-  }
-  .tiffany-header__top-left {
+
+  .tiffany-header__right {
     display: none;
   }
-  .tiffany-header__hamburger {
-    display: flex;
-  }
-  .tiffany-header__top {
-    padding: 0.75rem 0;
-  }
-  .tiffany-header__logo-link {
-    position: static;
-    transform: none;
-    margin: 0 auto;
-  }
+
   .tiffany-header__logo-text {
     font-size: 1.35rem;
   }
-  .tiffany-header__logo-ampersand {
-    font-size: 1.1rem;
-  }
-  .tiffany-header__logo-co {
-    font-size: 1.15rem;
-  }
-  .tiffany-header__actions {
-    gap: 0.75rem;
-  }
-  .tiffany-header__locale {
-    display: none;
+
+  .tiffany-header__logo-amp {
+    font-size: 1.05rem;
   }
 }
-

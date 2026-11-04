@@ -1,20 +1,29 @@
 /* ============================================================================
    TIFFANY-INSPIRED LUXURY PRODUCT CARD
    Clean negative space, borderless gallery aesthetic, delicate typography
+   Palette:
+   - Surface: #FFFFFF
+   - Border: #E6E1DA
+   - Text (Primary): #111111
+   - Text (Secondary): #555555
+   - Text (Muted): #999999
+   - Accent: #D4AF7F
    ============================================================================ */
 
 .luxury-card {
   display: flex;
   flex-direction: column;
-  background-color: var(--color-white);
+  background-color: #FFFFFF;
+  border: 1px solid #E6E1DA;
   position: relative;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.3s ease;
   height: 100%;
 }
 
 .luxury-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.06);
+  border-color: #D4AF7F;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.05);
 }
 
 .luxury-card__media-link {
@@ -29,7 +38,7 @@
   position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
-  background-color: var(--color-ivory);
+  background-color: #F8F4EF;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -42,16 +51,16 @@
   top: 1rem;
   left: 1rem;
   z-index: 10;
-  font-family: var(--font-ui);
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
   font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-charcoal);
-  background: rgba(255, 255, 255, 0.92);
+  color: #111111;
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(4px);
   padding: 0.3rem 0.65rem;
-  border: 1px solid rgba(212, 175, 127, 0.4);
+  border: 1px solid #E6E1DA;
 }
 
 /* Image */
@@ -74,7 +83,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: var(--color-white);
+  color: #FFFFFF;
   padding: 2rem;
   position: relative;
   overflow: hidden;
@@ -97,11 +106,11 @@
 }
 
 .luxury-card__gem-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-serif-display, 'Playfair Display', Georgia, serif);
   font-size: 0.85rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-ivory);
+  color: #F8F4EF;
   opacity: 0.9;
   margin-top: 1rem;
   font-weight: 500;
@@ -114,7 +123,7 @@
   left: 0;
   right: 0;
   padding: 1.25rem 1rem;
-  background: linear-gradient(to top, rgba(17, 17, 17, 0.85) 0%, transparent 100%);
+  background: linear-gradient(to top, rgba(17, 17, 17, 0.8) 0%, transparent 100%);
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -130,13 +139,13 @@
 }
 
 .luxury-card__action-btn {
-  font-family: var(--font-ui);
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--color-white);
-  border-bottom: 1px solid var(--color-champagne);
+  color: #FFFFFF;
+  border-bottom: 1px solid #D4AF7F;
   padding-bottom: 2px;
 }
 
@@ -147,43 +156,42 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  background-color: var(--color-white);
+  background-color: #FFFFFF;
 }
 
 .luxury-card__category {
-  font-family: var(--font-ui);
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
   font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: #D4AF7F;
   margin-bottom: 0.5rem;
 }
 
 .luxury-card__title {
-  font-family: var(--font-serif);
+  font-family: var(--font-serif-display, 'Playfair Display', Georgia, serif);
   font-size: 1.15rem;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.35;
   margin-bottom: 0.6rem;
-  color: var(--color-black);
+  color: #111111;
 }
 
 .luxury-card__title-link {
   text-decoration: none;
-  color: inherit;
+  color: #111111;
   transition: color 0.25s ease;
 }
 
 .luxury-card__title-link:hover {
-  color: var(--color-champagne);
+  color: #D4AF7F;
 }
 
 .luxury-card__specs {
-  font-family: var(--font-ui);
-  font-size: 0.76rem;
-  color: var(--color-charcoal);
-  opacity: 0.85;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.75rem;
+  color: #555555;
   margin-bottom: 0.9rem;
   display: flex;
   justify-content: center;
@@ -193,15 +201,15 @@
 }
 
 .luxury-card__specs-dot {
-  color: var(--color-champagne);
+  color: #D4AF7F;
   font-size: 0.8rem;
 }
 
 .luxury-card__price {
-  font-family: var(--font-serif);
-  font-size: 1.15rem;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 1.05rem;
   font-weight: 600;
-  color: var(--color-black);
+  color: #111111;
   margin-top: auto;
   letter-spacing: 0.02em;
 }
@@ -217,4 +225,3 @@
     display: none;
   }
 }
-

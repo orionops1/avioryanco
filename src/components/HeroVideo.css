@@ -1,21 +1,22 @@
 @import "../styles/fonts.css";
 
 /* ============================================================================
-   ATMOSPHERIC HERO EXPERIENCE — MASTER BLUEPRINT
-   Full-screen dark vignette backdrop fading smoothly into var(--color-primary-black)
-   Pure White Headline, Champagne Gold Accents (var(--color-champagne))
+   ATMOSPHERIC HERO EXPERIENCE
+   Full-screen luxury video backdrop with high-contrast readable typography
+   Palette: #FFFFFF headlines, #D4AF7F champagne accent, #E8E8E8 body text
    ============================================================================ */
 
 .hero-atmospheric {
   position: relative;
   width: 100%;
   min-height: 85vh;
-  height: clamp(620px, 90vh, 900px);
+  height: clamp(620px, 90vh, 860px);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background-color: var(--color-primary-black);
+  background-color: #111111;
+  margin-top: 0;
 }
 
 .hero-atmospheric__video {
@@ -26,7 +27,7 @@
   height: 100%;
   object-fit: cover;
   z-index: 1;
-  opacity: 0.72;
+  opacity: 0.75;
 }
 
 .hero-atmospheric__fallback {
@@ -51,23 +52,21 @@
   z-index: 0;
 }
 
-/* ── Deep Obsidian Chiaroscuro Vignette Overlay ──
-   Fades smoothly from subtle center spotlight to deep var(--color-primary-black) at the bottom and sides
-   ─────────────────────────────────────────────────── */
+/* Dark Vignette: Smooth dark gradient ensures all white text is 100% visible */
 .hero-atmospheric__vignette {
   position: absolute;
   inset: 0;
   background: radial-gradient(
-    circle at 50% 45%,
-    rgba(10, 14, 23, 0.45) 0%,
-    rgba(10, 14, 23, 0.75) 55%,
-    var(--color-primary-black) 100%
+    circle at 50% 50%,
+    rgba(17, 17, 17, 0.4) 0%,
+    rgba(17, 17, 17, 0.7) 65%,
+    rgba(17, 17, 17, 0.92) 100%
   ),
   linear-gradient(
     180deg,
-    rgba(10, 14, 23, 0.35) 0%,
-    rgba(10, 14, 23, 0.6) 60%,
-    var(--color-primary-black) 100%
+    rgba(17, 17, 17, 0.45) 0%,
+    rgba(17, 17, 17, 0.3) 40%,
+    rgba(17, 17, 17, 0.75) 100%
   );
   z-index: 2;
   pointer-events: none;
@@ -77,65 +76,65 @@
   position: relative;
   z-index: 3;
   text-align: center;
-  color: var(--color-white);
-  padding: 4rem 1.5rem;
+  color: #FFFFFF;
+  padding: 2rem 1.5rem;
   max-width: 900px;
   margin: 0 auto;
+  margin-top: calc(var(--header-height, 110px) / 2);
 }
 
 .hero-atmospheric__text {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .hero-atmospheric__eyebrow {
-  font-family: var(--font-ui, 'Montserrat', sans-serif);
-  font-size: 10px;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--color-champagne);
+  color: #D4AF7F;
   display: inline-block;
   padding: 0.35rem 1rem;
-  border-bottom: 1px solid rgba(197, 168, 128, 0.3);
-  margin-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(212, 175, 127, 0.4);
+  margin-bottom: 0.25rem;
 }
 
-/* Pure White Headline: Forged for the skin that remembers you. */
+/* Pure White Headline: High Contrast, Elegant Serif */
 .hero-atmospheric__headline {
-  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
-  font-style: italic;
-  font-size: clamp(2.4rem, 5.5vw, 4.4rem);
+  font-family: var(--font-serif-display, 'Playfair Display', Georgia, serif);
+  font-size: clamp(2.2rem, 4.8vw, 3.8rem);
   font-weight: 400;
-  line-height: 1.15;
-  letter-spacing: -0.01em;
-  color: var(--color-white);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: #FFFFFF;
   margin: 0;
-  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
   max-width: 820px;
 }
 
 .hero-atmospheric__subtitle {
-  font-family: var(--font-ui, 'Montserrat', sans-serif);
-  font-size: clamp(0.85rem, 1.4vw, 1.05rem);
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: clamp(0.9rem, 1.25vw, 1.05rem);
   font-weight: 300;
-  line-height: 1.8;
-  color: #D6D9E0;
+  line-height: 1.75;
+  color: #E8E8E8;
   max-width: 680px;
   margin: 0;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
-  letter-spacing: 0.04em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+  letter-spacing: 0.02em;
 }
 
 .hero-atmospheric__actions {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.75rem;
   flex-wrap: wrap;
-  margin-top: 1.75rem;
+  margin-top: 1.5rem;
 }
 
 /* Primary CTA: Thin, elegant gold-bordered button */
@@ -143,26 +142,26 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 2.5rem;
-  background-color: transparent;
-  color: var(--color-champagne);
-  border: 1px solid var(--color-champagne);
-  font-family: var(--font-ui, 'Montserrat', sans-serif);
+  padding: 0.95rem 2.25rem;
+  background-color: #D4AF7F;
+  color: #111111;
+  border: 1px solid #D4AF7F;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
 }
 
 .hero-atmospheric__btn-primary:hover {
-  background-color: var(--color-champagne);
-  color: var(--color-primary-black);
-  box-shadow: 0 0 32px rgba(197, 168, 128, 0.45);
+  background-color: transparent;
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+  box-shadow: 0 0 24px rgba(255, 255, 255, 0.25);
   transform: translateY(-2px);
 }
 
@@ -170,42 +169,45 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  font-family: var(--font-ui, 'Montserrat', sans-serif);
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
   font-size: 11px;
   font-weight: 500;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--color-white);
+  color: #FFFFFF;
   text-decoration: none;
   transition: color 0.25s ease, transform 0.25s ease;
   padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .hero-atmospheric__btn-secondary:hover {
-  color: var(--color-champagne);
+  color: #D4AF7F;
+  border-bottom-color: #D4AF7F;
   transform: translateX(4px);
 }
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .hero-atmospheric {
-    min-height: 70vh;
+    min-height: 80vh;
     height: auto;
-    padding: 7rem 0 5rem 0;
+    padding: 6rem 0 4rem 0;
   }
 
   .hero-atmospheric__content {
-    padding: 2rem 1.25rem;
+    padding: 1.5rem 1.25rem;
+    margin-top: 2rem;
   }
 
   .hero-atmospheric__headline {
     font-size: 2.1rem;
-    line-height: 1.2;
+    line-height: 1.25;
   }
 
   .hero-atmospheric__subtitle {
-    font-size: 0.82rem;
-    line-height: 1.65;
+    font-size: 0.88rem;
+    line-height: 1.6;
   }
 
   .hero-atmospheric__actions {
@@ -220,4 +222,3 @@
     font-size: 10px;
   }
 }
-

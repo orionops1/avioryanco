@@ -372,11 +372,9 @@ section {
    ============================================================================ */
 
 header {
-  background-color: transparent;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  width: 100%;
+  /* Header styling is managed entirely by Header.css */
+  /* position: fixed with transparent-to-white hover is defined there */
+  overflow: visible !important;
 }
 
 footer {

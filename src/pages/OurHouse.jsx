@@ -9,7 +9,7 @@ export default function OurHouse() {
       {/* HERO */}
       <section style={{
         backgroundColor: "var(--color-ivory)",
-        color: '#F8F4EF',
+        color: '#555555',
         padding: 'var(--spacing-3xl) 0',
         textAlign: 'center'
       }}>
@@ -98,9 +98,9 @@ export default function OurHouse() {
       </section>
 
       {/* CEYLON HERITAGE */}
-      <section style={{ backgroundColor: "var(--color-ivory)", color: '#F8F4EF', paddingTop: 'var(--spacing-3xl)', paddingBottom: 'var(--spacing-3xl)' }}>
+      <section style={{ backgroundColor: "var(--color-ivory)", color: '#111111', paddingTop: 'var(--spacing-3xl)', paddingBottom: 'var(--spacing-3xl)' }}>
         <div className="container">
-          <h2 style={{ color: '#D4AF7F', marginBottom: 'var(--spacing-lg)', textAlign: 'center' }}>
+          <h2 style={{ color: '#111111', fontFamily: 'var(--font-serif-display)', marginBottom: 'var(--spacing-lg)', textAlign: 'center' }}>
             {ceylonHeritage.title}
           </h2>
           <p style={{

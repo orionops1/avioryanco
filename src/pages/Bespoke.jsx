@@ -16,7 +16,7 @@ export default function Bespoke() {
         textAlign: 'center'
       }}>
         <div className="container">
-          <span style={{ display: 'block', fontFamily: 'var(--font-sans)', fontSize: '0.65rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: '#C5A880', marginBottom: '0.6rem' }}>THE PRIVATE COVENANT</span>
+          <span style={{ display: 'block', fontFamily: 'var(--font-sans)', fontSize: '0.65rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: '#D4AF7F', marginBottom: '0.6rem' }}>THE PRIVATE COVENANT</span>
           <h1 style={{ color: '#FFFFFF', fontFamily: 'var(--font-serif-display)', fontSize: 'clamp(2.2rem, 4.5vw, 3.4rem)' }}>Bespoke Intimacy™</h1>
           <p style={{ fontSize: '1.1rem', marginTop: 'var(--spacing-md)', opacity: 0.9 }}>
             Forged for the skin that remembers you. Hand-wrought gold, rare unheated Ceylon stones, and the signature secret Heartbeat Gem™
@@ -28,7 +28,7 @@ export default function Bespoke() {
       <div className="container" style={{ paddingTop: 'var(--spacing-3xl)', paddingBottom: 'var(--spacing-3xl)' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
           <h2 style={{ marginBottom: 'var(--spacing-lg)' }}>Crafted Exclusively For You</h2>
-          <p style={{ fontSize: '1.1rem', marginBottom: 'var(--spacing-xl)', color: '#2B2B2B', lineHeight: 1.8 }}>
+          <p style={{ fontSize: '1.1rem', marginBottom: 'var(--spacing-xl)', color: '#555555', lineHeight: 1.8 }}>
             Every piece of jewelry tells a story. Our bespoke service allows you to collaborate with master artisans 
             to create something entirely unique – a piece that perfectly captures your vision, your style, and your most 
             meaningful moments. From initial concept to final masterpiece, we guide you through every stage.
@@ -99,10 +99,10 @@ export default function Bespoke() {
             <div key={idx} style={{
               backgroundColor: "var(--color-ivory)",
               padding: 'var(--spacing-lg)',
-              border: '1px solid #D0CCBE'
+              border: "1px solid #E6E1DA"
             }}>
               <h4 style={{ marginBottom: 'var(--spacing-md)' }}>{item.title}</h4>
-              <p style={{ color: '#2B2B2B' }}>{item.description}</p>
+              <p style={{ color: '#555555' }}>{item.description}</p>
             </div>
           ))}
         </div>
@@ -135,7 +135,7 @@ export default function Bespoke() {
               <div key={idx} style={{
                 backgroundColor: "var(--color-ivory)",
                 padding: 'var(--spacing-lg)',
-                border: '1px solid #D0CCBE',
+                border: "1px solid #E6E1DA",
                 borderLeft: '4px solid #D4AF7F'
               }}>
                 <p style={{ fontStyle: 'italic', marginBottom: 'var(--spacing-md)' }}>"{testimonial.text}"</p>
@@ -177,7 +177,7 @@ export default function Bespoke() {
                 <span style={{ fontSize: '1.25rem' }}>{expandedFaq === faq.id ? '−' : '+'}</span>
               </button>
               {expandedFaq === faq.id && (
-                <p style={{ padding: 'var(--spacing-md) 0', color: '#2B2B2B', lineHeight: 1.8 }}>
+                <p style={{ padding: 'var(--spacing-md) 0', color: '#555555', lineHeight: 1.8 }}>
                   {faq.answer}
                 </p>
               )}
