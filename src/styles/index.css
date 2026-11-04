@@ -18,65 +18,55 @@
    UNIFIED CSS VARIABLE SYSTEM - COMPREHENSIVE DESIGN TOKENS
    ============================================================================ */
 :root {
-  /* MASTER BLUEPRINT: DARK ROMANTIC LUXURY PALETTE */
-  --color-obsidian: #0A0E17;
-  --color-obsidian-dark: #070A10;
-  --color-obsidian-light: #121824;
-  --color-obsidian-card: #0E131E;
-  --color-champagne: #C5A880;
-  --color-gold: #C5A880;
-  --color-gold-hover: #D8BA92;
-  --color-pure-white: #FFFFFF;
-  --color-text-light: #F0F2F6;
-  --color-text-muted: #8E95A5;
-  --color-border-gold: rgba(197, 168, 128, 0.22);
-  --color-border-subtle: rgba(255, 255, 255, 0.08);
   /* =========================================================================
-     PRIMARY COLORS (Luxury Palette)
+     PRIMARY COLORS (Clean Luxury Palette - Champagne & Ivory)
      ========================================================================= */
   --color-primary-black: #111111;
+  --color-black: #0d0d0d;
+  --color-white: #ffffff;
   --color-ivory: #F8F4EF;
-  --color-champagne: #C5A880;
+  --color-soft-cream: #faf8f5;
+  
+  /* CHAMPAGNE & GOLD - Your Signature Colors */
+  --color-champagne: #D4AF7F;
+  --color-gold: #D4AF7F;
+  --color-accent-gold: #C5A880;
+  --color-warm-gold: #d4a574;
+  --color-gold-dark: #8B7355;
+  
+  /* SUPPORTING NEUTRALS */
   --color-charcoal: #2B2B2B;
   --color-light-gray: #E8E3DC;
   --color-gray-light: #E8E3DC;
   --color-gray-medium: #D0CCBE;
   --color-medium-gray: #D0CCBE;
   --color-accent-brown: #A68563;
-  --color-gold-dark: #8B7355;
+  
+  /* TEXT & ACCENTS */
+  --color-text: #2c1810;
+  --color-dark-brown: #2c1810;
+  --color-rich-charcoal: #241c14;
+  --color-burgundy: #5e2e1f;
   --color-rose-gold: #B76E79;
 
-  /* SECONDARY COLORS (Legacy compatibility) */
-  --color-black: #0d0d0d;
-  --color-dark-brown: #2c1810;
-  --color-burgundy: #5e2e1f;
-  --color-warm-gold: #d4a574;
-  --color-soft-cream: #faf8f5;
-  --color-rich-charcoal: #241c14;
-  --color-text: #2c1810;
-  --color-accent-gold: #b8860b;
-  --color-white: #ffffff;
-
   /* =========================================================================
-     TYPOGRAPHY SYSTEM
+     TYPOGRAPHY SYSTEM (Clean & Minimal)
      ========================================================================= */
   /* Font Families */
   --font-serif-display: 'Playfair Display', serif;
   --font-serif-body: 'Cormorant Garamond', serif;
   --font-sans: 'Montserrat', sans-serif;
   --font-brand: 'BlackGold', serif;
+  --font-serif: "Playfair Display", serif;
+  --font-body: "Montserrat", sans-serif;
+  --font-ui: "Montserrat", sans-serif;
 
-  /* Font sizes - Responsive using clamp() */
+  /* Font sizes - Generous & Breathing */
   --font-size-h1: clamp(2.75rem, 7vw, 4.5rem);
   --font-size-h2: clamp(2.25rem, 5.5vw, 3.5rem);
   --font-size-h3: clamp(1.75rem, 4.5vw, 2.5rem);
   --font-size-body: 1rem;
   --font-size-small: 0.875rem;
-
-  /* Legacy font variables */
-  --font-serif: "Playfair Display", serif;
-  --font-body: "Montserrat", sans-serif;
-  --font-ui: "Montserrat", sans-serif;
 
   /* =========================================================================
      SPACING SYSTEM (Consistent increments: 0.5rem base)
@@ -91,28 +81,20 @@
   --spacing-4xl: 8rem;       /* 128px */
 
   /* =========================================================================
-     EFFECTS SYSTEM - SHADOWS (Mohs Scale inspired)
+     EFFECTS SYSTEM - SHADOWS (Minimal, Refined)
      ========================================================================= */
-  /* Small shadow for subtle depth */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-
-  /* Medium shadow for standard components */
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-
-  /* Large shadow for elevated cards and modals */
-  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
-
-  /* Extra large shadow for premium floating elements */
-  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+  /* Subtle shadow for minimal depth */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 2px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.12);
 
   /* =========================================================================
-     EFFECTS SYSTEM - BORDERS (Luxury Design)
+     EFFECTS SYSTEM - BORDERS (Refined, Minimal)
      ========================================================================= */
   /* Luxury border with champagne accent */
-  --border-luxury: 2px solid var(--color-champagne);
-
-  /* Subtle border for minimal contrast */
+  --border-luxury: 1px solid var(--color-champagne);
   --border-subtle: 1px solid var(--color-light-gray);
+  --border-minimal: 1px solid rgba(212, 175, 127, 0.15);
 
   /* =========================================================================
      TRANSITIONS & ANIMATIONS
@@ -148,7 +130,7 @@ html {
 body {
   font-family: var(--font-body);
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.7;
   color: var(--color-text);
   background-color: var(--color-ivory);
   -webkit-font-smoothing: antialiased;
@@ -275,7 +257,7 @@ li {
 }
 
 /* ============================================================================
-   ENHANCED BUTTONS (LUXURY INTERACTIONS)
+   BUTTONS (Clean, Minimal)
    ============================================================================ */
 
 .btn {
@@ -289,7 +271,7 @@ li {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  border: 2px solid var(--color-text);
+  border: 1px solid var(--color-text);
   background-color: transparent;
   color: var(--color-text);
   cursor: pointer;
@@ -308,15 +290,16 @@ li {
 }
 
 .btn-primary:hover {
-  background-color: var(--color-burgundy);
-  border-color: var(--color-burgundy);
+  background-color: var(--color-champagne);
+  border-color: var(--color-champagne);
+  color: var(--color-text);
   transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .btn-primary:active {
   transform: translateY(0);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
 }
 
 /* SECONDARY BUTTON */
@@ -329,7 +312,7 @@ li {
   background-color: var(--color-champagne);
   color: var(--color-text);
   transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(212, 167, 109, 0.2);
+  box-shadow: 0 4px 12px rgba(212, 175, 127, 0.15);
 }
 
 /* OUTLINE BUTTON */
@@ -473,7 +456,7 @@ label {
 }
 
 /* ============================================================================
-   CARD STYLING (ENHANCED - Phase 1)
+   CARD STYLING (Clean, Minimal)
    ============================================================================ */
 
 .card {
@@ -482,11 +465,12 @@ label {
   padding: var(--spacing-lg);
   transition: var(--transition);
   box-shadow: var(--shadow-sm);
+  border: var(--border-minimal);
 }
 
 .card:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
 }
 
 /* ============================================================================
