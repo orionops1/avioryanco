@@ -27,7 +27,7 @@ export default function Home() {
   const handleVaultUnlock = (e) => {
     e.preventDefault()
     const cleaned = cipherInput.trim().toUpperCase()
-    const validCiphers = ['CEYLON', 'INTIMACY', 'VOW', 'DEVOTION', 'AVIORY', 'PRIVATE']
+    const validCiphers = ['CEYLON', 'VOW', 'TOUCH', 'WONDER', 'WHISPER', 'AVIORY', 'PRIVATE']
     if (validCiphers.includes(cleaned) || cleaned.length >= 4) {
       setVaultUnlocked(true)
       setCipherError('')
@@ -89,22 +89,22 @@ export default function Home() {
       <section className="home-pillars-section" aria-label="The Architecture of Devotion">
         <div className="container">
           <div className="section-header-minimal">
-            <span className="editorial-eyebrow">THE ARCHITECTURE OF DEVOTION</span>
-            <h2 className="section-headline-serif">Four Expressions of Private Covenant</h2>
+            <span className="editorial-eyebrow">THE FOUR EXPRESSIONS</span>
+            <h2 className="section-headline-serif">VOW / TOUCH / WONDER / WHISPER</h2>
             <p className="section-narrative-lead">
-              To possess an Aviory creation is not an act of public status. It is a private covenant forged in gold and unheated Ceylon stone, meant to live where only your lover reaches.
+              To possess an Aviory creation is not an act of public display. It is a private covenant forged in gold and unheated Ceylon stone, meant to live where only your lover reaches.
             </p>
           </div>
 
           <div className="pillars-asym-grid">
-            {/* PILLAR 1: LOVE */}
+            {/* PILLAR 1: VOW */}
             <div className="pillar-card">
               <div 
                 className="pillar-card__media"
                 style={{ backgroundImage: 'url(/images/most-popular-gifts.jpg)' }}
               >
                 <div className="pillar-card__overlay" />
-                <span className="pillar-card__num">01 / LOVE</span>
+                <span className="pillar-card__num">01 / VOW</span>
               </div>
               <div className="pillar-card__content">
                 <span className="pillar-card__tag">PERMANENCE</span>
@@ -112,7 +112,7 @@ export default function Home() {
                   "A vow isn't spoken once. It is carried daily against your pulse."
                 </blockquote>
                 <p className="pillar-card__desc">
-                  The physical anchor of a vow that stays when words fade. Hand-wrought solitaires and unheated Ceylon sapphires created to outlast lifetimes.
+                  The physical anchor of a promise that stays when words fade. Hand-wrought solitaires and unheated Ceylon sapphires created to outlast lifetimes.
                 </p>
                 <Link to="/love-and-celebration" className="pillar-card__link">
                   EXPLORE THE VOW COLLECTION →
@@ -120,22 +120,22 @@ export default function Home() {
               </div>
             </div>
 
-            {/* PILLAR 2: LUST */}
+            {/* PILLAR 2: TOUCH */}
             <div className="pillar-card pillar-card--offset">
               <div 
                 className="pillar-card__media"
                 style={{ backgroundImage: 'url(/images/gifts-for-her.jpg)' }}
               >
                 <div className="pillar-card__overlay" />
-                <span className="pillar-card__num">02 / LUST</span>
+                <span className="pillar-card__num">02 / TOUCH</span>
               </div>
               <div className="pillar-card__content">
                 <span className="pillar-card__tag">TACTILE</span>
                 <blockquote className="pillar-card__quote">
-                  "Warm gold shaped to rest heavy against her collarbone in dark rooms."
+                  "Warm gold shaped to rest heavy against her collarbone in morning light."
                 </blockquote>
                 <p className="pillar-card__desc">
-                  Precious metal designed to be touched, traced, and caressed. Heavy high-jewelry collars and hand-hammered gold cuffs that hold bodily heat.
+                  Precious metal designed to be touched, traced, and caressed. Heavy high-jewelry collars and hand-hammered gold cuffs that hold bodily warmth.
                 </p>
                 <Link to="/fine-jewellery" className="pillar-card__link">
                   EXPLORE TACTILE GOLD →
@@ -143,48 +143,48 @@ export default function Home() {
               </div>
             </div>
 
-            {/* PILLAR 3: ROMANCE */}
+            {/* PILLAR 3: WONDER */}
             <div className="pillar-card">
               <div 
                 className="pillar-card__media"
                 style={{ backgroundImage: 'url(/images/editorial/ceylon-sapphire-vault.jpg)' }}
               >
                 <div className="pillar-card__overlay" />
-                <span className="pillar-card__num">03 / ROMANCE</span>
+                <span className="pillar-card__num">03 / WONDER</span>
               </div>
               <div className="pillar-card__content">
                 <span className="pillar-card__tag">MYSTIC</span>
                 <blockquote className="pillar-card__quote">
-                  "Born deep beneath Sri Lankan earth. Cut to catch only candlelight."
+                  "Born deep beneath Sri Lankan earth. Cut to capture light in intimate spaces."
                 </blockquote>
                 <p className="pillar-card__desc">
-                  Untreated royal blue and lotus padparadscha sapphires, cut with deep facets that awaken under low candle flame in quiet, private hours.
+                  Untreated royal blue and lotus padparadscha sapphires, cut with deep facets that awaken under candlelight and morning glow. Gemstones that hold mystery.
                 </p>
                 <Link to="/gemstones" className="pillar-card__link">
-                  EXPLORE CANDLELIT GEMS →
+                  EXPLORE WONDER GEMS →
                 </Link>
               </div>
             </div>
 
-            {/* PILLAR 4: INTIMACY */}
+            {/* PILLAR 4: WHISPER */}
             <div className="pillar-card pillar-card--offset">
               <div 
                 className="pillar-card__media"
                 style={{ backgroundImage: 'url(/images/art-of-gifting.jpg)' }}
               >
                 <div className="pillar-card__overlay" />
-                <span className="pillar-card__num">04 / INTIMACY</span>
+                <span className="pillar-card__num">04 / WHISPER</span>
               </div>
               <div className="pillar-card__content">
                 <span className="pillar-card__tag">SECRET</span>
                 <blockquote className="pillar-card__quote">
-                  "A secret rubover gem set inside the band, touching her skin alone."
+                  "A secret gem set inside the band, touching her skin—only you will know."
                 </blockquote>
                 <p className="pillar-card__desc">
-                  Hidden details shared only between the giver and the wearer. The signature Heartbeat Gem™ embedded flush where nobody else will ever see.
+                  Hidden details shared only between giver and wearer. The signature Heartbeat Gem™ embedded flush where nobody else will ever see it rest.
                 </p>
                 <Link to="/bespoke" className="pillar-card__link">
-                  COMMISSION A SECRET DETAIL →
+                  COMMISSION A WHISPERED DETAIL →
                 </Link>
               </div>
             </div>
