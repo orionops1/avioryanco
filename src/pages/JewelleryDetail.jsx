@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react'
+import React, { useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import useCartStore from '../hooks/useCart'
 import { useLanguage } from '../hooks/useLanguage'

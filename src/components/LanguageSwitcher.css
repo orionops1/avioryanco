@@ -1,5 +1,5 @@
 /* ============================================================================
-   TIFFANY & CO. STANDARD LUXURY LANGUAGE SWITCHER
+   HAUTE JOAILLERIE DISCREET 11PX LANGUAGE SWITCHER
    Clean, robust positioning across Desktop, Mobile, and Drawer
    ============================================================================ */
 
@@ -14,49 +14,51 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  padding: 0.35rem 0.6rem;
+  padding: 0.35rem 0.55rem;
   background-color: transparent;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  color: #111111;
+  border: 1px solid rgba(22, 22, 22, 0.16);
+  color: #161616;
   cursor: pointer;
   font-family: var(--font-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif);
-  font-size: 0.72rem;
+  font-size: 11px;
   font-weight: 500;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   transition: all 0.2s ease;
   line-height: 1;
 }
 
 .language-toggle:hover {
-  border-color: #D4AF7F;
-  color: #D4AF7F;
+  border-color: #C5A059;
+  color: #C5A059;
 }
 
 .language-flag {
-  font-size: 0.9rem;
+  font-size: 11px;
   line-height: 1;
 }
 
 .language-code {
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: inherit;
 }
 
 .language-chevron {
-  font-size: 0.6rem;
-  color: #736F6B;
+  font-size: 10px;
+  color: inherit;
+  opacity: 0.7;
   transition: transform 0.2s ease;
 }
 
 .language-switcher--dark .language-toggle {
-  color: #111111;
-  border-color: rgba(0, 0, 0, 0.15);
+  color: #161616;
+  border-color: rgba(22, 22, 22, 0.16);
 }
 
 .language-switcher--light .language-toggle {
-  color: #111111;
-  border-color: rgba(0, 0, 0, 0.15);
+  color: #161616;
+  border-color: rgba(22, 22, 22, 0.16);
 }
 
 /* ──────────────────────────────────────────────────────────
@@ -66,9 +68,9 @@
   position: absolute;
   top: calc(100% + 6px);
   right: 0;
-  background-color: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.16);
+  background-color: #FFFFFF;
+  border: 1px solid rgba(22, 22, 22, 0.12);
+  box-shadow: 0 12px 32px rgba(22, 22, 22, 0.12);
   min-width: 175px;
   z-index: 999999;
   overflow: hidden;
@@ -84,12 +86,12 @@
   padding: 0.5rem 0.85rem;
   background-color: #FAF7F2;
   font-family: var(--font-ui, sans-serif);
-  font-size: 0.62rem;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #736F6B;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  color: #C5A059;
+  border-bottom: 1px solid rgba(22, 22, 22, 0.08);
 }
 
 .language-option {
@@ -100,11 +102,11 @@
   padding: 0.65rem 0.85rem;
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  color: #111111;
+  border-bottom: 1px solid rgba(22, 22, 22, 0.05);
+  color: #161616;
   cursor: pointer;
   font-family: var(--font-ui, sans-serif);
-  font-size: 0.78rem;
+  font-size: 11px;
   text-align: left;
   transition: background 0.15s ease, color 0.15s ease;
 }
@@ -115,30 +117,30 @@
 
 .language-option:hover {
   background-color: #FAF7F2;
-  color: #B89260;
+  color: #C5A059;
 }
 
 .language-option.active {
-  background-color: #111111;
-  color: #ffffff;
+  background-color: #161616;
+  color: #FFFFFF;
   font-weight: 600;
 }
 
 .language-option.active .option-code {
-  color: #D4AF7F;
+  color: #C5A059;
 }
 
 .option-flag {
-  font-size: 0.95rem;
+  font-size: 11px;
 }
 
 .option-name {
   flex: 1;
-  font-size: 0.75rem;
+  font-size: 11px;
 }
 
 .option-code {
-  font-size: 0.65rem;
+  font-size: 10px;
   opacity: 0.7;
 }
 
@@ -148,7 +150,7 @@
 @media (max-width: 900px) {
   .language-toggle {
     padding: 0.3rem 0.5rem;
-    font-size: 0.68rem;
+    font-size: 11px;
   }
 
   .language-dropdown {

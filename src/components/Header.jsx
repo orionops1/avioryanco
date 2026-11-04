@@ -147,14 +147,20 @@ export default function Header({ scrolled }) {
       >
         {/* ============================================================
             TOP ROW: Tiffany-standard Layout
-            Left: Atelier/Search | Center: Logo | Right: Locale/Bag
+            Left: Our Private Room (Colombo Salon) / Search
+            Center: Logo
+            Right: Locale ($ USD / EN) / Bag
             ============================================================ */}
         <div className="tiffany-header__top">
           <div className="container tiffany-header__top-inner">
-            {/* Left Desktop: Atelier / Search */}
+            {/* Left Desktop: Our Private Room (Colombo Salon Booking) / Search */}
             <div className="tiffany-header__top-left">
-              <Link to="/our-house" className="tiffany-header__utility-btn" title="Atelier &amp; Boutiques">
-                <span className="tiffany-header__utility-text">ATELIER</span>
+              <Link
+                to="/private-consultations"
+                className="tiffany-header__utility-btn"
+                title="Our Private Room — Colombo Salon Booking"
+              >
+                <span className="tiffany-header__utility-text">{t('common.ourPrivateRoom', 'OUR PRIVATE ROOM')}</span>
               </Link>
               <button
                 type="button"
@@ -179,7 +185,7 @@ export default function Header({ scrolled }) {
               <span className={`tiffany-hamburger-bar ${mobileMenuOpen ? 'open' : ''}`} />
             </button>
 
-            {/* Center: Prominent BlackGold Logo */}
+            {/* Center: Prominent Custom Serif Gold/Charcoal Logo */}
             <Link
               to="/"
               className="tiffany-header__logo-link"
@@ -191,9 +197,9 @@ export default function Header({ scrolled }) {
               <span className="tiffany-header__logo-co">CO.</span>
             </Link>
 
-            {/* Right: Actions Cluster */}
+            {/* Right: Discreet 11px Utilities Cluster ($ USD, EN, Bag) */}
             <div className="tiffany-header__actions">
-              {/* Language & Currency Switchers */}
+              {/* Currency & Language Switchers */}
               <div className="tiffany-header__locale">
                 <CurrencySwitcher variant="light" />
                 <LanguageSwitcher variant="light" />
@@ -218,6 +224,7 @@ export default function Header({ scrolled }) {
 
         {/* ============================================================
             BOTTOM ROW: Navigation Menu (Centered)
+            GIFTS FOR HER | ENGAGEMENT | MADE ONLY FOR YOU | OUR STORY
             ============================================================ */}
         <nav className="tiffany-header__nav" aria-label="Main Navigation">
           <div className="container">
@@ -242,124 +249,124 @@ export default function Header({ scrolled }) {
           </div>
         </nav>
 
-      {/* ============================================================
-          FULL-WIDTH MEGA-MENU PANELS
-          Includes Tabbed Tiffany Sub-Navigation for Love & Celebration
-          ============================================================ */}
-      {menuItems.map((item) =>
-        item.mega ? (
-          <div
-            key={item.key}
-            className={`tiffany-mega ${activeMega === item.key ? 'tiffany-mega--visible' : ''}`}
-            onMouseEnter={() => clearTimeout(megaTimeoutRef.current)}
-            onMouseLeave={handleMegaLeave}
-            role="menu"
-          >
-            {item.mega.tabs ? (
-              /* TABBED SUB-NAVIGATION (Tiffany & Co. Love & Celebration Pattern) */
-              <div className="container tiffany-mega__tabbed-container">
-                {/* Horizontal Tab Headers */}
-                <div className="tiffany-mega__subnav-bar">
-                  <div className="tiffany-mega__subnav-tabs">
-                    {item.mega.tabs.map((tab) => (
-                      <button
-                        key={tab.id}
-                        type="button"
-                        className={`tiffany-mega__subnav-tab ${activeLoveTab === tab.id ? 'tiffany-mega__subnav-tab--active' : ''}`}
-                        onMouseEnter={() => setActiveLoveTab(tab.id)}
-                        onClick={() => setActiveLoveTab(tab.id)}
-                      >
-                        <span>{tab.label}</span>
-                      </button>
-                    ))}
-                  </div>
-                  {item.mega.infoLink && (
-                    <Link
-                      to={item.mega.infoLink.href}
-                      className="tiffany-mega__subnav-info"
-                      onClick={handleNavClick}
-                    >
-                      {item.mega.infoLink.label} &rarr;
-                    </Link>
-                  )}
-                </div>
-
-                {/* Tab Cards Content Grid */}
-                {item.mega.tabs.map((tab) =>
-                  tab.id === activeLoveTab ? (
-                    <div key={tab.id} className="tiffany-mega__cards-grid">
-                      {tab.items.map((card, idx) => (
-                        <Link
-                          key={idx}
-                          to={card.href}
-                          className={`tiffany-mega__card ${card.guide ? 'tiffany-mega__card--guide' : ''}`}
-                          onClick={handleNavClick}
+        {/* ============================================================
+            FULL-WIDTH MEGA-MENU PANELS
+            Tabbed Layout for Engagement | Columns + Feature for Others
+            ============================================================ */}
+        {menuItems.map((item) =>
+          item.mega ? (
+            <div
+              key={item.key}
+              className={`tiffany-mega ${activeMega === item.key ? 'tiffany-mega--visible' : ''}`}
+              onMouseEnter={() => clearTimeout(megaTimeoutRef.current)}
+              onMouseLeave={handleMegaLeave}
+              role="menu"
+            >
+              {item.mega.tabs ? (
+                /* TABBED SUB-NAVIGATION (Haute Joaillerie Engagement Standard) */
+                <div className="container tiffany-mega__tabbed-container">
+                  {/* Horizontal Tab Headers */}
+                  <div className="tiffany-mega__subnav-bar">
+                    <div className="tiffany-mega__subnav-tabs">
+                      {item.mega.tabs.map((tab) => (
+                        <button
+                          key={tab.id}
+                          type="button"
+                          className={`tiffany-mega__subnav-tab ${activeLoveTab === tab.id ? 'tiffany-mega__subnav-tab--active' : ''}`}
+                          onMouseEnter={() => setActiveLoveTab(tab.id)}
+                          onClick={() => setActiveLoveTab(tab.id)}
                         >
-                          <div className="tiffany-mega__card-media">
-                            <img
-                              src={card.image}
-                              alt={card.name}
-                              loading="lazy"
-                              onError={(e) => {
-                                e.target.style.display = 'none'
-                                e.target.parentElement.classList.add('tiffany-card-fallback')
-                              }}
-                            />
-                          </div>
-                          <h4 className="tiffany-mega__card-title">{card.name}</h4>
-                          <p className="tiffany-mega__card-desc">{card.desc}</p>
-                        </Link>
+                          <span>{tab.label}</span>
+                        </button>
                       ))}
                     </div>
-                  ) : null
-                )}
-              </div>
-            ) : (
-              /* STANDARD 3-COLUMN + FEATURE EDITORIAL LAYOUT */
-              <div className="container tiffany-mega__inner">
-                <div className="tiffany-mega__columns">
-                  {item.mega.columns?.map((col, ci) => (
-                    <div key={ci} className="tiffany-mega__column">
-                      <h3 className="tiffany-mega__heading">{col.heading}</h3>
-                      <ul className="tiffany-mega__links">
-                        {col.links.map((link, li) => (
-                          <li key={li}>
-                            <Link
-                              to={link.href}
-                              className={`tiffany-mega__link ${link.accent ? 'tiffany-mega__link--accent' : ''}`}
-                              onClick={handleNavClick}
-                            >
-                              {link.label}
-                              {link.accent && <ArrowRight />}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-
-                {item.mega.feature && (
-                  <div className={`tiffany-mega__feature tiffany-mega__feature--${item.mega.feature.accent}`}>
-                    <span className="tiffany-mega__feature-eyebrow">AVIORY &amp; CO.</span>
-                    <h4 className="tiffany-mega__feature-title">{item.mega.feature.title}</h4>
-                    <p className="tiffany-mega__feature-sub">{item.mega.feature.subtitle}</p>
-                    <div className="tiffany-mega__feature-rule" />
-                    <Link
-                      to={item.mega.feature.cta.href}
-                      className="tiffany-mega__feature-cta"
-                      onClick={handleNavClick}
-                    >
-                      {item.mega.feature.cta.label}
-                      <ArrowRight />
-                    </Link>
+                    {item.mega.infoLink && (
+                      <Link
+                        to={item.mega.infoLink.href}
+                        className="tiffany-mega__subnav-info"
+                        onClick={handleNavClick}
+                      >
+                        {item.mega.infoLink.label} &rarr;
+                      </Link>
+                    )}
                   </div>
-                )}
-              </div>
-            )}
-          </div>
-        ) : null
-      )}
+
+                  {/* Tab Cards Content Grid */}
+                  {item.mega.tabs.map((tab) =>
+                    tab.id === activeLoveTab ? (
+                      <div key={tab.id} className="tiffany-mega__cards-grid">
+                        {tab.items.map((card, idx) => (
+                          <Link
+                            key={idx}
+                            to={card.href}
+                            className={`tiffany-mega__card ${card.guide ? 'tiffany-mega__card--guide' : ''}`}
+                            onClick={handleNavClick}
+                          >
+                            <div className="tiffany-mega__card-media">
+                              <img
+                                src={card.image}
+                                alt={card.name}
+                                loading="lazy"
+                                onError={(e) => {
+                                  e.target.style.display = 'none'
+                                  e.target.parentElement.classList.add('tiffany-card-fallback')
+                                }}
+                              />
+                            </div>
+                            <h4 className="tiffany-mega__card-title">{card.name}</h4>
+                            <p className="tiffany-mega__card-desc">{card.desc}</p>
+                          </Link>
+                        ))}
+                      </div>
+                    ) : null
+                  )}
+                </div>
+              ) : (
+                /* STANDARD 3-COLUMN + FEATURE EDITORIAL LAYOUT */
+                <div className="container tiffany-mega__inner">
+                  <div className="tiffany-mega__columns">
+                    {item.mega.columns?.map((col, ci) => (
+                      <div key={ci} className="tiffany-mega__column">
+                        <h3 className="tiffany-mega__heading">{col.heading}</h3>
+                        <ul className="tiffany-mega__links">
+                          {col.links.map((link, li) => (
+                            <li key={li}>
+                              <Link
+                                to={link.href}
+                                className={`tiffany-mega__link ${link.accent ? 'tiffany-mega__link--accent' : ''}`}
+                                onClick={handleNavClick}
+                              >
+                                {link.label}
+                                {link.accent && <ArrowRight />}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+
+                  {item.mega.feature && (
+                    <div className={`tiffany-mega__feature tiffany-mega__feature--${item.mega.feature.accent}`}>
+                      <span className="tiffany-mega__feature-eyebrow">AVIORY &amp; CO.</span>
+                      <h4 className="tiffany-mega__feature-title">{item.mega.feature.title}</h4>
+                      <p className="tiffany-mega__feature-sub">{item.mega.feature.subtitle}</p>
+                      <div className="tiffany-mega__feature-rule" />
+                      <Link
+                        to={item.mega.feature.cta.href}
+                        className="tiffany-mega__feature-cta"
+                        onClick={handleNavClick}
+                      >
+                        {item.mega.feature.cta.label}
+                        <ArrowRight />
+                      </Link>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          ) : null
+        )}
       </header>
 
       {/* Mega Backdrop */}
@@ -475,8 +482,8 @@ export default function Header({ scrolled }) {
             <Link to="/contact" className="tiffany-header__utility-link" onClick={() => setMobileMenuOpen(false)}>
               {t('common.contact', 'Contact Us')}
             </Link>
-            <Link to="/our-house" className="tiffany-header__utility-link" onClick={() => setMobileMenuOpen(false)}>
-              Atelier &amp; Boutiques
+            <Link to="/private-consultations" className="tiffany-header__utility-link" onClick={() => setMobileMenuOpen(false)}>
+              {t('common.ourPrivateRoom', 'Our Private Room')}
             </Link>
           </div>
         </div>

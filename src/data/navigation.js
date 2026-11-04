@@ -1,101 +1,60 @@
 // ============================================================================
 // AVIORY & CO - NAVIGATION CONFIGURATION
 // Centralized navigation structure for Header mega-menu and Footer links
-// Inspired by Tiffany & Co. & Harry Winston Haute Joaillerie standard
+// Inspired by Haute Joaillerie standard (Ivory White & Champagne Gold)
 // ============================================================================
 
 export const megaMenuData = [
   {
-    key: 'gemstones',
-    label: 'Gemstones',
-    labelKey: 'common.gemstones',
-    href: '/gemstones',
-    mega: {
-      columns: [
-        {
-          heading: 'By Rare Hue',
-          links: [
-            { label: 'Royal Blue Sapphires', href: '/gemstones?category=blue-sapphires' },
-            { label: 'Cornflower Sapphires', href: '/gemstones?category=blue-sapphires' },
-            { label: 'Padparadscha (Sunset Lotus)', href: '/gemstones?category=padparadscha' },
-            { label: 'Vivid Pink Sapphires', href: '/gemstones?category=pink-sapphires' },
-            { label: 'Canary Yellow Sapphires', href: '/gemstones?category=yellow-sapphires' },
-            { label: 'Pigeon Blood Rubies', href: '/gemstones?category=rubies' },
-            { label: 'Cobalt Spinels', href: '/gemstones?category=spinels' },
-          ],
-        },
-        {
-          heading: 'Curated Selections',
-          links: [
-            { label: 'Collector Vault Specimens', href: '/gemstones?category=collector' },
-            { label: 'Unheated Natural Gems', href: '/gemstones' },
-            { label: 'Rare Fancy Colored Gems', href: '/gemstones?category=other' },
-            { label: 'View All Gemstones', href: '/gemstones', accent: true },
-          ],
-        },
-        {
-          heading: 'Provenance & Science',
-          links: [
-            { label: 'Ceylon Provenance Assurance', href: '/journal/the-heritage-of-ceylon-gemstones' },
-            { label: 'GRS, GIA & Lotus Certification', href: '/our-house' },
-            { label: 'The Science of Sapphires', href: '/journal/the-science-of-sapphire' },
-          ],
-        },
-      ],
-      feature: {
-        title: 'The Ceylon Heritage Vault',
-        subtitle: 'Pure, unheated natural sapphires celebrated for over 2,000 years for celestial brilliance.',
-        cta: { label: 'Explore Provenance', href: '/our-house' },
-        accent: 'sapphire',
-      },
-    },
-  },
-  {
-    key: 'fine-jewellery',
-    label: 'Fine Jewellery',
-    labelKey: 'common.fineJewellery',
+    key: 'gifts-for-her',
+    label: 'GIFTS FOR HER',
+    labelKey: 'common.giftsForHer',
     href: '/fine-jewellery',
     mega: {
       columns: [
         {
-          heading: 'By Category',
+          heading: 'High Jewellery',
           links: [
-            { label: 'High Jewellery Rings', href: '/fine-jewellery?collection=Rings' },
-            { label: 'Earrings & Drops', href: '/fine-jewellery?collection=Earrings' },
-            { label: 'Statement Necklaces', href: '/fine-jewellery?collection=Necklaces' },
-            { label: 'Bracelets & Cuffs', href: '/fine-jewellery?collection=Bracelets' },
-            { label: 'Bespoke Art Objects', href: '/fine-jewellery?collection=Brooches' },
+            { label: 'Solitaire & Cocktail Rings', href: '/fine-jewellery?collection=Rings' },
+            { label: 'Drop & Stud Earrings', href: '/fine-jewellery?collection=Earrings' },
+            { label: 'Statement Pendants & Necklaces', href: '/fine-jewellery?collection=Necklaces' },
+            { label: 'Tennis & Sculptural Bracelets', href: '/fine-jewellery?collection=Bracelets' },
+            { label: 'Explore All Fine Jewellery', href: '/fine-jewellery', accent: true },
           ],
         },
         {
-          heading: 'Signature Collections',
+          heading: 'Rare Ceylon Gemstones',
           links: [
-            { label: 'Limited Atelier Masterpieces', href: '/fine-jewellery?collection=Limited+Edition' },
-            { label: 'The Love Collection', href: '/love-and-celebration' },
-            { label: 'View All Fine Jewellery', href: '/fine-jewellery', accent: true },
+            { label: 'Royal Blue Sapphires', href: '/gemstones?category=blue-sapphires' },
+            { label: 'Padparadscha (Sunset Lotus)', href: '/gemstones?category=padparadscha' },
+            { label: 'Vivid Pink Sapphires', href: '/gemstones?category=pink-sapphires' },
+            { label: 'Pigeon Blood Rubies', href: '/gemstones?category=rubies' },
+            { label: 'Canary Yellow Sapphires', href: '/gemstones?category=yellow-sapphires' },
+            { label: 'Explore All Rare Gemstones', href: '/gemstones', accent: true },
           ],
         },
         {
-          heading: 'Atelier Services',
+          heading: 'The Art of Gifting',
           links: [
-            { label: 'Bespoke Commission Process', href: '/bespoke' },
-            { label: 'Private Atelier Appointments', href: '/private-consultations' },
-            { label: 'Jewellery Care Guide', href: '/journal/caring-for-your-sapphires' },
+            { label: 'Anniversary Heirlooms', href: '/love-and-celebration?moment=anniversary' },
+            { label: 'Celebration Milestones', href: '/fine-jewellery?collection=Limited+Edition' },
+            { label: 'Personalized Commissions', href: '/bespoke' },
+            { label: 'Complimentary Signature Presentation', href: '/our-house' },
           ],
         },
       ],
       feature: {
-        title: 'Atelier Craftsmanship',
-        subtitle: 'Hand-wrought in 18K yellow gold, rose gold, and platinum by Ceylon master goldsmiths.',
-        cta: { label: 'Discover The Craft', href: '/journal/the-art-of-bespoke-jewellery' },
+        title: 'The Art of Gifting',
+        subtitle: 'Rare unheated Ceylon sapphires and handcrafted jewellery created to mark life’s most cherished milestones.',
+        cta: { label: 'Explore The Collection', href: '/fine-jewellery' },
         accent: 'gold',
       },
     },
   },
   {
-    key: 'love-and-celebration',
-    label: 'Love & Celebration',
-    labelKey: 'common.loveAndCelebration',
+    key: 'engagement',
+    label: 'ENGAGEMENT',
+    labelKey: 'common.engagement',
     href: '/love-and-celebration',
     mega: {
       tabs: [
@@ -252,87 +211,123 @@ export const megaMenuData = [
       },
       columns: [
         {
-          heading: 'By Moment',
+          heading: 'By Silhouette',
           links: [
-            { label: 'The Proposal', href: '/love-and-celebration?style=solitaire' },
-            { label: 'Say Yes with Halo Designs', href: '/love-and-celebration?style=halo' },
-            { label: 'Three Hearts, One Promise', href: '/love-and-celebration?style=three-stone' },
-            { label: 'Modern Love Stories', href: '/love-and-celebration?style=cushion' },
-            { label: 'Forever Elegance', href: '/love-and-celebration?style=oval' },
-            { label: 'Unique & Distinctive', href: '/love-and-celebration?style=pear' },
+            { label: 'The Proposal Solitaire', href: '/love-and-celebration?style=solitaire' },
+            { label: 'Brilliant Halo Settings', href: '/love-and-celebration?style=halo' },
+            { label: 'Three-Stone Trilogy', href: '/love-and-celebration?style=three-stone' },
+            { label: 'Cushion & Oval Romance', href: '/love-and-celebration?style=cushion' },
+            { label: 'Pear & Fancy Shapes', href: '/love-and-celebration?style=pear' },
           ],
         },
         {
-          heading: 'By Gemstone',
+          heading: 'By Rare Hue',
           links: [
             { label: 'Royal Sapphire Rings', href: '/love-and-celebration?stone=blue-sapphire' },
             { label: 'Burma & Ceylon Ruby Rings', href: '/love-and-celebration?stone=ruby' },
             { label: 'Pink & Padparadscha Rings', href: '/love-and-celebration?stone=pink-sapphire' },
-            { label: 'View Full Collection', href: '/love-and-celebration', accent: true },
+            { label: 'Explore All Rings', href: '/love-and-celebration', accent: true },
           ],
         },
         {
-          heading: 'Resources',
+          heading: 'Bridal Guidance',
           links: [
             { label: 'Ring Sizing Guide', href: '/love-and-celebration' },
-            { label: 'The Story of Love', href: '/love-and-celebration' },
-            { label: 'Book a Consultation', href: '/private-consultations' },
-            { label: 'Design Your Own', href: '/bespoke/enquiry' },
+            { label: 'Our Private Room Salon Session', href: '/private-consultations' },
+            { label: 'Design Your Custom Ring', href: '/bespoke/enquiry' },
           ],
         },
       ],
       feature: {
-        title: 'AVIORY Love Collection',
+        title: 'The Love Collection',
         subtitle: 'Rings for Every Love Story. Handcrafted with rare Ceylon gemstones.',
-        cta: { label: 'Design Your Ring', href: '/bespoke/enquiry' },
+        cta: { label: 'Explore Engagement', href: '/love-and-celebration' },
         accent: 'rose',
       },
     },
   },
   {
-    key: 'bespoke',
-    label: 'Bespoke',
-    labelKey: 'common.bespoke',
+    key: 'made-only-for-you',
+    label: 'MADE ONLY FOR YOU',
+    labelKey: 'common.madeOnlyForYou',
     href: '/bespoke',
     mega: {
       columns: [
         {
           heading: 'Custom Creation',
           links: [
-            { label: 'The 5-Stage Process', href: '/bespoke/process' },
-            { label: 'Submit Custom Commission Enquiry', href: '/bespoke/enquiry' },
-            { label: 'Private Showroom Consultation', href: '/private-consultations' },
-            { label: 'View Bespoke Atelier', href: '/bespoke', accent: true },
+            { label: 'The 5-Stage Journey', href: '/bespoke/process' },
+            { label: 'Begin Custom Commission', href: '/bespoke/enquiry' },
+            { label: 'Private Salon Consultation', href: '/private-consultations' },
+            { label: 'View Bespoke Portfolio', href: '/bespoke', accent: true },
           ],
         },
         {
-          heading: 'Inspiration & Stories',
+          heading: 'Center Stone Sourcing',
+          links: [
+            { label: 'Unheated Natural Sapphires', href: '/gemstones' },
+            { label: 'Padparadscha & Rare Colors', href: '/gemstones?category=padparadscha' },
+            { label: 'Ethical Mine-to-Market Custody', href: '/journal/sustainable-luxury-and-ethical-sourcing' },
+          ],
+        },
+        {
+          heading: 'Craft & Inspiration',
           links: [
             { label: 'Designing Your Dream Ring', href: '/journal/designing-your-dream-ring' },
-            { label: 'The Art of Bespoke Jewellery', href: '/journal/the-art-of-bespoke-jewellery' },
-            { label: 'Ethical Mine-to-Market', href: '/journal/sustainable-luxury-and-ethical-sourcing' },
+            { label: 'The Art of Haute Joaillerie', href: '/journal/the-art-of-bespoke-jewellery' },
+            { label: 'Jewellery Care & Preservation', href: '/journal/caring-for-your-sapphires' },
           ],
         },
       ],
       feature: {
         title: 'Vision to Masterpiece',
-        subtitle: 'From a loose hand-selected gem to an heirloom that transcends generations.',
-        cta: { label: 'Explore Bespoke', href: '/bespoke/process' },
+        subtitle: 'From a loose hand-selected Ceylon gem to an heirloom that transcends generations.',
+        cta: { label: 'Start Your Creation', href: '/bespoke/enquiry' },
         accent: 'champagne',
       },
     },
   },
   {
-    key: 'our-house',
-    label: 'Our House',
-    labelKey: 'common.ourHouse',
+    key: 'our-story',
+    label: 'OUR STORY',
+    labelKey: 'common.ourStory',
     href: '/our-house',
-  },
-  {
-    key: 'journal',
-    label: 'Journal',
-    labelKey: 'common.journal',
-    href: '/journal',
+    mega: {
+      columns: [
+        {
+          heading: 'The Maison',
+          links: [
+            { label: 'Our Ceylon Heritage', href: '/our-house' },
+            { label: 'Ethical Mine Custody', href: '/journal/sustainable-luxury-and-ethical-sourcing' },
+            { label: 'Our Private Room — Colombo Salon', href: '/private-consultations' },
+            { label: 'Concierge & Inquiries', href: '/contact' },
+          ],
+        },
+        {
+          heading: 'The Aviory Journal',
+          links: [
+            { label: 'The Science of Sapphires', href: '/journal/the-science-of-sapphire' },
+            { label: 'The Heritage of Ceylon Gemstones', href: '/journal/the-heritage-of-ceylon-gemstones' },
+            { label: 'Designing Your Dream Ring', href: '/journal/designing-your-dream-ring' },
+            { label: 'Read All Journal Stories', href: '/journal', accent: true },
+          ],
+        },
+        {
+          heading: 'Guarantees & Custody',
+          links: [
+            { label: 'GRS, GIA & Lotus Certification', href: '/our-house' },
+            { label: 'Complimentary Worldwide Delivery', href: '/contact?subject=shipping' },
+            { label: 'Lifetime Care & Authenticity', href: '/contact?subject=returns' },
+          ],
+        },
+      ],
+      feature: {
+        title: 'Two Millennia of Lore',
+        subtitle: 'Unheated Ceylon gems sourced directly from historical mines and crafted into timeless works of art.',
+        cta: { label: 'Discover Our Story', href: '/our-house' },
+        accent: 'gold',
+      },
+    },
   },
 ];
 
