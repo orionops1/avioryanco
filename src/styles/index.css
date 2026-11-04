@@ -588,12 +588,12 @@ label {
    ============================================================================ */
 
 header {
-  background-color: var(--color-white);
+  background-color: transparent;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 2000;
   width: 100%;
-  overflow-x: hidden;
+  overflow: visible !important;
 }
 
 header.scrolled {
