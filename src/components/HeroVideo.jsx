@@ -3,12 +3,15 @@ import { Link } from 'react-router-dom'
 import './HeroVideo.css'
 
 export default function HeroVideo({
-  video,
-  poster,
-  title = "AVIORY & CO.",
-  slogan = "WHERE LOVE BECOMES GOLD.",
-  subtitle = "Unheated Ceylon gems. Handcrafted in Sri Lanka. Made for the one you love.",
-  cta = { label: "Explore the Collection", href: "/fine-jewellery" },
+  video = "/videos/hero-luxury.mp4",
+  poster = "/images/hero-banner.jpg",
+  eyebrow = "WHERE THE VOW LIVES",
+  headline = "Forged for the skin that remembers you.",
+  slogan,
+  subtitle = "A vow isn't spoken once. It is carried daily against your pulse. Untreated Ceylon sapphires and hand-wrought gold, born deep beneath Sri Lankan earth.",
+  primaryCta = { label: "EXPLORE THE VOW COLLECTION", href: "/love-and-celebration" },
+  secondaryCta = { label: "BEGIN THE BESPOKE INTIMACY™ COMMISSION →", href: "/bespoke/enquiry" },
+  cta,
   ctaPrimary,
   ctaSecondary
 }) {
@@ -26,7 +29,9 @@ export default function HeroVideo({
     }
   }, [])
 
-  const primaryBtn = cta || ctaPrimary
+  const firstBtn = cta || ctaPrimary || primaryCta
+  const secondBtn = ctaSecondary || secondaryCta
+  const mainHeadline = headline || slogan
 
   return (
     <section className="hero-video" aria-label="Hero Showcase">
@@ -57,15 +62,19 @@ export default function HeroVideo({
       <div className="hero-video__content">
         <div className="container">
           <div className="hero-video__text">
+            {eyebrow && (
+              <span className="hero-video__eyebrow">{eyebrow}</span>
+            )}
+
             <h1 className="hero-video__title" aria-label="AVIORY & CO.">
               <span className="hero-video__logo-text">AVIORY</span>
               <span className="hero-video__logo-amp">&amp;</span>
               <span className="hero-video__logo-co">CO.</span>
             </h1>
 
-            {slogan && (
+            {mainHeadline && (
               <h2 className="hero-video__slogan">
-                {slogan}
+                {mainHeadline}
               </h2>
             )}
             
@@ -73,16 +82,16 @@ export default function HeroVideo({
               <p className="hero-video__subtitle">{subtitle}</p>
             )}
             
-            {(primaryBtn || ctaSecondary) && (
+            {(firstBtn || secondBtn) && (
               <div className="hero-video__cta">
-                {primaryBtn && (
-                  <Link to={primaryBtn.href} className="btn btn-primary">
-                    {primaryBtn.label}
+                {firstBtn && (
+                  <Link to={firstBtn.href} className="btn btn-primary">
+                    {firstBtn.label}
                   </Link>
                 )}
-                {ctaSecondary && (
-                  <Link to={ctaSecondary.href} className="btn btn-secondary">
-                    {ctaSecondary.label}
+                {secondBtn && (
+                  <Link to={secondBtn.href} className="btn btn-secondary">
+                    {secondBtn.label}
                   </Link>
                 )}
               </div>
