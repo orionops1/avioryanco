@@ -324,7 +324,7 @@ export default function Home() {
                   Untouched by fire. Extracted from the sacred gem rivers of Ceylon and cut with deliberate deep pavilion facets to capture and hold candlelight in quiet, private rooms.
                 </p>
                 <div className="museum-exhibit__specs">
-                  <span>GRS &amp; Lotus Certified</span>
+                  <span>Certified Ceylon Gem</span>
                   <span>•</span>
                   <span>7.42 Carats</span>
                   <span>•</span>
@@ -509,7 +509,7 @@ export default function Home() {
               <div className="vault-specimen-card">
                 <span className="vault-specimen-badge">LOT #RES-112</span>
                 <h4 className="vault-specimen-title">11.20ct Vivid Royal Blue Cushion Sapphire</h4>
-                <p className="vault-specimen-meta">100% Unheated • Lotus Superb Quality • Direct Ceylon Custody</p>
+                <p className="vault-specimen-meta">100% Unheated • Certified Ceylon Gem • Direct Provenance Custody</p>
                 <p className="vault-specimen-desc">
                   Intense cornflower-to-royal saturation with zero secondary modifiers. Exceptional crystalline transparency rarely observed in double-digit unheated stones.
                 </p>
@@ -529,7 +529,7 @@ export default function Home() {
               <div className="vault-specimen-card">
                 <span className="vault-specimen-badge">LOT #RES-064</span>
                 <h4 className="vault-specimen-title">6.40ct Sunset Padparadscha Pear</h4>
-                <p className="vault-specimen-meta">Untreated Lotus Bloom • GRS Documented • Master Faceted</p>
+                <p className="vault-specimen-meta">Untreated Ceylon Gem • Independent Verified • Master Faceted</p>
                 <p className="vault-specimen-desc">
                   Equally balanced 50/50 delicate pink and golden orange lotus flower hue. Sourced directly from an artisanal family gem deposit in Elahera.
                 </p>
@@ -549,7 +549,7 @@ export default function Home() {
               <div className="vault-specimen-card">
                 <span className="vault-specimen-badge">LOT #RES-048</span>
                 <h4 className="vault-specimen-title">4.85ct Pigeon Blood Untreated Ceylon Ruby</h4>
-                <p className="vault-specimen-meta">Pure Red Hue • Unheated • SSEF &amp; GIA Certification</p>
+                <p className="vault-specimen-meta">Pure Red Hue • Unheated • Certified Ceylon Gem</p>
                 <p className="vault-specimen-desc">
                   A phenomenal natural ruby with vivid fluorescence that glows fiercely under low candlelight. One of the finest corundum stones recovered in Ceylon this decade.
                 </p>

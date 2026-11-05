@@ -175,7 +175,7 @@ export default function CartDrawer({ isOpen, onClose }) {
             </div>
 
             <div className="cart-drawer__trust-badges">
-              <span>&bull; GIA &amp; Lotus Certified</span>
+              <span>&bullet; Certified Ceylon Gems</span>
               <span>&bull; Armoured Delivery</span>
               <span>&bull; Concierge Care</span>
             </div>

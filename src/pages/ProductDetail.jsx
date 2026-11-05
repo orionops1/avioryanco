@@ -182,7 +182,7 @@ export default function ProductDetail() {
             <div className="pdp-gallery__badge-strip">
               {productType === 'gemstone' && (
                 <>
-                  <span className="pdp-badge pdp-badge--gold">GIA Certified</span>
+                  <span className="pdp-badge pdp-badge--gold">Certified Ceylon Gem</span>
                   <span className="pdp-badge">{product.treatment}</span>
                   <span className="pdp-badge">{product.origin}</span>
                 </>
@@ -235,7 +235,7 @@ export default function ProductDetail() {
             </h4>
             <p className="pdp-ritual__text">
               {productType === 'gemstone'
-                ? 'Presented in a hand-polished lacquered mahogany presentation box, plush Italian suede travel pouch, wax-sealed GIA dossier, and certificate of authentic mine provenance. Delivered via fully insured armoured courier.'
+                ? 'Presented in a hand-polished lacquered mahogany presentation box, plush Italian suede travel pouch, wax-sealed Ceylon provenance dossier, and certificate of authenticity. Delivered via fully insured armoured courier.'
                 : productType === 'jewellery'
                 ? 'Each piece includes a luxury presentation box, certificate of authenticity, and complimentary professional cleaning service. Lifetime craftsmanship guarantee with annual inspection included.'
                 : 'Every engagement ring includes complimentary bespoke resizing within 12 months of purchase, annual professional cleaning and prong inspection, and a lifetime craftsmanship guarantee.'}
@@ -432,7 +432,7 @@ export default function ProductDetail() {
                   <span className="pdp-assurance-icon">âœ¦</span>
                   <div>
                     <strong>Certified Authenticity</strong>
-                    <p>100% natural, unheated stone with independent GIA certification.</p>
+                    <p>100% natural, unheated Ceylon gemstone with independent laboratory certification.</p>
                   </div>
                 </div>
                 <div className="pdp-assurance-item">
@@ -626,12 +626,12 @@ export default function ProductDetail() {
                   <div className="pdp-cert-card">
                     <h4>
                       {productType === 'gemstone'
-                        ? 'GIA Diamond & Gemstone Laboratory'
+                        ? 'Ceylon Gemstone Authentication'
                         : 'Certificate of Authenticity'}
                     </h4>
                     <p>
                       {productType === 'gemstone'
-                        ? `This unheated ${product.name} is verified for natural status, color authenticity, and absence of thermal enhancement. Official GIA documentation is presented with physical hallmark seal upon purchase.`
+                        ? `This unheated ${product.name} is verified as a certified Ceylon gemstone for natural status, color authenticity, and absence of thermal enhancement. Official Ceylon provenance documentation with physical hallmark seal is presented upon purchase.`
                         : productType === 'ring'
                         ? `This engagement ring comes with a certificate of authenticity guaranteeing the quality and characteristics of the center gemstone. All rings are manufactured according to the highest standards of craftsmanship.`
                         : `This fine jewellery piece comes with a certificate of authenticity guaranteeing the materials and craftsmanship standards.`}

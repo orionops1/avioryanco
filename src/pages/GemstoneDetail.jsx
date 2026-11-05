@@ -87,7 +87,7 @@ export default function GemstoneDetail() {
         <div className="pdp-gallery">
           <div className="pdp-gallery__featured">
             <div className="pdp-gallery__badge-strip">
-              <span className="pdp-badge pdp-badge--gold">GIA Certified</span>
+              <span className="pdp-badge pdp-badge--gold">Certified Ceylon Gem</span>
               <span className="pdp-badge">{gem.treatment}</span>
               <span className="pdp-badge">Ceylon Origin</span>
             </div>
@@ -148,7 +148,7 @@ export default function GemstoneDetail() {
             <h4 className="pdp-ritual__title">The Aviory Signature Packaging</h4>
             <p className="pdp-ritual__text">
               Presented in a hand-polished lacquered mahogany presentation box, plush Italian suede travel pouch, 
-              wax-sealed GIA dossier, and certificate of authentic Ceylon mine provenance. Delivered via fully insured armoured courier.
+              wax-sealed Ceylon provenance dossier, and international laboratory certificate. Delivered via fully insured armoured courier.
             </p>
           </div>
         </div>
@@ -219,8 +219,8 @@ export default function GemstoneDetail() {
             <div className="pdp-assurance-item">
               <span className="pdp-assurance-icon">âœ¦</span>
               <div>
-                <strong>Independent GIA Documentation</strong>
-                <p>Accompanied by verified international laboratory certification.</p>
+                <strong>Ceylon Gemstone Documentation</strong>
+                <p>Accompanied by verified independent laboratory certification of authenticity.</p>
               </div>
             </div>
             <div className="pdp-assurance-item">
@@ -302,8 +302,8 @@ export default function GemstoneDetail() {
                   <div className="pdp-cert-card">
                     <h4>{gem.certification} Diamond & Gemstone Laboratory</h4>
                     <p>
-                      This unheated {gem.name} is verified for natural status, color authenticity, and absence of thermal enhancement. 
-                      Official GIA documentation is presented with physical hallmark seal upon purchase.
+                      This unheated {gem.name} is verified as a certified Ceylon gemstone for natural status, color authenticity, and absence of thermal enhancement. 
+                      Official Ceylon provenance documentation with physical hallmark seal is presented upon purchase.
                     </p>
                     <Link to="/journal/the-heritage-of-ceylon-gemstones" className="pdp-cert-link">
                       Learn About Ceylon Gemological Heritage â†’

@@ -117,7 +117,7 @@ export default function Footer() {
         <div className="container">
           <div className="footer-bottom-content">
             <div className="footer-copyright">
-              <p>&copy; {new Date().getFullYear()} AVIORY &amp; CO. All Rights Reserved. GIA&reg; &amp; Lotus&reg; Certified Ceylon Gemstones.</p>
+              <p>&copy; {new Date().getFullYear()} AVIORY &amp; CO. All Rights Reserved. Certified Ceylon Gemstones.</p>
             </div>
             <div className="footer-links">
               {footerLinks.company.map((link, idx) => (

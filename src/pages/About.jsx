@@ -78,7 +78,7 @@ export default function About() {
                 <span className="about-heritage__highlight-icon">✦</span>
                 <div>
                   <h3>Uncompromising Quality</h3>
-                  <p>Every gemstone is hand-selected and GIA certified. We reject thousands to find the exceptional few that meet our standards.</p>
+                  <p>Every gemstone is hand-selected and verified as authentic Ceylon specimens. We reject thousands to find the exceptional few that meet our standards.</p>
                 </div>
               </div>
             </div>
