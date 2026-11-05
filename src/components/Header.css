@@ -638,6 +638,11 @@ header,
   white-space: nowrap;
 }
 
+/* Switcher components in mobile */
+.tiffany-mobile-drawer__locale-item > div {
+  flex: 1;
+}
+
 .tiffany-mobile-drawer__footer {
   padding: 1.5rem;
   border-top: 1px solid #E6E1DA;

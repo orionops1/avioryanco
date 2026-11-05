@@ -3,6 +3,8 @@ import { Link, useLocation } from 'react-router-dom'
 import useCartStore from '../hooks/useCart'
 import { useLanguage } from '../hooks/useLanguage'
 import { megaMenuData } from '../data/navigation'
+import CurrencySwitcher from './CurrencySwitcher'
+import LanguageSwitcher from './LanguageSwitcher'
 import CartDrawer from './CartDrawer'
 import SearchModal from './SearchModal'
 import AppointmentModal from './AppointmentModal'
@@ -378,11 +380,11 @@ export default function Header({ scrolled }) {
             <div className="tiffany-mobile-drawer__locale">
               <div className="tiffany-mobile-drawer__locale-item">
                 <span className="tiffany-mobile-drawer__locale-label">Currency</span>
-                {/* Currency switcher component will be added here */}
+                <CurrencySwitcher variant="mobile" />
               </div>
               <div className="tiffany-mobile-drawer__locale-item">
                 <span className="tiffany-mobile-drawer__locale-label">Language</span>
-                {/* Language switcher component will be added here */}
+                <LanguageSwitcher variant="mobile" />
               </div>
             </div>
 
