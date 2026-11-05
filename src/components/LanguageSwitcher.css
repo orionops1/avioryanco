@@ -157,6 +157,66 @@
 }
 
 /* ──────────────────────────────────────────────────────────
+   Mobile Variant - For Mobile Drawer Footer (Ivory Background)
+   ────────────────────────────────────────────────────────── */
+.language-switcher--mobile .language-toggle {
+  color: #111111;
+  border-color: #D4AF7F;
+  background-color: transparent;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.4rem 0.65rem;
+  letter-spacing: 0.08em;
+  border-radius: 2px;
+}
+
+.language-switcher--mobile .language-toggle:hover {
+  border-color: #D4AF7F;
+  color: #D4AF7F;
+  background-color: rgba(212, 175, 127, 0.04);
+}
+
+.language-switcher--mobile .language-toggle--open {
+  background-color: #111111 !important;
+  color: #FFFFFF !important;
+  border-color: #111111 !important;
+}
+
+.language-switcher--mobile .language-dropdown {
+  background-color: #FFFFFF;
+  border: 1px solid #E8E3DC;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  right: -50px;
+  width: 185px;
+}
+
+.language-switcher--mobile .language-dropdown__header {
+  background-color: #F8F4EF;
+  color: #111111;
+  border-bottom: 1px solid #E8E3DC;
+}
+
+.language-switcher--mobile .language-option {
+  color: #111111;
+  border-bottom: 1px solid #F0EBE3;
+}
+
+.language-switcher--mobile .language-option:hover {
+  background-color: #F8F4EF;
+  color: #D4AF7F;
+}
+
+.language-switcher--mobile .language-option.active {
+  background-color: #111111;
+  color: #FFFFFF;
+}
+
+.language-switcher--mobile .language-option.active .option-code {
+  color: #D4AF7F;
+  font-weight: 700;
+}
+
+/* ──────────────────────────────────────────────────────────
    Mobile & Responsive Adjustments
    ────────────────────────────────────────────────────────── */
 @media (max-width: 768px) {

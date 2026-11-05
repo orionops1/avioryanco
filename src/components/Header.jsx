@@ -377,10 +377,6 @@ export default function Header({ scrolled }) {
         </div>
 
         {/* Currency & Language top bar in mobile drawer */}
-        <div className="tiffany-mobile-drawer__locale-top">
-          <CurrencySwitcher variant="dark" />
-          <LanguageSwitcher variant="dark" />
-        </div>
 
         <div className="tiffany-mobile-drawer__body">
           <ul className="tiffany-mobile-drawer__list">
@@ -459,6 +455,10 @@ export default function Header({ scrolled }) {
         </div>
 
         <div className="tiffany-mobile-drawer__footer">
+          <div className="tiffany-mobile-drawer__locale-bar">
+            <CurrencySwitcher variant="mobile" />
+            <LanguageSwitcher variant="mobile" />
+          </div>
           <button
             type="button"
             className="btn btn-primary"
