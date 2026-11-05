@@ -28,26 +28,26 @@ export default function Home() {
 
   const heartbeatOptions = {
     sapphire: {
-      name: 'Ceylon Royal Blue Sapphire',
-      carat: '0.05ct Natural Unheated',
-      symbol: 'Unwavering Fidelity & Serenity',
-      quote: 'Echoing the steady depth of midnight Ceylon waters—a calm, unbroken promise.',
+      name: 'Midnight Ceylon Sapphire',
+      carat: 'Natural · Untouched by Fire',
+      symbol: 'Unwavering Devotion',
+      quote: 'Echoing the depth of midnight water—a calm, unbroken promise.',
       colorHex: '#254E8C',
       pulseGlow: 'rgba(37, 78, 140, 0.45)'
     },
     ruby: {
-      name: 'Ceylon Pigeon Blood Ruby',
-      carat: '0.05ct Natural Unheated',
+      name: 'Pigeon Blood Ruby',
+      carat: 'Natural · Untouched by Fire',
       symbol: 'Ardent Private Passion',
       quote: 'An untreated crimson crystal holding the unspoken heat of devotion against her pulse.',
       colorHex: '#8C1D32',
       pulseGlow: 'rgba(140, 29, 50, 0.45)'
     },
     padparadscha: {
-      name: 'Sunset Padparadscha Sapphire',
-      carat: '0.05ct Natural Unheated',
-      symbol: 'Ethereal Reverence & Tenderness',
-      quote: 'The rarest lotus-dawn hue, capturing the first light of Ceylon earth against warm skin.',
+      name: 'Sunset Lotus Padparadscha',
+      carat: 'Natural · Untouched by Fire',
+      symbol: 'Ethereal Reverence',
+      quote: 'The first warmth of dawn light against bare skin.',
       colorHex: '#C56B55',
       pulseGlow: 'rgba(197, 107, 85, 0.45)'
     }
@@ -63,31 +63,31 @@ export default function Home() {
         poster="/images/hero-banner.jpg"
         eyebrow="WHERE THE VOW LIVES"
         headline="Forged for the skin that remembers you."
-        subtitle="A vow isn't spoken once. It is carried daily against your pulse. Untreated Ceylon sapphires and hand-wrought gold, born deep beneath Sri Lankan earth."
+        subtitle="A vow isn't spoken once. It is carried daily against your pulse."
         primaryCta={{ label: "EXPLORE THE VOW COLLECTION", href: "/love-and-celebration" }}
-        secondaryCta={{ label: "BEGIN THE BESPOKE INTIMACY™ COMMISSION →", href: "/bespoke/enquiry" }}
+        secondaryCta={{ label: "COMMISSION A SECRET PIECE →", href: "/bespoke/enquiry" }}
       />
 
-      {/* 2. THE EMOTIONAL ENGINE: 4 PILLARS OF DEVOTION */}
+      {/* 2. THE FOUR EMOTIONAL PILLARS: VOW, TOUCH, WONDER, WHISPER */}
       <section className="home-pillars-section" aria-label="The Architecture of Devotion">
         <div className="container">
           <div className="section-header-centered">
             <span className="editorial-eyebrow">THE ARCHITECTURE OF DEVOTION</span>
-            <h2 className="section-title">Four Expressions of Private Covenant</h2>
+            <h2 className="section-title">Four Expressions of a Private Covenant</h2>
             <p className="section-subtitle">
-              To wear an Aviory creation is not an act of public status. It is a private covenant forged in gold and unheated Ceylon stone, meant to live where only your lover reaches.
+              Not an act of public status. A covenant carried where only your lover reaches.
             </p>
           </div>
 
           <div className="pillars-grid">
-            {/* PILLAR 1: LOVE */}
+            {/* PILLAR 1: VOW */}
             <div className="pillar-card">
               <div 
                 className="pillar-card__media"
                 style={{ backgroundImage: 'url(/images/most-popular-gifts.jpg)' }}
               >
                 <div className="pillar-card__overlay" />
-                <span className="pillar-card__num">LOVE</span>
+                <span className="pillar-card__num">VOW</span>
               </div>
               <div className="pillar-card__content">
                 <span className="pillar-card__tag">PERMANENCE</span>
@@ -95,7 +95,7 @@ export default function Home() {
                   "A vow isn't spoken once. It is carried daily against your pulse."
                 </blockquote>
                 <p className="pillar-card__desc">
-                  The physical anchor of a vow that stays when words fade. Handcrafted solitaires and unheated Ceylon sapphires created to outlast lifetimes.
+                  When words fade and rooms empty, this stays. The physical anchor of a devotion meant to outlast lifetimes.
                 </p>
                 <Link to="/love-and-celebration" className="pillar-card__link">
                   EXPLORE THE VOW COLLECTION →
@@ -103,68 +103,68 @@ export default function Home() {
               </div>
             </div>
 
-            {/* PILLAR 2: LUST */}
+            {/* PILLAR 2: TOUCH */}
             <div className="pillar-card">
               <div 
                 className="pillar-card__media"
                 style={{ backgroundImage: 'url(/images/gifts-for-her.jpg)' }}
               >
                 <div className="pillar-card__overlay" />
-                <span className="pillar-card__num">LUST</span>
+                <span className="pillar-card__num">TOUCH</span>
               </div>
               <div className="pillar-card__content">
                 <span className="pillar-card__tag">TACTILE</span>
                 <blockquote className="pillar-card__quote">
-                  "Warm gold shaped to rest heavy against her collarbone in private hours."
+                  "Warm metal shaped to rest heavy against her collarbone in private hours."
                 </blockquote>
                 <p className="pillar-card__desc">
-                  Precious metal designed to be touched, traced, and caressed. Heavy high-jewelry collars and hand-hammered gold cuffs that hold bodily warmth.
+                  Designed to be traced with fingertips in the dark. Heavy metal that drinks your heat and holds it through the night.
                 </p>
                 <Link to="/fine-jewellery" className="pillar-card__link">
-                  EXPLORE TACTILE GOLD →
+                  EXPLORE TACTILE CREATIONS →
                 </Link>
               </div>
             </div>
 
-            {/* PILLAR 3: ROMANCE */}
+            {/* PILLAR 3: WONDER */}
             <div className="pillar-card">
               <div 
                 className="pillar-card__media"
                 style={{ backgroundImage: 'url(/images/editorial/ceylon-sapphire-vault.jpg)' }}
               >
                 <div className="pillar-card__overlay" />
-                <span className="pillar-card__num">ROMANCE</span>
+                <span className="pillar-card__num">WONDER</span>
               </div>
               <div className="pillar-card__content">
                 <span className="pillar-card__tag">MYSTIC</span>
                 <blockquote className="pillar-card__quote">
-                  "Born deep beneath Sri Lankan earth. Cut to catch only candlelight."
+                  "Born in ancient dark. Cut to catch only candlelight."
                 </blockquote>
                 <p className="pillar-card__desc">
-                  Untreated royal blue and sunset padparadscha sapphires, cut with deep pavilion facets to awaken under low candle flame in quiet, private rooms.
+                  Awakened under low candle flame in quiet rooms. A deep, solitary glow meant for nobody else in the room.
                 </p>
                 <Link to="/gemstones" className="pillar-card__link">
-                  EXPLORE CANDLELIT GEMS →
+                  EXPLORE CANDLELIT PIECES →
                 </Link>
               </div>
             </div>
 
-            {/* PILLAR 4: INTIMACY */}
+            {/* PILLAR 4: WHISPER */}
             <div className="pillar-card">
               <div 
                 className="pillar-card__media"
                 style={{ backgroundImage: 'url(/images/art-of-gifting.jpg)' }}
               >
                 <div className="pillar-card__overlay" />
-                <span className="pillar-card__num">INTIMACY</span>
+                <span className="pillar-card__num">WHISPER</span>
               </div>
               <div className="pillar-card__content">
                 <span className="pillar-card__tag">SECRET</span>
                 <blockquote className="pillar-card__quote">
-                  "A secret gem set flush inside the band, touching her skin alone."
+                  "A secret stone set flush against the skin, touching her pulse alone."
                 </blockquote>
                 <p className="pillar-card__desc">
-                  Hidden details shared only between the giver and the wearer. The signature Heartbeat Gem™ embedded flush where nobody else will ever see.
+                  The world sees the ring. Only she feels what lives inside—warm, hidden, beating with every breath.
                 </p>
                 <Link to="/bespoke" className="pillar-card__link">
                   COMMISSION A SECRET DETAIL →
@@ -175,7 +175,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. THE BESPOKE INTIMACY™ SIGNATURE: THE HEARTBEAT GEM */}
+      {/* 3. THE SIGNATURE COVENANT: THE HEARTBEAT GEM */}
       <section className="home-heartbeat-section" aria-label="The Heartbeat Gem Feature">
         <div className="container">
           <div className="heartbeat-grid">
@@ -222,13 +222,13 @@ export default function Home() {
               {/* Stone Preview Card */}
               <div className="heartbeat-preview-pill">
                 <span className="heartbeat-pill-dot" style={{ backgroundColor: currentHeartbeat.colorHex }} />
-                <span className="heartbeat-pill-text">Selected: <strong>{currentHeartbeat.name}</strong> ({currentHeartbeat.carat})</span>
+                <span className="heartbeat-pill-text">Selected: <strong>{currentHeartbeat.name}</strong></span>
               </div>
             </div>
 
             {/* Narrative & Interactive Selector */}
             <div className="heartbeat-narrative">
-              <span className="editorial-eyebrow">SIGNATURE BESPOKE INTIMACY™</span>
+              <span className="editorial-eyebrow">THE SECRET COVENANT</span>
               <h2 className="section-title">The Heartbeat Gem™: Hidden Against Her Pulse</h2>
               
               <blockquote className="heartbeat-quote">
@@ -236,15 +236,15 @@ export default function Home() {
               </blockquote>
 
               <p className="heartbeat-text">
-                While the outer world admires an unheated Ceylon sapphire or platinum solitaire, the true covenant of your piece remains hidden within. Our master goldsmiths flush-set a micro unheated Ceylon gem directly into the interior curve of the ring band. 
+                The world sees what you wear on the outside. But the true covenant of your piece remains hidden within.
               </p>
               <p className="heartbeat-text">
-                It remains completely invisible to dinner parties, cameras, and strangers—touching only her skin, warm with every beat of her pulse.
+                Set flush into the interior curve of the band, a secret stone rests against her bare skin. Completely invisible to dinner parties, cameras, and strangers—felt with every beat of her pulse.
               </p>
 
               {/* Stone Selector Tabs */}
               <div className="heartbeat-selector-group">
-                <span className="heartbeat-selector-label">CHOOSE YOUR SECRET INNER STONE:</span>
+                <span className="heartbeat-selector-label">CHOOSE HER SECRET INNER STONE:</span>
                 <div className="heartbeat-buttons">
                   <button 
                     type="button" 
@@ -252,7 +252,7 @@ export default function Home() {
                     onClick={() => handleHeartbeatSelect('sapphire')}
                   >
                     <span className="heartbeat-btn__swatch" style={{ backgroundColor: '#254E8C' }} />
-                    <span className="heartbeat-btn__title">Royal Sapphire</span>
+                    <span className="heartbeat-btn__title">Midnight Sapphire</span>
                   </button>
 
                   <button 
@@ -270,7 +270,7 @@ export default function Home() {
                     onClick={() => handleHeartbeatSelect('padparadscha')}
                   >
                     <span className="heartbeat-btn__swatch" style={{ backgroundColor: '#C56B55' }} />
-                    <span className="heartbeat-btn__title">Padparadscha</span>
+                    <span className="heartbeat-btn__title">Sunset Lotus</span>
                   </button>
                 </div>
               </div>
@@ -283,10 +283,10 @@ export default function Home() {
 
               <div className="heartbeat-actions">
                 <Link to="/bespoke/enquiry" className="btn-luxury-primary">
-                  COMMISSION WITH A HEARTBEAT GEM →
+                  COMMISSION WITH A SECRET GEM →
                 </Link>
                 <Link to="/bespoke/process" className="link-text-gold">
-                  HOW THE CUSTOM JOURNEY WORKS
+                  HOW A SECRET IS MADE →
                 </Link>
               </div>
             </div>
@@ -294,46 +294,46 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. ASYMMETRICAL MUSEUM GALLERY (py-24 RHYTHM) */}
+      {/* 4. ASYMMETRICAL MUSEUM GALLERY (SOLITARY EXHIBITS) */}
       <section className="home-museum-section" aria-label="Solitary Museum Exhibits">
         <div className="container">
           <div className="section-header-centered">
             <span className="editorial-eyebrow">SOLITARY EXHIBITS</span>
-            <h2 className="section-title">The Museum Gallery</h2>
+            <h2 className="section-title">Works of Solitary Devotion</h2>
             <p className="section-subtitle">
-              We reject crowded retail catalog grids. Each rare unheated specimen and bespoke commission is presented in deliberate spatial solitude, under chiaroscuro framing.
+              Each piece is shown alone. The way an obsession deserves to be seen.
             </p>
           </div>
 
           <div className="museum-exhibits-wrap">
-            {/* EXHIBIT 01: Ceylon Royal Cushion */}
+            {/* EXHIBIT 01: The Midnight Cushion */}
             <article className="museum-exhibit museum-exhibit--left">
               <div className="museum-exhibit__media-wrap">
                 <img 
                   src="/images/editorial/ceylon-sapphire-vault.jpg" 
-                  alt="The 7.42ct Ceylon Royal Cushion" 
+                  alt="The 7.42ct Midnight Cushion" 
                   className="museum-exhibit__img"
                 />
-                <span className="museum-exhibit__badge">100% UNHEATED • CERTIFIED NATURAL</span>
+                <span className="museum-exhibit__badge">SOLITARY SPECIMEN</span>
               </div>
               <div className="museum-exhibit__meta">
                 <span className="museum-exhibit__num">EXHIBIT 01 / 04</span>
-                <span className="museum-exhibit__category">MASTER COLLECTOR SAPPHIRE</span>
-                <h3 className="museum-exhibit__title">The 7.42ct Ceylon Royal Cushion</h3>
+                <span className="museum-exhibit__category">NIGHTFALL CUSHION</span>
+                <h3 className="museum-exhibit__title">The 7.42ct Midnight Cushion</h3>
                 <p className="museum-exhibit__story">
-                  Untouched by fire. Extracted from the ancient gem gravels of Sri Lanka and cut with deliberate deep pavilion facets to capture and hold candlelight in quiet, private rooms.
+                  Untouched by fire. Cut with deep pavilion facets to capture and hold candlelight in darkened rooms. A blue so deep it feels like looking into water at midnight.
                 </p>
                 <div className="museum-exhibit__specs">
-                  <span>GRS &amp; Lotus Certified</span>
-                  <span>•</span>
                   <span>7.42 Carats</span>
                   <span>•</span>
-                  <span>Direct Mine Custody</span>
+                  <span>Cut for Candlelight</span>
+                  <span>•</span>
+                  <span>Solitary Creation</span>
                 </div>
                 <div className="museum-exhibit__footer">
                   <div className="museum-exhibit__price">{formatPrice(24800, currency)}</div>
                   <Link to="/gemstones/bs-001" className="btn-luxury-primary">
-                    EXPLORE THIS SPECIMEN
+                    EXPLORE THIS CREATION
                   </Link>
                 </div>
               </div>
@@ -347,21 +347,21 @@ export default function Home() {
                   alt="The Secret Vow Solitaire Ring" 
                   className="museum-exhibit__img"
                 />
-                <span className="museum-exhibit__badge">BESPOKE INTIMACY™</span>
+                <span className="museum-exhibit__badge">SECRET DETAIL</span>
               </div>
               <div className="museum-exhibit__meta">
                 <span className="museum-exhibit__num">EXHIBIT 02 / 04</span>
-                <span className="museum-exhibit__category">BESPOKE INTIMACY™ RING</span>
+                <span className="museum-exhibit__category">SOLITAIRE OF DEVOTION</span>
                 <h3 className="museum-exhibit__title">The Secret Vow Solitaire</h3>
                 <p className="museum-exhibit__story">
-                  A classical solitaire to the world; an intense secret to two lovers. Hand-wrought in 950 platinum with a 3.20ct Ceylon Cornflower Sapphire and a secret inner pulse ruby touching her skin alone.
+                  A classical ring to the world; an intense secret to two lovers. Solid platinum on the outside, with a secret pulse stone resting against her skin where no one else will ever reach.
                 </p>
                 <div className="museum-exhibit__specs">
-                  <span>950 Platinum</span>
+                  <span>Hand-Wrought Platinum</span>
                   <span>•</span>
-                  <span>3.20ct Ceylon Stone</span>
+                  <span>Secret Pulse Stone</span>
                   <span>•</span>
-                  <span>Heartbeat Gem™ Included</span>
+                  <span>Made for Her Skin</span>
                 </div>
                 <div className="museum-exhibit__footer">
                   <div className="museum-exhibit__price">{formatPrice(18500, currency)}</div>
@@ -372,67 +372,67 @@ export default function Home() {
               </div>
             </article>
 
-            {/* EXHIBIT 03: The Sunset Padparadscha Collar */}
+            {/* EXHIBIT 03: The Sunset Lotus Collar */}
             <article className="museum-exhibit museum-exhibit--left">
               <div className="museum-exhibit__media-wrap">
                 <img 
                   src="/images/gifts-for-her.jpg" 
-                  alt="The Sunset Padparadscha Collar" 
+                  alt="The Sunset Lotus Collar" 
                   className="museum-exhibit__img"
                 />
-                <span className="museum-exhibit__badge">ONE-OF-ONE HAUTE JOAILLERIE</span>
+                <span className="museum-exhibit__badge">ONE OF ONE</span>
               </div>
               <div className="museum-exhibit__meta">
                 <span className="museum-exhibit__num">EXHIBIT 03 / 04</span>
-                <span className="museum-exhibit__category">HAUTE JOAILLERIE COLLAR</span>
-                <h3 className="museum-exhibit__title">The Sunset Padparadscha Collar</h3>
+                <span className="museum-exhibit__category">HIGH JEWELLERY COLLAR</span>
+                <h3 className="museum-exhibit__title">The Sunset Lotus Collar</h3>
                 <p className="museum-exhibit__story">
-                  Warm gold shaped to rest heavy against her collarbone in private hours. The rare salmon-lotus hue awakens in low candlelight, retaining the physical warmth of the wearer throughout the evening.
+                  Warm metal shaped to rest heavy against her collarbone in private hours. The dawn-lotus hue awakens in low candlelight, drinking the physical warmth of the wearer.
                 </p>
                 <div className="museum-exhibit__specs">
-                  <span>18K Warm Champagne Gold</span>
+                  <span>Warm Gold</span>
                   <span>•</span>
-                  <span>4.18ct Untreated Padparadscha</span>
+                  <span>Lotus Bloom Hue</span>
                   <span>•</span>
-                  <span>Handcrafted in Ceylon</span>
+                  <span>Rests Heavy on Collarbone</span>
                 </div>
                 <div className="museum-exhibit__footer">
                   <div className="museum-exhibit__price">{formatPrice(32000, currency)}</div>
                   <Link to="/fine-jewellery" className="btn-luxury-primary">
-                    EXPLORE THIS PIECE
+                    EXPLORE THIS CREATION
                   </Link>
                 </div>
               </div>
             </article>
 
-            {/* EXHIBIT 04: The Sri Lankan Deep Emerald-Cut Teal */}
+            {/* EXHIBIT 04: The Deep Emerald-Cut Oceanic */}
             <article className="museum-exhibit museum-exhibit--right">
               <div className="museum-exhibit__media-wrap">
                 <img 
                   src="/images/gifts-to-engrave.jpg" 
-                  alt="The Sri Lankan Deep Emerald-Cut Teal Sapphire" 
+                  alt="The Deep Emerald-Cut Oceanic" 
                   className="museum-exhibit__img"
                 />
-                <span className="museum-exhibit__badge">RARE NATURAL SPECIMEN</span>
+                <span className="museum-exhibit__badge">RARE SPECIMEN</span>
               </div>
               <div className="museum-exhibit__meta">
                 <span className="museum-exhibit__num">EXHIBIT 04 / 04</span>
-                <span className="museum-exhibit__category">MASTER COLLECTOR SPECIMEN</span>
-                <h3 className="museum-exhibit__title">The Sri Lankan Deep Emerald-Cut Teal</h3>
+                <span className="museum-exhibit__category">DEEP CUT SPECIMEN</span>
+                <h3 className="museum-exhibit__title">The Deep Emerald-Cut Oceanic</h3>
                 <p className="museum-exhibit__story">
-                  A natural chromatic duality from Sri Lanka's sacred river basins. Intersecting oceanic midnight blue and jungle emerald green in a single untreated crystal, certified untouched by artificial heat.
+                  Midnight oceanic depths and jungle shadow in a single untreated crystal. Cut to draw the eye downward into quiet, unbroken silence.
                 </p>
                 <div className="museum-exhibit__specs">
                   <span>5.10 Carats</span>
                   <span>•</span>
-                  <span>Lotus Master Gem Report</span>
+                  <span>Architectural Step Cut</span>
                   <span>•</span>
-                  <span>Emerald Cut</span>
+                  <span>Untouched by Fire</span>
                 </div>
                 <div className="museum-exhibit__footer">
                   <div className="museum-exhibit__price">{formatPrice(16200, currency)}</div>
                   <Link to="/gemstones" className="btn-luxury-primary">
-                    EXPLORE THIS SPECIMEN
+                    EXPLORE THIS CREATION
                   </Link>
                 </div>
               </div>
@@ -441,14 +441,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. HOW AVIORY & CO. OUTPERFORMS LEGACY HOUSES */}
+      {/* 5. HOUSE PHILOSOPHY: PRIVATE DEVOTION VS MASS PRESTIGE */}
       <section className="home-ethos-section" aria-label="House Ethos vs Legacy Houses">
         <div className="container">
           <div className="section-header-centered">
             <span className="editorial-eyebrow">HOUSE PHILOSOPHY</span>
             <h2 className="section-title">Why Private Devotion Outlasts Mass Prestige</h2>
             <p className="section-subtitle">
-              Legacy houses sell standardized gift boxes and public prestige to millions. Aviory &amp; Co. creates solitary treasures meant for one person alone.
+              Legacy houses sell gift boxes to millions. We forge solitary covenants for one person alone.
             </p>
           </div>
 
@@ -458,10 +458,10 @@ export default function Home() {
               <span className="ethos-card__eyebrow">ONE-OF-ONE CREATIONS</span>
               <h3 className="ethos-card__title">Bespoke Intimacy™</h3>
               <p className="ethos-card__flaw">
-                <strong>The Legacy Flaw:</strong> Millions wear the identical key pendant, love bracelet, or assembly-line engagement band.
+                <strong>The World:</strong> Millions wearing the identical mass-produced bracelet or assembly-line ring.
               </p>
               <p className="ethos-card__advantage">
-                <strong>The Aviory Advantage:</strong> Every piece carries a solitary narrative, an unheated Ceylon gemstone, and secret inner details known only to two lovers.
+                <strong>Aviory:</strong> A solitary creation carrying an unspoken secret known only to the two of you.
               </p>
             </div>
 
@@ -470,37 +470,37 @@ export default function Home() {
               <span className="ethos-card__eyebrow">HIGH DISCRETION</span>
               <h3 className="ethos-card__title">Atelier Discretion</h3>
               <p className="ethos-card__flaw">
-                <strong>The Legacy Flaw:</strong> Rushed transactions at crowded glass counters in commercial shopping malls.
+                <strong>The World:</strong> Rushed transactions at crowded glass counters in shopping malls.
               </p>
               <p className="ethos-card__advantage">
-                <strong>The Aviory Advantage:</strong> Quiet, high-discretion champagne sit-downs in our Sri Lanka salon or confidential encrypted 1-on-1 virtual viewing suites.
+                <strong>Aviory:</strong> Quiet champagne sit-downs in our private salon suite or confidential encrypted virtual rooms.
               </p>
             </div>
 
-            {/* PILLAR 3: SENSORY PROVENANCE */}
+            {/* PILLAR 3: WILD PROVENANCE */}
             <div className="ethos-card">
-              <span className="ethos-card__eyebrow">GENUINE RARITY</span>
-              <h3 className="ethos-card__title">Sensory Provenance</h3>
+              <span className="ethos-card__eyebrow">WILD &amp; UNTOUCHED</span>
+              <h3 className="ethos-card__title">Wild Provenance</h3>
               <p className="ethos-card__flaw">
-                <strong>The Legacy Flaw:</strong> Dry commodity charts, sterile 4-C formulas, and heated commercial inventory.
+                <strong>The World:</strong> Cooked, treated commodity stones with sterile technical charts.
               </p>
               <p className="ethos-card__advantage">
-                <strong>The Aviory Advantage:</strong> Two millennia of Sri Lankan gem heritage, unheated crystalline purity, and ethical direct mine-to-hand custody.
+                <strong>Aviory:</strong> Untouched by artificial fire. Pure earth, pulled from ancient ground and cut by hand.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 6. THE MASTER CEYLON RESERVE */}
+      {/* 6. THE MASTER RESERVE */}
       <section className="home-vault-section" aria-label="The Master Ceylon Reserve">
         <div className="container">
           <div className="vault-frame">
             <div className="section-header-centered">
-              <span className="editorial-eyebrow">CONFIDENTIAL PATRON ARCHIVE</span>
-              <h2 className="section-title">The Master Ceylon Reserve</h2>
+              <span className="editorial-eyebrow">THE PRIVATE ARCHIVE</span>
+              <h2 className="section-title">The Master Reserve</h2>
               <p className="section-subtitle">
-                Pre-release unheated Ceylon sapphires and master collector stones held under private seal in our Sri Lanka atelier.
+                Rare unheated stones held under private seal. Seen only by private appointment.
               </p>
             </div>
 
@@ -508,10 +508,10 @@ export default function Home() {
               {/* SPECIMEN 01 */}
               <div className="vault-specimen-card">
                 <span className="vault-specimen-badge">LOT #RES-112</span>
-                <h4 className="vault-specimen-title">11.20ct Vivid Royal Blue Ceylon Cushion</h4>
-                <p className="vault-specimen-meta">100% Unheated • Lotus Superb Quality • Sri Lankan Mine Custody</p>
+                <h4 className="vault-specimen-title">11.20ct Vivid Royal Blue Cushion</h4>
+                <p className="vault-specimen-meta">Untouched by Fire · Pure Saturation · Private Custody</p>
                 <p className="vault-specimen-desc">
-                  Intense cornflower-to-royal saturation with zero secondary modifiers. Exceptional crystalline transparency rarely observed in double-digit unheated stones.
+                  An unbroken midnight blue with transparency rarely found in stones of this weight. Deep, quiet, and hypnotic.
                 </p>
                 <div className="vault-specimen-footer">
                   <span className="vault-price">Private Reserve</span>
@@ -528,10 +528,10 @@ export default function Home() {
               {/* SPECIMEN 02 */}
               <div className="vault-specimen-card">
                 <span className="vault-specimen-badge">LOT #RES-064</span>
-                <h4 className="vault-specimen-title">6.40ct Sunset Padparadscha Pear</h4>
-                <p className="vault-specimen-meta">Untreated Lotus Bloom • GRS Documented • Master Faceted</p>
+                <h4 className="vault-specimen-title">6.40ct Sunset Lotus Pear</h4>
+                <p className="vault-specimen-meta">Lotus Bloom Hue · Master Faceted · Private Custody</p>
                 <p className="vault-specimen-desc">
-                  Equally balanced 50/50 delicate pink and golden orange lotus flower hue. Sourced directly from an artisanal family gem deposit in Sri Lanka.
+                  Equally balanced delicate pink and warm sunrise orange. The colour of the first light touching bare skin.
                 </p>
                 <div className="vault-specimen-footer">
                   <span className="vault-price">Private Reserve</span>
@@ -548,10 +548,10 @@ export default function Home() {
               {/* SPECIMEN 03 */}
               <div className="vault-specimen-card">
                 <span className="vault-specimen-badge">LOT #RES-048</span>
-                <h4 className="vault-specimen-title">4.85ct Pigeon Blood Untreated Ceylon Ruby</h4>
-                <p className="vault-specimen-meta">Pure Red Hue • Unheated • SSEF &amp; GIA Certification</p>
+                <h4 className="vault-specimen-title">4.85ct Pigeon Blood Ruby</h4>
+                <p className="vault-specimen-meta">Pure Crimson · Fierce Fluorescence · Private Custody</p>
                 <p className="vault-specimen-desc">
-                  A phenomenal natural ruby with vivid fluorescence that glows fiercely under low candlelight. One of the finest corundum stones recovered in Ceylon this decade.
+                  A fierce crimson crystal with natural fluorescence that awakens fiercely under low candle flame.
                 </p>
                 <div className="vault-specimen-footer">
                   <span className="vault-price">Private Reserve</span>
@@ -569,14 +569,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. COLOMBO ATELIER & WORLDWIDE PRIVATE VIEWINGS */}
-      <section className="home-consultation-section" aria-label="Sri Lanka Atelier & Worldwide Viewings">
+      {/* 7. PRIVATE ATELIER & WORLDWIDE VIEWINGS */}
+      <section className="home-consultation-section" aria-label="Private Atelier & Worldwide Viewings">
         <div className="container">
           <div className="consultation-card">
-            <span className="editorial-eyebrow">THE PRIVATE ATELIER &amp; SALON</span>
+            <span className="editorial-eyebrow">PRIVATE SALON &amp; SUITES</span>
             <h2 className="consultation-title">Private Consultations in Sri Lanka &amp; Worldwide</h2>
             <p className="consultation-lead">
-              We do not host retail crowds. Our Sri Lanka salon operates exclusively by private appointment for quiet, unhurried champagne viewings under candlelight. For our patrons across London, Zurich, New York, and Tokyo, our gemologists host confidential 1-on-1 virtual viewings in 4K resolution.
+              We do not host retail crowds. Our salon operates exclusively by private appointment for quiet, unhurried champagne viewings under candlelight. For our patrons in London, New York, Zurich, and Tokyo, our gemologists host confidential 1-on-1 virtual suites.
             </p>
             <div className="consultation-actions">
               <button 
@@ -587,21 +587,21 @@ export default function Home() {
                 RESERVE A PRIVATE APPOINTMENT
               </button>
               <Link to="/our-house" className="btn-luxury-outline">
-                DISCOVER OUR PROVENANCE
+                DISCOVER OUR HOUSE
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 8. FROM OUR JOURNAL (EDITORIAL LORE & INTIMACY) */}
+      {/* 8. FROM OUR JOURNAL (LORE & INTIMACY) */}
       <section className="home-journal-section" aria-label="From Our Journal">
         <div className="container">
           <div className="section-header-centered">
-            <span className="editorial-eyebrow">EDITORIAL LORE &amp; CRAFT</span>
+            <span className="editorial-eyebrow">EDITORIAL LORE</span>
             <h2 className="section-title">From Our Journal</h2>
             <p className="section-subtitle">
-              Dispatches on unheated gemstone provenance, the secret poetry of jewelry, and ancient Ceylon mine lore.
+              On the secret poetry of jewelry, touch, and ancient earth lore.
             </p>
           </div>
 
@@ -612,31 +612,31 @@ export default function Home() {
                 <Link to="/journal/the-secret-inner-band">The Secret Inner-Band: Why We Hide a Gem Against Your Pulse</Link>
               </h3>
               <p className="journal-card__excerpt">
-                Why true luxury is turning inward. The emotional anthropology behind setting a solitary unheated ruby flush against her pulse point.
+                Why true luxury turns inward. The emotional anthropology behind placing a secret jewel where only her skin can feel it.
               </p>
-              <span className="journal-card__meta">By Master Goldsmith &bull; 6 min read</span>
+              <span className="journal-card__meta">6 min read</span>
             </article>
 
             <article className="journal-card">
-              <span className="journal-card__category">GEMOLOGICAL INTEGRITY</span>
+              <span className="journal-card__category">EARTH &amp; INTEGRITY</span>
               <h3 className="journal-card__title">
-                <Link to="/journal/unheated-ceylon-sapphires">Untreated Ceylon Sapphires: Why Heat Kills the Soul of a Stone</Link>
+                <Link to="/journal/unheated-ceylon-sapphires">Untouched by Fire: Why Heat Kills the Soul of a Stone</Link>
               </h3>
               <p className="journal-card__excerpt">
-                Less than 1% of the world's corundum enters the market untouched by furnace heat. The delicate silk rutile inclusions that prove wild crystalline purity.
+                Less than 1% of the world's stones enter the world untouched by ovens. What wild crystalline purity actually means.
               </p>
-              <span className="journal-card__meta">By Chief Gemologist &bull; 8 min read</span>
+              <span className="journal-card__meta">8 min read</span>
             </article>
 
             <article className="journal-card">
-              <span className="journal-card__category">ATELIER CRAFT</span>
+              <span className="journal-card__category">DARK ROMANCE</span>
               <h3 className="journal-card__title">
-                <Link to="/journal/candlelight-and-gold">Candlelight &amp; Gold: The Lost Art of Chiaroscuro Jewelry Design</Link>
+                <Link to="/journal/candlelight-and-gold">Candlelight &amp; Metal: The Lost Art of Chiaroscuro Jewelry</Link>
               </h3>
               <p className="journal-card__excerpt">
-                Before electric spotlights, fine jewelry was cut to dance under candle flame in darkened rooms. How our goldsmiths revive deep pavilion facets.
+                Before electric spotlights, fine jewelry was cut to dance under low candle flame in quiet rooms.
               </p>
-              <span className="journal-card__meta">By Design Atelier &bull; 5 min read</span>
+              <span className="journal-card__meta">5 min read</span>
             </article>
           </div>
 
@@ -655,12 +655,12 @@ export default function Home() {
             <span className="editorial-eyebrow">BY INVITATION</span>
             <h2 className="newsletter-title">Enter the Circle of Devotion</h2>
             <p className="newsletter-desc">
-              Receive discreet dispatches regarding newly unearthed unheated Ceylon sapphires, bespoke atelier releases, and invitations to private salon viewings.
+              Discreet invitations to private releases, newly unearthed stones, and salon viewings. Kept strictly confidential.
             </p>
 
             {subscribed ? (
               <div className="newsletter-success">
-                Your invitation request has been registered with our private concierge.
+                Your invitation request has been registered with our concierge.
               </div>
             ) : (
               <form onSubmit={handleNewsletterSubmit} className="newsletter-form">

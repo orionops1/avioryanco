@@ -8,7 +8,7 @@ export default function HeroVideo({
   eyebrow = "WHERE THE VOW LIVES",
   headline = "Forged for the skin that remembers you.",
   slogan,
-  subtitle = "A vow isn't spoken once. It is carried daily against your pulse. Untreated Ceylon sapphires and hand-wrought gold, born deep beneath Sri Lankan earth.",
+  subtitle = "A vow isn't spoken once. It is carried daily against your pulse.",
   primaryCta = { label: "EXPLORE THE VOW COLLECTION", href: "/love-and-celebration" },
   secondaryCta = { label: "BEGIN THE BESPOKE INTIMACY™ COMMISSION →", href: "/bespoke/enquiry" },
   cta,
