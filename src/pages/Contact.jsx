@@ -205,7 +205,7 @@ export default function Contact() {
                   <option value="bespoke">Bespoke Enquiry</option>
                   <option value="gemologist">Gemologist Concierge Consultation</option>
                   <option value="consultation">Schedule Consultation</option>
-                  <option value="support">Customer Support</option>
+                  <option value="support">Private Support</option>
                   <option value="other">Other</option>
                 </select>
                 {errors.subject && (
@@ -296,7 +296,7 @@ export default function Contact() {
           <p style={{ color: 'var(--color-charcoal)', fontSize: '1.1rem' }}>Map Coming Soon</p>
         </div>
         <p style={{ textAlign: 'center', color: 'var(--color-charcoal)' }}>
-          Located in the heart of Colombo, Sri Lanka. Contact us to arrange a visit.
+          Located in the heart of Sri Lanka. Contact us to arrange a visit.
         </p>
       </section>
     </>

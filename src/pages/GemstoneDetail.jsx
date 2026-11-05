@@ -213,7 +213,7 @@ export default function GemstoneDetail() {
               <span className="pdp-assurance-icon">âœ¦</span>
               <div>
                 <strong>Ceylon Provenance Guarantee</strong>
-                <p>100% natural, unheated stone sourced directly from Ratnapura gem deposits.</p>
+                <p>100% natural, unheated stone from the sacred gem rivers of Ceylon.</p>
               </div>
             </div>
             <div className="pdp-assurance-item">

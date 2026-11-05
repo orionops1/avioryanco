@@ -311,7 +311,7 @@ export default function Home() {
               <div className="museum-exhibit__media-wrap">
                 <img 
                   src="/images/editorial/ceylon-sapphire-vault.jpg" 
-                  alt="The 7.42ct Balangoda Royal Cushion" 
+                  alt="The Royal Cushion Sapphire" 
                   className="museum-exhibit__img"
                 />
                 <span className="museum-exhibit__badge">100% UNHEATED • CERTIFIED NATURAL</span>
@@ -319,9 +319,9 @@ export default function Home() {
               <div className="museum-exhibit__meta">
                 <span className="museum-exhibit__num">EXHIBIT 01 / 04</span>
                 <span className="museum-exhibit__category">MASTER COLLECTOR SAPPHIRE</span>
-                <h3 className="museum-exhibit__title">The 7.42ct Balangoda Royal Cushion</h3>
+                <h3 className="museum-exhibit__title">The 7.42ct Royal Cushion Sapphire</h3>
                 <p className="museum-exhibit__story">
-                  Untouched by fire. Extracted from the ancient gem gravels of Balangoda and cut with deliberate deep pavilion facets to capture and hold candlelight in quiet, private rooms.
+                  Untouched by fire. Extracted from the sacred gem rivers of Ceylon and cut with deliberate deep pavilion facets to capture and hold candlelight in quiet, private rooms.
                 </p>
                 <div className="museum-exhibit__specs">
                   <span>GRS &amp; Lotus Certified</span>
@@ -418,9 +418,9 @@ export default function Home() {
               <div className="museum-exhibit__meta">
                 <span className="museum-exhibit__num">EXHIBIT 04 / 04</span>
                 <span className="museum-exhibit__category">MASTER COLLECTOR SPECIMEN</span>
-                <h3 className="museum-exhibit__title">The Ratnapura Deep Emerald-Cut Teal</h3>
+                <h3 className="museum-exhibit__title">The Emerald-Cut Teal Sapphire</h3>
                 <p className="museum-exhibit__story">
-                  A natural chromatic duality from Sri Lanka's sacred river basins. Intersecting oceanic midnight blue and jungle emerald green in a single untreated crystal, certified untouched by artificial heat.
+                  A natural chromatic duality from Ceylon's sacred river basins. Intersecting oceanic midnight blue and jungle emerald green in a single untreated crystal, certified untouched by artificial heat.
                 </p>
                 <div className="museum-exhibit__specs">
                   <span>5.10 Carats</span>
@@ -473,7 +473,7 @@ export default function Home() {
                 <strong>The Legacy Flaw:</strong> Rushed transactions at crowded glass counters in commercial shopping malls.
               </p>
               <p className="ethos-card__advantage">
-                <strong>The Aviory Advantage:</strong> Quiet, high-discretion champagne sit-downs in our Colombo salon or confidential encrypted 1-on-1 virtual viewing suites.
+                <strong>The Aviory Advantage:</strong> Quiet, high-discretion champagne sit-downs in our private atelier or confidential encrypted 1-on-1 virtual viewing suites.
               </p>
             </div>
 
@@ -500,7 +500,7 @@ export default function Home() {
               <span className="editorial-eyebrow">CONFIDENTIAL PATRON ARCHIVE</span>
               <h2 className="section-title">The Master Ceylon Reserve</h2>
               <p className="section-subtitle">
-                Pre-release unheated Ceylon sapphires and master collector stones held under private seal in our Colombo atelier.
+                Pre-release unheated Ceylon sapphires and master collector stones held under private seal in our atelier.
               </p>
             </div>
 
@@ -508,8 +508,8 @@ export default function Home() {
               {/* SPECIMEN 01 */}
               <div className="vault-specimen-card">
                 <span className="vault-specimen-badge">LOT #RES-112</span>
-                <h4 className="vault-specimen-title">11.20ct Vivid Royal Blue Balangoda Cushion</h4>
-                <p className="vault-specimen-meta">100% Unheated • Lotus Superb Quality • Ratnapura Mine Custody</p>
+                <h4 className="vault-specimen-title">11.20ct Vivid Royal Blue Cushion Sapphire</h4>
+                <p className="vault-specimen-meta">100% Unheated • Lotus Superb Quality • Direct Ceylon Custody</p>
                 <p className="vault-specimen-desc">
                   Intense cornflower-to-royal saturation with zero secondary modifiers. Exceptional crystalline transparency rarely observed in double-digit unheated stones.
                 </p>
@@ -569,14 +569,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. COLOMBO ATELIER & WORLDWIDE PRIVATE VIEWINGS */}
-      <section className="home-consultation-section" aria-label="Colombo Atelier & Worldwide Viewings">
+      {/* 7. ATELIER & WORLDWIDE PRIVATE VIEWINGS */}
+      <section className="home-consultation-section" aria-label="Atelier & Worldwide Viewings">
         <div className="container">
           <div className="consultation-card">
-            <span className="editorial-eyebrow">COLOMBO ATELIER &amp; SALON</span>
-            <h2 className="consultation-title">Private Consultations in Colombo &amp; Worldwide</h2>
+            <span className="editorial-eyebrow">ATELIER &amp; PRIVATE SALON</span>
+            <h2 className="consultation-title">Private Consultations in Ceylon &amp; Worldwide</h2>
             <p className="consultation-lead">
-              We do not host retail crowds. Our Colombo salon operates exclusively by private appointment for quiet, unhurried champagne viewings under candlelight. For our patrons across London, Zurich, New York, and Tokyo, our gemologists host confidential 1-on-1 virtual viewings in 4K resolution.
+              We do not host retail crowds. Our private atelier in Sri Lanka operates exclusively by appointment for quiet, unhurried champagne viewings under candlelight. For our patrons across London, Zurich, New York, and Tokyo, our gemologists host confidential 1-on-1 virtual viewings in 4K resolution.
             </p>
             <div className="consultation-actions">
               <button 

@@ -201,7 +201,7 @@ export const megaMenuData = [
           heading: 'Our House',
           links: [
             { label: 'The Aviory Philosophy', href: '/our-house' },
-            { label: 'Our Colombo Atelier', href: '/our-house' },
+            { label: 'Our Atelier in Sri Lanka', href: '/our-house' },
             { label: 'Master Craftsmanship', href: '/journal/the-art-of-bespoke-jewellery' },
             { label: 'Contact Us', href: '/contact' },
           ],
@@ -209,10 +209,10 @@ export const megaMenuData = [
         {
           heading: 'Our Roots',
           links: [
-            { label: 'Sri Lankan Gem Heritage', href: '/journal/the-heritage-of-ceylon-gemstones' },
+            { label: 'Ceylon Gem Heritage', href: '/journal/the-heritage-of-ceylon-gemstones' },
             { label: 'The Unheated Sapphire Standard', href: '/journal/the-science-of-sapphire' },
-            { label: 'Sustainable Sourcing Stories', href: '/journal/sustainable-luxury-and-ethical-sourcing' },
-            { label: 'Visit Our Space', href: '/our-house' },
+            { label: 'Ethical Sourcing & Sacred Rivers', href: '/journal/sustainable-luxury-and-ethical-sourcing' },
+            { label: 'Private Salon Visits', href: '/our-house' },
           ],
         },
         {
