@@ -392,7 +392,7 @@ export default function Bespoke() {
             DESIRE, MADE REAL.
           </h2>
           <p style={{ fontSize: '1rem', color: '#666', lineHeight: 1.7, marginBottom: '2rem' }}>
-            Speak directly with our master gemmologist in Colombo or arrange a confidential virtual consultation from anywhere in the world.
+            Speak directly with our master gemmologist in Sri Lanka or arrange a confidential virtual consultation from anywhere in the world.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link to="/bespoke/enquiry" className="btn btn-primary" style={{ padding: '0.9rem 2.2rem' }}>

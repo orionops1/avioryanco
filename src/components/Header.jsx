@@ -150,7 +150,7 @@ export default function Header({ scrolled }) {
             ============================================================ */}
         <div className="tiffany-header__top">
           <div className="container tiffany-header__top-inner">
-            {/* Left Desktop: Atelier / Search */}
+            {/* Left Desktop: ATELIER · Search · Currency · Language */}
             <div className="tiffany-header__top-left">
               <Link to="/our-house" className="tiffany-header__utility-btn" title="Atelier &amp; Boutiques">
                 <span className="tiffany-header__utility-text">ATELIER</span>
@@ -164,6 +164,10 @@ export default function Header({ scrolled }) {
               >
                 <SearchIcon />
               </button>
+              <div className="tiffany-header__locale-inline">
+                <CurrencySwitcher variant="light" />
+                <LanguageSwitcher variant="light" />
+              </div>
             </div>
 
             {/* Mobile hamburger */}
@@ -193,14 +197,9 @@ export default function Header({ scrolled }) {
               <span className="tiffany-header__descriptor">CEYLON &bull; HIGH JEWELLERY &bull; EST. 2009</span>
             </Link>
 
-            {/* Right: Actions Cluster (Currency, Language & Bag clearly visible) */}
+            {/* Right: Shopping Bag */}
             <div className="tiffany-header__actions">
-              <div className="tiffany-header__locale">
-                <CurrencySwitcher variant="light" />
-                <LanguageSwitcher variant="light" />
-              </div>
-
-              {/* Shopping Bag Button */}
+              {/* Shopping Bag */}
               <button
                 type="button"
                 className="tiffany-header__action-btn tiffany-header__action-btn--bag"

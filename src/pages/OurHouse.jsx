@@ -252,8 +252,8 @@ export default function OurHouse() {
           }} />
 
           {[
-            { year: '2009', title: 'The Founding', desc: 'Maison established in Colombo, dedicated exclusively to unheated Ceylon sapphires.' },
-            { year: '2014', title: 'Mine Custody', desc: 'Direct custodial agreements with historic Ratnapura artisanal pit mines.' },
+            { year: '2009', title: 'The Founding', desc: 'Maison established in Sri Lanka, dedicated exclusively to unheated Ceylon sapphires.' },
+            { year: '2014', title: 'Mine Custody', desc: 'Direct custodial agreements with historic Sri Lankan artisanal pit mines.' },
             { year: '2018', title: 'Pure Intimacy', desc: 'Inauguration of the Bespoke Programme and pulse-point gemstone signature.' },
             { year: '2022', title: 'Global Recognition', desc: 'Private salon viewings across London, Geneva, Dubai, and Singapore.' },
             { year: 'Today', title: 'Desire, Made Real', desc: 'Continuing the craft with uncompromising intimacy and gemmological truth.' }
@@ -307,7 +307,7 @@ export default function OurHouse() {
             Experience The Maison
           </h2>
           <p style={{ fontSize: '1rem', color: '#666', lineHeight: 1.7, marginBottom: '2rem' }}>
-            We welcome private clients by appointment at our Colombo salon or via confidential private consultation.
+            We welcome private clients by appointment at our Sri Lanka atelier or via confidential private consultation.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link to="/private-consultations" className="btn btn-primary" style={{ padding: '0.9rem 2.2rem' }}>

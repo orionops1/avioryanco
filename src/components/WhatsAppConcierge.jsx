@@ -35,7 +35,7 @@ export default function WhatsAppConcierge() {
           <div className="concierge-card__body">
             <h4 className="concierge-card__title">Direct Gemologist Concierge</h4>
             <p className="concierge-card__desc">
-              Connect directly with our master gemologists in Colombo for private pricing, 4K daylight video previews, or bespoke inquiries.
+              Connect directly with our master gemologists in Sri Lanka for private pricing, 4K daylight video previews, or bespoke inquiries.
             </p>
 
             <div className="concierge-card__options">

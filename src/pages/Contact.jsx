@@ -296,7 +296,7 @@ export default function Contact() {
           <p style={{ color: 'var(--color-charcoal)', fontSize: '1.1rem' }}>Map Coming Soon</p>
         </div>
         <p style={{ textAlign: 'center', color: 'var(--color-charcoal)' }}>
-          Located in the heart of Colombo, Sri Lanka. Contact us to arrange a visit.
+          Located in Sri Lanka. Contact us to arrange a private atelier visit.
         </p>
       </section>
     </>

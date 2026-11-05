@@ -6,9 +6,9 @@ export default function HeroVideo({
   video,
   poster,
   title = "AVIORY & CO.",
-  slogan = "DESIRE, MADE REAL.",
-  subtitle = "Every love has its own expression. Exceptional Ceylon gemstones, fine jewellery, and personal creations made around the moments that define you.",
-  cta = { label: "Begin Your Story", href: "/love-and-celebration" },
+  slogan = "WHERE LOVE BECOMES GOLD.",
+  subtitle = "Unheated Ceylon gems. Handcrafted in Sri Lanka. Made for the one you love.",
+  cta = { label: "Explore the Collection", href: "/fine-jewellery" },
   ctaPrimary,
   ctaSecondary
 }) {

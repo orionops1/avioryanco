@@ -229,7 +229,7 @@ export default function Gemstones() {
         <div className="container gemstones-concierge__inner">
           <div className="gemstones-concierge__text">
             <h3>Seeking a specific Ceylon sapphire or rare carat weight?</h3>
-            <p>Our gemological team in Colombo sources exceptional stones directly from verified artisanal mines on request.</p>
+            <p>Our gemological team in Sri Lanka sources exceptional stones directly from verified artisanal mines on request.</p>
           </div>
           <div className="gemstones-concierge__action">
             <a href="/private-consultations" className="btn btn-primary">

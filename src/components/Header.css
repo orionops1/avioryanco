@@ -24,7 +24,7 @@
 /* ── Top Row: Logo Center, Utilities Left, Actions Right ── */
 .tiffany-header__top {
   background-color: #FFFFFF;
-  padding: 1.1rem 0;
+  padding: 1.4rem 0;
   border-bottom: 1px solid #E8E3DC;
   position: relative;
   z-index: 2020;
@@ -107,7 +107,7 @@
 
 .tiffany-header__logo-text {
   font-family: "BlackGold", "BlackGoldRegular", serif !important;
-  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
   font-weight: normal;
   letter-spacing: 0.1em;
   color: #1A1A1A;
@@ -118,15 +118,15 @@
 .tiffany-header__logo-ampersand {
   font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif !important;
   font-style: italic;
-  font-size: clamp(1.3rem, 2.3vw, 2rem);
+  font-size: clamp(1.8rem, 3.2vw, 2.9rem);
   font-weight: 400;
-  color: #1A1A1A;
+  color: #B8996A;
   margin: 0 0.3rem;
 }
 
 .tiffany-header__logo-co {
   font-family: "BlackGold", "BlackGoldRegular", serif !important;
-  font-size: clamp(1.3rem, 2.4vw, 2rem);
+  font-size: clamp(1.9rem, 3.5vw, 3rem);
   font-weight: normal;
   letter-spacing: 0.12em;
   color: #1A1A1A;
@@ -216,13 +216,16 @@
   border: 1.5px solid #FFFFFF;
 }
 
-/* Locale Switchers */
-.tiffany-header__locale {
+/* Locale Switchers are now inline in the top-left bar */
+
+
+/* Locale switchers inline in top-left bar */
+.tiffany-header__locale-inline {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.5rem;
   padding-left: 1rem;
-  margin-left: 0.25rem;
+  margin-left: 0.5rem;
   border-left: 1px solid #E8E3DC;
 }
 
@@ -943,7 +946,7 @@
   .tiffany-header__actions {
     gap: 0.75rem;
   }
-  .tiffany-header__locale {
+  .tiffany-header__locale-inline {
     display: none !important;
   }
 }

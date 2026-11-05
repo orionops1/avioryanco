@@ -75,8 +75,8 @@ export default function AppointmentModal({ isOpen, onClose }) {
                   checked={formData.type === 'atelier'}
                   onChange={(e) => setFormData({ ...formData, type: e.target.value })}
                 />
-                <strong>Colombo Atelier</strong>
-                <span>Private Showroom Visit</span>
+                <strong>The Flagship Atelier</strong>
+                <span>Private Atelier Visit · Sri Lanka</span>
               </label>
 
               <label className={`appt-type-card ${formData.type === 'suite' ? 'appt-type-card--active' : ''}`}>

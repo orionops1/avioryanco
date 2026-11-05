@@ -31,28 +31,28 @@ export default function Home() {
   return (
     <div className="aviory-homepage">
       {/* 1. HERO VIDEO / CAMPAIGN */}
-      <HeroVideo 
-        video={heroVideo.video}
-        poster={heroVideo.poster}
-        title={heroVideo.title}
-        slogan={heroVideo.slogan}
-        subtitle={heroVideo.subtitle}
-        cta={heroVideo.cta}
+      <HeroVideo
+        video="/videos/hero-luxury.mp4"
+        poster="/images/hero-banner.jpg"
+        slogan="MADE TO BE FELT, NOT JUST WORN."
+        subtitle="Natural Ceylon gems. Handcrafted in Sri Lanka. Carried close, every single day."
+        cta={{ label: "EXPLORE THE VOW COLLECTION", href: "/love-and-celebration" }}
+        ctaSecondary={{ label: "COMMISSION A BESPOKE PIECE →", href: "/bespoke/enquiry" }}
       />
 
       {/* USP Trust Strip — Tiffany-standard subtle pillar row */}
       <div className="home-usp-strip">
         <div className="home-usp-strip__item">
           <span className="home-usp-strip__icon" aria-hidden="true">&#10022;</span>
-          <span>Complimentary Worldwide Shipping</span>
+          <span>Ships Anywhere in the World</span>
         </div>
         <div className="home-usp-strip__item">
           <span className="home-usp-strip__icon" aria-hidden="true">&#9671;</span>
-          <span>Certified Unheated Ceylon Gemstones</span>
+          <span>100% Natural, Unheated Ceylon Gems</span>
         </div>
         <div className="home-usp-strip__item">
           <span className="home-usp-strip__icon" aria-hidden="true">&#10023;</span>
-          <span>Private Consultations Available</span>
+          <span>Private Appointments — In Person or Online</span>
         </div>
       </div>
 
@@ -70,12 +70,12 @@ export default function Home() {
               </div>
               <div className="editorial-panel-content">
                 <span className="editorial-eyebrow">LOVE &amp; CELEBRATION</span>
-                <h3>For the Moments Too Large for Words</h3>
+                <h3>The Ring She Will Never Take Off</h3>
                 <p>
-                  Some moments cannot be explained &mdash; only felt. A question asked in a quiet room. A promise made in front of everyone you love. Discover engagement rings and fine jewellery created to hold the weight of those moments.
+                  Some feelings are too big to put into words. So you put them into gold. Engagement rings and celebration jewellery created to carry the weight of your most important moments — beautifully, forever.
                 </p>
                 <Link to="/love-and-celebration" className="btn btn-primary btn-small">
-                  EXPLORE LOVE &amp; CELEBRATION
+                  EXPLORE THE VOW COLLECTION
                 </Link>
               </div>
             </div>
@@ -89,13 +89,13 @@ export default function Home() {
                 <div className="editorial-panel-overlay" />
               </div>
               <div className="editorial-panel-content">
-                <span className="editorial-eyebrow">HIGH JEWELLERY ATELIER</span>
-                <h3>Beauty That Becomes Part of Your Story</h3>
+                <span className="editorial-eyebrow">FINE JEWELLERY</span>
+                <h3>Gold That Stays Warm Against Her Skin</h3>
                 <p>
-                  The pieces we wear daily become part of who we are. From considered everyday silhouettes to extraordinary statements &mdash; crafted with certified unheated gemstones, made to be worn, not kept away.
+                  The pieces you reach for every morning. The ones that feel wrong to remove. Fine jewellery with natural Ceylon gemstones — made to live on you, not in a box.
                 </p>
                 <Link to="/fine-jewellery" className="btn btn-primary btn-small">
-                  EXPLORE FINE JEWELLERY
+                  DISCOVER FINE JEWELLERY
                 </Link>
               </div>
             </div>
@@ -113,17 +113,17 @@ export default function Home() {
             <div className="home-value-hero-overlay" />
           </div>
           <div className="home-value-hero-content">
-            <span className="editorial-eyebrow">PURE INTIMACY &bull; THE BESPOKE PROGRAMME</span>
-            <h2>A Piece That Belongs Only to You</h2>
+            <span className="editorial-eyebrow">MADE ONLY FOR YOU</span>
+            <h2>A Piece That Holds Your Secret</h2>
             <p>
-              Some feelings are difficult to put into words. Tell us about the person. The memory. The moment you want to make permanent.
+              Think of the person. The feeling. The moment you want to freeze in gold and stone — and keep close for the rest of your life.
             </p>
             <p style={{ marginTop: "-1rem", fontStyle: "italic", color: "#8E6F3E" }}>
-              Together, we will select an unheated gemstone and develop a design that feels personal, meaningful &mdash; and entirely yours. This is not a purchase. It is a collaboration.
+              We will sit with you — in our atelier or over video — and design something that belongs entirely to you two. No templates. No catalogues. Just the story you bring us, turned into something real.
             </p>
             <div className="home-value-hero-actions">
               <Link to="/bespoke" className="btn btn-primary">
-                BEGIN A BESPOKE CONVERSATION
+                START YOUR STORY
               </Link>
               <Link to="/our-house" className="btn btn-outline">
                 DISCOVER OUR HOUSE
@@ -143,17 +143,17 @@ export default function Home() {
             <div className="home-gift-overlay" />
           </div>
           <div className="home-gift-content">
-            <span className="editorial-eyebrow">MILESTONES &amp; GIVING</span>
-            <h2>For the People Who Deserve More Than a Gesture</h2>
+            <span className="editorial-eyebrow">A GIFT THAT SAYS EVERYTHING</span>
+            <h2>For the Person You Think About When Nobody Is Watching</h2>
             <p>
-              A birthday. An anniversary. An unexpected Tuesday when you simply wanted them to know.
+              A birthday. An anniversary. An ordinary Tuesday when you just needed them to know.
             </p>
             <p style={{ marginTop: "-1rem", fontWeight: "500", color: "#111111" }}>
-              Find something that says: <em>I thought of you, specifically.</em>
+              Find something that says: <em>I chose this for you, and only you.</em>
             </p>
             <div style={{ marginTop: "1rem" }}>
               <Link to="/fine-jewellery" className="btn btn-primary">
-                DISCOVER MEANINGFUL GIFTS
+                FIND THE PERFECT GIFT
               </Link>
             </div>
           </div>
@@ -165,26 +165,26 @@ export default function Home() {
         <div className="container">
           <div className="home-heritage-grid">
             <div className="home-heritage-content">
-              <span className="editorial-eyebrow">CEYLON PROVENANCE &amp; SCIENCE</span>
-              <h2>A Heritage Written in Colour</h2>
+              <span className="editorial-eyebrow">BORN IN SRI LANKA</span>
+              <h2>Wild Colour, Straight from the Earth</h2>
               <p>
-                Sri Lanka is one of the oldest gemstone origins on earth &mdash; a legendary island that has yielded extraordinary sapphires, rubies, and spinels for more than two millennia.
+                Sri Lanka has been producing the world's most extraordinary sapphires, rubies, and spinels for over two thousand years. These are not factory stones. They are pulled from the ground exactly as nature made them — unheated, untreated, alive with colour.
               </p>
               <p>
-                At Aviory, we bring this heritage closer through a rigorous curation of 100% natural, unheated Ceylon gemstones, accompanied by international reports from Lotus, GRS, and GIA.
+                Every gem at Aviory carries full certification from Lotus, GRS, or GIA — confirming it has never been touched by heat. What you see is exactly what nature created.
               </p>
               <div className="home-heritage-actions">
                 <Link to="/gemstones" className="btn btn-primary">
-                  EXPLORE CEYLON GEMSTONES
+                  EXPLORE RARE CEYLON GEMS
                 </Link>
                 <Link to="/our-house" className="btn btn-outline">
-                  OUR GEMSTONE HERITAGE
+                  OUR STORY
                 </Link>
               </div>
             </div>
             <div className="home-heritage-visual">
               <div className="home-heritage-card">
-                <div className="heritage-badge">100% UNHEATED &amp; CERTIFIED NATURAL</div>
+                <div className="heritage-badge">100% NATURAL · NEVER HEATED</div>
                 <div className="heritage-gemstone-image-wrap">
                   <img 
                     src="/images/editorial/ceylon-sapphire-vault.jpg" 
@@ -198,7 +198,7 @@ export default function Home() {
                   <h4>Royal Ceylon Sapphire</h4>
                   <p className="heritage-gemstone-meta">7.42 Carats &bull; Cushion Cut &bull; Unheated &bull; Natural</p>
                   <p className="heritage-gemstone-desc">
-                    The colour of a clear evening sky, just after the light changes. Unheated, unaltered, and accompanied by full gemmological documentation.
+                    The colour of deep evening sky. Pulled from Sri Lankan earth, never touched by heat — wild and completely real.
                   </p>
                   <Link to="/gemstones?category=blue-sapphires" className="heritage-card-link">
                     DISCOVER THIS SAPPHIRE &rarr;
@@ -214,8 +214,8 @@ export default function Home() {
       <section className="featured-products">
         <div className="container">
           <div className="section-title-wrap">
-            <span className="editorial-eyebrow">CURATED HIGHLIGHTS</span>
-            <h2 className="section-heading">Featured Creations</h2>
+            <span className="editorial-eyebrow">HANDPICKED FOR YOU</span>
+            <h2 className="section-heading">Pieces Worth Falling For</h2>
             <div className="highlight-tabs" style={{ display: "flex", gap: "1rem", justifyContent: "center", marginTop: "1.25rem" }}>
               <button
                 type="button"
@@ -265,7 +265,7 @@ export default function Home() {
         textAlign: "center"
       }}>
         <div className="container" style={{ maxWidth: "860px", margin: "0 auto" }}>
-          <span className="editorial-eyebrow" style={{ color: "#DFBA73" }}>OUR HOUSE &bull; THE CREDO</span>
+          <span className="editorial-eyebrow" style={{ color: "#DFBA73" }}>WHO WE ARE</span>
           <h2 style={{
             fontFamily: "var(--font-serif-display, 'Playfair Display', serif)",
             fontSize: "clamp(2rem, 3.8vw, 3rem)",
@@ -274,7 +274,7 @@ export default function Home() {
             lineHeight: 1.25,
             marginBottom: "1.5rem"
           }}>
-            More Than Jewellery.<br />A Personal Expression.
+            We Don't Make Jewellery for Everyone.<br />We Make It for Someone.
           </h2>
           <p style={{
             fontFamily: "var(--font-serif-body, 'Cormorant Garamond', Georgia, serif)",
@@ -283,7 +283,7 @@ export default function Home() {
             color: "#EDE7DC",
             marginBottom: "2rem"
           }}>
-            Born in Sri Lanka &mdash; a country with one of the world's most celebrated gemstone heritages &mdash; Aviory brings together the beauty of Ceylon gemstones, gemmological knowledge, and master goldsmith artistry. Every gemstone has its own character, and every creation has the opportunity to mean something different to the person who carries it.
+            Sri Lanka has given the world some of its most extraordinary gems for over two thousand years. We bring that heritage into every piece — combining natural, unheated Ceylon gems with master goldsmith craftsmanship. Each creation is designed around one person, one feeling, one story. Yours.
           </p>
           <div style={{
             display: "inline-block",
@@ -299,7 +299,7 @@ export default function Home() {
               fontStyle: "italic",
               color: "#DFBA73"
             }}>
-              &ldquo;We do not believe in jewellery made for everyone.<br />We believe in jewellery made for someone.&rdquo;
+              &ldquo;Not for everyone who wants beautiful jewellery.<br />For the one person who deserves this exact piece.&rdquo;
             </p>
           </div>
           <div>
@@ -314,9 +314,9 @@ export default function Home() {
       <section className="journal-preview">
         <div className="container">
           <div className="section-title-wrap">
-            <span className="editorial-eyebrow">EDITORIAL &amp; KNOWLEDGE</span>
+            <span className="editorial-eyebrow">STORIES FROM THE ATELIER</span>
             <h2 className="section-heading">From Our Journal</h2>
-            <p className="section-subtitle">Gemological insights, provenance disclosures, and jewelry care</p>
+            <p className="section-subtitle">On gems, gold, the craft — and the feelings that make it all worth it.</p>
           </div>
           <div className="journal-grid">
             {journalArticles.slice(0, 3).map(article => (
@@ -344,9 +344,9 @@ export default function Home() {
       <section className="newsletter-section">
         <div className="container">
           <div className="newsletter-content">
-            <span className="editorial-eyebrow" style={{ color: "#D4AF7F" }}>THE PRIVATE CIRCLE</span>
-            <h2>Join Our Circle</h2>
-            <p>Receive exclusive private access to newly acquired Ceylon gemstones, bespoke commission invitations, and editorial journal stories.</p>
+            <span className="editorial-eyebrow" style={{ color: "#D4AF7F" }}>STAY CLOSE</span>
+            <h2>Be the First to Know</h2>
+            <p>New rare gems. New designs. Private appointments before they open to everyone. No noise — only the things worth your attention.</p>
             {subscribed && <div className="alert alert-success">{t("home.subscribeSuccess", "Thank you for subscribing!")}</div>}
             <form onSubmit={handleNewsletterSubmit} className="newsletter-form">
               <input
@@ -356,7 +356,7 @@ export default function Home() {
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
-              <button type="submit" className="btn btn-primary">SUBSCRIBE</button>
+              <button type="submit" className="btn btn-primary">JOIN</button>
             </form>
           </div>
         </div>
@@ -365,9 +365,9 @@ export default function Home() {
       {/* 10. ATELIER & SALON CONSULTATION */}
       <section className="cta-section">
         <div className="container">
-          <span className="editorial-eyebrow">PRIVATE SALON EXPERIENCE</span>
-          <h2>Visit Our Atelier &amp; Private Salon</h2>
-          <p>Our gemologists and master goldsmiths are available for private in-person or virtual consultations worldwide.</p>
+          <span className="editorial-eyebrow">LET'S MEET</span>
+          <h2>Come See Us — or We'll Come to You</h2>
+          <p>Our atelier is in Sri Lanka, but we see clients everywhere. Book a private in-person or video appointment — relaxed, unhurried, completely personal.</p>
           <div style={{ display: "flex", gap: "var(--spacing-md)", justifyContent: "center", flexWrap: "wrap", marginTop: "1.5rem" }}>
             <Link to="/contact" className="btn btn-primary">
               BOOK A PRIVATE CONSULTATION

@@ -133,7 +133,7 @@ export default function LoveAndCelebration() {
               &ldquo;Before the question is asked, there is a silence so full it needs a body to hold it. We do not sell jewellery. We make desire real.&rdquo;
             </p>
             <p className="love-hero__narrative">
-              Real passion refuses to be rushed, manufactured, or copied. In our Colombo atelier, master goldsmiths forge 950 platinum and 18K solid gold around singular, unheated Ceylon sapphires and rare natural gems &mdash; permanent talismans of longing, devotion, and private devotion.
+              Real passion refuses to be rushed, manufactured, or copied. In our Sri Lanka atelier, master goldsmiths forge 950 platinum and 18K solid gold around singular, unheated Ceylon sapphires and rare natural gems &mdash; permanent talismans of longing, devotion, and private devotion.
             </p>
 
             <div className="love-hero__badges">

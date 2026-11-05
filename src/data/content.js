@@ -149,7 +149,7 @@ export const about = {
     },
     {
       title: 'Ceylon Provenance',
-      description: 'Ethical direct custody from historic Ratnapura gravels, certified by GIA and Lotus.'
+      description: 'Ethical direct custody from historic Ceylon gem gravels, certified by GIA and Lotus.'
     }
   ]
 };
@@ -215,7 +215,7 @@ export const shopInfo = {
   locations: [
     {
       name: 'Main Atelier',
-      address: 'Colombo, Sri Lanka',
+      address: 'Private Atelier, Sri Lanka',
       hours: 'By appointment',
       contact: '+94 77 610 0099 / +94 77 610 0075',
       services: ['Consultations', 'Private Showings', 'Bespoke Design']
@@ -244,8 +244,8 @@ export const contactInfo = {
   whatsapp2: '+94776100075',
   phones: ['+94 77 610 0099', '+94 77 610 0075'],
   whatsapp: '+94776100099',
-  address: 'Colombo 03',
-  city: 'Colombo',
+  address: 'Private Atelier',
+  city: 'Sri Lanka',
   country: 'Sri Lanka',
   hours: 'Monday - Friday: 9:00 AM - 6:00 PM',
   weekends: 'Saturday & Sunday: By Appointment',
