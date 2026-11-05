@@ -35,7 +35,8 @@
   
   /* STRUCTURE & BORDERS */
   --color-border: #E6E1DA;           /* Hairline dividers */
-  --color-border-subtle: #E6E1DA;    /* Subtle structural lines */
+  --color-border-subtle: #E6E1DA;
+  --header-height: 110px;    /* Subtle structural lines */
   
   /* SUPPORTING NEUTRALS - rarely used */
   --color-white: #FFFFFF;
