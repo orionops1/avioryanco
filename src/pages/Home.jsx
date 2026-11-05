@@ -80,14 +80,14 @@ export default function Home() {
           </div>
 
           <div className="pillars-grid">
-            {/* PILLAR 1: LOVE */}
+            {/* PILLAR 1: VOW */}
             <div className="pillar-card">
               <div 
                 className="pillar-card__media"
                 style={{ backgroundImage: 'url(/images/most-popular-gifts.jpg)' }}
               >
                 <div className="pillar-card__overlay" />
-                <span className="pillar-card__num">01 / LOVE</span>
+                <span className="pillar-card__num">01 / VOW</span>
               </div>
               <div className="pillar-card__content">
                 <span className="pillar-card__tag">PERMANENCE</span>
@@ -103,14 +103,14 @@ export default function Home() {
               </div>
             </div>
 
-            {/* PILLAR 2: LUST */}
+            {/* PILLAR 2: TOUCH */}
             <div className="pillar-card">
               <div 
                 className="pillar-card__media"
                 style={{ backgroundImage: 'url(/images/gifts-for-her.jpg)' }}
               >
                 <div className="pillar-card__overlay" />
-                <span className="pillar-card__num">02 / LUST</span>
+                <span className="pillar-card__num">02 / TOUCH</span>
               </div>
               <div className="pillar-card__content">
                 <span className="pillar-card__tag">TACTILE</span>
@@ -126,14 +126,14 @@ export default function Home() {
               </div>
             </div>
 
-            {/* PILLAR 3: ROMANCE */}
+            {/* PILLAR 3: WONDER */}
             <div className="pillar-card">
               <div 
                 className="pillar-card__media"
                 style={{ backgroundImage: 'url(/images/editorial/ceylon-sapphire-vault.jpg)' }}
               >
                 <div className="pillar-card__overlay" />
-                <span className="pillar-card__num">03 / ROMANCE</span>
+                <span className="pillar-card__num">03 / WONDER</span>
               </div>
               <div className="pillar-card__content">
                 <span className="pillar-card__tag">MYSTIC</span>
@@ -149,14 +149,14 @@ export default function Home() {
               </div>
             </div>
 
-            {/* PILLAR 4: INTIMACY */}
+            {/* PILLAR 4: WHISPER */}
             <div className="pillar-card">
               <div 
                 className="pillar-card__media"
                 style={{ backgroundImage: 'url(/images/art-of-gifting.jpg)' }}
               >
                 <div className="pillar-card__overlay" />
-                <span className="pillar-card__num">04 / INTIMACY</span>
+                <span className="pillar-card__num">04 / WHISPER</span>
               </div>
               <div className="pillar-card__content">
                 <span className="pillar-card__tag">SECRET</span>
