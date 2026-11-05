@@ -374,16 +374,29 @@ export default function Header({ scrolled }) {
               </button>
             </div>
 
+            {/* Locale Switchers in Mobile Drawer */}
+            <div className="tiffany-mobile-drawer__locale">
+              <div className="tiffany-mobile-drawer__locale-item">
+                <span className="tiffany-mobile-drawer__locale-label">Currency</span>
+                {/* Currency switcher component will be added here */}
+              </div>
+              <div className="tiffany-mobile-drawer__locale-item">
+                <span className="tiffany-mobile-drawer__locale-label">Language</span>
+                {/* Language switcher component will be added here */}
+              </div>
+            </div>
+
             <div className="tiffany-mobile-drawer__nav">
               {menuItems.map((item) => (
-                <Link
-                  key={item.key}
-                  to={item.href}
-                  className="tiffany-mobile-drawer__link"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
+                <div key={item.key} className="tiffany-mobile-drawer__item">
+                  <Link
+                    to={item.href}
+                    className="tiffany-mobile-drawer__link"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                </div>
               ))}
             </div>
 
