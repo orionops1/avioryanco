@@ -140,7 +140,6 @@ body {
   background-color: var(--color-ivory);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding-top: 180px;
 }
 
 #root {
