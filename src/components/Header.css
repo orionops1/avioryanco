@@ -7,7 +7,7 @@
 
 /* ── Header Shell ── */
 .tiffany-header {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -15,6 +15,7 @@
   background-color: #FFFFFF;
   overflow: visible !important;
   transition: box-shadow 0.3s ease;
+  width: 100%;
 }
 
 .tiffany-header--scrolled {
