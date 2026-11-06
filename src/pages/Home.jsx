@@ -72,10 +72,11 @@ export default function Home() {
       <section className="home-pillars-section" aria-label="The Architecture of Devotion">
         <div className="container">
           <div className="section-header-centered">
-            <span className="editorial-eyebrow">THE ARCHITECTURE OF DEVOTION</span>
-            <h2 className="section-title">Four Expressions of a Private Covenant</h2>
+            <span className="editorial-eyebrow">BESPOKE INTIMACY</span>
+            <h2 className="section-title">THE ARCHITECTURE OF DEVOTION</h2>
+            <h3 className="section-subtitle-heading">Four Expressions of Intimacy</h3>
             <p className="section-subtitle">
-              Not an act of public status. A covenant carried where only your lover reaches.
+              Love has its own language: a promise kept, a touch remembered, a look that lingers, a secret shared.
             </p>
           </div>
 
@@ -90,16 +91,9 @@ export default function Home() {
                 <span className="pillar-card__num">VOW</span>
               </div>
               <div className="pillar-card__content">
-                <span className="pillar-card__tag">PERMANENCE</span>
                 <blockquote className="pillar-card__quote">
-                  "A vow isn't spoken once. It is carried daily against your pulse."
+                  A promise kept.
                 </blockquote>
-                <p className="pillar-card__desc">
-                  When words fade and rooms empty, this stays. The physical anchor of a devotion meant to outlast lifetimes.
-                </p>
-                <Link to="/love-and-celebration" className="pillar-card__link">
-                  EXPLORE THE VOW COLLECTION →
-                </Link>
               </div>
             </div>
 
@@ -113,16 +107,9 @@ export default function Home() {
                 <span className="pillar-card__num">TOUCH</span>
               </div>
               <div className="pillar-card__content">
-                <span className="pillar-card__tag">TACTILE</span>
                 <blockquote className="pillar-card__quote">
-                  "Warm metal shaped to rest heavy against her collarbone in private hours."
+                  A touch remembered.
                 </blockquote>
-                <p className="pillar-card__desc">
-                  Designed to be traced with fingertips in the dark. Heavy metal that drinks your heat and holds it through the night.
-                </p>
-                <Link to="/fine-jewellery" className="pillar-card__link">
-                  EXPLORE TACTILE CREATIONS →
-                </Link>
               </div>
             </div>
 
@@ -136,16 +123,9 @@ export default function Home() {
                 <span className="pillar-card__num">WONDER</span>
               </div>
               <div className="pillar-card__content">
-                <span className="pillar-card__tag">MYSTIC</span>
                 <blockquote className="pillar-card__quote">
-                  "Born in ancient dark. Cut to catch only candlelight."
+                  A look that lingers.
                 </blockquote>
-                <p className="pillar-card__desc">
-                  Awakened under low candle flame in quiet rooms. A deep, solitary glow meant for nobody else in the room.
-                </p>
-                <Link to="/gemstones" className="pillar-card__link">
-                  EXPLORE CANDLELIT PIECES →
-                </Link>
               </div>
             </div>
 
@@ -159,16 +139,9 @@ export default function Home() {
                 <span className="pillar-card__num">WHISPER</span>
               </div>
               <div className="pillar-card__content">
-                <span className="pillar-card__tag">SECRET</span>
                 <blockquote className="pillar-card__quote">
-                  "A secret stone set flush against the skin, touching her pulse alone."
+                  A secret shared.
                 </blockquote>
-                <p className="pillar-card__desc">
-                  The world sees the ring. Only she feels what lives inside—warm, hidden, beating with every breath.
-                </p>
-                <Link to="/bespoke" className="pillar-card__link">
-                  COMMISSION A SECRET DETAIL →
-                </Link>
               </div>
             </div>
           </div>
