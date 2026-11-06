@@ -61,11 +61,11 @@ export default function Home() {
       <HeroVideo
         video="/videos/hero-luxury.mp4"
         poster="/images/hero-banner.jpg"
-        eyebrow="WHERE THE VOW LIVES"
-        headline="Forged for the skin that remembers you."
-        subtitle="A vow isn't spoken once. It is carried daily against your pulse."
-        primaryCta={{ label: "EXPLORE THE VOW COLLECTION", href: "/love-and-celebration" }}
-        secondaryCta={{ label: "CREATE YOUR BESPOKE PIECE →", href: "/bespoke/enquiry" }}
+        eyebrow="BESPOKE INTIMACY"
+        headline="The Shape of Desire"
+        subtitle="For love, longing and the moments that belong only to you."
+        primaryCta={{ label: "DISCOVER AVIORY", href: "/love-and-celebration" }}
+        secondaryCta={null}
       />
 
       {/* 2. THE FOUR EMOTIONAL PILLARS: VOW, TOUCH, WONDER, WHISPER */}
