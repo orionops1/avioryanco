@@ -66,12 +66,6 @@ export default function HeroVideo({
               <span className="hero-video__eyebrow">{eyebrow}</span>
             )}
 
-            <h1 className="hero-video__title" aria-label="AVIORY & CO.">
-              <span className="hero-video__logo-text">AVIORY</span>
-              <span className="hero-video__logo-amp">&amp;</span>
-              <span className="hero-video__logo-co">CO.</span>
-            </h1>
-
             {mainHeadline && (
               <h2 className="hero-video__slogan">
                 {mainHeadline}
