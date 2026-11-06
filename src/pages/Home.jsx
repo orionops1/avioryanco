@@ -65,7 +65,7 @@ export default function Home() {
         headline="Forged for the skin that remembers you."
         subtitle="A vow isn't spoken once. It is carried daily against your pulse."
         primaryCta={{ label: "EXPLORE THE VOW COLLECTION", href: "/love-and-celebration" }}
-        secondaryCta={{ label: "COMMISSION A SECRET PIECE →", href: "/bespoke/enquiry" }}
+        secondaryCta={{ label: "CREATE YOUR BESPOKE PIECE →", href: "/bespoke/enquiry" }}
       />
 
       {/* 2. THE FOUR EMOTIONAL PILLARS: VOW, TOUCH, WONDER, WHISPER */}
