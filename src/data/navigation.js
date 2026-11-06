@@ -1,6 +1,6 @@
 // ============================================================================
 // AVIORY & CO. - BRAND NAVIGATION CONFIGURATION
-// Direction: Expressions · Bespoke · Our House · Journal
+// Direction: Expressions · The Proposal · The Colour Edit · Bespoke · Our House · Journal
 // Emotion before commerce — VOW · TOUCH · WONDER · WHISPER
 // ============================================================================
 
@@ -25,7 +25,7 @@ export const megaMenuData = [
           heading: 'Bespoke Intimacy',
           links: [
             { label: 'The Heartbeat Gem™: Hidden Against Her Pulse', href: '/bespoke' },
-            { label: 'Solitary Creations', href: '/love-and-celebration' },
+            { label: 'Solitary Devotion', href: '/love-and-celebration' },
             { label: 'Private Commissions', href: '/bespoke/enquiry' },
             { label: 'Explore All Expressions', href: '/love-and-celebration', accent: true },
           ],
@@ -62,6 +62,76 @@ export const megaMenuData = [
         subtitle: 'Love has its own language: a promise kept, a touch remembered, a look that lingers, a secret shared.',
         cta: { label: 'Discover Aviory', href: '/love-and-celebration' },
         accent: 'champagne',
+      },
+    },
+  },
+  {
+    key: 'the-proposal',
+    label: 'THE PROPOSAL',
+    labelKey: 'common.theProposal',
+    href: '/the-proposal',
+    mega: {
+      columns: [
+        {
+          heading: 'Four Experiences',
+          links: [
+            { label: '01 — Find the Feeling', href: '/the-proposal#find-the-feeling' },
+            { label: '02 — Make It Yours', href: '/the-proposal#make-it-yours' },
+            { label: '03 — Keep the Surprise', href: '/the-proposal#keep-the-surprise' },
+            { label: '04 — The Moment After Yes', href: '/the-proposal#moment-after-yes' },
+          ],
+        },
+        {
+          heading: 'The Proposal Experience',
+          links: [
+            { label: 'The Private Proposal Service', href: '/the-proposal' },
+            { label: 'Solitaire Rings of Devotion', href: '/the-proposal#curated-rings' },
+            { label: 'The Secret Inner Band', href: '/bespoke' },
+            { label: 'Plan Your Proposal With Us', href: '/private-consultations', accent: true },
+          ],
+        },
+      ],
+      feature: {
+        title: 'Make the Moment Yours',
+        subtitle: 'For the question you have been carrying, and the life you hope to begin together.',
+        cta: { label: 'Begin Your Proposal', href: '/the-proposal' },
+        accent: 'champagne',
+      },
+    },
+  },
+  {
+    key: 'the-colour-edit',
+    label: 'THE COLOUR EDIT',
+    labelKey: 'common.theColourEdit',
+    href: '/the-colour-edit',
+    mega: {
+      columns: [
+        {
+          heading: 'Explore by Colour Family',
+          links: [
+            { label: 'The Depth of Blue (Blue)', href: '/the-colour-edit?color=blue' },
+            { label: 'The Art of Blush (Pink)', href: '/the-colour-edit?color=pink' },
+            { label: 'Between Rose & Sunset (Padparadscha)', href: '/the-colour-edit?color=padparadscha' },
+            { label: 'A Little Sunlight (Yellow)', href: '/the-colour-edit?color=yellow' },
+            { label: 'The Heat of Red (Ruby & Crimson)', href: '/the-colour-edit?color=red' },
+            { label: 'After Dusk (Violet & Deep tones)', href: '/the-colour-edit?color=violet' },
+          ],
+        },
+        {
+          heading: 'The Discovery Space',
+          links: [
+            { label: 'Singular Specimens', href: '/the-colour-edit' },
+            { label: 'Untouched by Artificial Fire', href: '/journal/unheated-ceylon-sapphires' },
+            { label: 'Earth Provenance Custody', href: '/our-house' },
+            { label: 'View Full Colour Edit', href: '/the-colour-edit', accent: true },
+          ],
+        },
+      ],
+      feature: {
+        title: 'A World of Colour',
+        subtitle: 'Some colours catch your eye. Others stay with you. Enter through feeling, not technical charts.',
+        cta: { label: 'Explore the Colours', href: '/the-colour-edit' },
+        accent: 'sapphire',
       },
     },
   },
@@ -170,10 +240,16 @@ export const footerLinks = {
     { label: 'Wonder', href: '/gemstones' },
     { label: 'Whisper', href: '/bespoke' },
   ],
+  destinations: [
+    { label: 'The Proposal', href: '/the-proposal' },
+    { label: 'The Colour Edit', href: '/the-colour-edit' },
+    { label: 'Things Worth Keeping Close', href: '/#things-worth-keeping-close' },
+    { label: 'Bespoke Commissions', href: '/bespoke/enquiry' },
+  ],
   house: [
     { label: 'Our Story', href: '/our-house' },
-    { label: 'Bespoke', href: '/bespoke' },
-    { label: 'Journal', href: '/journal' },
+    { label: 'Philosophy', href: '/our-house' },
+    { label: 'The Intimate Edit', href: '/journal' },
     { label: 'Contact', href: '/contact' },
   ],
   assistance: [

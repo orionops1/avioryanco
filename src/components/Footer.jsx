@@ -43,6 +43,18 @@ export default function Footer() {
               </ul>
             </div>
 
+            {/* Destinations Column */}
+            <div className="footer-section">
+              <h4>DESTINATIONS</h4>
+              <ul>
+                {footerLinks.destinations?.map((link, idx) => (
+                  <li key={idx}>
+                    <Link to={link.href}>{link.label}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
             {/* The House Column */}
             <div className="footer-section">
               <h4>THE HOUSE</h4>

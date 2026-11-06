@@ -1,0 +1,427 @@
+/* ============================================================================
+   THE PROPOSAL LANDING PAGE STYLES
+   ============================================================================ */
+
+.proposal-page {
+  width: 100%;
+  background-color: #F8F4EF;
+  color: #111111;
+  overflow-x: hidden;
+}
+
+/* ── 1. Hero ── */
+.proposal-hero {
+  position: relative;
+  min-height: 520px;
+  height: clamp(520px, 75vh, 700px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #FFFFFF;
+  overflow: hidden;
+  background-color: #111111;
+}
+
+.proposal-hero__backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.proposal-hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.proposal-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.72) 100%);
+}
+
+.proposal-hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 820px;
+  padding: 3rem 1.5rem;
+}
+
+.proposal-hero__title {
+  font-family: var(--font-serif-display, 'Playfair Display', Georgia, serif);
+  font-size: clamp(2.4rem, 4.8vw, 4rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 0.12em;
+  color: #FFFFFF;
+  margin: 0.5rem 0 1.25rem 0;
+  text-shadow: 0 3px 20px rgba(0, 0, 0, 0.7);
+}
+
+.proposal-hero__subtitle {
+  font-family: var(--font-serif-body, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.2rem, 1.9vw, 1.45rem);
+  font-style: italic;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.94);
+  margin: 0 auto 2.25rem auto;
+  max-width: 620px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+.proposal-hero__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.proposal-hero__outline-btn {
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.proposal-hero__outline-btn:hover {
+  background-color: #FFFFFF !important;
+  color: #111111 !important;
+}
+
+/* ── 2. Four Experiences ── */
+.proposal-experiences-section {
+  padding: clamp(5rem, 8vw, 8rem) 0;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #E6E1DA;
+}
+
+.proposal-experiences-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(2rem, 4vw, 3.5rem);
+}
+
+.proposal-exp-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #F8F4EF;
+  border: 1px solid #E6E1DA;
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.proposal-exp-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.06);
+  border-color: #D4AF7F;
+}
+
+.proposal-exp-card__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: #111111;
+}
+
+.proposal-exp-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.proposal-exp-card:hover .proposal-exp-card__img {
+  transform: scale(1.05);
+}
+
+.proposal-exp-card__number {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #FFFFFF;
+  background-color: rgba(17, 17, 17, 0.8);
+  backdrop-filter: blur(8px);
+  padding: 0.35rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.proposal-exp-card__content {
+  padding: clamp(2rem, 3vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.proposal-exp-card__step {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: #D4AF7F;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.proposal-exp-card__title {
+  font-family: var(--font-serif-display, 'Playfair Display', Georgia, serif);
+  font-size: clamp(1.4rem, 2vw, 1.75rem);
+  font-weight: 400;
+  line-height: 1.3;
+  color: #111111;
+  margin: 0 0 0.85rem 0;
+}
+
+.proposal-exp-card__desc {
+  font-family: var(--font-serif-body, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.15rem;
+  line-height: 1.65;
+  color: #555555;
+  margin: 0 0 1.75rem 0;
+  flex: 1;
+}
+
+.proposal-exp-card__link,
+.proposal-exp-card__btn {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #111111;
+  text-decoration: none;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.2s ease, gap 0.2s ease;
+  border-top: 1px solid #E6E1DA;
+  padding-top: 1.15rem;
+  text-align: left;
+}
+
+.proposal-exp-card__link:hover,
+.proposal-exp-card__btn:hover {
+  color: #D4AF7F;
+  gap: 0.65rem;
+}
+
+/* ── 3. Private Proposal Experience Box ── */
+.proposal-service-section {
+  padding: clamp(4.5rem, 7vw, 7.5rem) 0;
+  background-color: #111111;
+  color: #FAF7F2;
+}
+
+.proposal-service-box {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.proposal-service__title {
+  font-family: var(--font-serif-display, 'Playfair Display', Georgia, serif);
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0.08em;
+  color: #FFFFFF;
+  margin: 0.5rem 0 1.25rem 0;
+}
+
+.proposal-service__lead {
+  font-family: var(--font-serif-body, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.15rem, 1.8vw, 1.35rem);
+  font-style: italic;
+  line-height: 1.7;
+  color: #D4AF7F;
+  margin: 0 auto 3.5rem auto;
+  max-width: 720px;
+}
+
+.proposal-service__pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  text-align: left;
+  margin-bottom: 3.5rem;
+}
+
+.proposal-service__pillar {
+  background-color: #1A1A1A;
+  border: 1px solid rgba(212, 175, 127, 0.25);
+  padding: 2.25rem 1.85rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.proposal-service__pillar-num {
+  font-family: var(--font-serif-display, 'Playfair Display', Georgia, serif);
+  font-size: 1.6rem;
+  color: #D4AF7F;
+  margin-bottom: 0.75rem;
+}
+
+.proposal-service__pillar h4 {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin: 0 0 0.85rem 0;
+}
+
+.proposal-service__pillar p {
+  font-family: var(--font-serif-body, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: #C2BBB1;
+  margin: 0;
+}
+
+.proposal-service__action {
+  text-align: center;
+}
+
+/* ── 4. Curated Proposal Rings ── */
+.proposal-rings-section {
+  padding: clamp(5rem, 8vw, 8rem) 0;
+  background-color: #F8F4EF;
+}
+
+.proposal-rings-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+  margin-bottom: 3rem;
+}
+
+.proposal-ring-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E6E1DA;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  overflow: hidden;
+}
+
+.proposal-ring-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.06);
+  border-color: #D4AF7F;
+}
+
+.proposal-ring-card__media {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: #F4F0EA;
+  overflow: hidden;
+}
+
+.proposal-ring-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.proposal-ring-card:hover .proposal-ring-card__img {
+  transform: scale(1.06);
+}
+
+.proposal-ring-card__body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.proposal-ring-card__style {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #D4AF7F;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.proposal-ring-card__name {
+  font-family: var(--font-serif-display, 'Playfair Display', Georgia, serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: #111111;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+}
+
+.proposal-ring-card__desc {
+  font-family: var(--font-serif-body, 'Cormorant Garamond', Georgia, serif);
+  font-size: 0.98rem;
+  color: #666666;
+  line-height: 1.5;
+  margin: 0 0 1.25rem 0;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.proposal-ring-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #E6E1DA;
+  padding-top: 1rem;
+}
+
+.proposal-ring-card__price {
+  font-family: var(--font-serif-display, 'Playfair Display', Georgia, serif);
+  font-size: 1.1rem;
+  color: #111111;
+}
+
+.proposal-rings__cta-wrap {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .proposal-rings-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .proposal-experiences-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .proposal-service__pillars {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .proposal-rings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .proposal-hero {
+    min-height: 440px;
+    height: 70vh;
+  }
+}

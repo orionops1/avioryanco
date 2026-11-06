@@ -1509,3 +1509,371 @@
     text-align: center;
   }
 }
+
+/* ============================================================================
+   NEW SECTIONS: THE PROPOSAL, THE COLOUR EDIT & THINGS WORTH KEEPING CLOSE
+   ============================================================================ */
+
+/* ── 1. The Proposal Homepage Section ── */
+.home-proposal-section {
+  padding: clamp(5rem, 8vw, 8rem) 0;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #E6E1DA;
+}
+
+.home-proposal-banner {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: clamp(3rem, 5vw, 6rem);
+  align-items: center;
+}
+
+.home-proposal-banner__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-proposal-banner__desc {
+  font-family: var(--font-serif-body, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.2rem, 1.8vw, 1.45rem);
+  font-style: italic;
+  line-height: 1.6;
+  color: #444444;
+  margin: 0 0 2.25rem 0;
+}
+
+.home-proposal-callout {
+  background-color: #F8F4EF;
+  border-left: 3px solid #D4AF7F;
+  padding: 1.75rem 2rem;
+  margin-top: 0.5rem;
+}
+
+.home-proposal-callout__ask {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: #111111;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.home-proposal-callout__sub {
+  font-family: var(--font-serif-body, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #666666;
+  margin: 0 0 1.35rem 0;
+}
+
+/* 3-Photo Proposal Montage */
+.home-proposal-montage {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1.25rem;
+  height: 480px;
+}
+
+.home-proposal-montage__item {
+  position: relative;
+  overflow: hidden;
+  background-color: #111111;
+  border: 1px solid #E6E1DA;
+}
+
+.home-proposal-montage__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.home-proposal-montage__item:hover img {
+  transform: scale(1.05);
+}
+
+.home-proposal-montage__item--main {
+  grid-row: 1 / 3;
+}
+
+/* ── 2. The Colour Edit Homepage Section ── */
+.home-colour-edit-section {
+  padding: clamp(5rem, 8vw, 8rem) 0;
+  background-color: #F8F4EF;
+  border-bottom: 1px solid #E6E1DA;
+}
+
+.home-colour-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.25rem;
+}
+
+.home-colour-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  border: 1px solid #E6E1DA;
+  text-decoration: none;
+  color: #111111;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  overflow: hidden;
+}
+
+.home-colour-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+  border-color: #D4AF7F;
+}
+
+.home-colour-card__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: #111111;
+  overflow: hidden;
+}
+
+.home-colour-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.home-colour-card:hover .home-colour-card__media img {
+  transform: scale(1.08);
+}
+
+.home-colour-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.4) 100%);
+}
+
+.home-colour-card__swatch {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.home-colour-card__info {
+  padding: 1.15rem 1rem 1.35rem 1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.home-colour-card__name {
+  font-family: var(--font-serif-display, 'Playfair Display', Georgia, serif);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #111111;
+  margin: 0 0 0.35rem 0;
+  line-height: 1.3;
+}
+
+.home-colour-card__tagline {
+  font-family: var(--font-serif-body, 'Cormorant Garamond', Georgia, serif);
+  font-size: 0.88rem;
+  font-style: italic;
+  line-height: 1.4;
+  color: #666666;
+  margin: 0 0 1rem 0;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.home-colour-card__cta {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #D4AF7F;
+  text-transform: uppercase;
+}
+
+.home-colour-footer-wrap {
+  text-align: center;
+  margin-top: 3.5rem;
+}
+
+/* ── 3. Things Worth Keeping Close Section ── */
+.home-curations-section {
+  padding: clamp(5rem, 8vw, 8rem) 0;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #E6E1DA;
+}
+
+.curations-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+}
+
+.curation-card {
+  background-color: #F8F4EF;
+  border: 1px solid #E6E1DA;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  overflow: hidden;
+}
+
+.curation-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.06);
+  border-color: #D4AF7F;
+}
+
+.curation-card__media-link {
+  display: block;
+}
+
+.curation-card__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: #FFFFFF;
+  overflow: hidden;
+}
+
+.curation-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.curation-card:hover .curation-card__img {
+  transform: scale(1.06);
+}
+
+.curation-card__tag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #FFFFFF;
+  background-color: rgba(17, 17, 17, 0.8);
+  backdrop-filter: blur(8px);
+  padding: 0.3rem 0.65rem;
+  text-transform: uppercase;
+}
+
+.curation-card__body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.curation-card__category {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #D4AF7F;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.curation-card__title {
+  font-family: var(--font-serif-display, 'Playfair Display', Georgia, serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+}
+
+.curation-card__title a {
+  color: #111111;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.curation-card__title a:hover {
+  color: #D4AF7F;
+}
+
+.curation-card__desc {
+  font-family: var(--font-serif-body, 'Cormorant Garamond', Georgia, serif);
+  font-size: 0.98rem;
+  color: #666666;
+  line-height: 1.5;
+  margin: 0 0 1.25rem 0;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.curation-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #E6E1DA;
+  padding-top: 1rem;
+}
+
+.curation-card__price {
+  font-family: var(--font-serif-display, 'Playfair Display', Georgia, serif);
+  font-size: 1.1rem;
+  color: #111111;
+}
+
+.curations-footer-wrap {
+  text-align: center;
+  margin-top: 3.5rem;
+}
+
+/* ── Responsive adjustments for new sections ── */
+@media (max-width: 1200px) {
+  .home-colour-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .curations-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .home-proposal-banner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .home-proposal-montage {
+    height: 380px;
+  }
+}
+
+@media (max-width: 650px) {
+  .home-colour-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .curations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-proposal-montage {
+    height: 320px;
+  }
+}

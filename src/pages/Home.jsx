@@ -2,9 +2,14 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import HeroVideo from '../components/HeroVideo'
 import AppointmentModal from '../components/AppointmentModal'
+import { engagementRings, fineJewellery } from '../data/products'
+import { colourFamilies } from './TheColourEdit'
+import { useLanguage } from '../hooks/useLanguage'
+import { formatPrice } from '../utils/currencyConverter'
 import './Home.css'
 
 export default function Home() {
+  const { currency } = useLanguage()
   const [appointmentModalOpen, setAppointmentModalOpen] = useState(false)
   const [email, setEmail] = useState('')
   const [subscribed, setSubscribed] = useState(false)
@@ -46,10 +51,18 @@ export default function Home() {
 
   const currentHeartbeat = heartbeatOptions[activeHeartbeatGem]
 
+  // Curated 4 creations for "Things Worth Keeping Close"
+  const curatedCreations = [
+    engagementRings[0],
+    engagementRings[1],
+    fineJewellery[0] || engagementRings[2],
+    engagementRings[3]
+  ].filter(Boolean)
+
   return (
     <div className="aviory-romantic-home">
       {/* ====================================================================
-          1. HERO BANNER — THE SHAPE OF DESIRE
+          1. THE HERO — THE SHAPE OF DESIRE
           ==================================================================== */}
       <HeroVideo
         video="/videos/hero-luxury.mp4"
@@ -175,7 +188,178 @@ export default function Home() {
       </section>
 
       {/* ====================================================================
-          3. THE SIGNATURE COVENANT: THE HEARTBEAT GEM™
+          3. THE PROPOSAL — MAKE THE MOMENT YOURS
+          ==================================================================== */}
+      <section className="home-proposal-section" aria-label="The Proposal">
+        <div className="container">
+          <div className="home-proposal-banner">
+            <div className="home-proposal-banner__content">
+              <span className="editorial-eyebrow">THE PROPOSAL</span>
+              <h2 className="section-title">MAKE THE MOMENT YOURS.</h2>
+              <p className="home-proposal-banner__desc">
+                For the question you've been carrying, and the life you hope to begin together.
+              </p>
+
+              <div className="home-proposal-callout">
+                <span className="home-proposal-callout__ask">READY TO ASK?</span>
+                <p className="home-proposal-callout__sub">Let's make the moment feel like yours.</p>
+                <Link to="/the-proposal" className="btn-luxury-primary">
+                  BEGIN YOUR PROPOSAL &rarr;
+                </Link>
+              </div>
+            </div>
+
+            <div className="home-proposal-montage">
+              <div className="home-proposal-montage__item home-proposal-montage__item--main">
+                <img src="/images/proposal/proposal_moment.jpg" alt="The Proposal Question" />
+              </div>
+              <div className="home-proposal-montage__item home-proposal-montage__item--sub1">
+                <img src="/images/proposal/proposal_ring_hand.jpg" alt="Proposal Ring on Hand" />
+              </div>
+              <div className="home-proposal-montage__item home-proposal-montage__item--sub2">
+                <img src="/images/proposal/proposal_candlelight.jpg" alt="Candlelight Proposal" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ====================================================================
+          4. THE COLOUR EDIT — A WORLD OF COLOUR, WITH A STORY OF ITS OWN
+          ==================================================================== */}
+      <section className="home-colour-edit-section" aria-label="The Colour Edit">
+        <div className="container">
+          <div className="section-header-centered">
+            <span className="editorial-eyebrow">THE COLOUR EDIT</span>
+            <h2 className="section-title">A WORLD OF COLOUR, WITH A STORY OF ITS OWN.</h2>
+            <p className="section-subtitle">
+              Some colours catch your eye. Others stay with you.
+            </p>
+          </div>
+
+          {/* Proper multi-card horizontal collection on desktop */}
+          <div className="home-colour-cards-grid">
+            {colourFamilies.map((fam) => (
+              <Link 
+                key={fam.id} 
+                to={`/the-colour-edit?color=${fam.id}`} 
+                className="home-colour-card"
+              >
+                <div className="home-colour-card__media">
+                  <img src={fam.image} alt={fam.editorialName} />
+                  <div className="home-colour-card__overlay" />
+                  <span className="home-colour-card__swatch" style={{ backgroundColor: fam.colorHex }} />
+                </div>
+                <div className="home-colour-card__info">
+                  <h3 className="home-colour-card__name">{fam.editorialName}</h3>
+                  <p className="home-colour-card__tagline">{fam.tagline}</p>
+                  <span className="home-colour-card__cta">
+                    DISCOVER {fam.colourFamily.toUpperCase()} &rarr;
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="home-colour-footer-wrap">
+            <Link to="/the-colour-edit" className="link-text-gold">
+              EXPLORE ALL COLOURS &rarr;
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ====================================================================
+          5. THINGS WORTH KEEPING CLOSE — UNDERSTATED PRODUCT CURATION
+          ==================================================================== */}
+      <section 
+        id="things-worth-keeping-close" 
+        className="home-curations-section" 
+        aria-label="Things Worth Keeping Close"
+      >
+        <div className="container">
+          <div className="section-header-centered">
+            <span className="editorial-eyebrow">CURATED CREATIONS</span>
+            <h2 className="section-title">THINGS WORTH KEEPING CLOSE</h2>
+            <p className="section-subtitle">
+              Discover the creations that speak to you.
+            </p>
+          </div>
+
+          <div className="curations-grid">
+            {curatedCreations.map((item) => (
+              <div key={item.id} className="curation-card">
+                <Link to={`/products/${item.id}`} className="curation-card__media-link">
+                  <div className="curation-card__media">
+                    <img 
+                      src={item.images?.[0] || item.image} 
+                      alt={item.name} 
+                      className="curation-card__img"
+                    />
+                    <span className="curation-card__tag">SOLITARY PIECE</span>
+                  </div>
+                </Link>
+                <div className="curation-card__body">
+                  <span className="curation-card__category">{item.category || 'High Jewellery'}</span>
+                  <h3 className="curation-card__title">
+                    <Link to={`/products/${item.id}`}>{item.name}</Link>
+                  </h3>
+                  <p className="curation-card__desc">{item.description}</p>
+                  <div className="curation-card__footer">
+                    <span className="curation-card__price">
+                      {formatPrice(item.price, currency)}
+                    </span>
+                    <Link to={`/products/${item.id}`} className="btn-luxury-primary btn-small">
+                      VIEW CREATION
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="curations-footer-wrap">
+            <Link to="/love-and-celebration" className="link-text-gold">
+              VIEW THE COMPLETE REPERTOIRE &rarr;
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ====================================================================
+          6. THE BESPOKE EXPERIENCE — BEGIN WITH A FEELING
+          ==================================================================== */}
+      <section className="home-bespoke-section" aria-label="Bespoke Intimacy">
+        <div className="container">
+          <div className="editorial-split-grid">
+            <div className="editorial-split__media-wrap">
+              <img 
+                src="/images/expressions/bespoke_hands.jpg" 
+                alt="Two hands clasped with devotion" 
+                className="editorial-split__img"
+              />
+            </div>
+            <div className="editorial-split__content">
+              <span className="editorial-eyebrow">MADE AROUND YOU</span>
+              <h2 className="section-title">BEGIN WITH A FEELING.</h2>
+              <p className="editorial-split__lead">
+                Tell us who it is for, what you want them to feel, or the moment you want to remember. Together, we will create something that could belong to no one else.
+              </p>
+              <div className="editorial-split__actions">
+                <Link to="/bespoke/enquiry" className="btn-luxury-primary">
+                  BEGIN YOUR BESPOKE STORY
+                </Link>
+                <Link to="/bespoke/process" className="btn-luxury-outline">
+                  THE BESPOKE EXPERIENCE
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ====================================================================
+          7. THE SIGNATURE COVENANT: THE HEARTBEAT GEM™
           ==================================================================== */}
       <section className="home-heartbeat-section" aria-label="The Heartbeat Gem Feature">
         <div className="container">
@@ -312,7 +496,7 @@ export default function Home() {
       </section>
 
       {/* ====================================================================
-          4. SECOND FULL-WIDTH BANNER — THE PRIVATE SIDE OF LOVE
+          8. THE PRIVATE SIDE OF LOVE — FULL-WIDTH CINEMATIC PAUSE
           ==================================================================== */}
       <section 
         className="home-private-banner" 
@@ -335,39 +519,7 @@ export default function Home() {
       </section>
 
       {/* ====================================================================
-          5. BESPOKE — MAKE IT PERSONAL
-          ==================================================================== */}
-      <section className="home-bespoke-section" aria-label="Bespoke Intimacy">
-        <div className="container">
-          <div className="editorial-split-grid">
-            <div className="editorial-split__media-wrap">
-              <img 
-                src="/images/expressions/bespoke_hands.jpg" 
-                alt="Two hands clasped with devotion" 
-                className="editorial-split__img"
-              />
-            </div>
-            <div className="editorial-split__content">
-              <span className="editorial-eyebrow">MADE AROUND YOU</span>
-              <h2 className="section-title">BEGIN WITH A FEELING.</h2>
-              <p className="editorial-split__lead">
-                Tell us who it is for, what you want them to feel, or the moment you want to remember. Together, we will create something that could belong to no one else.
-              </p>
-              <div className="editorial-split__actions">
-                <Link to="/bespoke/enquiry" className="btn-luxury-primary">
-                  BEGIN YOUR BESPOKE STORY
-                </Link>
-                <Link to="/bespoke/process" className="btn-luxury-outline">
-                  THE BESPOKE EXPERIENCE
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ====================================================================
-          6. OUR HOUSE — THE AVIORY PHILOSOPHY
+          9. OUR HOUSE — A HOUSE BUILT AROUND FEELING
           ==================================================================== */}
       <section className="home-house-section" aria-label="Our House">
         <div className="container">
@@ -406,7 +558,7 @@ export default function Home() {
       </section>
 
       {/* ====================================================================
-          7. JOURNAL — THE INTIMATE EDIT
+          10. THE INTIMATE EDIT — JOURNAL
           ==================================================================== */}
       <section className="home-journal-section" aria-label="The Aviory Journal">
         <div className="container">
@@ -463,7 +615,7 @@ export default function Home() {
       </section>
 
       {/* ====================================================================
-          8. THE CIRCLE OF DEVOTION — CONFIDENTIAL INVITATION
+          11. THE CIRCLE OF DEVOTION — CONFIDENTIAL INVITATION
           ==================================================================== */}
       <section className="home-newsletter-section" aria-label="The Circle of Devotion">
         <div className="container">

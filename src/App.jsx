@@ -7,6 +7,8 @@ import ScrollToTop from './components/ScrollToTop'
 
 // Canonical Pages
 import Home from './pages/Home'
+import TheProposal from './pages/TheProposal'
+import TheColourEdit from './pages/TheColourEdit'
 import Shop from './pages/Shop'
 import Gemstones from './pages/Gemstones'
 import GemstoneDetail from './pages/GemstoneDetail'
@@ -35,6 +37,15 @@ function AppContent() {
         <Routes>
           {/* Home */}
           <Route path="/" element={<Home />} />
+
+          {/* The Proposal (Dedicated Experience) */}
+          <Route path="/the-proposal" element={<TheProposal />} />
+          <Route path="/proposal" element={<Navigate to="/the-proposal" replace />} />
+
+          {/* The Colour Edit (Dedicated Aesthetic Discovery) */}
+          <Route path="/the-colour-edit" element={<TheColourEdit />} />
+          <Route path="/colour-edit" element={<Navigate to="/the-colour-edit" replace />} />
+          <Route path="/color-edit" element={<Navigate to="/the-colour-edit" replace />} />
 
           {/* Expressions / Love & Celebration */}
           <Route path="/love-and-celebration" element={<LoveAndCelebration />} />
@@ -70,12 +81,12 @@ function AppContent() {
           <Route path="/private-consultations" element={<PrivateConsultations />} />
           <Route path="/contact" element={<Contact />} />
 
-          {/* Duplicate / Legacy Route Redirects */}
+          {/* Legacy Route Redirects */}
           <Route path="/about" element={<Navigate to="/our-house" replace />} />
           <Route path="/love" element={<Navigate to="/love-and-celebration" replace />} />
           <Route path="/blog" element={<Navigate to="/journal" replace />} />
           <Route path="/blog/:slug" element={<Navigate to="/journal" replace />} />
-          <Route path="/engagement-rings" element={<Navigate to="/love-and-celebration" replace />} />
+          <Route path="/engagement-rings" element={<Navigate to="/the-proposal" replace />} />
           <Route path="/expressions" element={<Navigate to="/love-and-celebration" replace />} />
         </Routes>
       </main>
