@@ -35,9 +35,9 @@
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   width: 100%;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 /* Left utilities */
@@ -46,8 +46,6 @@
   align-items: center;
   gap: 1.75rem;
   flex: 0 0 auto;
-  position: absolute;
-  left: 0;
 }
 
 .tiffany-header__utility-btn {
@@ -76,7 +74,7 @@
   display: inline-block;
 }
 
-/* Center Logo — Truly Centered */
+/* Center Logo — Centered with equal flex space on sides */
 .tiffany-header__logo-link {
   display: flex;
   flex-direction: column;
@@ -86,7 +84,8 @@
   position: relative;
   z-index: 5;
   white-space: nowrap;
-  flex: 0 0 auto;
+  flex: 1;
+  min-width: 0;
 }
 
 .tiffany-header__logo-row {
@@ -179,8 +178,6 @@
   gap: 1.25rem;
   flex: 0 0 auto;
   z-index: 10;
-  position: absolute;
-  right: 0;
 }
 
 .tiffany-header__action-btn {
