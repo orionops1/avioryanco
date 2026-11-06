@@ -16,6 +16,7 @@
   overflow: visible !important;
   transition: box-shadow 0.3s ease;
   width: 100% !important;
+  /* Sticky positioning fix: header disappears on scroll down, reappears on scroll up */
 }
 
 .tiffany-header--scrolled {
