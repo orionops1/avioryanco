@@ -109,7 +109,7 @@ export default function Gemstones() {
             DESIRE, MADE REAL.
           </p>
           <p className="gemstones-hero__subtitle" style={{ maxWidth: '580px', margin: '0 auto' }}>
-            Two billion years of natural heat and pressure, untouched by human furnace. Certified unheated Ceylon sapphires and rubies chosen for extraordinary character.
+            Two billion years of natural heat and pressure, untouched by human furnace. Singular Ceylon stones and rubies chosen for extraordinary character.
           </p>
         </div>
       </section>
@@ -206,7 +206,7 @@ export default function Gemstones() {
           <div className="gemstones-empty">
             <h3 className="gemstones-empty__title">No creations match your current criteria</h3>
             <p className="gemstones-empty__text">
-              Our gemologists continually acquire unheated stones from Sri Lanka. Contact our concierge to request a private search for your exact desired stone.
+              Our gemologists continually acquire rare natural stones from Sri Lanka. Contact our concierge to request a private search for your exact desired stone.
             </p>
             <button
               type="button"

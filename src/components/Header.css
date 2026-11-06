@@ -7,16 +7,31 @@
 
 /* ── Header Shell ── */
 .tiffany-header {
-  position: sticky !important;
+  position: fixed !important;
   top: 0 !important;
   left: 0 !important;
   right: 0 !important;
   z-index: 2000 !important;
-  background-color: #FFFFFF !important;
+  background-color: #FFFFFF;
   overflow: visible !important;
-  transition: box-shadow 0.3s ease;
+  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, background-color 0.3s ease;
   width: 100% !important;
-  /* Sticky positioning fix: header disappears on scroll down, reappears on scroll up */
+  transform: translateY(0);
+}
+
+.tiffany-header--hidden {
+  transform: translateY(-100%) !important;
+}
+
+.tiffany-header--home-top {
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.tiffany-header--home-top.tiffany-header--mega-active,
+.tiffany-header--home-top:hover {
+  background-color: #FFFFFF !important;
 }
 
 .tiffany-header--scrolled {
@@ -952,4 +967,83 @@
   .tiffany-header__locale-inline {
     display: none !important;
   }
+}
+
+/* Expressions Visual Cards in Mega Menu */
+.tiffany-mega__expressions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  flex: 1.4;
+  padding-right: 2.5rem;
+  border-right: 1px solid #E8E3DC;
+}
+
+.tiffany-mega__expression-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: #1A1A1A;
+  transition: transform 0.25s ease;
+}
+
+.tiffany-mega__expression-card:hover {
+  transform: translateY(-3px);
+}
+
+.tiffany-mega__expression-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 2px;
+  overflow: hidden;
+  background-color: #F4F0EA;
+  margin-bottom: 0.6rem;
+}
+
+.tiffany-mega__expression-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.tiffany-mega__expression-card:hover .tiffany-mega__expression-media img {
+  transform: scale(1.05);
+}
+
+.tiffany-mega__expression-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.55) 100%);
+}
+
+.tiffany-mega__expression-badge {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0.6rem;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+
+.tiffany-mega__expression-title {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: #1A1A1A;
+  margin: 0 0 0.2rem 0;
+}
+
+.tiffany-mega__expression-subtitle {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 0.82rem;
+  font-style: italic;
+  color: #777777;
+  margin: 0;
+  line-height: 1.3;
 }

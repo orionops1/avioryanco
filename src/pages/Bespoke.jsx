@@ -101,7 +101,7 @@ export default function Bespoke() {
             fontFamily: 'var(--font-serif-body)',
             fontSize: '1.2rem'
           }}>
-            Every bespoke creation begins with an unspoken truth. We source an unheated Ceylon gemstone that mirrors your emotion, then sculpt precious metal around its unique anatomy. Worn against bare skin. Felt forever.
+            Every bespoke creation begins with an unspoken truth. We source a rare singular stone that mirrors your emotion, then sculpt precious metal around its unique anatomy. Worn against bare skin. Felt forever.
           </p>
         </div>
       </section>
@@ -206,8 +206,8 @@ export default function Bespoke() {
               desc: 'Never duplicated. Cast, carved, and hand-finished for one recipient alone.'
             },
             {
-              title: '100% Unheated Stones',
-              desc: 'Natural Ceylon gems in raw geological purity — certified by GIA & Lotus.'
+              title: 'Untouched by Artificial Fire',
+              desc: 'Natural Ceylon gems in raw geological purity — guaranteed with unbroken provenance custody.'
             },
             {
               title: 'Pulse-Point Setting',

@@ -115,7 +115,7 @@ export default function LoveAndCelebration() {
   }
 
   const bridalWhatsAppUrl = `https://wa.me/94776100099?text=${encodeURIComponent(
-    "Hello AVIORY Atelier, I am seeking a creation for an intimate love story. I would love to explore your bespoke bridal rings and rare unheated Ceylon gemstones."
+    "Hello AVIORY Atelier, I am seeking a creation for an intimate love story. I would love to explore your bespoke bespoke rings and private covenants."
   )}`
 
   return (
@@ -133,15 +133,15 @@ export default function LoveAndCelebration() {
               &ldquo;Before the question is asked, there is a silence so full it needs a body to hold it. We do not sell jewellery. We make desire real.&rdquo;
             </p>
             <p className="love-hero__narrative">
-              Real passion refuses to be rushed, manufactured, or copied. In our Sri Lanka atelier, master goldsmiths forge 950 platinum and 18K solid gold around singular, unheated Ceylon sapphires and rare natural gems &mdash; permanent talismans of longing, devotion, and private devotion.
+              Real passion refuses to be rushed, manufactured, or copied. A vow isn't spoken once. It is carried daily against your pulse. Each solitary creation holds an unspoken covenant&mdash;forged for the skin that remembers you.
             </p>
 
             <div className="love-hero__badges">
               <span className="love-badge">
-                <span className="love-badge__dot" /> 100% Certified Unheated Ceylon Gemstones
+                <span className="love-badge__dot" /> The Secret Pulse Covenant
               </span>
               <span className="love-badge">
-                <span className="love-badge__dot" /> Pure Intimacy &bull; Hand-Forged 950 Platinum
+                <span className="love-badge__dot" /> Solitary One-of-One Creations
               </span>
               <span className="love-badge">
                 <span className="love-badge__dot" /> Secret Inner Gemstone &amp; Private Engraving
@@ -178,7 +178,7 @@ export default function LoveAndCelebration() {
               <div className="love-hero__caption-card">
                 <span className="love-caption__tag">TALISMAN OF DESIRE</span>
                 <h4 className="love-caption__title">The Royal Solitaire</h4>
-                <p className="love-caption__desc">7.42ct Unheated Ceylon Sapphire resting in Hand-Wrought 950 Platinum</p>
+                <p className="love-caption__desc">Solitary Midnight Covenant resting against her skin</p>
                 <Link to="/bespoke" className="love-caption__link">
                   Commission Yours &rarr;
                 </Link>
@@ -216,7 +216,7 @@ export default function LoveAndCelebration() {
               <div className="love-chapter-card__body">
                 <h3 className="love-chapter-card__title">The Confession</h3>
                 <p className="love-chapter-card__desc">
-                  Iconic cathedral solitaires bearing solitary unheated Ceylon sapphires. The moment when words stop and everything changes.
+                  Iconic cathedral solitaires bearing solitary covenants of devotion. The moment when words stop and everything changes.
                 </p>
                 <span className="love-chapter-card__link">Discover Solitaires &rarr;</span>
               </div>
@@ -256,7 +256,7 @@ export default function LoveAndCelebration() {
               <div className="love-chapter-card__body">
                 <h3 className="love-chapter-card__title">An Unbroken Life</h3>
                 <p className="love-chapter-card__desc">
-                  The Trilogy setting: three harmonious unheated gemstones honouring what you were, who you are together, and what will outlive you both.
+                  The Trilogy setting: three harmonious stones of memory honouring what you were, who you are together, and what will outlive you both.
                 </p>
                 <span className="love-chapter-card__link">View Trilogy Rings &rarr;</span>
               </div>
@@ -286,7 +286,7 @@ export default function LoveAndCelebration() {
       </section>
 
       {/* ============================================================
-          3. ROMANCE & SENSUALITY MANIFESTO: UNHEATED & UNCOMPROMISED
+          3. MANIFESTO OF DEVOTION: UNCOMPROMISED & PURE
           ============================================================ */}
       <section className="love-manifesto">
         <div className="container">
@@ -320,7 +320,7 @@ export default function LoveAndCelebration() {
               <div className="love-pillar__icon">&#9671;</div>
               <h3 className="love-pillar__title">Cosmic Singularity</h3>
               <p className="love-pillar__text">
-                Formed 50 million years ago in Ceylon&rsquo;s crystalline earth, no two natural unheated stones share the same heart. An irreplaceable reflection of the person you chose.
+                Formed 50 million years ago in Ceylon&rsquo;s crystalline earth, no two natural creations share the same heart. An irreplaceable reflection of the person you chose.
               </p>
             </div>
           </div>
@@ -456,7 +456,7 @@ export default function LoveAndCelebration() {
               A private language etched into metal, hidden where only skin can feel it.
             </p>
             <p className="love-whispers__body">
-              True intimacy is never performative. At AVIORY &amp; CO., our master goldsmiths can discreetly set a private gemstone &mdash; a Ceylon ruby or sapphire &mdash; inside the inner band of your ring, resting directly against the wearer&rsquo;s pulse. Add hand-chiseled coordinates of where your hands first met, or a date that belongs to nobody else on earth.
+              True intimacy is never performative. At AVIORY &amp; CO., our artisans discreetly set The Heartbeat Gem™ &mdash; a Ceylon ruby or sapphire &mdash; inside the inner band of your ring, resting directly against the wearer&rsquo;s pulse. Add hand-chiseled coordinates of where your hands first met, or a date that belongs to nobody else on earth.
             </p>
 
             <ul className="love-whispers__features">
@@ -464,10 +464,10 @@ export default function LoveAndCelebration() {
                 <strong>Secret Inner Gemstone:</strong> A hidden Ceylon jewel resting unseen against the pulse point.
               </li>
               <li>
-                <strong>Private Hand Engraving:</strong> Micro-chiseled script in 950 platinum or 18K solid gold.
+                <strong>Private Hand Engraving:</strong> Micro-chiseled script resting on the inner curve of the band.
               </li>
               <li>
-                <strong>Direct Provenance Dossier:</strong> Unheated laboratory certificates tracing your stone from Ceylon earth to your hand.
+                <strong>Direct Provenance Dossier:</strong> Provenance custody tracing your piece from Sri Lankan earth directly to her skin.
               </li>
             </ul>
 

@@ -1,428 +1,191 @@
 // ============================================================================
-// AVIORY & CO - NAVIGATION CONFIGURATION
-// Centralized navigation structure for Header mega-menu and Footer links
-// Inspired by Tiffany & Co. & Harry Winston Haute Joaillerie standard
+// AVIORY & CO. - BRAND NAVIGATION CONFIGURATION
+// Direction: Expressions · Bespoke · Our House · Journal
+// Emotion before commerce — VOW · TOUCH · WONDER · WHISPER
 // ============================================================================
 
 export const megaMenuData = [
   {
-    key: 'gemstones',
-    label: 'Gemstones',
-    labelKey: 'common.gemstones',
-    href: '/gemstones',
-    mega: {
-      columns: [
-        {
-          heading: 'Ceylon Sapphires',
-          links: [
-            { label: 'Royal Blue Sapphires', href: '/gemstones?category=blue-sapphires' },
-            { label: 'Cornflower Blue Sapphires', href: '/gemstones?category=blue-sapphires' },
-            { label: 'Padparadscha Sapphires', href: '/gemstones?category=padparadscha' },
-            { label: 'Pink Sapphires', href: '/gemstones?category=pink-sapphires' },
-            { label: 'Yellow Sapphires', href: '/gemstones?category=yellow-sapphires' },
-            { label: 'Ceylon Rubies', href: '/gemstones?category=rubies' },
-            { label: 'Spinel & Other Coloured Gems', href: '/gemstones?category=spinels' },
-          ],
-        },
-        {
-          heading: 'Curated Selections',
-          links: [
-            { label: 'Private Reserve Stones', href: '/gemstones?category=collector' },
-            { label: 'Unheated Gemstones', href: '/gemstones' },
-            { label: 'Coloured & Rare Stones', href: '/gemstones?category=other' },
-            { label: 'View All Gemstones', href: '/gemstones', accent: true },
-          ],
-        },
-        {
-          heading: 'The Truth Behind Every Stone',
-          links: [
-            { label: 'Why Ceylon Gems Are Different', href: '/journal/the-heritage-of-ceylon-gemstones' },
-            { label: 'How We Certify Every Gem', href: '/our-house' },
-            { label: 'What Makes a Sapphire Rare', href: '/journal/the-science-of-sapphire' },
-          ],
-        },
-      ],
-      feature: {
-        title: 'Born in Sri Lanka',
-        subtitle: 'Natural, unheated gems — untouched by heat, full of colour, exactly as the earth made them.',
-        cta: { label: 'Discover Our Gems', href: '/gemstones' },
-        accent: 'sapphire',
-      },
-    },
-  },
-  {
-    key: 'fine-jewellery',
-    label: 'Fine Jewellery',
-    labelKey: 'common.fineJewellery',
-    href: '/fine-jewellery',
-    mega: {
-      columns: [
-        {
-          heading: 'Find Your Piece',
-          links: [
-            { label: 'Rings', href: '/fine-jewellery?collection=Rings' },
-            { label: 'Earrings & Drops', href: '/fine-jewellery?collection=Earrings' },
-            { label: 'Necklaces & Pendants', href: '/fine-jewellery?collection=Necklaces' },
-            { label: 'Bracelets & Cuffs', href: '/fine-jewellery?collection=Bracelets' },
-            { label: 'One-of-a-Kind Pieces', href: '/fine-jewellery?collection=Brooches' },
-          ],
-        },
-        {
-          heading: 'Our Signatures',
-          links: [
-            { label: 'Rare Limited Editions', href: '/fine-jewellery?collection=Limited+Edition' },
-            { label: 'Statement Suites', href: '/fine-jewellery?collection=Rings' },
-            { label: 'View All Fine Jewellery', href: '/fine-jewellery', accent: true },
-          ],
-        },
-        {
-          heading: 'Work With Us',
-          links: [
-            { label: 'Design Something Personal', href: '/bespoke' },
-            { label: 'Book a Private Appointment', href: '/private-consultations' },
-            { label: 'How to Care for Your Pieces', href: '/journal/caring-for-your-sapphires' },
-          ],
-        },
-      ],
-      feature: {
-        title: 'Gold That Remembers You',
-        subtitle: 'Handcrafted in 18K gold and platinum with natural Ceylon gems — made to be felt, every day.',
-        cta: { label: 'Explore Fine Jewellery', href: '/fine-jewellery' },
-        accent: 'gold',
-      },
-    },
-  },
-  {
-    key: 'love-and-celebration',
-    label: 'Love & Celebration',
-    labelKey: 'common.loveAndCelebration',
+    key: 'expressions',
+    label: 'EXPRESSIONS',
+    labelKey: 'common.expressions',
     href: '/love-and-celebration',
     mega: {
-      tabs: [
+      columns: [
         {
-          id: 'engagement-rings',
-          label: 'THE VOW COLLECTION',
-          items: [
-            {
-              name: 'The Royal Solitaire',
-              desc: 'Platinum-set, unheated Ceylon sapphire — the kind of ring that stops a room.',
-              image: '/images/products/ring-sapphire-solitaire.jpg',
-              href: '/love-and-celebration?style=solitaire',
-            },
-            {
-              name: 'The Aviory Classic',
-              desc: 'Our signature setting — elevated, timeless, made for one stone and one person.',
-              image: '/images/products/ring-aviory-setting.jpg',
-              href: '/love-and-celebration?style=solitaire',
-            },
-            {
-              name: 'The Lotus Halo',
-              desc: 'The rarest hue in nature — a padparadscha sapphire, soft and warm as dawn.',
-              image: '/images/products/ring-padparadscha.jpg',
-              href: '/love-and-celebration?style=halo',
-            },
-            {
-              name: 'The Three Promises',
-              desc: 'Three stones, one for where you have been and two for everything ahead.',
-              image: '/images/products/ring-emerald-solitaire.jpg',
-              href: '/love-and-celebration?style=three-stone',
-            },
-            {
-              name: 'The Crimson Soleste',
-              desc: 'Deep crimson Ceylon ruby — the colour of something you will never forget.',
-              image: '/images/products/ring-ruby-soleste.jpg',
-              href: '/love-and-celebration?style=halo',
-            },
-            {
-              name: 'Find Your Ring',
-              desc: 'A quiet guide for the most important choice you will make together.',
-              image: '/images/products/ring-guide.jpg',
-              href: '/journal/designing-your-dream-ring',
-              guide: true,
-            },
+          heading: 'Four Expressions of Intimacy',
+          links: [
+            { label: 'Vow — A Promise Kept', href: '/love-and-celebration' },
+            { label: 'Touch — A Touch Remembered', href: '/fine-jewellery' },
+            { label: 'Wonder — A Look That Lingers', href: '/gemstones' },
+            { label: 'Whisper — A Secret Shared', href: '/bespoke' },
           ],
         },
         {
-          id: 'gemstone-shapes',
-          label: 'CUT & SHAPE',
-          items: [
-            {
-              name: 'Oval Cut',
-              desc: 'Longer, softer — the most romantic cut for a Ceylon sapphire.',
-              image: '/images/categories/cat1.jpg',
-              href: '/love-and-celebration?cut=oval',
-            },
-            {
-              name: 'Cushion Cut',
-              desc: 'The cut that holds colour deepest — warm, full, completely alive.',
-              image: '/images/categories/cat2.jpg',
-              href: '/love-and-celebration?cut=cushion',
-            },
-            {
-              name: 'Emerald Cut',
-              desc: 'Clean, clear, architectural — a stone you can see straight through to the heart of.',
-              image: '/images/categories/cat3.jpg',
-              href: '/love-and-celebration?cut=emerald',
-            },
-            {
-              name: 'Round Brilliant',
-              desc: 'The timeless choice — brilliant light, in every direction.',
-              image: '/images/categories/cat4.jpg',
-              href: '/love-and-celebration?cut=round',
-            },
-            {
-              name: 'Pear Shape',
-              desc: 'One point. One drop. Unmistakable from across the room.',
-              image: '/images/categories/cat5.jpg',
-              href: '/love-and-celebration?cut=pear',
-            },
-            {
-              name: 'Princess Cut',
-              desc: 'Sharp corners, modern soul — for the one who knows exactly who she is.',
-              image: '/images/categories/cat6.jpg',
-              href: '/love-and-celebration?cut=princess',
-            },
-          ],
-        },
-        {
-          id: 'wedding-bands',
-          label: 'BANDS OF DEVOTION',
-          items: [
-            {
-              name: 'The Unbroken Circle',
-              desc: 'A ring with no beginning and no end — just colour, all the way around.',
-              image: '/images/products/prod7.jpg',
-              href: '/love-and-celebration?category=bands',
-            },
-            {
-              name: 'The Warm Pavé Band',
-              desc: 'Tiny gems set by hand — a band that catches light from every angle.',
-              image: '/images/products/prod8.jpg',
-              href: '/love-and-celebration?category=bands',
-            },
-            {
-              name: 'The Platinum Vow',
-              desc: 'Simple. Pure. The band that lets the promise speak for itself.',
-              image: '/images/products/prod9.jpg',
-              href: '/love-and-celebration?category=bands',
-            },
-            {
-              name: 'Made Together',
-              desc: 'Two bands designed as one — shaped around both of you, from the beginning.',
-              image: '/images/products/prod10.jpg',
-              href: '/love-and-celebration?category=bands',
-            },
-            {
-              name: 'The Contoured Band',
-              desc: 'Shaped to fit perfectly beside your solitaire, as if they were always meant to meet.',
-              image: '/images/products/portf1.jpg',
-              href: '/love-and-celebration?category=bands',
-            },
-            {
-              name: 'See All Bands',
-              desc: 'The full Aviory band collection — in platinum and gold, for every story.',
-              image: '/images/products/portf2.jpg',
-              href: '/love-and-celebration?category=bands',
-              guide: true,
-            },
-          ],
-        },
-        {
-          id: 'celebrations',
-          label: 'MARK THE MOMENT',
-          items: [
-            {
-              name: 'The Night She Said Yes',
-              desc: 'The ring for the question you have been building the courage to ask.',
-              image: '/images/most-popular-gifts.jpg',
-              href: '/love-and-celebration?style=solitaire',
-            },
-            {
-              name: 'Years Worn Well',
-              desc: 'For the years that deepened everything. Mark them in something that lasts.',
-              image: '/images/gifts-for-her.jpg',
-              href: '/love-and-celebration?moment=anniversary',
-            },
-            {
-              name: 'Something Perfectly Blue',
-              desc: 'Ceylon sapphires to wear on the day that changes everything.',
-              image: '/images/art-of-gifting.jpg',
-              href: '/fine-jewellery',
-            },
-            {
-              name: 'Tell Us Your Story',
-              desc: 'Bring us your memory, your feeling, your moment. We will make it real.',
-              image: '/images/gifts-to-engrave.jpg',
-              href: '/bespoke',
-            },
-            {
-              name: 'The Moments Worth Keeping',
-              desc: 'Some achievements deserve more than a dinner. Mark them in certified Ceylon stone.',
-              image: '/images/products/portf3.jpg',
-              href: '/gemstones?category=collector',
-            },
-            {
-              name: 'For a New Chapter',
-              desc: 'For becoming a mother. For starting again. For anything worth celebrating softly.',
-              image: '/images/products/portf4.jpg',
-              href: '/love-and-celebration?category=bands',
-              guide: true,
-            },
-          ],
-        },
-        {
-          id: 'the-difference',
-          label: 'WHY AVIORY',
-          items: [
-            {
-              name: 'Never Touched by Heat',
-              desc: 'Every gem is 100% natural — no heat, no treatment, no shortcuts. Certified and documented.',
-              image: '/images/categories/cat1.jpg',
-              href: '/our-house',
-            },
-            {
-              name: 'Traced from the Earth',
-              desc: 'We know where every stone comes from. That story comes with every purchase.',
-              image: '/images/journal/ja-003.jpg',
-              href: '/journal/sustainable-luxury-and-ethical-sourcing',
-            },
-            {
-              name: 'Independently Certified',
-              desc: 'GRS, GIA, and Lotus reports confirm what we promise — wild, unaltered stones.',
-              image: '/images/journal/ja-001.jpg',
-              href: '/our-house',
-            },
-            {
-              name: 'Made by Hand',
-              desc: 'Every piece is hand-forged by master goldsmiths with generations of craft behind them.',
-              image: '/images/art-of-gifting.jpg',
-              href: '/journal/the-art-of-bespoke-jewellery',
-            },
-            {
-              name: 'One-on-One Creation',
-              desc: 'A personal session to design something that could only ever belong to you.',
-              image: '/images/gifts-to-engrave.jpg',
-              href: '/bespoke',
-            },
-            {
-              name: 'Cared for Forever',
-              desc: 'Free annual care, cleaning, and lifetime provenance custody — yours for good.',
-              image: '/images/journal/ja-002.jpg',
-              href: '/contact?subject=care',
-              guide: true,
-            },
+          heading: 'Bespoke Intimacy',
+          links: [
+            { label: 'The Heartbeat Gem™: Hidden Against Her Pulse', href: '/bespoke' },
+            { label: 'Solitary Creations', href: '/love-and-celebration' },
+            { label: 'Private Commissions', href: '/bespoke/enquiry' },
+            { label: 'Explore All Expressions', href: '/love-and-celebration', accent: true },
           ],
         },
       ],
-      columns: [
+      cards: [
         {
-          heading: 'The Feeling',
-          links: [
-            { label: 'Ask the Question', href: '/love-and-celebration?style=solitaire' },
-            { label: 'Halo Rings', href: '/love-and-celebration?style=halo' },
-            { label: 'Three-Stone Rings', href: '/love-and-celebration?style=three-stone' },
-            { label: 'Contemporary Styles', href: '/love-and-celebration?style=cushion' },
-            { label: 'Oval & Timeless Cuts', href: '/love-and-celebration?style=oval' },
-            { label: 'Something Unexpected', href: '/love-and-celebration?style=pear' },
-          ],
+          name: 'VOW',
+          subtitle: 'A promise kept.',
+          image: '/images/expressions/vow.jpg',
+          href: '/love-and-celebration',
         },
         {
-          heading: 'The Stone',
-          links: [
-            { label: 'Royal Blue Sapphire Rings', href: '/love-and-celebration?stone=blue-sapphire' },
-            { label: 'Ruby Rings', href: '/love-and-celebration?stone=ruby' },
-            { label: 'Pink & Padparadscha Rings', href: '/love-and-celebration?stone=pink-sapphire' },
-            { label: 'See the Full Collection', href: '/love-and-celebration', accent: true },
-          ],
+          name: 'TOUCH',
+          subtitle: 'A touch remembered.',
+          image: '/images/expressions/touch.jpg',
+          href: '/fine-jewellery',
         },
         {
-          heading: 'Guidance',
-          links: [
-            { label: 'Find Her Ring Size', href: '/love-and-celebration' },
-            { label: 'Stories of Love & Devotion', href: '/love-and-celebration' },
-            { label: 'Book a Private Appointment', href: '/private-consultations' },
-            { label: 'Design Something Personal', href: '/bespoke/enquiry' },
-          ],
+          name: 'WONDER',
+          subtitle: 'A look that lingers.',
+          image: '/images/expressions/wonder.jpg',
+          href: '/gemstones',
+        },
+        {
+          name: 'WHISPER',
+          subtitle: 'A secret shared.',
+          image: '/images/expressions/whisper.jpg',
+          href: '/bespoke',
         },
       ],
       feature: {
-        title: 'The Vow Collection',
-        subtitle: 'Rings that hold the weight of the most important moments in your life.',
-        cta: { label: 'Explore the Vow Collection', href: '/love-and-celebration' },
-        accent: 'rose',
+        title: 'The Architecture of Devotion',
+        subtitle: 'Love has its own language: a promise kept, a touch remembered, a look that lingers, a secret shared.',
+        cta: { label: 'Discover Aviory', href: '/love-and-celebration' },
+        accent: 'champagne',
       },
     },
   },
   {
     key: 'bespoke',
-    label: 'Bespoke',
+    label: 'BESPOKE',
     labelKey: 'common.bespoke',
     href: '/bespoke',
     mega: {
       columns: [
         {
-          heading: 'Start Here',
+          heading: 'The Intimate Journey',
           links: [
-            { label: 'How It Works', href: '/bespoke/process' },
-            { label: 'Tell Us What You Have in Mind', href: '/bespoke/enquiry' },
-            { label: 'Book a Private Session', href: '/private-consultations' },
-            { label: 'See Our Bespoke Work', href: '/bespoke', accent: true },
+            { label: 'Your Story', href: '/bespoke' },
+            { label: 'The Bespoke Experience', href: '/bespoke/process' },
+            { label: 'Begin a Private Commission', href: '/bespoke/enquiry', accent: true },
           ],
         },
         {
-          heading: 'Stories & Ideas',
+          heading: 'Private Devotion',
           links: [
-            { label: 'How to Design a Ring Together', href: '/journal/designing-your-dream-ring' },
-            { label: 'What Bespoke Actually Means', href: '/journal/the-art-of-bespoke-jewellery' },
-            { label: 'Where Our Gems Come From', href: '/journal/sustainable-luxury-and-ethical-sourcing' },
+            { label: 'The Secret Inner Band', href: '/journal/the-secret-inner-band' },
+            { label: 'Reserve an Atelier Suite', href: '/private-consultations' },
+            { label: 'Confidential Virtual Salon', href: '/private-consultations' },
           ],
         },
       ],
       feature: {
-        title: 'Made Only for You',
-        subtitle: 'You bring the feeling. We will find the gem, design the setting, and make it permanent.',
-        cta: { label: 'Start Your Story', href: '/bespoke/enquiry' },
+        title: 'Begin With a Feeling',
+        subtitle: 'Tell us who it is for, what you want them to feel, or the moment you want to remember. Together, we will create something that could belong to no one else.',
+        cta: { label: 'Begin Your Story', href: '/bespoke/enquiry' },
         accent: 'champagne',
       },
     },
   },
   {
     key: 'our-house',
-    label: 'Our House',
+    label: 'OUR HOUSE',
     labelKey: 'common.ourHouse',
     href: '/our-house',
+    mega: {
+      columns: [
+        {
+          heading: 'The Maison',
+          links: [
+            { label: 'The Aviory Story', href: '/our-house' },
+            { label: 'Our Philosophy', href: '/our-house' },
+            { label: 'Contact & Atelier Appointments', href: '/contact' },
+          ],
+        },
+        {
+          heading: 'Discretion & Heritage',
+          links: [
+            { label: 'A House Built Around Feeling', href: '/our-house' },
+            { label: 'Wild Earth Provenance', href: '/journal/sustainable-luxury-and-ethical-sourcing' },
+            { label: 'Private Salons Worldwide', href: '/private-consultations' },
+          ],
+        },
+      ],
+      feature: {
+        title: 'Built Around Feeling',
+        subtitle: 'Some things are chosen for how they look. Others are chosen for what they mean. Aviory exists for the latter.',
+        cta: { label: 'Get to Know Aviory', href: '/our-house' },
+        accent: 'platinum',
+      },
+    },
   },
   {
     key: 'journal',
-    label: 'Journal',
+    label: 'JOURNAL',
     labelKey: 'common.journal',
     href: '/journal',
+    mega: {
+      columns: [
+        {
+          heading: 'The Intimate Edit',
+          links: [
+            { label: 'The Language of Touch', href: '/journal/the-secret-inner-band' },
+            { label: 'The Beauty of Being Desired', href: '/journal/candlelight-and-gold' },
+            { label: 'All Dispatches & Stories', href: '/journal', accent: true },
+          ],
+        },
+        {
+          heading: 'Inspiration',
+          links: [
+            { label: 'Candlelight & Devotion', href: '/journal/candlelight-and-gold' },
+            { label: 'Untouched by Fire', href: '/journal/unheated-ceylon-sapphires' },
+            { label: 'The Secret Inner Covenant', href: '/journal/the-secret-inner-band' },
+          ],
+        },
+      ],
+      feature: {
+        title: 'The Intimate Edit',
+        subtitle: 'Notes on desire, devotion, attraction and the art of making a moment matter.',
+        cta: { label: 'Read The Journal', href: '/journal' },
+        accent: 'sapphire',
+      },
+    },
   },
 ];
 
 export const footerLinks = {
-  collections: [
-    { label: 'Royal Ceylon Sapphires', href: '/gemstones' },
-    { label: 'Padparadscha & Spinels', href: '/gemstones?category=padparadscha' },
-    { label: 'Fine Jewellery', href: '/fine-jewellery' },
-    { label: 'The Vow Collection', href: '/love-and-celebration' },
-    { label: 'Private Reserve Gems', href: '/gemstones?category=collector' },
+  expressions: [
+    { label: 'Vow', href: '/love-and-celebration' },
+    { label: 'Touch', href: '/fine-jewellery' },
+    { label: 'Wonder', href: '/gemstones' },
+    { label: 'Whisper', href: '/bespoke' },
   ],
-  service: [
-    { label: 'Book a Private Appointment', href: '/private-consultations' },
-    { label: 'Shipping & Worldwide Delivery', href: '/contact?subject=shipping' },
-    { label: 'Returns & Our Promise to You', href: '/contact?subject=returns' },
-    { label: 'Ring Sizing Guide', href: '/love-and-celebration' },
+  house: [
+    { label: 'Our Story', href: '/our-house' },
+    { label: 'Bespoke', href: '/bespoke' },
+    { label: 'Journal', href: '/journal' },
+    { label: 'Contact', href: '/contact' },
   ],
-  company: [
-    { label: 'Who We Are', href: '/our-house' },
-    { label: 'The Bespoke Process', href: '/bespoke/process' },
-    { label: 'The Aviory Journal', href: '/journal' },
-    { label: 'How We Source Our Gems', href: '/journal/sustainable-luxury-and-ethical-sourcing' },
+  assistance: [
+    { label: 'Private Enquiries', href: '/contact?subject=enquiry' },
+    { label: 'Delivery & Care', href: '/contact?subject=care' },
+    { label: 'Returns', href: '/contact?subject=returns' },
+    { label: 'Frequently Asked Questions', href: '/contact?subject=faq' },
   ],
-  concierge: [
-    { label: 'Contact Us', href: '/contact' },
-    { label: 'Book a Consultation', href: '/private-consultations' },
-    { label: 'Design Something Personal', href: '/bespoke/enquiry' },
+  social: [
+    { label: 'Instagram', href: 'https://instagram.com/avioryco' },
+    { label: 'Pinterest', href: 'https://pinterest.com/avioryco' },
+    { label: 'Facebook', href: 'https://facebook.com/avioryco' },
+    { label: 'YouTube', href: 'https://youtube.com/@avioryco' },
   ],
 };

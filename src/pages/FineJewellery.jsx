@@ -67,7 +67,7 @@ export default function FineJewellery() {
             DESIRE, MADE REAL.
           </p>
           <p style={{ fontSize: '0.98rem', color: '#D0CCBE', opacity: 0.95, maxWidth: '560px', margin: '0 auto', lineHeight: 1.65 }}>
-            Each creation is sculpted around rare unheated Ceylon sapphires and gold — designed to be worn against bare skin and remembered forever.
+            Each creation is sculpted around rare singular stones and warm precious metals — designed to be worn against bare skin and remembered forever.
           </p>
         </div>
       </section>

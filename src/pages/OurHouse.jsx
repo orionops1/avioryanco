@@ -89,7 +89,7 @@ export default function OurHouse() {
             lineHeight: 1.8,
             color: '#444444'
           }}>
-            Jewellery is not an ornament. It is a confession worn where blood beats closest to the surface. Since 2009, our maison has preserved the sacred heritage of Sri Lanka's unheated gemstones — stones formed two billion years ago, brought to light with zero thermal alteration.
+            Jewellery is not an ornament. It is a confession worn where blood beats closest to the surface. Since 2009, our maison has preserved the sacred heritage of Sri Lanka's rare gemstones — stones formed two billion years ago, brought to light with zero thermal alteration.
           </p>
         </div>
       </section>
@@ -252,7 +252,7 @@ export default function OurHouse() {
           }} />
 
           {[
-            { year: '2009', title: 'The Founding', desc: 'Maison established in Sri Lanka, dedicated exclusively to unheated Ceylon sapphires.' },
+            { year: '2009', title: 'The Founding', desc: 'Maison established in Sri Lanka, dedicated exclusively to solitary, pure Ceylon creations.' },
             { year: '2014', title: 'Mine Custody', desc: 'Direct custodial agreements with historic Sri Lankan artisanal pit mines.' },
             { year: '2018', title: 'Pure Intimacy', desc: 'Inauguration of the Bespoke Programme and pulse-point gemstone signature.' },
             { year: '2022', title: 'Global Recognition', desc: 'Private salon viewings across London, Geneva, Dubai, and Singapore.' },

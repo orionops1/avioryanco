@@ -4,16 +4,12 @@ import './HeroVideo.css'
 
 export default function HeroVideo({
   video = "/videos/hero-luxury.mp4",
-  poster = "/images/hero-banner.jpg",
-  eyebrow = "WHERE THE VOW LIVES",
-  headline = "Forged for the skin that remembers you.",
-  slogan,
-  subtitle = "A vow isn't spoken once. It is carried daily against your pulse.",
-  primaryCta = { label: "EXPLORE THE VOW COLLECTION", href: "/love-and-celebration" },
-  secondaryCta = { label: "BEGIN THE BESPOKE INTIMACY™ COMMISSION →", href: "/bespoke/enquiry" },
-  cta,
-  ctaPrimary,
-  ctaSecondary
+  poster = "/images/expressions/hero_model.jpg",
+  eyebrow = "BESPOKE INTIMACY",
+  headline = "THE SHAPE OF DESIRE",
+  subtitle = "For love, longing and the moments that belong only to you.",
+  primaryCta = { label: "DISCOVER AVIORY", href: "#architecture-of-devotion" },
+  secondaryCta = null
 }) {
   const videoRef = useRef(null)
 
@@ -29,13 +25,19 @@ export default function HeroVideo({
     }
   }, [])
 
-  const firstBtn = cta || ctaPrimary || primaryCta
-  const secondBtn = ctaSecondary || secondaryCta
-  const mainHeadline = headline || slogan
+  const handleCtaClick = (e, href) => {
+    if (href.startsWith('#')) {
+      e.preventDefault()
+      const target = document.querySelector(href)
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+  }
 
   return (
     <section className="hero-video" aria-label="Hero Showcase">
-      {/* VIDEO BACKGROUND */}
+      {/* VIDEO BACKGROUND (Looped, silent, cinematic) */}
       <video
         ref={videoRef}
         className="hero-video__video"
@@ -46,7 +48,7 @@ export default function HeroVideo({
         playsInline
       >
         <source src={video} type="video/mp4" />
-        <img src={poster} alt="Hero" className="hero-video__fallback-img" />
+        <img src={poster} alt="Bespoke Intimacy" className="hero-video__fallback-img" />
       </video>
 
       {/* FALLBACK IMAGE */}
@@ -58,7 +60,7 @@ export default function HeroVideo({
       {/* LUXURY VIGNETTE OVERLAY */}
       <div className="hero-video__overlay" />
 
-      {/* CONTENT WITH BLACKGOLD LOGO */}
+      {/* CONTENT (No duplicate logo — only Eyebrow, Headline, Supporting line, and Single CTA) */}
       <div className="hero-video__content">
         <div className="container">
           <div className="hero-video__text">
@@ -66,26 +68,29 @@ export default function HeroVideo({
               <span className="hero-video__eyebrow">{eyebrow}</span>
             )}
 
-            {mainHeadline && (
-              <h2 className="hero-video__slogan">
-                {mainHeadline}
-              </h2>
+            {headline && (
+              <h1 className="hero-video__slogan">
+                {headline}
+              </h1>
             )}
             
             {subtitle && (
               <p className="hero-video__subtitle">{subtitle}</p>
             )}
             
-            {(firstBtn || secondBtn) && (
+            {primaryCta && (
               <div className="hero-video__cta">
-                {firstBtn && (
-                  <Link to={firstBtn.href} className="btn btn-primary">
-                    {firstBtn.label}
-                  </Link>
-                )}
-                {secondBtn && (
-                  <Link to={secondBtn.href} className="btn btn-secondary">
-                    {secondBtn.label}
+                {primaryCta.href.startsWith('#') ? (
+                  <a 
+                    href={primaryCta.href} 
+                    className="btn btn-primary"
+                    onClick={(e) => handleCtaClick(e, primaryCta.href)}
+                  >
+                    {primaryCta.label}
+                  </a>
+                ) : (
+                  <Link to={primaryCta.href} className="btn btn-primary">
+                    {primaryCta.label}
                   </Link>
                 )}
               </div>

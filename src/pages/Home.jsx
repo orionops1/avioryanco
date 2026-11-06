@@ -2,17 +2,14 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import HeroVideo from '../components/HeroVideo'
 import AppointmentModal from '../components/AppointmentModal'
-import { useLanguage } from '../hooks/useLanguage'
-import { formatPrice } from '../utils/currencyConverter'
 import './Home.css'
 
 export default function Home() {
-  const { currency } = useLanguage()
   const [appointmentModalOpen, setAppointmentModalOpen] = useState(false)
   const [email, setEmail] = useState('')
   const [subscribed, setSubscribed] = useState(false)
 
-  // Heartbeat Gem Interactive Showcase State
+  // The Heartbeat Gem™ Interactive State
   const [activeHeartbeatGem, setActiveHeartbeatGem] = useState('sapphire')
 
   const handleHeartbeatSelect = (gemKey) => {
@@ -28,25 +25,19 @@ export default function Home() {
 
   const heartbeatOptions = {
     sapphire: {
-      name: 'Midnight Ceylon Sapphire',
-      carat: 'Natural · Untouched by Fire',
-      symbol: 'Unwavering Devotion',
+      name: 'Midnight Blue',
       quote: 'Echoing the depth of midnight water—a calm, unbroken promise.',
       colorHex: '#254E8C',
       pulseGlow: 'rgba(37, 78, 140, 0.45)'
     },
     ruby: {
-      name: 'Pigeon Blood Ruby',
-      carat: 'Natural · Untouched by Fire',
-      symbol: 'Ardent Private Passion',
-      quote: 'An untreated crimson crystal holding the unspoken heat of devotion against her pulse.',
+      name: 'Pigeon Crimson',
+      quote: 'Holding the unspoken heat of devotion against her pulse.',
       colorHex: '#8C1D32',
       pulseGlow: 'rgba(140, 29, 50, 0.45)'
     },
     padparadscha: {
-      name: 'Sunset Lotus Padparadscha',
-      carat: 'Natural · Untouched by Fire',
-      symbol: 'Ethereal Reverence',
+      name: 'Sunset Lotus',
       quote: 'The first warmth of dawn light against bare skin.',
       colorHex: '#C56B55',
       pulseGlow: 'rgba(197, 107, 85, 0.45)'
@@ -57,98 +48,135 @@ export default function Home() {
 
   return (
     <div className="aviory-romantic-home">
-      {/* 1. ATMOSPHERIC HERO BANNER */}
+      {/* ====================================================================
+          1. HERO BANNER — THE SHAPE OF DESIRE
+          ==================================================================== */}
       <HeroVideo
         video="/videos/hero-luxury.mp4"
-        poster="/images/hero-banner.jpg"
+        poster="/images/expressions/hero_model.jpg"
         eyebrow="BESPOKE INTIMACY"
-        headline="The Shape of Desire"
+        headline="THE SHAPE OF DESIRE"
         subtitle="For love, longing and the moments that belong only to you."
-        primaryCta={{ label: "DISCOVER AVIORY", href: "/love-and-celebration" }}
+        primaryCta={{ label: "DISCOVER AVIORY", href: "#architecture-of-devotion" }}
         secondaryCta={null}
       />
 
-      {/* 2. THE FOUR EMOTIONAL PILLARS: VOW, TOUCH, WONDER, WHISPER */}
-      <section className="home-pillars-section" aria-label="The Architecture of Devotion">
+      {/* ====================================================================
+          2. THE ARCHITECTURE OF DEVOTION — FOUR EXPRESSIONS OF INTIMACY
+          ==================================================================== */}
+      <section 
+        id="architecture-of-devotion" 
+        className="home-pillars-section" 
+        aria-label="The Architecture of Devotion"
+      >
         <div className="container">
           <div className="section-header-centered">
-            <span className="editorial-eyebrow">BESPOKE INTIMACY</span>
+            <span className="editorial-eyebrow">FOUR EXPRESSIONS OF INTIMACY</span>
             <h2 className="section-title">THE ARCHITECTURE OF DEVOTION</h2>
-            <h3 className="section-subtitle-heading">Four Expressions of Intimacy</h3>
             <p className="section-subtitle">
               Love has its own language: a promise kept, a touch remembered, a look that lingers, a secret shared.
             </p>
           </div>
 
-          <div className="pillars-grid">
-            {/* PILLAR 1: VOW */}
-            <div className="pillar-card">
-              <div 
-                className="pillar-card__media"
-                style={{ backgroundImage: 'url(/images/most-popular-gifts.jpg)' }}
-              >
-                <div className="pillar-card__overlay" />
-                <span className="pillar-card__num">VOW</span>
+          <div className="devotion-grid">
+            {/* EXPRESSION ONE: VOW */}
+            <article className="devotion-card">
+              <Link to="/love-and-celebration" className="devotion-card__media-link">
+                <div 
+                  className="devotion-card__media"
+                  style={{ backgroundImage: 'url(/images/expressions/vow.jpg)' }}
+                >
+                  <div className="devotion-card__overlay" />
+                  <span className="devotion-card__tag">VOW</span>
+                </div>
+              </Link>
+              <div className="devotion-card__body">
+                <span className="devotion-card__eyebrow">EXPRESSION ONE</span>
+                <h3 className="devotion-card__title">A promise kept.</h3>
+                <p className="devotion-card__desc">
+                  Some promises are made in a moment and lived in every moment that follows.
+                </p>
+                <Link to="/love-and-celebration" className="devotion-card__cta">
+                  DISCOVER VOW &rarr;
+                </Link>
               </div>
-              <div className="pillar-card__content">
-                <blockquote className="pillar-card__quote">
-                  A promise kept.
-                </blockquote>
-              </div>
-            </div>
+            </article>
 
-            {/* PILLAR 2: TOUCH */}
-            <div className="pillar-card">
-              <div 
-                className="pillar-card__media"
-                style={{ backgroundImage: 'url(/images/gifts-for-her.jpg)' }}
-              >
-                <div className="pillar-card__overlay" />
-                <span className="pillar-card__num">TOUCH</span>
+            {/* EXPRESSION TWO: TOUCH */}
+            <article className="devotion-card">
+              <Link to="/fine-jewellery" className="devotion-card__media-link">
+                <div 
+                  className="devotion-card__media"
+                  style={{ backgroundImage: 'url(/images/expressions/touch.jpg)' }}
+                >
+                  <div className="devotion-card__overlay" />
+                  <span className="devotion-card__tag">TOUCH</span>
+                </div>
+              </Link>
+              <div className="devotion-card__body">
+                <span className="devotion-card__eyebrow">EXPRESSION TWO</span>
+                <h3 className="devotion-card__title">A touch remembered.</h3>
+                <p className="devotion-card__desc">
+                  For closeness, attraction and the quiet pull of being near.
+                </p>
+                <Link to="/fine-jewellery" className="devotion-card__cta">
+                  DISCOVER TOUCH &rarr;
+                </Link>
               </div>
-              <div className="pillar-card__content">
-                <blockquote className="pillar-card__quote">
-                  A touch remembered.
-                </blockquote>
-              </div>
-            </div>
+            </article>
 
-            {/* PILLAR 3: WONDER */}
-            <div className="pillar-card">
-              <div 
-                className="pillar-card__media"
-                style={{ backgroundImage: 'url(/images/editorial/ceylon-sapphire-vault.jpg)' }}
-              >
-                <div className="pillar-card__overlay" />
-                <span className="pillar-card__num">WONDER</span>
+            {/* EXPRESSION THREE: WONDER */}
+            <article className="devotion-card">
+              <Link to="/gemstones" className="devotion-card__media-link">
+                <div 
+                  className="devotion-card__media"
+                  style={{ backgroundImage: 'url(/images/expressions/wonder.jpg)' }}
+                >
+                  <div className="devotion-card__overlay" />
+                  <span className="devotion-card__tag">WONDER</span>
+                </div>
+              </Link>
+              <div className="devotion-card__body">
+                <span className="devotion-card__eyebrow">EXPRESSION THREE</span>
+                <h3 className="devotion-card__title">A look that lingers.</h3>
+                <p className="devotion-card__desc">
+                  For the sudden pull of attraction and the thrill of being captivated.
+                </p>
+                <Link to="/gemstones" className="devotion-card__cta">
+                  DISCOVER WONDER &rarr;
+                </Link>
               </div>
-              <div className="pillar-card__content">
-                <blockquote className="pillar-card__quote">
-                  A look that lingers.
-                </blockquote>
-              </div>
-            </div>
+            </article>
 
-            {/* PILLAR 4: WHISPER */}
-            <div className="pillar-card">
-              <div 
-                className="pillar-card__media"
-                style={{ backgroundImage: 'url(/images/art-of-gifting.jpg)' }}
-              >
-                <div className="pillar-card__overlay" />
-                <span className="pillar-card__num">WHISPER</span>
+            {/* EXPRESSION FOUR: WHISPER */}
+            <article className="devotion-card">
+              <Link to="/bespoke" className="devotion-card__media-link">
+                <div 
+                  className="devotion-card__media"
+                  style={{ backgroundImage: 'url(/images/expressions/whisper.jpg)' }}
+                >
+                  <div className="devotion-card__overlay" />
+                  <span className="devotion-card__tag">WHISPER</span>
+                </div>
+              </Link>
+              <div className="devotion-card__body">
+                <span className="devotion-card__eyebrow">EXPRESSION FOUR</span>
+                <h3 className="devotion-card__title">A secret shared.</h3>
+                <p className="devotion-card__desc">
+                  Some meanings are too personal for words. They belong to the two who understand.
+                </p>
+                <Link to="/bespoke" className="devotion-card__cta">
+                  DISCOVER WHISPER &rarr;
+                </Link>
               </div>
-              <div className="pillar-card__content">
-                <blockquote className="pillar-card__quote">
-                  A secret shared.
-                </blockquote>
-              </div>
-            </div>
+            </article>
           </div>
         </div>
       </section>
 
-      {/* 3. THE SIGNATURE COVENANT: THE HEARTBEAT GEM */}
+      {/* ====================================================================
+          3. THE SIGNATURE COVENANT: THE HEARTBEAT GEM™
+          ==================================================================== */}
       <section className="home-heartbeat-section" aria-label="The Heartbeat Gem Feature">
         <div className="container">
           <div className="heartbeat-grid">
@@ -157,13 +185,13 @@ export default function Home() {
               <div className="heartbeat-ring-canvas">
                 <svg className="heartbeat-ring-svg" viewBox="0 0 320 320" fill="none">
                   {/* Outer Ring Profile */}
-                  <circle cx="160" cy="160" r="120" stroke="#D4AF7F" strokeWidth="14" opacity="0.6" />
-                  <circle cx="160" cy="160" r="113" stroke="#E6E1DA" strokeWidth="1" />
+                  <circle cx="160" cy="160" r="120" stroke="#D4AF7F" strokeWidth="14" opacity="0.65" />
+                  <circle cx="160" cy="160" r="113" stroke="#F5EDE2" strokeWidth="1" />
                   {/* Inner Ring Profile (Skin Contact Surface) */}
                   <circle cx="160" cy="160" r="106" stroke="#D4AF7F" strokeWidth="2" />
 
                   {/* Solitaire Mount at Top (12 o'clock) */}
-                  <polygon points="160,26 174,38 160,50 146,38" fill="#111111" />
+                  <polygon points="160,26 174,38 160,50 146,38" fill="#1A1A1A" />
                   <circle cx="160" cy="38" r="9" fill="#254E8C" />
 
                   {/* The Secret Flush-Set Pulse Gem at Bottom (6 o'clock) */}
@@ -174,17 +202,28 @@ export default function Home() {
                     fill={currentHeartbeat.colorHex} 
                     className="heartbeat-gem-pulse"
                   />
-                  <circle cx="160" cy="266" r="14" stroke={currentHeartbeat.colorHex} strokeWidth="1.5" strokeDasharray="3 3" opacity="0.6" />
+                  <circle 
+                    cx="160" 
+                    cy="266" 
+                    r="14" 
+                    stroke={currentHeartbeat.colorHex} 
+                    strokeWidth="1.5" 
+                    strokeDasharray="3 3" 
+                    opacity="0.65" 
+                  />
                 </svg>
 
                 {/* Annotation Callouts */}
                 <div className="heartbeat-annotation heartbeat-annotation--public">
                   <span className="heartbeat-annotation__dot" />
-                  <span className="heartbeat-annotation__label">Public Solitaire Mount</span>
+                  <span className="heartbeat-annotation__label">Public Solitaire</span>
                 </div>
 
                 <div className="heartbeat-annotation heartbeat-annotation--secret">
-                  <span className="heartbeat-annotation__pulse-dot" style={{ backgroundColor: currentHeartbeat.colorHex }} />
+                  <span 
+                    className="heartbeat-annotation__pulse-dot" 
+                    style={{ backgroundColor: currentHeartbeat.colorHex }} 
+                  />
                   <div>
                     <span className="heartbeat-annotation__label">The Heartbeat Gem™</span>
                     <span className="heartbeat-annotation__sub">Resting flush against her pulse</span>
@@ -192,10 +231,15 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Stone Preview Card */}
+              {/* Stone Preview Pill */}
               <div className="heartbeat-preview-pill">
-                <span className="heartbeat-pill-dot" style={{ backgroundColor: currentHeartbeat.colorHex }} />
-                <span className="heartbeat-pill-text">Selected: <strong>{currentHeartbeat.name}</strong></span>
+                <span 
+                  className="heartbeat-pill-dot" 
+                  style={{ backgroundColor: currentHeartbeat.colorHex }} 
+                />
+                <span className="heartbeat-pill-text">
+                  Selected Inner Covenant: <strong>{currentHeartbeat.name}</strong>
+                </span>
               </div>
             </div>
 
@@ -212,12 +256,12 @@ export default function Home() {
                 The world sees what you wear on the outside. But the true covenant of your piece remains hidden within.
               </p>
               <p className="heartbeat-text">
-                Set flush into the interior curve of the band, a secret stone rests against her bare skin. Completely invisible to dinner parties, cameras, and strangers—felt with every beat of her pulse.
+                Set flush into the interior curve of the band, a private gemstone rests directly against her skin. Completely invisible to dinner parties, cameras, and strangers—felt with every beat of her pulse.
               </p>
 
-              {/* Stone Selector Tabs */}
+              {/* Stone Selector Buttons */}
               <div className="heartbeat-selector-group">
-                <span className="heartbeat-selector-label">CHOOSE HER SECRET INNER STONE:</span>
+                <span className="heartbeat-selector-label">CHOOSE HER PRIVATE INNER STONE:</span>
                 <div className="heartbeat-buttons">
                   <button 
                     type="button" 
@@ -225,7 +269,7 @@ export default function Home() {
                     onClick={() => handleHeartbeatSelect('sapphire')}
                   >
                     <span className="heartbeat-btn__swatch" style={{ backgroundColor: '#254E8C' }} />
-                    <span className="heartbeat-btn__title">Midnight Sapphire</span>
+                    <span className="heartbeat-btn__title">Midnight Blue</span>
                   </button>
 
                   <button 
@@ -234,7 +278,7 @@ export default function Home() {
                     onClick={() => handleHeartbeatSelect('ruby')}
                   >
                     <span className="heartbeat-btn__swatch" style={{ backgroundColor: '#8C1D32' }} />
-                    <span className="heartbeat-btn__title">Pigeon Ruby</span>
+                    <span className="heartbeat-btn__title">Pigeon Crimson</span>
                   </button>
 
                   <button 
@@ -256,10 +300,10 @@ export default function Home() {
 
               <div className="heartbeat-actions">
                 <Link to="/bespoke/enquiry" className="btn-luxury-primary">
-                  COMMISSION WITH A SECRET GEM →
+                  BEGIN YOUR BESPOKE STORY &rarr;
                 </Link>
                 <Link to="/bespoke/process" className="link-text-gold">
-                  HOW A SECRET IS MADE →
+                  HOW A SECRET IS MADE &rarr;
                 </Link>
               </div>
             </div>
@@ -267,361 +311,160 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. ASYMMETRICAL MUSEUM GALLERY (SOLITARY EXHIBITS) */}
-      <section className="home-museum-section" aria-label="Solitary Museum Exhibits">
+      {/* ====================================================================
+          4. SECOND FULL-WIDTH BANNER — THE PRIVATE SIDE OF LOVE
+          ==================================================================== */}
+      <section 
+        className="home-private-banner" 
+        style={{ backgroundImage: 'url(/images/expressions/private_love.jpg)' }}
+        aria-label="The Private Side of Love"
+      >
+        <div className="home-private-banner__overlay" />
         <div className="container">
-          <div className="section-header-centered">
-            <span className="editorial-eyebrow">SOLITARY EXHIBITS</span>
-            <h2 className="section-title">Works of Solitary Devotion</h2>
-            <p className="section-subtitle">
-              Each piece is shown alone. The way an obsession deserves to be seen.
+          <div className="home-private-banner__content">
+            <span className="editorial-eyebrow">THE PRIVATE SIDE OF LOVE</span>
+            <h2 className="home-private-banner__title">SOME THINGS BELONG ONLY TO TWO.</h2>
+            <p className="home-private-banner__desc">
+              A glance that says everything. A touch that needs no explanation. A moment the rest of the world never has to understand.
             </p>
-          </div>
-
-          <div className="museum-exhibits-wrap">
-            {/* EXHIBIT 01: The Midnight Cushion */}
-            <article className="museum-exhibit museum-exhibit--left">
-              <div className="museum-exhibit__media-wrap">
-                <img 
-                  src="/images/editorial/ceylon-sapphire-vault.jpg" 
-                  alt="The 7.42ct Midnight Cushion" 
-                  className="museum-exhibit__img"
-                />
-                <span className="museum-exhibit__badge">SOLITARY SPECIMEN</span>
-              </div>
-              <div className="museum-exhibit__meta">
-                <span className="museum-exhibit__num">EXHIBIT 01 / 04</span>
-                <span className="museum-exhibit__category">NIGHTFALL CUSHION</span>
-                <h3 className="museum-exhibit__title">The 7.42ct Midnight Cushion</h3>
-                <p className="museum-exhibit__story">
-                  Untouched by fire. Cut with deep pavilion facets to capture and hold candlelight in darkened rooms. A blue so deep it feels like looking into water at midnight.
-                </p>
-                <div className="museum-exhibit__specs">
-                  <span>7.42 Carats</span>
-                  <span>•</span>
-                  <span>Cut for Candlelight</span>
-                  <span>•</span>
-                  <span>Solitary Creation</span>
-                </div>
-                <div className="museum-exhibit__footer">
-                  <div className="museum-exhibit__price">{formatPrice(24800, currency)}</div>
-                  <Link to="/gemstones/bs-001" className="btn-luxury-primary">
-                    EXPLORE THIS CREATION
-                  </Link>
-                </div>
-              </div>
-            </article>
-
-            {/* EXHIBIT 02: The Secret Vow Solitaire */}
-            <article className="museum-exhibit museum-exhibit--right">
-              <div className="museum-exhibit__media-wrap">
-                <img 
-                  src="/images/most-popular-gifts.jpg" 
-                  alt="The Secret Vow Solitaire Ring" 
-                  className="museum-exhibit__img"
-                />
-                <span className="museum-exhibit__badge">SECRET DETAIL</span>
-              </div>
-              <div className="museum-exhibit__meta">
-                <span className="museum-exhibit__num">EXHIBIT 02 / 04</span>
-                <span className="museum-exhibit__category">SOLITAIRE OF DEVOTION</span>
-                <h3 className="museum-exhibit__title">The Secret Vow Solitaire</h3>
-                <p className="museum-exhibit__story">
-                  A classical ring to the world; an intense secret to two lovers. Solid platinum on the outside, with a secret pulse stone resting against her skin where no one else will ever reach.
-                </p>
-                <div className="museum-exhibit__specs">
-                  <span>Hand-Wrought Platinum</span>
-                  <span>•</span>
-                  <span>Secret Pulse Stone</span>
-                  <span>•</span>
-                  <span>Made for Her Skin</span>
-                </div>
-                <div className="museum-exhibit__footer">
-                  <div className="museum-exhibit__price">{formatPrice(18500, currency)}</div>
-                  <Link to="/love-and-celebration" className="btn-luxury-primary">
-                    EXPLORE THIS RING
-                  </Link>
-                </div>
-              </div>
-            </article>
-
-            {/* EXHIBIT 03: The Sunset Lotus Collar */}
-            <article className="museum-exhibit museum-exhibit--left">
-              <div className="museum-exhibit__media-wrap">
-                <img 
-                  src="/images/gifts-for-her.jpg" 
-                  alt="The Sunset Lotus Collar" 
-                  className="museum-exhibit__img"
-                />
-                <span className="museum-exhibit__badge">ONE OF ONE</span>
-              </div>
-              <div className="museum-exhibit__meta">
-                <span className="museum-exhibit__num">EXHIBIT 03 / 04</span>
-                <span className="museum-exhibit__category">HIGH JEWELLERY COLLAR</span>
-                <h3 className="museum-exhibit__title">The Sunset Lotus Collar</h3>
-                <p className="museum-exhibit__story">
-                  Warm metal shaped to rest heavy against her collarbone in private hours. The dawn-lotus hue awakens in low candlelight, drinking the physical warmth of the wearer.
-                </p>
-                <div className="museum-exhibit__specs">
-                  <span>Warm Gold</span>
-                  <span>•</span>
-                  <span>Lotus Bloom Hue</span>
-                  <span>•</span>
-                  <span>Rests Heavy on Collarbone</span>
-                </div>
-                <div className="museum-exhibit__footer">
-                  <div className="museum-exhibit__price">{formatPrice(32000, currency)}</div>
-                  <Link to="/fine-jewellery" className="btn-luxury-primary">
-                    EXPLORE THIS CREATION
-                  </Link>
-                </div>
-              </div>
-            </article>
-
-            {/* EXHIBIT 04: The Deep Emerald-Cut Oceanic */}
-            <article className="museum-exhibit museum-exhibit--right">
-              <div className="museum-exhibit__media-wrap">
-                <img 
-                  src="/images/gifts-to-engrave.jpg" 
-                  alt="The Deep Emerald-Cut Oceanic" 
-                  className="museum-exhibit__img"
-                />
-                <span className="museum-exhibit__badge">RARE SPECIMEN</span>
-              </div>
-              <div className="museum-exhibit__meta">
-                <span className="museum-exhibit__num">EXHIBIT 04 / 04</span>
-                <span className="museum-exhibit__category">DEEP CUT SPECIMEN</span>
-                <h3 className="museum-exhibit__title">The Deep Emerald-Cut Oceanic</h3>
-                <p className="museum-exhibit__story">
-                  Midnight oceanic depths and jungle shadow in a single untreated crystal. Cut to draw the eye downward into quiet, unbroken silence.
-                </p>
-                <div className="museum-exhibit__specs">
-                  <span>5.10 Carats</span>
-                  <span>•</span>
-                  <span>Architectural Step Cut</span>
-                  <span>•</span>
-                  <span>Untouched by Fire</span>
-                </div>
-                <div className="museum-exhibit__footer">
-                  <div className="museum-exhibit__price">{formatPrice(16200, currency)}</div>
-                  <Link to="/gemstones" className="btn-luxury-primary">
-                    EXPLORE THIS CREATION
-                  </Link>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. HOUSE PHILOSOPHY: PRIVATE DEVOTION VS MASS PRESTIGE */}
-      <section className="home-ethos-section" aria-label="House Ethos vs Legacy Houses">
-        <div className="container">
-          <div className="section-header-centered">
-            <span className="editorial-eyebrow">HOUSE PHILOSOPHY</span>
-            <h2 className="section-title">Why Private Devotion Outlasts Mass Prestige</h2>
-            <p className="section-subtitle">
-              Legacy houses sell gift boxes to millions. We forge solitary covenants for one person alone.
-            </p>
-          </div>
-
-          <div className="ethos-cards-grid">
-            {/* PILLAR 1: BESPOKE INTIMACY */}
-            <div className="ethos-card">
-              <span className="ethos-card__eyebrow">ONE-OF-ONE CREATIONS</span>
-              <h3 className="ethos-card__title">Bespoke Intimacy™</h3>
-              <p className="ethos-card__flaw">
-                <strong>The World:</strong> Millions wearing the identical mass-produced bracelet or assembly-line ring.
-              </p>
-              <p className="ethos-card__advantage">
-                <strong>Aviory:</strong> A solitary creation carrying an unspoken secret known only to the two of you.
-              </p>
-            </div>
-
-            {/* PILLAR 2: ATELIER DISCRETION */}
-            <div className="ethos-card ethos-card--highlight">
-              <span className="ethos-card__eyebrow">HIGH DISCRETION</span>
-              <h3 className="ethos-card__title">Atelier Discretion</h3>
-              <p className="ethos-card__flaw">
-                <strong>The World:</strong> Rushed transactions at crowded glass counters in shopping malls.
-              </p>
-              <p className="ethos-card__advantage">
-                <strong>Aviory:</strong> Quiet champagne sit-downs in our private salon suite or confidential encrypted virtual rooms.
-              </p>
-            </div>
-
-            {/* PILLAR 3: WILD PROVENANCE */}
-            <div className="ethos-card">
-              <span className="ethos-card__eyebrow">WILD &amp; UNTOUCHED</span>
-              <h3 className="ethos-card__title">Wild Provenance</h3>
-              <p className="ethos-card__flaw">
-                <strong>The World:</strong> Cooked, treated commodity stones with sterile technical charts.
-              </p>
-              <p className="ethos-card__advantage">
-                <strong>Aviory:</strong> Untouched by artificial fire. Pure earth, pulled from ancient ground and cut by hand.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 6. THE MASTER RESERVE */}
-      <section className="home-vault-section" aria-label="The Master Ceylon Reserve">
-        <div className="container">
-          <div className="vault-frame">
-            <div className="section-header-centered">
-              <span className="editorial-eyebrow">THE PRIVATE ARCHIVE</span>
-              <h2 className="section-title">The Master Reserve</h2>
-              <p className="section-subtitle">
-                Rare unheated stones held under private seal. Seen only by private appointment.
-              </p>
-            </div>
-
-            <div className="vault-specimens-grid">
-              {/* SPECIMEN 01 */}
-              <div className="vault-specimen-card">
-                <span className="vault-specimen-badge">LOT #RES-112</span>
-                <h4 className="vault-specimen-title">11.20ct Vivid Royal Blue Cushion</h4>
-                <p className="vault-specimen-meta">Untouched by Fire · Pure Saturation · Private Custody</p>
-                <p className="vault-specimen-desc">
-                  An unbroken midnight blue with transparency rarely found in stones of this weight. Deep, quiet, and hypnotic.
-                </p>
-                <div className="vault-specimen-footer">
-                  <span className="vault-price">Private Reserve</span>
-                  <button 
-                    type="button" 
-                    className="btn-luxury-primary btn-small"
-                    onClick={() => setAppointmentModalOpen(true)}
-                  >
-                    REQUEST PRIVATE ACQUISITION
-                  </button>
-                </div>
-              </div>
-
-              {/* SPECIMEN 02 */}
-              <div className="vault-specimen-card">
-                <span className="vault-specimen-badge">LOT #RES-064</span>
-                <h4 className="vault-specimen-title">6.40ct Sunset Lotus Pear</h4>
-                <p className="vault-specimen-meta">Lotus Bloom Hue · Master Faceted · Private Custody</p>
-                <p className="vault-specimen-desc">
-                  Equally balanced delicate pink and warm sunrise orange. The colour of the first light touching bare skin.
-                </p>
-                <div className="vault-specimen-footer">
-                  <span className="vault-price">Private Reserve</span>
-                  <button 
-                    type="button" 
-                    className="btn-luxury-primary btn-small"
-                    onClick={() => setAppointmentModalOpen(true)}
-                  >
-                    REQUEST PRIVATE ACQUISITION
-                  </button>
-                </div>
-              </div>
-
-              {/* SPECIMEN 03 */}
-              <div className="vault-specimen-card">
-                <span className="vault-specimen-badge">LOT #RES-048</span>
-                <h4 className="vault-specimen-title">4.85ct Pigeon Blood Ruby</h4>
-                <p className="vault-specimen-meta">Pure Crimson · Fierce Fluorescence · Private Custody</p>
-                <p className="vault-specimen-desc">
-                  A fierce crimson crystal with natural fluorescence that awakens fiercely under low candle flame.
-                </p>
-                <div className="vault-specimen-footer">
-                  <span className="vault-price">Private Reserve</span>
-                  <button 
-                    type="button" 
-                    className="btn-luxury-primary btn-small"
-                    onClick={() => setAppointmentModalOpen(true)}
-                  >
-                    REQUEST PRIVATE ACQUISITION
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 7. PRIVATE ATELIER & WORLDWIDE VIEWINGS */}
-      <section className="home-consultation-section" aria-label="Private Atelier & Worldwide Viewings">
-        <div className="container">
-          <div className="consultation-card">
-            <span className="editorial-eyebrow">PRIVATE SALON &amp; SUITES</span>
-            <h2 className="consultation-title">Private Consultations in Sri Lanka &amp; Worldwide</h2>
-            <p className="consultation-lead">
-              We do not host retail crowds. Our salon operates exclusively by private appointment for quiet, unhurried champagne viewings under candlelight. For our patrons in London, New York, Zurich, and Tokyo, our gemologists host confidential 1-on-1 virtual suites.
-            </p>
-            <div className="consultation-actions">
-              <button 
-                type="button" 
-                className="btn-luxury-primary"
-                onClick={() => setAppointmentModalOpen(true)}
-              >
-                RESERVE A PRIVATE APPOINTMENT
-              </button>
-              <Link to="/our-house" className="btn-luxury-outline">
-                DISCOVER OUR HOUSE
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 8. FROM OUR JOURNAL (LORE & INTIMACY) */}
-      <section className="home-journal-section" aria-label="From Our Journal">
-        <div className="container">
-          <div className="section-header-centered">
-            <span className="editorial-eyebrow">EDITORIAL LORE</span>
-            <h2 className="section-title">From Our Journal</h2>
-            <p className="section-subtitle">
-              On the secret poetry of jewelry, touch, and ancient earth lore.
-            </p>
-          </div>
-
-          <div className="journal-articles-grid">
-            <article className="journal-card">
-              <span className="journal-card__category">BESPOKE INTIMACY</span>
-              <h3 className="journal-card__title">
-                <Link to="/journal/the-secret-inner-band">The Secret Inner-Band: Why We Hide a Gem Against Your Pulse</Link>
-              </h3>
-              <p className="journal-card__excerpt">
-                Why true luxury turns inward. The emotional anthropology behind placing a secret jewel where only her skin can feel it.
-              </p>
-              <span className="journal-card__meta">6 min read</span>
-            </article>
-
-            <article className="journal-card">
-              <span className="journal-card__category">EARTH &amp; INTEGRITY</span>
-              <h3 className="journal-card__title">
-                <Link to="/journal/unheated-ceylon-sapphires">Untouched by Fire: Why Heat Kills the Soul of a Stone</Link>
-              </h3>
-              <p className="journal-card__excerpt">
-                Less than 1% of the world's stones enter the world untouched by ovens. What wild crystalline purity actually means.
-              </p>
-              <span className="journal-card__meta">8 min read</span>
-            </article>
-
-            <article className="journal-card">
-              <span className="journal-card__category">DARK ROMANCE</span>
-              <h3 className="journal-card__title">
-                <Link to="/journal/candlelight-and-gold">Candlelight &amp; Metal: The Lost Art of Chiaroscuro Jewelry</Link>
-              </h3>
-              <p className="journal-card__excerpt">
-                Before electric spotlights, fine jewelry was cut to dance under low candle flame in quiet rooms.
-              </p>
-              <span className="journal-card__meta">5 min read</span>
-            </article>
-          </div>
-
-          <div className="journal-footer-wrap">
-            <Link to="/journal" className="link-text-gold">
-              READ ALL DISPATCHES →
+            <Link to="/love-and-celebration" className="btn-luxury-primary">
+              ENTER THE AVIORY WORLD
             </Link>
           </div>
         </div>
       </section>
 
-      {/* 9. THE CIRCLE OF DEVOTION */}
+      {/* ====================================================================
+          5. BESPOKE — MAKE IT PERSONAL
+          ==================================================================== */}
+      <section className="home-bespoke-section" aria-label="Bespoke Intimacy">
+        <div className="container">
+          <div className="editorial-split-grid">
+            <div className="editorial-split__media-wrap">
+              <img 
+                src="/images/expressions/bespoke_hands.jpg" 
+                alt="Two hands clasped with devotion" 
+                className="editorial-split__img"
+              />
+            </div>
+            <div className="editorial-split__content">
+              <span className="editorial-eyebrow">MADE AROUND YOU</span>
+              <h2 className="section-title">BEGIN WITH A FEELING.</h2>
+              <p className="editorial-split__lead">
+                Tell us who it is for, what you want them to feel, or the moment you want to remember. Together, we will create something that could belong to no one else.
+              </p>
+              <div className="editorial-split__actions">
+                <Link to="/bespoke/enquiry" className="btn-luxury-primary">
+                  BEGIN YOUR BESPOKE STORY
+                </Link>
+                <Link to="/bespoke/process" className="btn-luxury-outline">
+                  THE BESPOKE EXPERIENCE
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ====================================================================
+          6. OUR HOUSE — THE AVIORY PHILOSOPHY
+          ==================================================================== */}
+      <section className="home-house-section" aria-label="Our House">
+        <div className="container">
+          <div className="editorial-split-grid editorial-split-grid--reversed">
+            <div className="editorial-split__media-wrap">
+              <img 
+                src="/images/expressions/our_house_portrait.jpg" 
+                alt="The House of Aviory" 
+                className="editorial-split__img"
+              />
+            </div>
+            <div className="editorial-split__content">
+              <span className="editorial-eyebrow">OUR HOUSE</span>
+              <h2 className="section-title">A HOUSE BUILT AROUND FEELING.</h2>
+              <p className="editorial-split__quote">
+                Some things are chosen for how they look. Others are chosen for what they mean.
+              </p>
+              <p className="editorial-split__lead">
+                Aviory exists for the latter. For the moments, people and emotions we want to hold close. Every story begins with a feeling, and every personal expression begins with yours.
+              </p>
+              <div className="editorial-split__actions">
+                <Link to="/our-house" className="btn-luxury-primary">
+                  GET TO KNOW AVIORY &rarr;
+                </Link>
+                <button 
+                  type="button" 
+                  className="btn-luxury-outline"
+                  onClick={() => setAppointmentModalOpen(true)}
+                >
+                  RESERVE A PRIVATE APPOINTMENT
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ====================================================================
+          7. JOURNAL — THE INTIMATE EDIT
+          ==================================================================== */}
+      <section className="home-journal-section" aria-label="The Aviory Journal">
+        <div className="container">
+          <div className="section-header-centered">
+            <span className="editorial-eyebrow">THE AVIORY JOURNAL</span>
+            <h2 className="section-title">THE INTIMATE EDIT</h2>
+            <p className="section-subtitle">
+              Notes on desire, devotion, attraction and the art of making a moment matter.
+            </p>
+          </div>
+
+          <div className="intimate-journal-grid">
+            <article className="intimate-journal-card">
+              <Link to="/journal/the-secret-inner-band" className="intimate-journal-card__media-link">
+                <div 
+                  className="intimate-journal-card__media"
+                  style={{ backgroundImage: 'url(/images/expressions/journal_touch.jpg)' }}
+                />
+              </Link>
+              <div className="intimate-journal-card__body">
+                <h3 className="intimate-journal-card__title">
+                  <Link to="/journal/the-secret-inner-band">The Language of Touch</Link>
+                </h3>
+                <p className="intimate-journal-card__excerpt">
+                  On the things we feel without saying.
+                </p>
+              </div>
+            </article>
+
+            <article className="intimate-journal-card">
+              <Link to="/journal/candlelight-and-gold" className="intimate-journal-card__media-link">
+                <div 
+                  className="intimate-journal-card__media"
+                  style={{ backgroundImage: 'url(/images/expressions/journal_desired.jpg)' }}
+                />
+              </Link>
+              <div className="intimate-journal-card__body">
+                <h3 className="intimate-journal-card__title">
+                  <Link to="/journal/candlelight-and-gold">The Beauty of Being Desired</Link>
+                </h3>
+                <p className="intimate-journal-card__excerpt">
+                  On attraction, confidence and connection.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div className="journal-footer-wrap">
+            <Link to="/journal" className="link-text-gold">
+              READ THE JOURNAL &rarr;
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ====================================================================
+          8. THE CIRCLE OF DEVOTION — CONFIDENTIAL INVITATION
+          ==================================================================== */}
       <section className="home-newsletter-section" aria-label="The Circle of Devotion">
         <div className="container">
           <div className="newsletter-inner">

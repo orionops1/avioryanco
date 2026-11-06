@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useCallback } from 'react'
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import React, { useEffect, useCallback } from 'react'
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import { LanguageProvider } from './hooks/useLanguage'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -24,19 +24,68 @@ import OurHouse from './pages/OurHouse'
 import PrivateConsultations from './pages/PrivateConsultations'
 import Contact from './pages/Contact'
 
+function AppContent() {
+  const location = useLocation()
+  const isHome = location.pathname === '/'
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      <Header />
+      <main style={{ flex: 1, paddingTop: isHome ? 0 : 'var(--header-height, 120px)' }}>
+        <Routes>
+          {/* Home */}
+          <Route path="/" element={<Home />} />
+
+          {/* Expressions / Love & Celebration */}
+          <Route path="/love-and-celebration" element={<LoveAndCelebration />} />
+          <Route path="/love-and-celebration/:id" element={<LoveAndCelebrationDetail />} />
+
+          {/* Touch / Fine Jewellery */}
+          <Route path="/fine-jewellery" element={<FineJewellery />} />
+          <Route path="/fine-jewellery/:id" element={<JewelleryDetail />} />
+
+          {/* Wonder / Gemstones */}
+          <Route path="/gemstones" element={<Gemstones />} />
+          <Route path="/gemstones/:id" element={<GemstoneDetail />} />
+
+          {/* Shop */}
+          <Route path="/shop" element={<Shop />} />
+
+          {/* Universal Product Detail */}
+          <Route path="/products/:id" element={<ProductDetail />} />
+
+          {/* Whisper / Bespoke */}
+          <Route path="/bespoke" element={<Bespoke />} />
+          <Route path="/bespoke/process" element={<BespokeProcess />} />
+          <Route path="/bespoke/enquiry" element={<BespokeEnquiry />} />
+
+          {/* Journal */}
+          <Route path="/journal" element={<Journal />} />
+          <Route path="/journal/:slug" element={<JournalArticle />} />
+
+          {/* The Maison / Our House */}
+          <Route path="/our-house" element={<OurHouse />} />
+
+          {/* Consultations & Contact */}
+          <Route path="/private-consultations" element={<PrivateConsultations />} />
+          <Route path="/contact" element={<Contact />} />
+
+          {/* Duplicate / Legacy Route Redirects */}
+          <Route path="/about" element={<Navigate to="/our-house" replace />} />
+          <Route path="/love" element={<Navigate to="/love-and-celebration" replace />} />
+          <Route path="/blog" element={<Navigate to="/journal" replace />} />
+          <Route path="/blog/:slug" element={<Navigate to="/journal" replace />} />
+          <Route path="/engagement-rings" element={<Navigate to="/love-and-celebration" replace />} />
+          <Route path="/expressions" element={<Navigate to="/love-and-celebration" replace />} />
+        </Routes>
+      </main>
+      <Footer />
+    </div>
+  )
+}
+
 export default function App() {
-  const [scrolled, setScrolled] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  /* Measure header height and expose as CSS variable for mega-menu positioning */
+  /* Measure header height and expose as CSS variable for mega-menu and content positioning */
   const updateHeaderHeight = useCallback(() => {
     const header = document.querySelector('.tiffany-header, .header')
     if (header) {
@@ -56,57 +105,7 @@ export default function App() {
     <LanguageProvider>
       <Router>
         <ScrollToTop />
-        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-          <Header scrolled={scrolled} />
-          <main style={{ flex: 1 }}>
-            <Routes>
-              {/* Home */}
-              <Route path="/" element={<Home />} />
-
-              {/* Shop */}
-              <Route path="/shop" element={<Shop />} />
-
-              {/* Gemstones */}
-              <Route path="/gemstones" element={<Gemstones />} />
-              <Route path="/gemstones/:id" element={<GemstoneDetail />} />
-
-              {/* Fine Jewellery */}
-              <Route path="/fine-jewellery" element={<FineJewellery />} />
-              <Route path="/fine-jewellery/:id" element={<JewelleryDetail />} />
-
-              {/* Love & Celebration Collection */}
-              <Route path="/love-and-celebration" element={<LoveAndCelebration />} />
-              <Route path="/love-and-celebration/:id" element={<LoveAndCelebrationDetail />} />
-
-              {/* Universal Product Detail */}
-              <Route path="/products/:id" element={<ProductDetail />} />
-
-              {/* Bespoke */}
-              <Route path="/bespoke" element={<Bespoke />} />
-              <Route path="/bespoke/process" element={<BespokeProcess />} />
-              <Route path="/bespoke/enquiry" element={<BespokeEnquiry />} />
-
-              {/* Journal */}
-              <Route path="/journal" element={<Journal />} />
-              <Route path="/journal/:slug" element={<JournalArticle />} />
-
-              {/* The Maison / Our House */}
-              <Route path="/our-house" element={<OurHouse />} />
-
-              {/* Consultations & Contact */}
-              <Route path="/private-consultations" element={<PrivateConsultations />} />
-              <Route path="/contact" element={<Contact />} />
-
-              {/* Duplicate / Legacy Route Redirects */}
-              <Route path="/about" element={<Navigate to="/our-house" replace />} />
-              <Route path="/love" element={<Navigate to="/love-and-celebration" replace />} />
-              <Route path="/blog" element={<Navigate to="/journal" replace />} />
-              <Route path="/blog/:slug" element={<Navigate to="/journal" replace />} />
-              <Route path="/engagement-rings" element={<Navigate to="/love-and-celebration" replace />} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
+        <AppContent />
       </Router>
     </LanguageProvider>
   )
