@@ -56,7 +56,7 @@ export default function App() {
     <LanguageProvider>
       <Router>
         <ScrollToTop />
-        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', position: 'relative' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
           <Header scrolled={scrolled} />
           <main style={{ flex: 1 }}>
             <Routes>
