@@ -11,7 +11,7 @@ import AppointmentModal from './AppointmentModal'
 import './Header.css'
 
 /* ============================================================================
-   Thin-Stroke Luxury Vector Icons
+   ICONS
    ============================================================================ */
 
 const SearchIcon = () => (
@@ -50,7 +50,7 @@ const ArrowRight = () => (
 )
 
 /* ============================================================================
-   Mega-Menu Editorial Structure with i18n
+   HELPERS
    ============================================================================ */
 
 function useMegaMenuData(t) {
@@ -64,11 +64,10 @@ function useMegaMenuData(t) {
 }
 
 /* ============================================================================
-   Main Header Component
-   Mouseover / Hover navigation matching Tiffany & Co.
+   HEADER COMPONENT
    ============================================================================ */
 
-export default function Header({ scrolled }) {
+export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeMega, setActiveMega] = useState(null)
   const [activeLoveTab, setActiveLoveTab] = useState('engagement-rings')
@@ -81,32 +80,28 @@ export default function Header({ scrolled }) {
   const { t } = useLanguage()
   const location = useLocation()
   const megaTimeoutRef = useRef(null)
-  const headerRef = useRef(null)
 
   const menuItems = useMegaMenuData(t)
 
-  // Route change reset
+  // Close all menus on route change
   useEffect(() => {
     setMobileMenuOpen(false)
     setActiveMega(null)
     setMobileAccordion(null)
   }, [location.pathname, location.search])
 
-  // Prevent scroll when mobile menu or modals open
+  // Prevent scroll when any menu/modal is open
   useEffect(() => {
-    if (mobileMenuOpen || cartDrawerOpen || searchModalOpen || appointmentModalOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = ''
-    }
+    const shouldLockScroll = mobileMenuOpen || cartDrawerOpen || searchModalOpen || appointmentModalOpen
+    document.body.style.overflow = shouldLockScroll ? 'hidden' : ''
     return () => {
       document.body.style.overflow = ''
     }
   }, [mobileMenuOpen, cartDrawerOpen, searchModalOpen, appointmentModalOpen])
 
-  // Keyboard navigation
+  // Close menus on Escape key
   useEffect(() => {
-    const handleKeyDown = (e) => {
+    const handleEscape = (e) => {
       if (e.key === 'Escape') {
         setActiveMega(null)
         setMobileMenuOpen(false)
@@ -115,42 +110,41 @@ export default function Header({ scrolled }) {
         setAppointmentModalOpen(false)
       }
     }
-    window.addEventListener('keydown', handleKeyDown)
-    return () => window.removeEventListener('keydown', handleKeyDown)
+    window.addEventListener('keydown', handleEscape)
+    return () => window.removeEventListener('keydown', handleEscape)
   }, [])
 
-  // Mouseover / Hover handlers (Tiffany & Co. pattern)
-  const handleMegaEnter = useCallback((key) => {
+  // Close mega menu with delay
+  const closeMegaMenu = useCallback(() => {
+    megaTimeoutRef.current = setTimeout(() => {
+      setActiveMega(null)
+    }, 150)
+  }, [])
+
+  // Open mega menu (instant)
+  const openMegaMenu = useCallback((key) => {
     clearTimeout(megaTimeoutRef.current)
     setActiveMega(key)
   }, [])
 
-  const handleMegaLeave = useCallback(() => {
-    megaTimeoutRef.current = setTimeout(() => {
-      setActiveMega(null)
-    }, 200)
+  // Clear pending timeouts
+  const cancelMegaClose = useCallback(() => {
+    clearTimeout(megaTimeoutRef.current)
   }, [])
 
-  const handleNavClick = () => {
+  // Close all menus
+  const closeAllMenus = useCallback(() => {
     clearTimeout(megaTimeoutRef.current)
     setActiveMega(null)
-  }
+  }, [])
 
   return (
     <>
-
-
-      <header
-        ref={headerRef}
-        className={`tiffany-header ${scrolled ? 'tiffany-header--scrolled' : ''} ${activeMega ? 'tiffany-header--mega-open' : ''}`}
-      >
-        {/* ============================================================
-            TOP ROW: Tiffany-standard Layout
-            Left: Atelier/Search | Center: Logo | Right: Locale/Bag
-            ============================================================ */}
+      <header className="tiffany-header">
+        {/* TOP ROW */}
         <div className="tiffany-header__top">
           <div className="container tiffany-header__top-inner">
-            {/* Left Desktop: ATELIER · Search · Currency · Language */}
+            {/* Left */}
             <div className="tiffany-header__top-left">
               <Link to="/our-house" className="tiffany-header__utility-btn" title="Atelier &amp; Boutiques">
                 <span className="tiffany-header__utility-text">ATELIER</span>
@@ -170,7 +164,7 @@ export default function Header({ scrolled }) {
               </div>
             </div>
 
-            {/* Mobile hamburger */}
+            {/* Mobile Hamburger */}
             <button
               type="button"
               className="tiffany-header__hamburger"
@@ -182,11 +176,11 @@ export default function Header({ scrolled }) {
               <span className={`tiffany-hamburger-bar ${mobileMenuOpen ? 'open' : ''}`} />
             </button>
 
-            {/* Center: Prominent BlackGold Logo & Brand Descriptor */}
+            {/* Center Logo */}
             <Link
               to="/"
               className="tiffany-header__logo-link"
-              onClick={handleNavClick}
+              onClick={closeAllMenus}
               aria-label="AVIORY &amp; CO. Homepage"
             >
               <div className="tiffany-header__logo-row">
@@ -197,9 +191,8 @@ export default function Header({ scrolled }) {
               <span className="tiffany-header__descriptor">CEYLON &bull; HIGH JEWELLERY &bull; EST. 2009</span>
             </Link>
 
-            {/* Right: Shopping Bag */}
+            {/* Right */}
             <div className="tiffany-header__actions">
-              {/* Shopping Bag */}
               <button
                 type="button"
                 className="tiffany-header__action-btn tiffany-header__action-btn--bag"
@@ -216,10 +209,7 @@ export default function Header({ scrolled }) {
           </div>
         </div>
 
-        {/* ============================================================
-            BOTTOM ROW: Navigation Menu (Centered)
-            Instant Mouseover / Hover menu (Tiffany & Co. Standard)
-            ============================================================ */}
+        {/* NAVIGATION */}
         <nav className="tiffany-header__nav" aria-label="Main Navigation">
           <div className="container">
             <ul className="tiffany-header__nav-list">
@@ -227,13 +217,13 @@ export default function Header({ scrolled }) {
                 <li
                   key={item.key}
                   className={`tiffany-header__nav-item ${activeMega === item.key ? 'tiffany-header__nav-item--active' : ''}`}
-                  onMouseEnter={() => item.mega ? handleMegaEnter(item.key) : setActiveMega(null)}
-                  onMouseLeave={handleMegaLeave}
+                  onMouseEnter={() => item.mega && openMegaMenu(item.key)}
+                  onMouseLeave={closeMegaMenu}
                 >
                   <Link
                     to={item.href}
                     className="tiffany-header__nav-link"
-                    onClick={handleNavClick}
+                    onClick={closeAllMenus}
                   >
                     <span>{item.label}</span>
                   </Link>
@@ -243,23 +233,18 @@ export default function Header({ scrolled }) {
           </div>
         </nav>
 
-        {/* ============================================================
-            FULL-WIDTH MEGA-MENU PANELS
-            Mouseover-activated with 5 Tiffany Sub-Nav Tabs for Love & Celebration
-            ============================================================ */}
+        {/* MEGA MENUS */}
         {menuItems.map((item) =>
           item.mega ? (
             <div
               key={item.key}
               className={`tiffany-mega ${activeMega === item.key ? 'tiffany-mega--visible' : ''}`}
-              onMouseEnter={() => clearTimeout(megaTimeoutRef.current)}
-              onMouseLeave={handleMegaLeave}
+              onMouseEnter={cancelMegaClose}
+              onMouseLeave={closeMegaMenu}
               role="menu"
             >
               {item.mega.tabs ? (
-                /* TABBED SUB-NAVIGATION (Tiffany & Co. Love & Celebration 5-Tab Pattern) */
                 <div className="container tiffany-mega__tabbed-container">
-                  {/* Horizontal Tab Headers: 5 Tiffany Sections */}
                   <div className="tiffany-mega__subnav-bar">
                     <div className="tiffany-mega__subnav-tabs">
                       {item.mega.tabs.map((tab) => (
@@ -276,7 +261,6 @@ export default function Header({ scrolled }) {
                     </div>
                   </div>
 
-                  {/* Tab Cards Content Grid: 6 Cards per Tab */}
                   {item.mega.tabs.map((tab) =>
                     tab.id === activeLoveTab ? (
                       <div key={tab.id} className="tiffany-mega__cards-grid">
@@ -285,7 +269,7 @@ export default function Header({ scrolled }) {
                             key={idx}
                             to={card.href}
                             className={`tiffany-mega__card ${card.guide ? 'tiffany-mega__card--guide' : ''}`}
-                            onClick={handleNavClick}
+                            onClick={closeAllMenus}
                           >
                             <div className="tiffany-mega__card-media">
                               <img
@@ -306,7 +290,6 @@ export default function Header({ scrolled }) {
                   )}
                 </div>
               ) : (
-                /* STANDARD 3-COLUMN + FEATURE EDITORIAL LAYOUT */
                 <div className="container tiffany-mega__inner">
                   <div className="tiffany-mega__columns">
                     {item.mega.columns?.map((col, ci) => (
@@ -318,7 +301,7 @@ export default function Header({ scrolled }) {
                               <Link
                                 to={link.href}
                                 className={`tiffany-mega__link ${link.accent ? 'tiffany-mega__link--accent' : ''}`}
-                                onClick={handleNavClick}
+                                onClick={closeAllMenus}
                               >
                                 {link.label}
                                 {link.accent && <ArrowRight />}
@@ -339,7 +322,7 @@ export default function Header({ scrolled }) {
                       <Link
                         to={item.mega.feature.cta.href}
                         className="tiffany-mega__feature-cta"
-                        onClick={handleNavClick}
+                        onClick={closeAllMenus}
                       >
                         {item.mega.feature.cta.label}
                         <ArrowRight />
@@ -353,15 +336,13 @@ export default function Header({ scrolled }) {
         )}
       </header>
 
-      {/* Mega Backdrop */}
+      {/* MEGA BACKDROP */}
       <div
         className={`tiffany-mega-backdrop ${activeMega ? 'tiffany-mega-backdrop--visible' : ''}`}
-        onClick={() => setActiveMega(null)}
+        onClick={closeAllMenus}
       />
 
-      {/* ============================================================
-          MOBILE DRAWER NAVIGATION
-          ============================================================ */}
+      {/* MOBILE DRAWER */}
       <div className={`tiffany-mobile-drawer ${mobileMenuOpen ? 'tiffany-mobile-drawer--open' : ''}`}>
         <div className="tiffany-mobile-drawer__header">
           <span className="tiffany-mobile-drawer__logo">AVIORY &amp; CO.</span>
@@ -374,8 +355,6 @@ export default function Header({ scrolled }) {
             <CloseIcon />
           </button>
         </div>
-
-        {/* Currency & Language top bar in mobile drawer */}
 
         <div className="tiffany-mobile-drawer__body">
           <ul className="tiffany-mobile-drawer__list">
@@ -484,9 +463,7 @@ export default function Header({ scrolled }) {
         <div className="tiffany-mobile-backdrop" onClick={() => setMobileMenuOpen(false)} />
       )}
 
-      {/* ============================================================
-          INTEGRATED MODALS
-          ============================================================ */}
+      {/* MODALS */}
       <CartDrawer isOpen={cartDrawerOpen} onClose={() => setCartDrawerOpen(false)} />
       <SearchModal isOpen={searchModalOpen} onClose={() => setSearchModalOpen(false)} />
       <AppointmentModal isOpen={appointmentModalOpen} onClose={() => setAppointmentModalOpen(false)} />
