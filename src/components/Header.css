@@ -36,6 +36,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  gap: 1rem;
 }
 
 /* Left utilities */
@@ -72,18 +73,18 @@
   display: inline-block;
 }
 
-/* Center Logo — Absolute Centered */
+/* Center Logo — Flex-based Centered */
 .tiffany-header__logo-link {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
+  flex: 1;
   z-index: 5;
   white-space: nowrap;
+  min-width: 0;
 }
 
 .tiffany-header__logo-row {
