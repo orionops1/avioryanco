@@ -10,6 +10,9 @@ import SearchModal from './SearchModal'
 import AppointmentModal from './AppointmentModal'
 import './Header.css'
 
+/* VERCEL DEPLOYMENT TEST - TIMESTAMP: DO NOT REMOVE */
+console.log('Header deployed - sticky fix active')
+
 /* ============================================================================
    ICONS
    ============================================================================ */
