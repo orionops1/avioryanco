@@ -9,8 +9,8 @@ export default function FineJewellery() {
   const [selectedCollection, setSelectedCollection] = useState('all')
   const [selectedType, setSelectedType] = useState('all')
 
-  const collections = ['all', ...new Set(fineJewellery.map(j => j.collection))]
-  const types = ['all', ...new Set(fineJewellery.map(j => j.type))]
+  const collections = ['all', ...new Set(fineJewellery.map(j => j.collection).filter(Boolean))]
+  const types = ['all', ...new Set(fineJewellery.map(j => j.type).filter(Boolean))]
 
   useEffect(() => {
     const colParam = searchParams.get('collection')
@@ -39,13 +39,27 @@ export default function FineJewellery() {
     })
   }, [selectedCollection, selectedType])
 
+  const updateFilters = (col, type) => {
+    const nextParams = {}
+    if (col && col !== 'all') nextParams.collection = col
+    if (type && type !== 'all') nextParams.type = type
+    setSearchParams(nextParams)
+  }
+
   const handleCollectionChange = (col) => {
     setSelectedCollection(col)
-    if (col === 'all') {
-      setSearchParams({})
-    } else {
-      setSearchParams({ collection: col })
-    }
+    updateFilters(col, selectedType)
+  }
+
+  const handleTypeChange = (type) => {
+    setSelectedType(type)
+    updateFilters(selectedCollection, type)
+  }
+
+  const handleClearAll = () => {
+    setSelectedCollection('all')
+    setSelectedType('all')
+    setSearchParams({})
   }
 
   return (
@@ -77,26 +91,47 @@ export default function FineJewellery() {
           <div className="filters-header">
             <h3>Filters</h3>
             <button
+              type="button"
               className="btn btn-small"
-              onClick={() => {
-                handleCollectionChange('all')
-                setSelectedType('all')
-              }}
+              onClick={handleClearAll}
             >
               Clear All
             </button>
           </div>
 
+          {/* Collection Filter */}
           <div style={{ marginBottom: 'var(--spacing-lg)' }}>
-            <h4 style={{ marginBottom: 'var(--spacing-md)', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Collection</h4>
+            <h4 style={{ marginBottom: 'var(--spacing-md)', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              Collection
+            </h4>
             <div className="filter-group">
               {collections.map(col => (
                 <button
                   key={col}
+                  type="button"
                   className={`filter-option ${selectedCollection.toLowerCase() === col.toLowerCase() ? 'active' : ''}`}
                   onClick={() => handleCollectionChange(col)}
                 >
-                  {col.charAt(0).toUpperCase() + col.slice(1)}
+                  {col === 'all' ? 'All Collections' : col.charAt(0).toUpperCase() + col.slice(1)}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Category / Type Filter */}
+          <div style={{ marginBottom: 'var(--spacing-lg)' }}>
+            <h4 style={{ marginBottom: 'var(--spacing-md)', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              Category
+            </h4>
+            <div className="filter-group">
+              {types.map(t => (
+                <button
+                  key={t}
+                  type="button"
+                  className={`filter-option ${selectedType.toLowerCase() === t.toLowerCase() ? 'active' : ''}`}
+                  onClick={() => handleTypeChange(t)}
+                >
+                  {t === 'all' ? 'All Categories' : t.charAt(0).toUpperCase() + t.slice(1)}
                 </button>
               ))}
             </div>
@@ -119,11 +154,9 @@ export default function FineJewellery() {
           <div style={{ textAlign: 'center', padding: 'var(--spacing-2xl) 0' }}>
             <p style={{ color: '#2B2B2B', marginBottom: 'var(--spacing-lg)' }}>No fine jewellery pieces match your filters.</p>
             <button
+              type="button"
               className="btn btn-primary"
-              onClick={() => {
-                handleCollectionChange('all')
-                setSelectedType('all')
-              }}
+              onClick={handleClearAll}
             >
               Reset Filters
             </button>

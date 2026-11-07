@@ -1,14 +1,13 @@
 import React, { useState } from 'react'
-import { contactInfo } from '../data/content'
+import { CONTACT_CONFIG } from '../constants/contact'
 import './WhatsAppConcierge.css'
 
 export default function WhatsAppConcierge() {
   const [isOpen, setIsOpen] = useState(false)
-  const phoneNumber = contactInfo.whatsapp
 
   const sendWhatsApp = (topic) => {
-    const text = encodeURIComponent(`Hello Aviory & Co., I am inquiring regarding: ${topic}. Could you please connect me with a Master Gemologist?`)
-    window.open(`https://wa.me/${phoneNumber.replace(/[^0-9]/g, '')}?text=${text}`, '_blank')
+    const text = `Hello Aviory & Co., I am inquiring regarding: ${topic}. Could you please connect me with a Master Gemologist?`
+    window.open(CONTACT_CONFIG.buildWhatsAppUrl(text), '_blank')
     setIsOpen(false)
   }
 
@@ -49,39 +48,45 @@ export default function WhatsAppConcierge() {
               <button 
                 type="button" 
                 className="concierge-opt-btn"
-                onClick={() => sendWhatsApp('Daylight Video Preview Request')}
+                onClick={() => sendWhatsApp('Bespoke Engagement Ring Consultation')}
               >
-                <span>✦</span> Request 4K Daylight Video Preview
+                <span>✦</span> Bespoke Engagement Consultation
               </button>
               <button 
                 type="button" 
                 className="concierge-opt-btn"
-                onClick={() => sendWhatsApp('Bespoke Engagement Ring Consultation')}
+                onClick={() => sendWhatsApp('Private Atelier Appointment (Colombo / Virtual)')}
               >
-                <span>✦</span> Bespoke Engagement Ring Design
+                <span>✦</span> Book Atelier / Virtual Viewing
+              </button>
+              <button 
+                type="button" 
+                className="concierge-opt-btn"
+                onClick={() => sendWhatsApp('Haute Joaillerie High Jewellery Suites')}
+              >
+                <span>✦</span> View High Jewellery Suites
               </button>
             </div>
-          </div>
 
-          <div className="concierge-card__footer">
-            <span className="concierge-card__secure-note">
-              Encrypted Private WhatsApp Connection
-            </span>
+            <div className="concierge-card__footer">
+              <span className="concierge-hours">Atelier Hours: {CONTACT_CONFIG.atelier.hours}</span>
+            </div>
           </div>
         </div>
       )}
 
-      {/* Floating Trigger Button */}
-      <button
-        type="button"
-        className="concierge-btn"
+      {/* Floating Launcher Button */}
+      <button 
+        type="button" 
+        className="concierge-launcher" 
         onClick={() => setIsOpen(!isOpen)}
-        aria-label="Open Luxury Concierge"
-        title="Direct Gemologist Concierge"
+        aria-label="Open Direct Concierge"
       >
-        <span className="concierge-btn__pulse" />
-        <span className="concierge-btn__icon">✦</span>
-        <span className="concierge-btn__label">Gemologist Concierge</span>
+        <span className="concierge-pulse" />
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+        <span className="concierge-launcher__label">Concierge</span>
       </button>
     </div>
   )

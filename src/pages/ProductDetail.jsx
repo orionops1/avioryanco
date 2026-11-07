@@ -4,6 +4,7 @@ import useCartStore from '../hooks/useCart'
 import { useLanguage } from '../hooks/useLanguage'
 import { formatPrice } from '../utils/currencyConverter'
 import { gemstones, fineJewellery, engagementRings } from '../data/products'
+import { CONTACT_CONFIG } from '../constants/contact'
 import ProductCard from '../components/ProductCard'
 import StickyConciergeButton from '../components/StickyConciergeButton'
 import './ProductDetail.css'
@@ -58,6 +59,8 @@ export default function ProductDetail() {
   const [selectedMetal, setSelectedMetal] = useState('18K White Gold')
   const [inquiryModalOpen, setInquiryModalOpen] = useState(false)
   const [inquirySent, setInquirySent] = useState(false)
+  const [inquiryLoading, setInquiryLoading] = useState(false)
+  const [inquiryError, setInquiryError] = useState('')
   const [inquiryForm, setInquiryForm] = useState({ name: '', email: '', phone: '', message: '' })
 
   if (!product) {
@@ -95,17 +98,39 @@ export default function ProductDetail() {
     const sizeStr = cartItem.selectedSize ? `\n*Selected Size:* US ${cartItem.selectedSize}` : ''
     const metalStr = cartItem.selectedMetal ? `\n*Selected Metal:* ${cartItem.selectedMetal}` : ''
     const text = `Hello AVIORY & CO., I have selected and added this creation to my shopping bag:\n\n*Piece:* ${cartItem.name}\n*Category:* ${cartItem.category || cartItem.collection || 'Fine Jewellery'}\n*Price:* ${priceStr}${sizeStr}${metalStr}\n*Ref:* ${cartItem.id}\n\nPlease confirm availability and concierge purchase details.`
-    window.open(`https://wa.me/94776100099?text=${encodeURIComponent(text)}`, '_blank')
+    window.open(CONTACT_CONFIG.buildWhatsAppUrl(text), '_blank')
   }
 
-  const handleInquirySubmit = (e) => {
+  const handleInquirySubmit = async (e) => {
     e.preventDefault()
-    setInquirySent(true)
-    setTimeout(() => {
-      setInquirySent(false)
-      setInquiryModalOpen(false)
+    setInquiryLoading(true)
+    setInquiryError('')
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: inquiryForm.name,
+          email: inquiryForm.email,
+          phone: inquiryForm.phone,
+          subject: `Product Inquiry: ${product.name} (${product.id})`,
+          message: inquiryForm.message || `Inquiry regarding ${product.name}. Please connect me with a specialist.`
+        })
+      })
+
+      const data = await res.json()
+      if (!res.ok || !data.success) {
+        throw new Error(data.error || 'Failed to submit inquiry.')
+      }
+
+      setInquirySent(true)
       setInquiryForm({ name: '', email: '', phone: '', message: '' })
-    }, 2500)
+    } catch (err) {
+      setInquiryError(err.message || 'Network error. Please try again.')
+    } finally {
+      setInquiryLoading(false)
+    }
   }
 
   // Generate breadcrumb based on product type
@@ -248,7 +273,7 @@ export default function ProductDetail() {
           {/* Header */}
           <div className="pdp-info__header">
             <span className="pdp-info__subtitle">
-              {getCategoryLabel()} â€¢ REF: {product.id.toUpperCase()}
+              {getCategoryLabel()} • REF: {product.id.toUpperCase()}
             </span>
             <h1 className="pdp-info__title">{product.name}</h1>
             <div className="pdp-info__price">{formatPrice(product.price, currency)}</div>
@@ -679,7 +704,7 @@ export default function ProductDetail() {
               onClick={() => setInquiryModalOpen(false)}
               aria-label="Close modal"
             >
-              âœ•
+              ✕
             </button>
             <span className="pdp-info__subtitle">
               {productType === 'gemstone'
@@ -690,20 +715,30 @@ export default function ProductDetail() {
             </span>
             <h3 className="pdp-modal__title">{product.name}</h3>
             <p className="pdp-modal__meta">
-              Ref: {product.id.toUpperCase()} â€¢ {formatPrice(product.price, currency)}
-              {productType === 'ring' && ` â€¢ Size ${selectedSize}`}
+              Ref: {product.id.toUpperCase()} • {formatPrice(product.price, currency)}
+              {productType === 'ring' && ` • Size ${selectedSize}`}
             </p>
 
             {inquirySent ? (
-              <div className="alert alert-success" style={{ margin: '2rem 0' }}>
-                {productType === 'gemstone'
-                  ? 'Thank you. Our Master Gemologist will contact you shortly with high-resolution video footage and private viewing details.'
-                  : productType === 'ring'
-                  ? 'Thank you. A bridal consultant will reach out to confirm your virtual or in-atelier showing.'
-                  : 'Thank you. Our specialist will contact you shortly to arrange a private consultation.'}
+              <div className="alert alert-success" style={{ margin: '2rem 0', textAlign: 'center' }}>
+                <p style={{ marginBottom: '1rem' }}>
+                  {productType === 'gemstone'
+                    ? 'Thank you. Our Master Gemologist will contact you shortly with high-resolution video footage and private viewing details.'
+                    : productType === 'ring'
+                    ? 'Thank you. A bridal consultant will reach out to confirm your virtual or in-atelier showing.'
+                    : 'Thank you. Our specialist will contact you shortly to arrange a private consultation.'}
+                </p>
+                <button type="button" className="btn btn-small btn-primary" onClick={() => setInquiryModalOpen(false)}>
+                  Close
+                </button>
               </div>
             ) : (
               <form onSubmit={handleInquirySubmit} className="pdp-modal__form">
+                {inquiryError && (
+                  <div style={{ color: '#d9534f', fontSize: '0.88rem', marginBottom: '0.75rem', textAlign: 'center' }}>
+                    {inquiryError}
+                  </div>
+                )}
                 <div className="pdp-form-row">
                   <input
                     type="text"
@@ -738,8 +773,10 @@ export default function ProductDetail() {
                   value={inquiryForm.message}
                   onChange={(e) => setInquiryForm({ ...inquiryForm, message: e.target.value })}
                 />
-                <button type="submit" className="btn btn-primary" style={{ width: '100%', marginTop: '0.5rem' }}>
-                  {productType === 'gemstone'
+                <button type="submit" className="btn btn-primary" disabled={inquiryLoading} style={{ width: '100%', marginTop: '0.5rem', opacity: inquiryLoading ? 0.7 : 1 }}>
+                  {inquiryLoading
+                    ? 'Sending...'
+                    : productType === 'gemstone'
                     ? 'Send Private Inquiry'
                     : productType === 'ring'
                     ? 'Submit Bridal Request'

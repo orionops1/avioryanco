@@ -7,14 +7,79 @@ import { fileURLToPath } from 'node:url'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-function adminApiPlugin() {
+function devApiPlugin() {
   const contentPath = path.resolve(__dirname, 'src/data/siteContent.json')
   const uploadsDir = path.resolve(__dirname, 'public/images/uploads')
 
   return {
-    name: 'admin-api-plugin',
+    name: 'dev-api-plugin',
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
+        // Helper to parse JSON body
+        const readBody = (callback) => {
+          let body = ''
+          req.on('data', chunk => { body += chunk })
+          req.on('end', () => {
+            try {
+              callback(null, body ? JSON.parse(body) : {})
+            } catch (err) {
+              callback(err)
+            }
+          })
+        }
+
+        // POST /api/contact
+        if (req.url === '/api/contact' && req.method === 'POST') {
+          res.setHeader('Content-Type', 'application/json')
+          readBody((err, data) => {
+            if (err || !data.name || !data.email || !data.message) {
+              res.statusCode = 400
+              return res.end(JSON.stringify({ success: false, error: 'Please provide valid name, email, and message.' }))
+            }
+            res.statusCode = 200
+            return res.end(JSON.stringify({
+              success: true,
+              message: 'Your inquiry has been received by our private concierge. We will respond within 24 hours.'
+            }))
+          })
+          return
+        }
+
+        // POST /api/appointment
+        if (req.url === '/api/appointment' && req.method === 'POST') {
+          res.setHeader('Content-Type', 'application/json')
+          readBody((err, data) => {
+            if (err || !data.name || !data.email || !data.date) {
+              res.statusCode = 400
+              return res.end(JSON.stringify({ success: false, error: 'Please provide valid name, email, and appointment date.' }))
+            }
+            res.statusCode = 200
+            return res.end(JSON.stringify({
+              success: true,
+              message: 'Your appointment request has been confirmed. Our concierge will contact you within 4 hours to finalize details.'
+            }))
+          })
+          return
+        }
+
+        // POST /api/newsletter
+        if (req.url === '/api/newsletter' && req.method === 'POST') {
+          res.setHeader('Content-Type', 'application/json')
+          readBody((err, data) => {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+            if (err || !data.email || !emailRegex.test(data.email)) {
+              res.statusCode = 400
+              return res.end(JSON.stringify({ success: false, error: 'Please provide a valid email address.' }))
+            }
+            res.statusCode = 200
+            return res.end(JSON.stringify({
+              success: true,
+              message: 'Welcome to the Circle of Devotion. You will receive private previews and atelier letters.'
+            }))
+          })
+          return
+        }
+
         // GET /api/admin/content
         if (req.url === '/api/admin/content' && req.method === 'GET') {
           res.setHeader('Content-Type', 'application/json')
@@ -35,20 +100,19 @@ function adminApiPlugin() {
 
         // POST /api/admin/content
         if (req.url === '/api/admin/content' && req.method === 'POST') {
-          let body = ''
-          req.on('data', chunk => {
-            body += chunk
-          })
-          req.on('end', () => {
-            res.setHeader('Content-Type', 'application/json')
+          res.setHeader('Content-Type', 'application/json')
+          readBody((err, parsed) => {
+            if (err) {
+              res.statusCode = 400
+              return res.end(JSON.stringify({ error: 'Invalid JSON: ' + err.message }))
+            }
             try {
-              const parsed = JSON.parse(body)
               fs.writeFileSync(contentPath, JSON.stringify(parsed, null, 2), 'utf-8')
               res.statusCode = 200
               return res.end(JSON.stringify({ success: true, message: 'Content saved successfully' }))
-            } catch (err) {
-              res.statusCode = 400
-              return res.end(JSON.stringify({ error: 'Invalid JSON or write error: ' + err.message }))
+            } catch (writeErr) {
+              res.statusCode = 500
+              return res.end(JSON.stringify({ error: 'Failed to save content: ' + writeErr.message }))
             }
           })
           return
@@ -56,28 +120,21 @@ function adminApiPlugin() {
 
         // POST /api/admin/upload
         if (req.url === '/api/admin/upload' && req.method === 'POST') {
-          let body = ''
-          req.on('data', chunk => {
-            body += chunk
-          })
-          req.on('end', () => {
-            res.setHeader('Content-Type', 'application/json')
+          res.setHeader('Content-Type', 'application/json')
+          readBody((err, parsed) => {
+            if (err || !parsed.dataUrl) {
+              res.statusCode = 400
+              return res.end(JSON.stringify({ error: 'No dataUrl provided' }))
+            }
             try {
-              const { dataUrl, filename } = JSON.parse(body)
-              if (!dataUrl) {
-                res.statusCode = 400
-                return res.end(JSON.stringify({ error: 'No dataUrl provided' }))
-              }
-
-              // Extract base64 and mime
-              const matches = dataUrl.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/)
+              const matches = parsed.dataUrl.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/)
               if (!matches || matches.length !== 3) {
                 res.statusCode = 400
                 return res.end(JSON.stringify({ error: 'Invalid base64 dataUrl' }))
               }
 
               const ext = matches[1].split('/')[1]?.replace('jpeg', 'jpg') || 'png'
-              const rawName = (filename || `upload-${Date.now()}`).replace(/[^a-zA-Z0-9_-]/g, '_')
+              const rawName = (parsed.filename || `upload-${Date.now()}`).replace(/[^a-zA-Z0-9_-]/g, '_')
               const cleanFilename = `${Date.now()}-${rawName}.${ext}`
 
               if (!fs.existsSync(uploadsDir)) {
@@ -95,9 +152,9 @@ function adminApiPlugin() {
                 filename: cleanFilename,
                 bytes: buffer.length
               }))
-            } catch (err) {
+            } catch (writeErr) {
               res.statusCode = 500
-              return res.end(JSON.stringify({ error: 'Upload failed: ' + err.message }))
+              return res.end(JSON.stringify({ error: 'Upload failed: ' + writeErr.message }))
             }
           })
           return
@@ -110,7 +167,7 @@ function adminApiPlugin() {
 }
 
 export default defineConfig({
-  plugins: [react(), adminApiPlugin()],
+  plugins: [react(), devApiPlugin()],
   build: {
     target: 'esnext',
     minify: 'esbuild',

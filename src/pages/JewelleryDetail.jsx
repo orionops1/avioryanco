@@ -1,3 +1,4 @@
+import { CONTACT_CONFIG } from '../constants/contact'
 ﻿import React, { useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import useCartStore from '../hooks/useCart'
@@ -38,7 +39,7 @@ export default function JewelleryDetail() {
     // Send jewellery details to WhatsApp
     const priceStr = typeof item.price === 'number' ? `$${item.price.toLocaleString()}` : item.price
     const text = `Hello AVIORY & CO., I have selected and added this fine jewellery creation to my shopping bag:\n\n*Piece:* ${item.name}\n*Collection:* ${item.category || item.collection || 'High Jewellery'}\n*Price:* ${priceStr}\n*Ref:* ${item.id}\n\nPlease confirm availability and concierge purchase details.`
-    window.open(`https://wa.me/94776100099?text=${encodeURIComponent(text)}`, '_blank')
+    window.open(CONTACT_CONFIG.buildWhatsAppUrl(text), '_blank')
   }
 
   const handleInquirySubmit = (e) => {

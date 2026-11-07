@@ -11,26 +11,51 @@ export default function AppointmentModal({ isOpen, onClose }) {
     interest: 'Ceylon Sapphires',
     notes: ''
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
 
   if (!isOpen) return null
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSubmitted(true)
-    setTimeout(() => {
-      setSubmitted(false)
-      onClose()
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        type: 'virtual',
-        date: '',
-        interest: 'Ceylon Sapphires',
-        notes: ''
+    setIsSubmitting(true)
+    setErrorMessage('')
+
+    try {
+      const res = await fetch('/api/appointment', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
       })
-    }, 2800)
+
+      const data = await res.json()
+
+      if (!res.ok || !data.success) {
+        throw new Error(data.error || 'Unable to submit appointment request. Please try again.')
+      }
+
+      setSubmitted(true)
+    } catch (err) {
+      setErrorMessage(err.message || 'A network error occurred. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+  const handleReset = () => {
+    setSubmitted(false)
+    setErrorMessage('')
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      type: 'virtual',
+      date: '',
+      interest: 'Ceylon Sapphires',
+      notes: ''
+    })
+    onClose()
   }
 
   return (
@@ -43,16 +68,39 @@ export default function AppointmentModal({ isOpen, onClose }) {
         <span className="appt-modal__tag">HAUTE JOAILLERIE CONCIERGE</span>
         <h2 className="appt-modal__title">Book a Private Appointment</h2>
         <p className="appt-modal__subtitle">
-          Connect with our gemologist for private viewings and consultations.
+          Connect with our gemologist for private viewings and bespoke consultations.
         </p>
 
         {submitted ? (
           <div className="alert alert-success" style={{ margin: '2rem 0', textAlign: 'center' }}>
-            <h3>Appointment Request Confirmed</h3>
-            <p>Our private concierge will contact you within 4 hours to finalize your calendar confirmation and private session link.</p>
+            <h3 style={{ marginBottom: '0.75rem', fontFamily: 'var(--font-serif-display)' }}>Appointment Request Confirmed</h3>
+            <p style={{ lineHeight: 1.6, marginBottom: '1.5rem' }}>
+              Our private concierge will contact you within 4 hours to confirm your calendar booking and prepare selected creations for your private session.
+            </p>
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={handleReset}
+            >
+              Close
+            </button>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="appt-form">
+            {errorMessage && (
+              <div style={{
+                backgroundColor: 'rgba(217, 83, 79, 0.1)',
+                border: '1px solid #d9534f',
+                color: '#d9534f',
+                padding: '0.75rem 1rem',
+                borderRadius: '4px',
+                fontSize: '0.88rem',
+                marginBottom: '1rem'
+              }}>
+                {errorMessage}
+              </div>
+            )}
+
             {/* Consultation Type Selector */}
             <div className="appt-types">
               <label className={`appt-type-card ${formData.type === 'virtual' ? 'appt-type-card--active' : ''}`}>
@@ -144,8 +192,13 @@ export default function AppointmentModal({ isOpen, onClose }) {
               onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
             />
 
-            <button type="submit" className="btn btn-primary" style={{ width: '100%', marginTop: '0.5rem' }}>
-              Confirm Appointment Request
+            <button
+              type="submit"
+              className="btn btn-primary"
+              disabled={isSubmitting}
+              style={{ width: '100%', marginTop: '0.5rem', opacity: isSubmitting ? 0.7 : 1 }}
+            >
+              {isSubmitting ? 'Confirming with Concierge...' : 'Confirm Appointment Request'}
             </button>
           </form>
         )}

@@ -468,7 +468,7 @@ export const fineJewellery = [
     mainStone: 'Blue Sapphire 2.2 ct',
     sideStones: 'Ceylon White Sapphires 0.8 ct',
     description: 'Contemporary halo necklace with a stunning blue sapphire pendant.',
-    image: '/images/jewellery/necklaces/fj-004.jpg',
+    image: '/images/gifts-for-her.jpg',
     longDescription: 'A modern take on a classic design, featuring a beautiful sapphire surrounded by a halo of brilliant natural white sapphires.',
     weight: '8.5 grams'
   },
@@ -513,7 +513,7 @@ export const fineJewellery = [
     mainStone: 'Sapphire 1.8 ct',
     sideStones: 'Ceylon White Sapphires 0.6 ct',
     description: 'Exquisite Art Deco inspired ring, limited to 50 pieces worldwide.',
-    image: '/images/jewellery/limited/fj-007.jpg',
+    image: '/images/jewellery/rings/fj-007.jpg',
     longDescription: 'A rare piece combining the geometric elegance of Art Deco with the timeless beauty of fine gemstones.',
     weight: '7.8 grams'
   },
@@ -523,12 +523,13 @@ export const fineJewellery = [
     collection: 'Custom',
     collectionSlug: 'custom',
     type: 'necklace',
-    price: 0,
+    price: null,
+    priceOnRequest: true,
     material: 'Bespoke',
     mainStone: 'Client\'s Choice',
     sideStones: 'Client\'s Choice',
     description: 'Fully customizable necklace created to your specifications.',
-    image: '/images/jewellery/custom/fj-008.jpg',
+    image: '/images/atelier-masterpieces.jpg',
     longDescription: 'Work with our artisans to create a completely bespoke piece that reflects your individual style and vision.',
     weight: 'Varies'
   }

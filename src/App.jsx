@@ -1,33 +1,56 @@
-import React, { useEffect, useCallback } from 'react'
+import React, { useEffect, useCallback, lazy, Suspense } from 'react'
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation, useNavigate } from 'react-router-dom'
 import { LanguageProvider } from './hooks/useLanguage'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 
-// Canonical Pages
+// Home loaded eagerly for immediate first paint
 import Home from './pages/Home'
-import TheProposal from './pages/TheProposal'
-import TheColourEdit from './pages/TheColourEdit'
-import Shop from './pages/Shop'
-import Gemstones from './pages/Gemstones'
-import GemstoneDetail from './pages/GemstoneDetail'
-import FineJewellery from './pages/FineJewellery'
-import JewelleryDetail from './pages/JewelleryDetail'
-import LoveAndCelebration from './pages/LoveAndCelebration'
-import LoveAndCelebrationDetail from './pages/LoveAndCelebrationDetail'
-import ProductDetail from './pages/ProductDetail'
-import Bespoke from './pages/Bespoke'
-import BespokeProcess from './pages/BespokeProcess'
-import BespokeEnquiry from './pages/BespokeEnquiry'
-import Journal from './pages/Journal'
-import JournalArticle from './pages/JournalArticle'
-import OurHouse from './pages/OurHouse'
-import PrivateConsultations from './pages/PrivateConsultations'
-import Contact from './pages/Contact'
+
+// Route-level code splitting for optimal luxury performance
+const TheProposal = lazy(() => import('./pages/TheProposal'))
+const TheColourEdit = lazy(() => import('./pages/TheColourEdit'))
+const Shop = lazy(() => import('./pages/Shop'))
+const Gemstones = lazy(() => import('./pages/Gemstones'))
+const GemstoneDetail = lazy(() => import('./pages/GemstoneDetail'))
+const FineJewellery = lazy(() => import('./pages/FineJewellery'))
+const JewelleryDetail = lazy(() => import('./pages/JewelleryDetail'))
+const LoveAndCelebration = lazy(() => import('./pages/LoveAndCelebration'))
+const LoveAndCelebrationDetail = lazy(() => import('./pages/LoveAndCelebrationDetail'))
+const ProductDetail = lazy(() => import('./pages/ProductDetail'))
+const Bespoke = lazy(() => import('./pages/Bespoke'))
+const BespokeProcess = lazy(() => import('./pages/BespokeProcess'))
+const BespokeEnquiry = lazy(() => import('./pages/BespokeEnquiry'))
+const Journal = lazy(() => import('./pages/Journal'))
+const JournalArticle = lazy(() => import('./pages/JournalArticle'))
+const OurHouse = lazy(() => import('./pages/OurHouse'))
+const PrivateConsultations = lazy(() => import('./pages/PrivateConsultations'))
+const Contact = lazy(() => import('./pages/Contact'))
+const PolicyPage = lazy(() => import('./pages/PolicyPage'))
 
 // Hidden Atelier Curator Admin Portal
-import AtelierCurator from './pages/AtelierCurator'
+const AtelierCurator = lazy(() => import('./pages/AtelierCurator'))
+
+const PageLoader = () => (
+  <div style={{
+    minHeight: '60vh',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#FAF8F5'
+  }}>
+    <div style={{
+      fontFamily: 'Playfair Display, Georgia, serif',
+      letterSpacing: '0.24em',
+      fontSize: '0.88rem',
+      color: '#B8996A',
+      textTransform: 'uppercase'
+    }}>
+      AVIORY &amp; CO.
+    </div>
+  </div>
+)
 
 function AppContent() {
   const location = useLocation()
@@ -52,10 +75,12 @@ function AppContent() {
   // If in hidden curator portal, render dedicated full-bleed admin suite without public chrome
   if (isCuratorPortal) {
     return (
-      <Routes>
-        <Route path="/atelier-curator" element={<AtelierCurator />} />
-        <Route path="/curator-portal" element={<AtelierCurator />} />
-      </Routes>
+      <Suspense fallback={<PageLoader />}>
+        <Routes>
+          <Route path="/atelier-curator" element={<AtelierCurator />} />
+          <Route path="/curator-portal" element={<AtelierCurator />} />
+        </Routes>
+      </Suspense>
     )
   }
 
@@ -65,7 +90,8 @@ function AppContent() {
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <Header />
       <main style={{ flex: 1, paddingTop: isHeroPage ? 0 : 'var(--header-height, 120px)' }}>
-        <Routes>
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
           {/* Home */}
           <Route path="/" element={<Home />} />
 
@@ -112,6 +138,23 @@ function AppContent() {
           <Route path="/private-consultations" element={<PrivateConsultations />} />
           <Route path="/contact" element={<Contact />} />
 
+          {/* Client Care & Maison Policies */}
+          <Route path="/shipping-and-delivery" element={<PolicyPage policySlug="shipping-and-delivery" />} />
+          <Route path="/returns-and-refunds" element={<PolicyPage policySlug="returns-and-refunds" />} />
+          <Route path="/privacy" element={<PolicyPage policySlug="privacy" />} />
+          <Route path="/terms" element={<PolicyPage policySlug="terms" />} />
+          <Route path="/jewellery-care" element={<PolicyPage policySlug="jewellery-care" />} />
+          <Route path="/gemstone-disclosure" element={<PolicyPage policySlug="gemstone-disclosure" />} />
+
+          {/* Canonical Aliases & Navigation Shortcuts */}
+          <Route path="/jewellery" element={<Navigate to="/fine-jewellery" replace />} />
+          <Route path="/jewelry" element={<Navigate to="/fine-jewellery" replace />} />
+          <Route path="/engagement" element={<Navigate to="/the-proposal" replace />} />
+          <Route path="/the-house" element={<Navigate to="/our-house" replace />} />
+          <Route path="/house" element={<Navigate to="/our-house" replace />} />
+          <Route path="/custom-concierge" element={<Navigate to="/bespoke" replace />} />
+          <Route path="/bespoke/consultation" element={<Navigate to="/bespoke/enquiry" replace />} />
+
           {/* Legacy Route Redirects */}
           <Route path="/about" element={<Navigate to="/our-house" replace />} />
           <Route path="/love" element={<Navigate to="/love-and-celebration" replace />} />
@@ -119,7 +162,8 @@ function AppContent() {
           <Route path="/blog/:slug" element={<Navigate to="/journal" replace />} />
           <Route path="/engagement-rings" element={<Navigate to="/the-proposal" replace />} />
           <Route path="/expressions" element={<Navigate to="/love-and-celebration" replace />} />
-        </Routes>
+          </Routes>
+        </Suspense>
       </main>
       <Footer />
     </div>

@@ -1,0 +1,231 @@
+/* ============================================================================
+   POLICY & CLIENT CARE PAGE STYLES
+   Minimalist luxury editorial aesthetic
+   ============================================================================ */
+
+.policy-page {
+  background-color: #FAF8F5;
+  color: #1A1A1A;
+  min-height: 80vh;
+}
+
+.policy-header {
+  background-color: #111111;
+  color: #FFFFFF;
+  padding: clamp(3.5rem, 6vw, 5rem) 0;
+  text-align: center;
+  border-bottom: 1px solid rgba(212, 175, 127, 0.2);
+}
+
+.policy-eyebrow {
+  display: block;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #D4AF7F;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.policy-title {
+  font-family: var(--font-serif-display, 'Playfair Display', Georgia, serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  color: #FFFFFF;
+  margin-bottom: 0.75rem;
+  line-height: 1.25;
+}
+
+.policy-meta {
+  font-size: 0.88rem;
+  color: #B3ADA3;
+  letter-spacing: 0.05em;
+}
+
+.policy-content-section {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+}
+
+.policy-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* Sidebar */
+.policy-sidebar {
+  background-color: #FFFFFF;
+  border: 1px solid #ECE7E1;
+  padding: 2rem;
+  position: sticky;
+  top: calc(var(--header-height, 120px) + 2rem);
+}
+
+.policy-sidebar__title {
+  font-family: var(--font-serif-display, 'Playfair Display', serif);
+  font-size: 1.15rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #E8E3DC;
+  color: #111111;
+}
+
+.policy-sidebar__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+}
+
+.policy-sidebar__item {
+  margin-bottom: 0.6rem;
+}
+
+.policy-sidebar__link {
+  display: block;
+  font-size: 0.88rem;
+  color: #666666;
+  text-decoration: none;
+  padding: 0.4rem 0.6rem;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+.policy-sidebar__link:hover {
+  color: #B8996A;
+  background-color: #F8F5F0;
+}
+
+.policy-sidebar__link--active {
+  color: #111111;
+  font-weight: 600;
+  background-color: #F4EFEA;
+  border-left: 2px solid #B8996A;
+}
+
+.policy-sidebar__concierge {
+  border-top: 1px solid #E8E3DC;
+  padding-top: 1.5rem;
+}
+
+.policy-sidebar__concierge h4 {
+  font-size: 0.92rem;
+  margin-bottom: 0.5rem;
+  color: #111111;
+}
+
+.policy-sidebar__concierge p {
+  font-size: 0.82rem;
+  color: #777777;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.policy-sidebar__whatsapp-btn {
+  display: block;
+  text-align: center;
+  background-color: #111111;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  transition: background-color 0.25s ease;
+  margin-bottom: 0.75rem;
+}
+
+.policy-sidebar__whatsapp-btn:hover {
+  background-color: #B8996A;
+  color: #FFFFFF;
+}
+
+.policy-sidebar__contact-link {
+  display: block;
+  font-size: 0.82rem;
+  color: #B8996A;
+  text-decoration: none;
+  font-weight: 500;
+  text-align: center;
+}
+
+.policy-sidebar__contact-link:hover {
+  text-decoration: underline;
+}
+
+/* Main Articles */
+.policy-main {
+  background-color: #FFFFFF;
+  border: 1px solid #ECE7E1;
+  padding: clamp(2rem, 5vw, 3.5rem);
+}
+
+.policy-article {
+  margin-bottom: 3rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid #F0ECE6;
+}
+
+.policy-article:last-of-type {
+  border-bottom: none;
+  margin-bottom: 2rem;
+  padding-bottom: 0;
+}
+
+.policy-article__heading {
+  font-family: var(--font-serif-display, 'Playfair Display', serif);
+  font-size: 1.5rem;
+  color: #111111;
+  margin-bottom: 1.25rem;
+  font-weight: 400;
+}
+
+.policy-article__body p {
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: #3A3A3A;
+  margin-bottom: 1rem;
+}
+
+.policy-article__body p:last-child {
+  margin-bottom: 0;
+}
+
+.policy-reassurance-box {
+  background-color: #FAF7F2;
+  border-left: 3px solid #D4AF7F;
+  padding: 1.5rem 1.75rem;
+  margin-top: 2rem;
+}
+
+.policy-reassurance-box h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+  color: #111111;
+}
+
+.policy-reassurance-box p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #555555;
+  margin: 0;
+}
+
+.policy-reassurance-box a {
+  color: #B8996A;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .policy-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .policy-sidebar {
+    position: static;
+  }
+}

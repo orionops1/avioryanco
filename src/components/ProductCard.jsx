@@ -35,17 +35,30 @@ export default function ProductCard({ product, type = 'gemstone' }) {
     if (type === 'gemstone') return `/gemstones/${product.id}`
     if (type === 'jewellery') return `/fine-jewellery/${product.id}`
     if (type === 'ring') return `/love-and-celebration/${product.id}`
-    return '#'
+    return `/products/${product.id}`
   }
 
   const categoryLabel = product.category || product.collection || product.style || 'Fine Jewellery'
-  const formattedPrice = typeof product.price === 'number' 
+  const formattedPrice = typeof product.price === 'number' && product.price > 0
     ? formatPrice(product.price, currency)
     : (product.price || 'Price on Request')
 
-  const badgeText = product.treatment === 'Unheated' 
-    ? 'Unheated Ceylon' 
-    : (product.certification ? `${product.certification} Certified` : (product.origin ? `Origin: ${product.origin}` : null))
+  // Display treatment and origin accurately without assuming all unheated stones are Ceylon
+  const badgeText = (() => {
+    if (product.treatment === 'Unheated') {
+      if (product.origin === 'Ceylon' || product.origin === 'Sri Lanka') {
+        return 'Unheated Ceylon'
+      }
+      return 'Natural Unheated'
+    }
+    if (product.origin) {
+      return `Origin: ${product.origin}`
+    }
+    if (product.certification && product.certification !== 'None') {
+      return `${product.certification} Certified`
+    }
+    return null
+  })()
 
   return (
     <article 

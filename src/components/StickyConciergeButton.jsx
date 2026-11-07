@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import { contactInfo } from '../data/content'
+import { CONTACT_CONFIG } from '../constants/contact'
 import './StickyConciergeButton.css'
 
 export default function StickyConciergeButton({ onClickContact }) {
   const [isExpanded, setIsExpanded] = useState(false)
 
   const handleWhatsAppClick = () => {
-    const whatsappUrl = `https://wa.me/${contactInfo.whatsapp.replace(/[^\d+]/g, '')}`
+    const whatsappUrl = CONTACT_CONFIG.buildWhatsAppUrl('Hello Aviory & Co., I would like to speak with a gemologist concierge.')
     window.open(whatsappUrl, '_blank')
     setIsExpanded(false)
   }
@@ -29,7 +29,7 @@ export default function StickyConciergeButton({ onClickContact }) {
             type="button"
             className="sticky-concierge__menu-item"
             onClick={() => {
-              onClickContact()
+              if (onClickContact) onClickContact()
               setIsExpanded(false)
             }}
           >

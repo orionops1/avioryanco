@@ -1,43 +1,39 @@
 // ============================================================================
 // AVIORY & CO. - BRAND NAVIGATION CONFIGURATION
-// Direction: Expressions · The Proposal · The Colour Edit · Bespoke · Our House · Journal
-// Emotion before commerce — VOW · TOUCH · WONDER · WHISPER
+// Direction: Jewellery · Engagement · Gemstones · Bespoke · The House · Journal
+// Luxury commercial clarity infused with deep emotional storytelling
 // ============================================================================
 
 export const megaMenuData = [
   {
-    key: 'expressions',
-    label: 'EXPRESSIONS',
-    labelKey: 'common.expressions',
-    href: '/love-and-celebration',
+    key: 'jewellery',
+    label: 'JEWELLERY',
+    labelKey: 'common.fineJewellery',
+    href: '/fine-jewellery',
     mega: {
       columns: [
         {
-          heading: 'Four Expressions of Intimacy',
+          heading: 'High Jewellery Repertoire',
           links: [
-            { label: 'Vow — A Promise Kept', href: '/love-and-celebration' },
-            { label: 'Touch — A Touch Remembered', href: '/fine-jewellery' },
-            { label: 'Wonder — A Look That Lingers', href: '/gemstones' },
-            { label: 'Whisper — A Secret Shared', href: '/bespoke' },
+            { label: 'All Fine Jewellery', href: '/fine-jewellery' },
+            { label: 'Rings of Devotion', href: '/fine-jewellery?type=ring' },
+            { label: 'Necklaces & Pendants', href: '/fine-jewellery?type=necklace' },
+            { label: 'Earrings & Drops', href: '/fine-jewellery?type=earrings' },
+            { label: 'Cuffs & Bracelets', href: '/fine-jewellery?type=bracelet' },
+            { label: 'Haute Joaillerie Masterpieces', href: '/fine-jewellery?collection=masterpiece', accent: true },
           ],
         },
         {
-          heading: 'Bespoke Intimacy',
+          heading: 'Aesthetic Discovery',
           links: [
-            { label: 'The Heartbeat Gem™: Hidden Against Her Pulse', href: '/bespoke' },
-            { label: 'Solitary Devotion', href: '/love-and-celebration' },
-            { label: 'Private Commissions', href: '/bespoke/enquiry' },
-            { label: 'Explore All Expressions', href: '/love-and-celebration', accent: true },
+            { label: 'The Colour Edit', href: '/the-colour-edit' },
+            { label: 'Love & Celebration Suites', href: '/love-and-celebration' },
+            { label: 'Things Worth Keeping Close', href: '/#things-worth-keeping-close' },
+            { label: 'Private Atelier Appointments', href: '/private-consultations', accent: true },
           ],
         },
       ],
       cards: [
-        {
-          name: 'VOW',
-          subtitle: 'A promise kept.',
-          image: '/images/expressions/vow.jpg',
-          href: '/love-and-celebration',
-        },
         {
           name: 'TOUCH',
           subtitle: 'A touch remembered.',
@@ -45,35 +41,30 @@ export const megaMenuData = [
           href: '/fine-jewellery',
         },
         {
-          name: 'WONDER',
-          subtitle: 'A look that lingers.',
-          image: '/images/expressions/wonder.jpg',
-          href: '/gemstones',
-        },
-        {
-          name: 'WHISPER',
-          subtitle: 'A secret shared.',
-          image: '/images/expressions/whisper.jpg',
-          href: '/bespoke',
+          name: 'THE COLOUR EDIT',
+          subtitle: 'A world of singular colour.',
+          image: '/images/the-depth-of-blue.jpg',
+          href: '/the-colour-edit',
         },
       ],
       feature: {
-        title: 'The Architecture of Devotion',
-        subtitle: 'Love has its own language: a promise kept, a touch remembered, a look that lingers, a secret shared.',
-        cta: { label: 'Discover Aviory', href: '/love-and-celebration' },
+        title: 'Beauty That Becomes Part of You',
+        subtitle: 'Each creation is sculpted around singular stones and warm precious metals — designed to be worn against bare skin and remembered forever.',
+        cta: { label: 'Explore Fine Jewellery', href: '/fine-jewellery' },
         accent: 'champagne',
       },
     },
   },
+
   {
-    key: 'the-proposal',
-    label: 'THE PROPOSAL',
+    key: 'engagement',
+    label: 'ENGAGEMENT',
     labelKey: 'common.theProposal',
     href: '/the-proposal',
     mega: {
       columns: [
         {
-          heading: 'Four Experiences',
+          heading: 'The Proposal Experience',
           links: [
             { label: '01 — Find the Feeling', href: '/the-proposal#find-the-feeling' },
             { label: '02 — Make It Yours', href: '/the-proposal#make-it-yours' },
@@ -82,13 +73,27 @@ export const megaMenuData = [
           ],
         },
         {
-          heading: 'The Proposal Experience',
+          heading: 'Curated Rings of Devotion',
           links: [
-            { label: 'The Private Proposal Service', href: '/the-proposal' },
-            { label: 'Solitaire Rings of Devotion', href: '/the-proposal#curated-rings' },
+            { label: 'Solitaire Engagement Rings', href: '/the-proposal#curated-rings' },
+            { label: 'Three-Stone Emotional Suites', href: '/love-and-celebration' },
             { label: 'The Secret Inner Band', href: '/bespoke' },
             { label: 'Plan Your Proposal With Us', href: '/private-consultations', accent: true },
           ],
+        },
+      ],
+      cards: [
+        {
+          name: 'THE QUESTION',
+          subtitle: 'Make the moment yours.',
+          image: '/images/proposal/proposal_moment.jpg',
+          href: '/the-proposal',
+        },
+        {
+          name: 'VOW',
+          subtitle: 'A promise kept.',
+          image: '/images/expressions/vow.jpg',
+          href: '/love-and-celebration',
         },
       ],
       feature: {
@@ -99,42 +104,58 @@ export const megaMenuData = [
       },
     },
   },
+
   {
-    key: 'the-colour-edit',
-    label: 'THE COLOUR EDIT',
-    labelKey: 'common.theColourEdit',
-    href: '/the-colour-edit',
+    key: 'gemstones',
+    label: 'GEMSTONES',
+    labelKey: 'common.gemstones',
+    href: '/gemstones',
     mega: {
       columns: [
         {
-          heading: 'Explore by Colour Family',
+          heading: 'Singular Natural Stones',
           links: [
-            { label: 'The Depth of Blue (Blue)', href: '/the-colour-edit?color=blue' },
-            { label: 'The Art of Blush (Pink)', href: '/the-colour-edit?color=pink' },
-            { label: 'Between Rose & Sunset (Padparadscha)', href: '/the-colour-edit?color=padparadscha' },
-            { label: 'A Little Sunlight (Yellow)', href: '/the-colour-edit?color=yellow' },
-            { label: 'The Heat of Red (Ruby & Crimson)', href: '/the-colour-edit?color=red' },
-            { label: 'After Dusk (Violet & Deep tones)', href: '/the-colour-edit?color=violet' },
+            { label: 'Royal Blue Ceylon Sapphires', href: '/gemstones?category=blue-sapphires' },
+            { label: 'Cornflower Blue Sapphires', href: '/gemstones?category=blue-sapphires' },
+            { label: 'Padparadscha (Sunset Lotus)', href: '/gemstones?category=padparadscha' },
+            { label: 'Pink & Magenta Sapphires', href: '/gemstones?category=pink-sapphires' },
+            { label: 'Yellow & Golden Sapphires', href: '/gemstones?category=yellow-sapphires' },
+            { label: 'Rare Pigeon Red Spinels & Rubies', href: '/gemstones?category=spinel' },
           ],
         },
         {
-          heading: 'The Discovery Space',
+          heading: 'Earth Custody & Integrity',
           links: [
-            { label: 'Singular Specimens', href: '/the-colour-edit' },
-            { label: 'Untouched by Artificial Fire', href: '/journal/unheated-ceylon-sapphires' },
-            { label: 'Earth Provenance Custody', href: '/our-house' },
-            { label: 'View Full Colour Edit', href: '/the-colour-edit', accent: true },
+            { label: '100% Natural & Unheated Verification', href: '/gemstone-disclosure' },
+            { label: 'Direct Ceylon Earth Custody', href: '/our-house' },
+            { label: 'GIA & GRS Certified Dossiers', href: '/gemstone-disclosure' },
+            { label: 'View All Gemstones', href: '/gemstones', accent: true },
           ],
         },
       ],
+      cards: [
+        {
+          name: 'WONDER',
+          subtitle: 'A look that lingers.',
+          image: '/images/expressions/wonder.jpg',
+          href: '/gemstones',
+        },
+        {
+          name: 'PADPARADSCHA',
+          subtitle: 'Between rose and sunset.',
+          image: '/images/between-rose-and-sunset.jpg',
+          href: '/the-colour-edit?color=padparadscha',
+        },
+      ],
       feature: {
-        title: 'A World of Colour',
-        subtitle: 'Some colours catch your eye. Others stay with you. Enter through feeling, not technical charts.',
-        cta: { label: 'Explore the Colours', href: '/the-colour-edit' },
+        title: 'Singular Stones From Wild Earth',
+        subtitle: 'Completely unheated Ceylon sapphires whose mesmerising depth was forged entirely by nature millions of years ago.',
+        cta: { label: 'Explore Rare Gemstones', href: '/gemstones' },
         accent: 'sapphire',
       },
     },
   },
+
   {
     key: 'bespoke',
     label: 'BESPOKE',
@@ -145,18 +166,33 @@ export const megaMenuData = [
         {
           heading: 'The Intimate Journey',
           links: [
-            { label: 'Your Story', href: '/bespoke' },
-            { label: 'The Bespoke Experience', href: '/bespoke/process' },
+            { label: 'Your Story Begins Here', href: '/bespoke' },
+            { label: 'The 5-Stage Bespoke Experience', href: '/bespoke/process' },
             { label: 'Begin a Private Commission', href: '/bespoke/enquiry', accent: true },
           ],
         },
         {
           heading: 'Private Devotion',
           links: [
-            { label: 'The Secret Inner Band', href: '/journal/the-secret-inner-band' },
+            { label: 'The Heartbeat Gem™: Hidden Against Her Pulse', href: '/bespoke' },
+            { label: 'The Secret Inner Band Covenant', href: '/journal/the-secret-inner-band' },
             { label: 'Reserve an Atelier Suite', href: '/private-consultations' },
             { label: 'Confidential Virtual Salon', href: '/private-consultations' },
           ],
+        },
+      ],
+      cards: [
+        {
+          name: 'WHISPER',
+          subtitle: 'A secret shared.',
+          image: '/images/expressions/whisper.jpg',
+          href: '/bespoke',
+        },
+        {
+          name: 'HEARTBEAT GEM™',
+          subtitle: 'Hidden against her pulse.',
+          image: '/images/expressions/bespoke_hands.jpg',
+          href: '/bespoke',
         },
       ],
       feature: {
@@ -167,9 +203,10 @@ export const megaMenuData = [
       },
     },
   },
+
   {
     key: 'our-house',
-    label: 'OUR HOUSE',
+    label: 'THE HOUSE',
     labelKey: 'common.ourHouse',
     href: '/our-house',
     mega: {
@@ -178,17 +215,33 @@ export const megaMenuData = [
           heading: 'The Maison',
           links: [
             { label: 'The Aviory Story', href: '/our-house' },
-            { label: 'Our Philosophy', href: '/our-house' },
-            { label: 'Contact & Atelier Appointments', href: '/contact' },
+            { label: 'Our Philosophy of Devotion', href: '/our-house' },
+            { label: 'The Colombo Flagship Suite', href: '/private-consultations' },
+            { label: 'Direct Gemologist Concierge', href: '/contact' },
           ],
         },
         {
-          heading: 'Discretion & Heritage',
+          heading: 'Heritage & Integrity',
           links: [
-            { label: 'A House Built Around Feeling', href: '/our-house' },
             { label: 'Wild Earth Provenance', href: '/journal/sustainable-luxury-and-ethical-sourcing' },
-            { label: 'Private Salons Worldwide', href: '/private-consultations' },
+            { label: 'Gemstone Disclosure Standards', href: '/gemstone-disclosure' },
+            { label: 'Shipping & Armoured Custody', href: '/shipping-and-delivery' },
+            { label: 'Private Salons Worldwide', href: '/private-consultations', accent: true },
           ],
+        },
+      ],
+      cards: [
+        {
+          name: 'OUR HOUSE',
+          subtitle: 'Built around feeling.',
+          image: '/images/expressions/our_house_portrait.jpg',
+          href: '/our-house',
+        },
+        {
+          name: 'THE ATELIER',
+          subtitle: 'Master lapidaries of Ceylon.',
+          image: '/images/expressions/gem_cutting.jpg',
+          href: '/our-house',
         },
       ],
       feature: {
@@ -199,6 +252,7 @@ export const megaMenuData = [
       },
     },
   },
+
   {
     key: 'journal',
     label: 'JOURNAL',
@@ -210,17 +264,31 @@ export const megaMenuData = [
           heading: 'The Intimate Edit',
           links: [
             { label: 'The Language of Touch', href: '/journal/the-secret-inner-band' },
-            { label: 'The Beauty of Being Desired', href: '/journal/candlelight-and-gold' },
+            { label: 'Candlelight & Gold: The Beauty of Being Desired', href: '/journal/candlelight-and-gold' },
             { label: 'All Dispatches & Stories', href: '/journal', accent: true },
           ],
         },
         {
-          heading: 'Inspiration',
+          heading: 'Craft & Provenance',
           links: [
-            { label: 'Candlelight & Devotion', href: '/journal/candlelight-and-gold' },
-            { label: 'Untouched by Fire', href: '/journal/unheated-ceylon-sapphires' },
+            { label: 'Untouched by Fire: Unheated Ceylon Sapphires', href: '/journal/unheated-ceylon-sapphires' },
+            { label: 'Direct Earth Custody & Ethical Sourcing', href: '/journal/sustainable-luxury-and-ethical-sourcing' },
             { label: 'The Secret Inner Covenant', href: '/journal/the-secret-inner-band' },
           ],
+        },
+      ],
+      cards: [
+        {
+          name: 'CANDLELIGHT',
+          subtitle: 'A warm golden glow.',
+          image: '/images/candlelight-and-gold.jpg',
+          href: '/journal/candlelight-and-gold',
+        },
+        {
+          name: 'UNTOUCHED BY FIRE',
+          subtitle: 'Natural unheated sapphires.',
+          image: '/images/unheated-ceylon-sapphires.jpg',
+          href: '/journal/unheated-ceylon-sapphires',
         },
       ],
       feature: {
@@ -235,28 +303,33 @@ export const megaMenuData = [
 
 export const footerLinks = {
   expressions: [
-    { label: 'Vow', href: '/love-and-celebration' },
-    { label: 'Touch', href: '/fine-jewellery' },
-    { label: 'Wonder', href: '/gemstones' },
-    { label: 'Whisper', href: '/bespoke' },
+    { label: 'Fine Jewellery', href: '/fine-jewellery' },
+    { label: 'Engagement & The Proposal', href: '/the-proposal' },
+    { label: 'Rare Ceylon Gemstones', href: '/gemstones' },
+    { label: 'Bespoke Atelier', href: '/bespoke' },
+    { label: 'The Colour Edit', href: '/the-colour-edit' },
   ],
   destinations: [
-    { label: 'The Proposal', href: '/the-proposal' },
-    { label: 'The Colour Edit', href: '/the-colour-edit' },
-    { label: 'Things Worth Keeping Close', href: '/#things-worth-keeping-close' },
-    { label: 'Bespoke Commissions', href: '/bespoke/enquiry' },
+    { label: 'High Jewellery Repertoire', href: '/fine-jewellery' },
+    { label: 'The Heartbeat Gem™', href: '/bespoke' },
+    { label: 'The Proposal Experience', href: '/the-proposal' },
+    { label: 'Private Commissions', href: '/bespoke/enquiry' },
+    { label: 'Atelier Suites (Colombo)', href: '/private-consultations' },
   ],
   house: [
-    { label: 'Our Story', href: '/our-house' },
-    { label: 'Philosophy', href: '/our-house' },
+    { label: 'The Maison Story', href: '/our-house' },
+    { label: 'Our Philosophy of Devotion', href: '/our-house' },
     { label: 'The Intimate Edit', href: '/journal' },
-    { label: 'Contact', href: '/contact' },
+    { label: 'Gemstone Disclosure & Provenance', href: '/gemstone-disclosure' },
+    { label: 'Private Appointments', href: '/private-consultations' },
   ],
   assistance: [
-    { label: 'Private Enquiries', href: '/contact?subject=enquiry' },
-    { label: 'Delivery & Care', href: '/contact?subject=care' },
-    { label: 'Returns', href: '/contact?subject=returns' },
-    { label: 'Frequently Asked Questions', href: '/contact?subject=faq' },
+    { label: 'Armoured Shipping & Delivery', href: '/shipping-and-delivery' },
+    { label: '14-Day Returns & Inspection', href: '/returns-and-refunds' },
+    { label: 'Jewellery Care & Cleaning', href: '/jewellery-care' },
+    { label: 'Client Privacy & Discretion', href: '/privacy' },
+    { label: 'Terms & Conditions', href: '/terms' },
+    { label: 'Concierge Direct Inquiry', href: '/contact' },
   ],
   social: [
     { label: 'Instagram', href: 'https://instagram.com/avioryco' },

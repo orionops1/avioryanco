@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import HeroVideo from '../components/HeroVideo'
 import AppointmentModal from '../components/AppointmentModal'
-import { colourFamilies } from './TheColourEdit'
+import { colourFamilies } from '../data/colours'
 import { useLanguage } from '../hooks/useLanguage'
 import { formatPrice } from '../utils/currencyConverter'
 import { useContentStore } from '../hooks/useContentStore'
@@ -39,11 +39,32 @@ export default function Home() {
     setActiveHeartbeatGem(gemKey)
   }
 
-  const handleNewsletterSubmit = (e) => {
+  const [newsletterLoading, setNewsletterLoading] = useState(false)
+  const [newsletterError, setNewsletterError] = useState('')
+
+  const handleNewsletterSubmit = async (e) => {
     e.preventDefault()
-    setSubscribed(true)
-    setEmail('')
-    setTimeout(() => setSubscribed(false), 4000)
+    if (!email) return
+    setNewsletterLoading(true)
+    setNewsletterError('')
+
+    try {
+      const res = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      })
+      const data = await res.json()
+      if (!res.ok || !data.success) {
+        throw new Error(data.error || 'Failed to submit invitation request.')
+      }
+      setSubscribed(true)
+      setEmail('')
+    } catch (err) {
+      setNewsletterError(err.message || 'Network error. Please try again.')
+    } finally {
+      setNewsletterLoading(false)
+    }
   }
 
   const heartbeatOptions = {
@@ -84,7 +105,10 @@ export default function Home() {
           label: hero.ctaLabel || "DISCOVER AVIORY", 
           href: hero.ctaHref || "#architecture-of-devotion" 
         }}
-        secondaryCta={null}
+        secondaryCta={{
+          label: "BOOK PRIVATE VIEWING",
+          onClick: () => setAppointmentModalOpen(true)
+        }}
       />
 
       {/* ====================================================================
@@ -260,7 +284,7 @@ export default function Home() {
           <div className="curations-grid">
             {(curationsSection.items || []).map((item) => (
               <div key={item.id} className="curation-card">
-                <Link to="/love-and-celebration" className="curation-card__media-link">
+                <Link to={`/products/${item.id}`} className="curation-card__media-link">
                   <div className="curation-card__media">
                     <img 
                       src={item.image} 
@@ -273,14 +297,14 @@ export default function Home() {
                 <div className="curation-card__body">
                   <span className="curation-card__category">{item.category || 'High Jewellery'}</span>
                   <h3 className="curation-card__title">
-                    <Link to="/love-and-celebration">{item.name}</Link>
+                    <Link to={`/products/${item.id}`}>{item.name}</Link>
                   </h3>
                   <p className="curation-card__desc">{item.description}</p>
                   <div className="curation-card__footer">
                     <span className="curation-card__price">
                       {formatPrice(item.price, currency)}
                     </span>
-                    <Link to="/love-and-celebration" className="btn-luxury-primary btn-small">
+                    <Link to={`/products/${item.id}`} className="btn-luxury-primary btn-small">
                       VIEW CREATION
                     </Link>
                   </div>
@@ -606,6 +630,11 @@ export default function Home() {
               </div>
             ) : (
               <form onSubmit={handleNewsletterSubmit} className="newsletter-form">
+                {newsletterError && (
+                  <div style={{ color: '#d9534f', fontSize: '0.85rem', width: '100%', marginBottom: '0.75rem', textAlign: 'center' }}>
+                    {newsletterError}
+                  </div>
+                )}
                 <input
                   type="email"
                   className="newsletter-input"
@@ -613,9 +642,10 @@ export default function Home() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
+                  disabled={newsletterLoading}
                 />
-                <button type="submit" className="btn-luxury-primary">
-                  REQUEST INVITATION
+                <button type="submit" className="btn-luxury-primary" disabled={newsletterLoading}>
+                  {newsletterLoading ? 'REGISTERING...' : 'REQUEST INVITATION'}
                 </button>
               </form>
             )}

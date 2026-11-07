@@ -1,3 +1,4 @@
+import { CONTACT_CONFIG } from '../constants/contact'
 ﻿import React, { useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import useCartStore from '../hooks/useCart'
@@ -44,7 +45,7 @@ export default function GemstoneDetail() {
     // Send item details to WhatsApp
     const priceStr = typeof gem.price === 'number' ? `$${gem.price.toLocaleString()}` : gem.price
     const text = `Hello AVIORY & CO., I have selected and added this gemstone to my shopping bag:\n\n*Piece:* ${gem.name}\n*Category:* ${gem.category || 'Gemstone'}\n*Carat Weight:* ${gem.caratWeight ? gem.caratWeight + ' ct' : 'Unheated Specimen'}\n*Origin:* ${gem.origin || 'Ceylon'}\n*Price:* ${priceStr}\n*Ref:* ${gem.id}\n\nPlease confirm availability and concierge purchase details.`
-    window.open(`https://wa.me/94776100099?text=${encodeURIComponent(text)}`, '_blank')
+    window.open(CONTACT_CONFIG.buildWhatsAppUrl(text), '_blank')
   }
 
   const handleInquirySubmit = (e) => {

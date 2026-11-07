@@ -90,9 +90,12 @@ export default function Footer() {
               <p>&copy; {new Date().getFullYear()} AVIORY &amp; CO. ALL RIGHTS RESERVED.</p>
             </div>
             <div className="footer-links">
-              <Link to="/contact">Atelier Discretion</Link>
-              <Link to="/private-consultations">Private Appointments</Link>
-              <Link to="/contact?subject=care">Care &amp; Custody</Link>
+              <Link to="/shipping-and-delivery">Shipping &amp; Delivery</Link>
+              <Link to="/returns-and-refunds">Returns &amp; Inspection</Link>
+              <Link to="/privacy">Privacy &amp; Discretion</Link>
+              <Link to="/terms">Terms of Sale</Link>
+              <Link to="/jewellery-care">Jewellery Care</Link>
+              <Link to="/gemstone-disclosure">Gemstone Disclosure</Link>
             </div>
           </div>
         </div>

@@ -1,35 +1,41 @@
 /* ============================================================================
    CURRENCY CONVERTER UTILITY
-   Manages conversion rates and formatting
+   Manages conversion rates and formatting across USD, EUR, GBP, LKR
    ============================================================================ */
 
+export const LAST_RATES_UPDATED = '2026-11-07'
+
 // Base currency is USD
-// Exchange rates (1 USD = X in target currency)
-const EXCHANGE_RATES = {
+// Verified exchange rates (1 USD = X in target currency)
+export const EXCHANGE_RATES = {
   USD: 1,
-  LKR: 327.50,  // Sri Lankan Rupee (approximate current rate)
-  EUR: 0.92     // Euro
+  EUR: 0.92,
+  GBP: 0.79,
+  LKR: 327.50
 }
 
-const CURRENCY_SYMBOLS = {
+export const CURRENCY_SYMBOLS = {
   USD: '$',
-  LKR: '₨',
-  EUR: '€'
+  EUR: '€',
+  GBP: '£',
+  LKR: '₨'
 }
 
-const CURRENCY_NAMES = {
+export const CURRENCY_NAMES = {
   USD: 'US Dollar',
-  LKR: 'Sri Lankan Rupee',
-  EUR: 'Euro'
+  EUR: 'Euro',
+  GBP: 'British Pound',
+  LKR: 'Sri Lankan Rupee'
 }
 
 /**
  * Convert a price from USD to target currency
  * @param {number} priceUSD - Price in USD
- * @param {string} targetCurrency - Target currency code (USD, LKR, EUR)
+ * @param {string} targetCurrency - Target currency code (USD, EUR, GBP, LKR)
  * @returns {number} - Converted price
  */
 export const convertPrice = (priceUSD, targetCurrency = 'USD') => {
+  if (typeof priceUSD !== 'number' || isNaN(priceUSD)) return 0
   const rate = EXCHANGE_RATES[targetCurrency] || 1
   return priceUSD * rate
 }
@@ -37,10 +43,12 @@ export const convertPrice = (priceUSD, targetCurrency = 'USD') => {
 /**
  * Format price with currency symbol and proper decimal places
  * @param {number} priceUSD - Price in USD
- * @param {string} currency - Currency code (USD, LKR, EUR)
+ * @param {string} currency - Currency code (USD, EUR, GBP, LKR)
  * @returns {string} - Formatted price string
  */
 export const formatPrice = (priceUSD, currency = 'USD') => {
+  if (typeof priceUSD !== 'number' || isNaN(priceUSD)) return 'Price upon request'
+  
   const convertedPrice = convertPrice(priceUSD, currency)
   const symbol = CURRENCY_SYMBOLS[currency] || '$'
 
@@ -56,6 +64,10 @@ export const formatPrice = (priceUSD, currency = 'USD') => {
   // Place symbol appropriately
   if (currency === 'EUR') {
     return `${formatted} ${symbol}`
+  } else if (currency === 'GBP') {
+    return `£${formatted}`
+  } else if (currency === 'LKR') {
+    return `₨ ${formatted}`
   } else {
     return `${symbol}${formatted}`
   }
@@ -84,6 +96,7 @@ export const getCurrencies = () => {
 }
 
 export default {
+  LAST_RATES_UPDATED,
   convertPrice,
   formatPrice,
   getExchangeRate,

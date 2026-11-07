@@ -1,3 +1,4 @@
+import { CONTACT_CONFIG } from '../constants/contact'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { bespokeProcess, faqs } from '../data/content'
@@ -399,7 +400,7 @@ export default function Bespoke() {
               Submit Commission Brief
             </Link>
             <a
-              href="https://wa.me/94776100099?text=Hello%20Aviory%20%26%20Co.%2C%20I%20would%20like%20to%20discuss%20a%20bespoke%20commission."
+              href={CONTACT_CONFIG.buildWhatsAppUrl("Hello Aviory & Co., I would like to discuss a bespoke commission.")}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-secondary"

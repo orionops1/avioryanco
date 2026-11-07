@@ -1,3 +1,4 @@
+import { CONTACT_CONFIG } from '../constants/contact'
 import React, { useState, useMemo, useEffect, useRef } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import ProductCard from '../components/ProductCard'
@@ -114,9 +115,7 @@ export default function LoveAndCelebration() {
     }
   }
 
-  const bridalWhatsAppUrl = `https://wa.me/94776100099?text=${encodeURIComponent(
-    "Hello AVIORY Atelier, I am seeking a creation for an intimate love story. I would love to explore your bespoke bespoke rings and private covenants."
-  )}`
+  const bridalWhatsAppUrl = CONTACT_CONFIG.buildWhatsAppUrl("Hello AVIORY Atelier, I am seeking a creation for an intimate love story. I would love to explore your bespoke rings and private covenants.")
 
   return (
     <div className="love-page">

@@ -53,7 +53,7 @@ export const submitContactForm = async (formData) => {
           }
           return {
             success: false,
-            error: 'We're experiencing technical difficulties. Please try again in a few moments.',
+            error: "We're experiencing technical difficulties. Please try again in a few moments.",
           };
         }
         
@@ -66,7 +66,7 @@ export const submitContactForm = async (formData) => {
       
       // Success
       const data = await response.json();
-      if (process.env.NODE_ENV === 'development') {
+      if (typeof process !== 'undefined' && process.env?.NODE_ENV === 'development') {
         console.log('[API] Contact form submitted successfully', data);
       }
       return { success: true, data };
@@ -76,7 +76,7 @@ export const submitContactForm = async (formData) => {
       
       // Check if error is a timeout/abort
       if (error.name === 'AbortError') {
-        if (process.env.NODE_ENV === 'development') {
+        if (typeof process !== 'undefined' && process.env?.NODE_ENV === 'development') {
           console.log(`[API] Timeout on attempt ${attempt + 1}, retrying...`);
         }
         
@@ -94,7 +94,7 @@ export const submitContactForm = async (formData) => {
       
       // Network error
       if (error.message === 'Failed to fetch') {
-        if (process.env.NODE_ENV === 'development') {
+        if (typeof process !== 'undefined' && process.env?.NODE_ENV === 'development') {
           console.error('[API Error] Network error:', error);
         }
         return {
@@ -104,7 +104,7 @@ export const submitContactForm = async (formData) => {
       }
       
       // Unknown error - don't retry
-      if (process.env.NODE_ENV === 'development') {
+      if (typeof process !== 'undefined' && process.env?.NODE_ENV === 'development') {
         console.error('[API Error] Unexpected error:', error);
       }
       return {
@@ -126,7 +126,7 @@ export const submitContactForm = async (formData) => {
  * @param {Error} error - The error object
  * @returns {string} - User-friendly error message
  */
-const getErrorMessage = (error) => {
+export const getErrorMessage = (error) => {
   if (!error) {
     return 'An error occurred. Please try again.';
   }
@@ -144,4 +144,5 @@ const getErrorMessage = (error) => {
 
 export default {
   submitContactForm,
+  getErrorMessage
 };

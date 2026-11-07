@@ -1,3 +1,4 @@
+import { CONTACT_CONFIG } from '../constants/contact'
 ﻿import React, { useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import useCartStore from '../hooks/useCart'
@@ -40,7 +41,7 @@ export default function LoveAndCelebrationDetail() {
     // Send ring details to WhatsApp
     const priceStr = typeof ring.price === 'number' ? `$${ring.price.toLocaleString()}` : ring.price
     const text = `Hello AVIORY & CO., I have selected and added this ring to my shopping bag:\n\n*Piece:* ${ring.name}\n*Style:* ${ring.style || 'Engagement Ring'}\n*Stone:* ${ring.stoneType || 'Ceylon Sapphire'}\n*Shape:* ${ring.shape || ''}\n*Selected Size:* US ${selectedSize}\n*Selected Metal:* ${selectedMetal}\n*Price:* ${priceStr}\n*Ref:* ${ring.id}\n\nPlease confirm creation timeline and private salon consultation.`
-    window.open(`https://wa.me/94776100099?text=${encodeURIComponent(text)}`, '_blank')
+    window.open(CONTACT_CONFIG.buildWhatsAppUrl(text), '_blank')
   }
 
   const handleInquirySubmit = (e) => {

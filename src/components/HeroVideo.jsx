@@ -9,7 +9,7 @@ export default function HeroVideo({
   headline = "THE SHAPE OF DESIRE",
   subtitle = "For love, longing and the moments that belong only to you.",
   primaryCta = { label: "DISCOVER AVIORY", href: "#architecture-of-devotion" },
-  secondaryCta = null
+  secondaryCta = { label: "BOOK PRIVATE VIEWING", href: "/private-consultations" }
 }) {
   const videoRef = useRef(null)
 
@@ -26,7 +26,7 @@ export default function HeroVideo({
   }, [])
 
   const handleCtaClick = (e, href) => {
-    if (href.startsWith('#')) {
+    if (href && href.startsWith('#')) {
       e.preventDefault()
       const target = document.querySelector(href)
       if (target) {
@@ -60,7 +60,7 @@ export default function HeroVideo({
       {/* LUXURY VIGNETTE OVERLAY */}
       <div className="hero-video__overlay" />
 
-      {/* CONTENT (No duplicate logo — only Eyebrow, Headline, Supporting line, and Single CTA) */}
+      {/* CONTENT (Eyebrow, Headline, Supporting line, and Clear Luxury Actions) */}
       <div className="hero-video__content">
         <div className="container">
           <div className="hero-video__text">
@@ -78,23 +78,39 @@ export default function HeroVideo({
               <p className="hero-video__subtitle">{subtitle}</p>
             )}
             
-            {primaryCta && (
-              <div className="hero-video__cta">
-                {primaryCta.href.startsWith('#') ? (
+            <div className="hero-video__actions">
+              {primaryCta && (
+                primaryCta.href && primaryCta.href.startsWith('#') ? (
                   <a 
                     href={primaryCta.href} 
-                    className="btn btn-primary"
+                    className="btn btn-primary hero-btn--primary"
                     onClick={(e) => handleCtaClick(e, primaryCta.href)}
                   >
                     {primaryCta.label}
                   </a>
                 ) : (
-                  <Link to={primaryCta.href} className="btn btn-primary">
+                  <Link to={primaryCta.href || '/fine-jewellery'} className="btn btn-primary hero-btn--primary">
                     {primaryCta.label}
                   </Link>
-                )}
-              </div>
-            )}
+                )
+              )}
+
+              {secondaryCta && (
+                secondaryCta.onClick ? (
+                  <button 
+                    type="button" 
+                    className="btn btn-outline hero-btn--secondary"
+                    onClick={secondaryCta.onClick}
+                  >
+                    {secondaryCta.label}
+                  </button>
+                ) : (
+                  <Link to={secondaryCta.href || '/private-consultations'} className="btn btn-outline hero-btn--secondary">
+                    {secondaryCta.label}
+                  </Link>
+                )
+              )}
+            </div>
           </div>
         </div>
       </div>

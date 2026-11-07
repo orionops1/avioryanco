@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import useCartStore from '../hooks/useCart'
-import { contactInfo } from '../data/content'
+import { CONTACT_CONFIG } from '../constants/contact'
 import './CartDrawer.css'
 
 const WhatsAppIcon = () => (
@@ -27,14 +27,14 @@ export default function CartDrawer({ isOpen, onClose }) {
     const itemLines = items.map((item, i) => {
       const sizeStr = item.selectedSize ? ` | Size: US ${item.selectedSize}` : ''
       const metalStr = item.selectedMetal ? ` | Metal: ${item.selectedMetal}` : ''
-      const priceStr = typeof item.price === 'number' ? `$${item.price.toLocaleString()}` : item.price
+      const priceStr = typeof item.price === 'number' ? `$${item.price.toLocaleString()}` : (item.price || 'Price Upon Request')
       return `${i + 1}. *${item.name}*\n   Category: ${item.category || item.collection || 'High Jewellery'}\n   Price: ${priceStr}${sizeStr}${metalStr}`
     }).join('\n\n')
 
     const totalStr = `$${calculatedTotal.toLocaleString()}`
     const message = `Hello AVIORY & CO.,\n\nI would like to inquire and place an order for the following creation(s) from my shopping bag:\n\n${itemLines}\n\n*Estimated Total:* ${totalStr}\n\nPlease confirm availability and concierge private delivery.`
 
-    const url = `https://wa.me/94776100099?text=${encodeURIComponent(message)}`
+    const url = CONTACT_CONFIG.buildWhatsAppUrl(message)
     window.open(url, '_blank')
   }
 
@@ -42,10 +42,10 @@ export default function CartDrawer({ isOpen, onClose }) {
   const handleSingleItemWhatsApp = (item) => {
     const sizeStr = item.selectedSize ? ` | Size: US ${item.selectedSize}` : ''
     const metalStr = item.selectedMetal ? ` | Metal: ${item.selectedMetal}` : ''
-    const priceStr = typeof item.price === 'number' ? `$${item.price.toLocaleString()}` : item.price
+    const priceStr = typeof item.price === 'number' ? `$${item.price.toLocaleString()}` : (item.price || 'Price Upon Request')
     const message = `Hello AVIORY & CO., I would like to enquire about this piece:\n\n*${item.name}*\nCategory: ${item.category || item.collection || 'High Jewellery'}\nPrice: ${priceStr}${sizeStr}${metalStr}\n\nPlease connect me with a concierge.`
 
-    const url = `https://wa.me/94776100099?text=${encodeURIComponent(message)}`
+    const url = CONTACT_CONFIG.buildWhatsAppUrl(message)
     window.open(url, '_blank')
   }
 
@@ -53,86 +53,97 @@ export default function CartDrawer({ isOpen, onClose }) {
 
   return (
     <>
-      {/* Backdrop */}
-      <div className="cart-backdrop" onClick={onClose} />
+      <div 
+        className="cart-drawer-overlay" 
+        onClick={onClose} 
+        aria-hidden="true" 
+      />
 
-      {/* Slide-out Drawer */}
-      <aside className="cart-drawer" role="dialog" aria-label="Shopping Bag">
-        {/* Drawer Header */}
+      <aside 
+        className="cart-drawer" 
+        role="dialog" 
+        aria-modal="true" 
+        aria-label="Your Bag"
+      >
         <div className="cart-drawer__header">
-          <div className="cart-drawer__title-wrap">
-            <h2 className="cart-drawer__title">Shopping Bag</h2>
-            <span className="cart-drawer__count">({itemCount} {itemCount === 1 ? 'creation' : 'creations'})</span>
+          <div>
+            <h2 className="cart-drawer__title">Your Selection</h2>
+            <span className="cart-drawer__subtitle">
+              {itemCount} {itemCount === 1 ? 'Creation' : 'Creations'} Selected
+            </span>
           </div>
           <button 
             type="button" 
             className="cart-drawer__close" 
             onClick={onClose}
-            aria-label="Close bag"
+            aria-label="Close cart"
           >
-            &times;
+            ✕
           </button>
         </div>
 
-        {/* Complimentary Shipping Banner */}
-        <div className="cart-drawer__shipping-bar">
-          <span>Complimentary Armoured Courier &amp; Worldwide Transit Insurance</span>
-        </div>
-
-        {/* Items List */}
-        <div className="cart-drawer__body">
+        <div className="cart-drawer__content">
           {items.length === 0 ? (
             <div className="cart-drawer__empty">
-              <span className="cart-drawer__empty-icon">&#9671;</span>
-              <h3>Your bag is currently empty</h3>
-              <p>Explore our vault of rare Ceylon sapphires, rubies, and bespoke jewellery.</p>
-              <Link to="/gemstones" className="btn btn-primary" onClick={onClose}>
-                Explore Gemstones
+              <span className="cart-drawer__empty-icon">✧</span>
+              <p className="cart-drawer__empty-title">Your shopping bag is empty</p>
+              <p className="cart-drawer__empty-text">
+                Explore our fine jewellery creations, rare unheated sapphires, and bridal suites.
+              </p>
+              <Link 
+                to="/fine-jewellery" 
+                className="btn btn-outline" 
+                onClick={onClose}
+              >
+                Explore High Jewellery
               </Link>
             </div>
           ) : (
             <ul className="cart-drawer__list">
-              {items.map((item, idx) => (
-                <li key={`${item.id}-${idx}`} className="cart-drawer__item">
-                  <div className="cart-drawer__item-thumb">
-                    {item.image ? (
-                      <img 
-                        src={item.image} 
-                        alt={item.name} 
-                        onError={(e) => { 
-                          e.currentTarget.style.display = 'none'
-                          e.currentTarget.parentElement.classList.add('cart-drawer__thumb-fallback')
-                        }} 
-                      />
-                    ) : null}
+              {items.map((item) => (
+                <li key={item.id} className="cart-drawer__item">
+                  <div className="cart-drawer__item-img-wrap">
+                    <img 
+                      src={item.image} 
+                      alt={item.name} 
+                      className="cart-drawer__item-img"
+                      onError={(e) => { e.target.src = '/images/atelier-masterpieces.jpg' }}
+                    />
                   </div>
 
-                  <div className="cart-drawer__item-details">
-                    <span className="cart-drawer__item-cat">{item.category || item.collection || 'High Jewellery'}</span>
-                    <h4 className="cart-drawer__item-name">{item.name}</h4>
-                    {item.selectedSize && (
-                      <span className="cart-drawer__item-meta">Size: US {item.selectedSize}</span>
+                  <div className="cart-drawer__item-info">
+                    <h3 className="cart-drawer__item-name">{item.name}</h3>
+                    <p className="cart-drawer__item-category">
+                      {item.category || item.collection || 'Haute Joaillerie'}
+                    </p>
+
+                    {(item.selectedSize || item.selectedMetal) && (
+                      <p className="cart-drawer__item-meta">
+                        {item.selectedSize && <span>US {item.selectedSize}</span>}
+                        {item.selectedSize && item.selectedMetal && <span> · </span>}
+                        {item.selectedMetal && <span>{item.selectedMetal}</span>}
+                      </p>
                     )}
-                    {item.selectedMetal && (
-                      <span className="cart-drawer__item-meta">Metal: {item.selectedMetal}</span>
-                    )}
-                    <div className="cart-drawer__item-price">
-                      {typeof item.price === 'number' ? `$${item.price.toLocaleString()}` : item.price}
-                    </div>
+
+                    <p className="cart-drawer__item-price">
+                      {typeof item.price === 'number'
+                        ? `$${item.price.toLocaleString()}`
+                        : (item.price || 'Price Upon Request')}
+                    </p>
 
                     <div className="cart-drawer__item-actions">
-                      <button
-                        type="button"
-                        className="cart-drawer__item-wa-btn"
+                      <button 
+                        type="button" 
+                        className="cart-drawer__enquire-btn"
                         onClick={() => handleSingleItemWhatsApp(item)}
-                        title="Enquire on WhatsApp"
                       >
-                        <WhatsAppIcon /> Enquire
+                        Enquire on WhatsApp
                       </button>
-                      <button
-                        type="button"
-                        className="cart-drawer__item-remove"
+                      <button 
+                        type="button" 
+                        className="cart-drawer__remove-btn" 
                         onClick={() => removeItem(item.id)}
+                        aria-label={`Remove ${item.name}`}
                       >
                         Remove
                       </button>
@@ -144,14 +155,14 @@ export default function CartDrawer({ isOpen, onClose }) {
           )}
         </div>
 
-        {/* Drawer Footer with Direct WhatsApp Checkout */}
         {items.length > 0 && (
           <div className="cart-drawer__footer">
-            <div className="cart-drawer__subtotal">
-              <span>Estimated Total</span>
-              <strong>${calculatedTotal.toLocaleString()}</strong>
+            <div className="cart-drawer__subtotal-row">
+              <span className="cart-drawer__subtotal-label">Estimated Total</span>
+              <span className="cart-drawer__subtotal-val">
+                ${calculatedTotal.toLocaleString()}
+              </span>
             </div>
-
             <p className="cart-drawer__subtotal-note">
               Taxes, duties, and insured worldwide delivery coordinated via private concierge.
             </p>
@@ -162,7 +173,7 @@ export default function CartDrawer({ isOpen, onClose }) {
                 className="btn cart-drawer__whatsapp-btn"
                 onClick={handleWhatsAppCheckout}
               >
-                <WhatsAppIcon /> Order via WhatsApp (+94 77 610 0099)
+                <WhatsAppIcon /> Order via WhatsApp ({CONTACT_CONFIG.whatsappFormatted})
               </button>
 
               <Link 
@@ -172,12 +183,6 @@ export default function CartDrawer({ isOpen, onClose }) {
               >
                 Book Private Consultation
               </Link>
-            </div>
-
-            <div className="cart-drawer__trust-badges">
-              <span>&bull; GIA &amp; Lotus Certified</span>
-              <span>&bull; Armoured Delivery</span>
-              <span>&bull; Concierge Care</span>
             </div>
           </div>
         )}
