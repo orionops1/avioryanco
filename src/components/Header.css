@@ -2,45 +2,312 @@
 
 /* ============================================================================
    AVIORY & CO. — TIFFANY-STANDARD LUXURY NAVIGATION SYSTEM
-   Architecture: Logo/Utility Row only → Logo/Utility Row → Nav Row → Mega Panel
+   Transparent over hero -> Solid white with black logo/text on hover/scroll
    ============================================================================ */
 
 /* ── Header Shell ── */
 .tiffany-header {
-  position: sticky !important;
+  position: fixed !important;
   top: 0 !important;
   left: 0 !important;
   right: 0 !important;
   z-index: 2000 !important;
-  background-color: #FFFFFF;
-  overflow: visible !important;
-  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, background-color 0.3s ease;
   width: 100% !important;
+  overflow: visible !important;
   transform: translateY(0);
+  background-color: #FFFFFF;
+  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), 
+              background-color 0.32s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.32s ease, 
+              border-color 0.32s ease;
 }
 
 .tiffany-header--hidden {
   transform: translateY(-100%) !important;
 }
 
-.tiffany-header--home-top {
-  background-color: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+.tiffany-header--scrolled {
+  box-shadow: 0 4px 28px rgba(0, 0, 0, 0.09);
 }
 
-.tiffany-header--home-top.tiffany-header--mega-active,
-.tiffany-header--home-top:hover {
+/* Smooth global transition for all header elements */
+.tiffany-header,
+.tiffany-header__top,
+.tiffany-header__nav,
+.tiffany-header__logo-text,
+.tiffany-header__logo-ampersand,
+.tiffany-header__logo-co,
+.tiffany-header__nav-link,
+.tiffany-header__utility-btn,
+.tiffany-header__action-btn,
+.tiffany-hamburger-bar,
+.tiffany-header__locale-inline,
+.currency-toggle,
+.language-toggle {
+  transition: background-color 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.32s ease,
+              text-shadow 0.32s ease !important;
+}
+
+/* ============================================================================
+   TIFFANY SIGNATURE: TRANSPARENT HERO MODE
+   At page top: fully transparent, white logo, white menu, full site visible.
+   On hover / active / scroll: smooth white layer appears behind, black logo, black text.
+   ============================================================================ */
+
+/* 1. Base Transparent Mode (Home Hero at scroll 0) */
+.tiffany-header--transparent {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.tiffany-header--transparent .tiffany-header__top {
+  background-color: transparent !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22) !important;
+}
+
+.tiffany-header--transparent .tiffany-header__nav {
+  background-color: transparent !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22) !important;
+}
+
+/* White Logo in transparent state */
+.tiffany-header--transparent .tiffany-header__logo-text {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7);
+}
+
+.tiffany-header--transparent .tiffany-header__logo-ampersand {
+  color: #E6CA9E !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+}
+
+.tiffany-header--transparent .tiffany-header__logo-co {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7);
+}
+
+/* White Nav Links in transparent state */
+.tiffany-header--transparent .tiffany-header__nav-link {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7);
+}
+
+.tiffany-header--transparent .tiffany-header__nav-link::after {
   background-color: #FFFFFF !important;
 }
 
-.tiffany-header--scrolled {
-  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.10);
+/* White Utility buttons and icons */
+.tiffany-header--transparent .tiffany-header__utility-btn {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7);
+}
+
+.tiffany-header--transparent .tiffany-header__action-btn {
+  color: #FFFFFF !important;
+  filter: drop-shadow(0 1px 6px rgba(0, 0, 0, 0.7));
+}
+
+.tiffany-header--transparent .tiffany-hamburger-bar {
+  background-color: #FFFFFF !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.tiffany-header--transparent .tiffany-header__locale-inline {
+  border-left-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+.tiffany-header--transparent .currency-toggle,
+.tiffany-header--transparent .language-toggle {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  color: #FFFFFF !important;
+  backdrop-filter: blur(8px);
+}
+
+.tiffany-header--transparent .currency-toggle .currency-symbol,
+.tiffany-header--transparent .currency-toggle .currency-code,
+.tiffany-header--transparent .language-toggle .language-code {
+  color: #FFFFFF !important;
+}
+
+.tiffany-header--transparent .currency-toggle .currency-chevron,
+.tiffany-header--transparent .language-toggle .language-chevron {
+  stroke: #FFFFFF !important;
+}
+
+/* 2. HOVER OVER HEADER / ACTIVE MEGA / MOBILE OPEN / SCROLLED:
+   A clean solid white layer appears behind, logo & texts become black! */
+.tiffany-header--transparent:hover,
+.tiffany-header--hovered,
+.tiffany-header--mega-active,
+.tiffany-header--mobile-open,
+.tiffany-header--solid {
+  background-color: #FFFFFF !important;
+  box-shadow: 0 4px 28px rgba(0, 0, 0, 0.08) !important;
+}
+
+.tiffany-header--transparent:hover .tiffany-header__top,
+.tiffany-header--hovered .tiffany-header__top,
+.tiffany-header--mega-active .tiffany-header__top,
+.tiffany-header--mobile-open .tiffany-header__top,
+.tiffany-header--solid .tiffany-header__top {
+  background-color: #FFFFFF !important;
+  border-bottom: 1px solid #E8E3DC !important;
+}
+
+.tiffany-header--transparent:hover .tiffany-header__nav,
+.tiffany-header--hovered .tiffany-header__nav,
+.tiffany-header--mega-active .tiffany-header__nav,
+.tiffany-header--mobile-open .tiffany-header__nav,
+.tiffany-header--solid .tiffany-header__nav {
+  background-color: #FFFFFF !important;
+  border-bottom: 1px solid #E8E3DC !important;
+}
+
+/* Logo turns black on hover / active / solid */
+.tiffany-header--transparent:hover .tiffany-header__logo-text,
+.tiffany-header--hovered .tiffany-header__logo-text,
+.tiffany-header--mega-active .tiffany-header__logo-text,
+.tiffany-header--mobile-open .tiffany-header__logo-text,
+.tiffany-header--solid .tiffany-header__logo-text {
+  color: #111111 !important;
+  text-shadow: none !important;
+}
+
+.tiffany-header--transparent:hover .tiffany-header__logo-ampersand,
+.tiffany-header--hovered .tiffany-header__logo-ampersand,
+.tiffany-header--mega-active .tiffany-header__logo-ampersand,
+.tiffany-header--mobile-open .tiffany-header__logo-ampersand,
+.tiffany-header--solid .tiffany-header__logo-ampersand {
+  color: #B8996A !important;
+  text-shadow: none !important;
+}
+
+.tiffany-header--transparent:hover .tiffany-header__logo-co,
+.tiffany-header--hovered .tiffany-header__logo-co,
+.tiffany-header--mega-active .tiffany-header__logo-co,
+.tiffany-header--mobile-open .tiffany-header__logo-co,
+.tiffany-header--solid .tiffany-header__logo-co {
+  color: #111111 !important;
+  text-shadow: none !important;
+}
+
+/* Nav links turn black on hover / active / solid */
+.tiffany-header--transparent:hover .tiffany-header__nav-link,
+.tiffany-header--hovered .tiffany-header__nav-link,
+.tiffany-header--mega-active .tiffany-header__nav-link,
+.tiffany-header--mobile-open .tiffany-header__nav-link,
+.tiffany-header--solid .tiffany-header__nav-link {
+  color: #111111 !important;
+  text-shadow: none !important;
+}
+
+.tiffany-header--transparent:hover .tiffany-header__nav-link::after,
+.tiffany-header--hovered .tiffany-header__nav-link::after,
+.tiffany-header--mega-active .tiffany-header__nav-link::after,
+.tiffany-header--mobile-open .tiffany-header__nav-link::after,
+.tiffany-header--solid .tiffany-header__nav-link::after {
+  background-color: #111111 !important;
+}
+
+.tiffany-header--transparent:hover .tiffany-header__nav-link:hover,
+.tiffany-header--hovered .tiffany-header__nav-link:hover,
+.tiffany-header--solid .tiffany-header__nav-link:hover {
+  color: #111111 !important;
+}
+
+/* Utility buttons and icons turn black */
+.tiffany-header--transparent:hover .tiffany-header__utility-btn,
+.tiffany-header--hovered .tiffany-header__utility-btn,
+.tiffany-header--mega-active .tiffany-header__utility-btn,
+.tiffany-header--mobile-open .tiffany-header__utility-btn,
+.tiffany-header--solid .tiffany-header__utility-btn {
+  color: #111111 !important;
+  text-shadow: none !important;
+}
+
+.tiffany-header--transparent:hover .tiffany-header__utility-btn:hover,
+.tiffany-header--hovered .tiffany-header__utility-btn:hover,
+.tiffany-header--solid .tiffany-header__utility-btn:hover {
+  color: #B8996A !important;
+}
+
+.tiffany-header--transparent:hover .tiffany-header__action-btn,
+.tiffany-header--hovered .tiffany-header__action-btn,
+.tiffany-header--mega-active .tiffany-header__action-btn,
+.tiffany-header--mobile-open .tiffany-header__action-btn,
+.tiffany-header--solid .tiffany-header__action-btn {
+  color: #111111 !important;
+  filter: none !important;
+}
+
+.tiffany-header--transparent:hover .tiffany-header__action-btn:hover,
+.tiffany-header--hovered .tiffany-header__action-btn:hover,
+.tiffany-header--solid .tiffany-header__action-btn:hover {
+  color: #B8996A !important;
+}
+
+.tiffany-header--transparent:hover .tiffany-hamburger-bar,
+.tiffany-header--hovered .tiffany-hamburger-bar,
+.tiffany-header--mega-active .tiffany-hamburger-bar,
+.tiffany-header--mobile-open .tiffany-hamburger-bar,
+.tiffany-header--solid .tiffany-hamburger-bar {
+  background-color: #111111 !important;
+  box-shadow: none !important;
+}
+
+.tiffany-header--transparent:hover .tiffany-header__locale-inline,
+.tiffany-header--hovered .tiffany-header__locale-inline,
+.tiffany-header--mega-active .tiffany-header__locale-inline,
+.tiffany-header--mobile-open .tiffany-header__locale-inline,
+.tiffany-header--solid .tiffany-header__locale-inline {
+  border-left-color: #E8E3DC !important;
+}
+
+.tiffany-header--transparent:hover .currency-toggle,
+.tiffany-header--hovered .currency-toggle,
+.tiffany-header--mega-active .currency-toggle,
+.tiffany-header--mobile-open .currency-toggle,
+.tiffany-header--solid .currency-toggle,
+.tiffany-header--transparent:hover .language-toggle,
+.tiffany-header--hovered .language-toggle,
+.tiffany-header--mega-active .language-toggle,
+.tiffany-header--mobile-open .language-toggle,
+.tiffany-header--solid .language-toggle {
+  background-color: #FAF7F2 !important;
+  border-color: #D5CFC7 !important;
+  color: #111111 !important;
+  backdrop-filter: none;
+}
+
+.tiffany-header--transparent:hover .currency-toggle .currency-symbol,
+.tiffany-header--transparent:hover .currency-toggle .currency-code,
+.tiffany-header--hovered .currency-toggle .currency-symbol,
+.tiffany-header--hovered .currency-toggle .currency-code,
+.tiffany-header--solid .currency-toggle .currency-symbol,
+.tiffany-header--solid .currency-toggle .currency-code,
+.tiffany-header--transparent:hover .language-toggle .language-code,
+.tiffany-header--hovered .language-toggle .language-code,
+.tiffany-header--solid .language-toggle .language-code {
+  color: #111111 !important;
+}
+
+.tiffany-header--transparent:hover .currency-toggle .currency-chevron,
+.tiffany-header--hovered .currency-toggle .currency-chevron,
+.tiffany-header--solid .currency-toggle .currency-chevron,
+.tiffany-header--transparent:hover .language-toggle .language-chevron,
+.tiffany-header--hovered .language-toggle .language-chevron,
+.tiffany-header--solid .language-toggle .language-chevron {
+  stroke: #111111 !important;
 }
 
 /* ── Top Row: Logo Center, Utilities Left, Actions Right ── */
 .tiffany-header__top {
-  background-color: #FFFFFF;
+  background-color: transparent;
   padding: 1.4rem 0;
   border-bottom: 1px solid #E8E3DC;
   position: relative;
@@ -249,7 +516,7 @@
 
 /* ── Navigation Row ── */
 .tiffany-header__nav {
-  background-color: #FFFFFF;
+  background-color: transparent;
   border-bottom: 1px solid #E8E3DC;
   position: relative;
   z-index: 2005;

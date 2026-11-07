@@ -59,10 +59,12 @@ function AppContent() {
     )
   }
 
+  const isHeroPage = isHome || location.pathname === '/the-proposal'
+
   return (
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <Header />
-      <main style={{ flex: 1, paddingTop: isHome ? 0 : 'var(--header-height, 120px)' }}>
+      <main style={{ flex: 1, paddingTop: isHeroPage ? 0 : 'var(--header-height, 120px)' }}>
         <Routes>
           {/* Home */}
           <Route path="/" element={<Home />} />

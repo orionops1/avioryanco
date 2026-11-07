@@ -21,6 +21,8 @@
   color: #FFFFFF;
   overflow: hidden;
   background-color: #111111;
+  padding-top: var(--header-height, 120px);
+  box-sizing: border-box;
 }
 
 .proposal-hero__backdrop {

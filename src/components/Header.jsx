@@ -78,6 +78,7 @@ export default function Header() {
   // Scroll state: Tiffany auto-hide on scroll down, reappear on scroll up
   const [scrolled, setScrolled] = useState(false)
   const [hidden, setHidden] = useState(false)
+  const [isHovered, setIsHovered] = useState(false)
   const prevScrollY = useRef(0)
 
   const itemCount = useCartStore((state) => state.getItemCount())
@@ -87,6 +88,9 @@ export default function Header() {
 
   const menuItems = useMegaMenuData(t)
   const isHome = location.pathname === '/'
+  const isHeroPage = isHome || location.pathname === '/the-proposal'
+  const isTransparent = isHeroPage && !scrolled && !mobileMenuOpen && !activeMega
+  const isSolid = scrolled || isHovered || Boolean(activeMega) || mobileMenuOpen || !isHeroPage
 
   // Auto-hide header when scrolling down, show when scrolling up
   useEffect(() => {
@@ -173,15 +177,24 @@ export default function Header() {
 
   const headerClasses = [
     'tiffany-header',
+    isTransparent ? 'tiffany-header--transparent' : 'tiffany-header--solid',
+    isHovered ? 'tiffany-header--hovered' : '',
     scrolled ? 'tiffany-header--scrolled' : '',
     hidden ? 'tiffany-header--hidden' : '',
-    isHome && !scrolled ? 'tiffany-header--home-top' : '',
-    activeMega ? 'tiffany-header--mega-active' : ''
+    activeMega ? 'tiffany-header--mega-active' : '',
+    mobileMenuOpen ? 'tiffany-header--mobile-open' : ''
   ].filter(Boolean).join(' ')
 
   return (
     <>
-      <header className={headerClasses}>
+      <header
+        className={headerClasses}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => {
+          setIsHovered(false)
+          closeMegaMenu()
+        }}
+      >
         {/* TOP ROW */}
         <div className="tiffany-header__top">
           <div className="container tiffany-header__top-inner">
@@ -206,8 +219,8 @@ export default function Header() {
               </button>
 
               <div className="tiffany-header__locale-inline">
-                <CurrencySwitcher variant="light" />
-                <LanguageSwitcher variant="light" />
+                <CurrencySwitcher variant={isSolid ? 'light' : 'dark'} />
+                <LanguageSwitcher variant={isSolid ? 'light' : 'dark'} />
               </div>
             </div>
 
