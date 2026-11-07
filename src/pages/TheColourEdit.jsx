@@ -4,6 +4,7 @@ import AppointmentModal from '../components/AppointmentModal'
 import { gemstones } from '../data/products'
 import { useLanguage } from '../hooks/useLanguage'
 import { formatPrice } from '../utils/currencyConverter'
+import { useContentStore } from '../hooks/useContentStore'
 import './TheColourEdit.css'
 
 export const colourFamilies = [
@@ -72,13 +73,25 @@ export const colourFamilies = [
 export default function TheColourEdit() {
   const [searchParams, setSearchParams] = useSearchParams()
   const { currency } = useLanguage()
+  const { content } = useContentStore()
+  const colourEditSection = content?.colourEditSection || {}
   const [appointmentModalOpen, setAppointmentModalOpen] = useState(false)
+
+  const families = useMemo(() => {
+    if (!colourEditSection.families || colourEditSection.families.length === 0) {
+      return colourFamilies
+    }
+    return colourFamilies.map((defFam, idx) => {
+      const storeFam = colourEditSection.families.find(f => f.id === defFam.id) || colourEditSection.families[idx]
+      return storeFam ? { ...defFam, ...storeFam } : defFam
+    })
+  }, [colourEditSection])
 
   const activeColorId = searchParams.get('color') || 'blue'
 
   const activeFamily = useMemo(() => {
-    return colourFamilies.find(f => f.id === activeColorId) || colourFamilies[0]
-  }, [activeColorId])
+    return families.find(f => f.id === activeColorId) || families[0]
+  }, [families, activeColorId])
 
   const handleSelectColor = (colorId) => {
     setSearchParams({ color: colorId })
@@ -90,7 +103,7 @@ export default function TheColourEdit() {
   const matchingStones = useMemo(() => {
     return gemstones.filter(stone => {
       const stoneText = `${stone.name} ${stone.category} ${stone.color || ''}`.toLowerCase()
-      return activeFamily.filterKeywords.some(kw => stoneText.includes(kw))
+      return (activeFamily.filterKeywords || []).some(kw => stoneText.includes(kw))
     })
   }, [activeFamily])
 
@@ -101,12 +114,12 @@ export default function TheColourEdit() {
           ==================================================================== */}
       <section className="colour-edit-hero">
         <div className="container">
-          <span className="editorial-eyebrow">THE COLOUR EDIT</span>
+          <span className="editorial-eyebrow">{colourEditSection.eyebrow || "THE COLOUR EDIT"}</span>
           <h1 className="colour-edit-hero__title">
-            A WORLD OF COLOUR, WITH A STORY OF ITS OWN.
+            {colourEditSection.headline || "A WORLD OF COLOUR, WITH A STORY OF ITS OWN."}
           </h1>
           <p className="colour-edit-hero__subtitle">
-            Some colours catch your eye. Others stay with you.
+            {colourEditSection.subtitle || "Some colours catch your eye. Others stay with you."}
           </p>
           <p className="colour-edit-hero__lead">
             We do not believe in cold technical catalogues. Every colour in the Aviory universe carries its own character, mood, and fascination—pulled straight from Sri Lankan earth and cut to dance under low candlelight.
@@ -120,7 +133,7 @@ export default function TheColourEdit() {
       <section className="colour-families-nav-section">
         <div className="container">
           <div className="colour-families-grid">
-            {colourFamilies.map((fam) => (
+            {families.map((fam) => (
               <button
                 key={fam.id}
                 type="button"

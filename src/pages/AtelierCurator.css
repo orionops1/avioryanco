@@ -1,0 +1,743 @@
+/* ============================================================================
+   AVIORY & CO. — ATELIER CURATOR BACKEND PORTAL
+   Discreet, high-luxury content & picture curation system
+   ============================================================================ */
+
+.curator-portal-root {
+  min-height: 100vh;
+  background-color: #0b0b0c;
+  color: #f5ede2;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: 0.02em;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ============================================================================
+   1. AUTHENTICATION / PASSCODE GATE
+   ============================================================================ */
+.curator-gate {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: radial-gradient(circle at center, #181614 0%, #080809 100%);
+  position: relative;
+}
+
+.curator-gate__backdrop-glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 175, 127, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.curator-gate__card {
+  position: relative;
+  z-index: 2;
+  background: rgba(18, 17, 16, 0.94);
+  border: 1px solid rgba(212, 175, 127, 0.28);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+  padding: 3.5rem 3rem;
+  max-width: 440px;
+  width: 100%;
+  text-align: center;
+  backdrop-filter: blur(12px);
+}
+
+.curator-gate__monogram {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  color: #d4af7f;
+  margin-bottom: 0.5rem;
+}
+
+.curator-gate__eyebrow {
+  display: block;
+  font-size: 0.68rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(245, 237, 226, 0.5);
+  margin-bottom: 1rem;
+}
+
+.curator-gate__title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.85rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: #fff;
+  margin: 0 0 0.8rem;
+}
+
+.curator-gate__subtitle {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: rgba(245, 237, 226, 0.65);
+  margin: 0 0 2rem;
+}
+
+.curator-gate__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.curator-gate__input-wrap {
+  position: relative;
+}
+
+.curator-gate__input {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(212, 175, 127, 0.35);
+  color: #f5ede2;
+  font-family: inherit;
+  font-size: 0.95rem;
+  letter-spacing: 0.2em;
+  padding: 0.9rem 1.2rem;
+  text-align: center;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+.curator-gate__input:focus {
+  border-color: #d4af7f;
+  box-shadow: 0 0 16px rgba(212, 175, 127, 0.2);
+}
+
+.curator-gate__error {
+  font-size: 0.78rem;
+  color: #e07a7a;
+  letter-spacing: 0.05em;
+  margin-top: -0.25rem;
+}
+
+.curator-gate__btn {
+  background: #d4af7f;
+  color: #0d0d0d;
+  border: none;
+  font-family: inherit;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.curator-gate__btn:hover {
+  background: #e2c299;
+  box-shadow: 0 6px 20px rgba(212, 175, 127, 0.3);
+}
+
+.curator-gate__hint {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: rgba(245, 237, 226, 0.35);
+  margin-top: 1.5rem;
+}
+
+.curator-gate__back-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  color: rgba(212, 175, 127, 0.7);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.curator-gate__back-link:hover {
+  color: #d4af7f;
+}
+
+/* ============================================================================
+   2. CURATOR DASHBOARD HEADER
+   ============================================================================ */
+.curator-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(14, 13, 12, 0.96);
+  border-bottom: 1px solid rgba(212, 175, 127, 0.22);
+  backdrop-filter: blur(14px);
+  padding: 0.9rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.curator-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.curator-header__monogram {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #d4af7f;
+  letter-spacing: 0.15em;
+}
+
+.curator-header__title-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.curator-header__title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.08em;
+  color: #fff;
+  margin: 0;
+}
+
+.curator-header__badge {
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #d4af7f;
+}
+
+.curator-header__status {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.74rem;
+  color: rgba(245, 237, 226, 0.65);
+}
+
+.curator-header__status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #50c878;
+  box-shadow: 0 0 8px rgba(80, 200, 120, 0.6);
+}
+
+.curator-header__status-dot--dirty {
+  background: #f4a261;
+  box-shadow: 0 0 8px rgba(244, 162, 97, 0.7);
+  animation: pulse-dot 1.5s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
+}
+
+.curator-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.curator-btn {
+  font-family: inherit;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 0.65rem 1.15rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+}
+
+.curator-btn--outline {
+  background: transparent;
+  border-color: rgba(212, 175, 127, 0.35);
+  color: #f5ede2;
+}
+
+.curator-btn--outline:hover {
+  border-color: #d4af7f;
+  color: #d4af7f;
+  background: rgba(212, 175, 127, 0.06);
+}
+
+.curator-btn--primary {
+  background: #d4af7f;
+  color: #0b0b0c;
+  font-weight: 600;
+  border-color: #d4af7f;
+}
+
+.curator-btn--primary:hover {
+  background: #e2c299;
+  box-shadow: 0 4px 18px rgba(212, 175, 127, 0.35);
+}
+
+.curator-btn--subtle {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
+  color: rgba(245, 237, 226, 0.7);
+}
+
+.curator-btn--subtle:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ============================================================================
+   3. CURATOR LAYOUT: SIDEBAR TABS & MAIN CONTENT AREA
+   ============================================================================ */
+.curator-layout {
+  display: flex;
+  min-height: calc(100vh - 65px);
+}
+
+.curator-sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  background: #0f0e0d;
+  border-right: 1px solid rgba(212, 175, 127, 0.15);
+  padding: 1.5rem 0.75rem;
+}
+
+.curator-sidebar__label {
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(212, 175, 127, 0.65);
+  padding: 0 0.85rem 0.75rem;
+  display: block;
+}
+
+.curator-nav-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  background: transparent;
+  border: 1px solid transparent;
+  color: rgba(245, 237, 226, 0.7);
+  font-family: inherit;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  padding: 0.75rem 0.95rem;
+  margin-bottom: 0.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.curator-nav-item:hover {
+  color: #fff;
+  background: rgba(212, 175, 127, 0.06);
+}
+
+.curator-nav-item--active {
+  background: rgba(212, 175, 127, 0.12);
+  border-color: rgba(212, 175, 127, 0.35);
+  color: #d4af7f;
+  font-weight: 500;
+}
+
+.curator-nav-item__badge {
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  padding: 0.15rem 0.45rem;
+  background: rgba(212, 175, 127, 0.15);
+  color: #d4af7f;
+  border-radius: 2px;
+}
+
+/* ============================================================================
+   4. CURATOR MAIN WORKSPACE
+   ============================================================================ */
+.curator-content {
+  flex: 1;
+  padding: 2.5rem 3rem 5rem;
+  max-width: 1200px;
+}
+
+.curator-section-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(212, 175, 127, 0.18);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.curator-section-header__eyebrow {
+  display: block;
+  font-size: 0.68rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #d4af7f;
+  margin-bottom: 0.35rem;
+}
+
+.curator-section-header__title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: #fff;
+  margin: 0;
+}
+
+.curator-section-header__desc {
+  font-size: 0.82rem;
+  color: rgba(245, 237, 226, 0.65);
+  margin: 0.4rem 0 0;
+}
+
+/* ============================================================================
+   5. EDITORIAL FORM COMPONENTS
+   ============================================================================ */
+.curator-card {
+  background: #121110;
+  border: 1px solid rgba(212, 175, 127, 0.2);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.curator-card__title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.35rem;
+  color: #f5ede2;
+  margin: 0 0 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.curator-card__tag {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #d4af7f;
+  background: rgba(212, 175, 127, 0.1);
+  padding: 0.25rem 0.6rem;
+}
+
+.curator-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.curator-form-grid--full {
+  grid-template-columns: 1fr;
+}
+
+.curator-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.curator-form-group--full {
+  grid-column: 1 / -1;
+}
+
+.curator-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(245, 237, 226, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.curator-label__hint {
+  font-size: 0.65rem;
+  letter-spacing: 0.04em;
+  color: rgba(212, 175, 127, 0.6);
+  text-transform: none;
+}
+
+.curator-input,
+.curator-textarea {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(212, 175, 127, 0.25);
+  color: #f5ede2;
+  font-family: inherit;
+  font-size: 0.85rem;
+  padding: 0.75rem 0.9rem;
+  outline: none;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.curator-input:focus,
+.curator-textarea:focus {
+  border-color: #d4af7f;
+  box-shadow: 0 0 10px rgba(212, 175, 127, 0.15);
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.curator-textarea {
+  resize: vertical;
+  min-height: 85px;
+  line-height: 1.5;
+}
+
+/* ============================================================================
+   6. IMAGE UPLOADER & PREVIEW WIDGET
+   ============================================================================ */
+.curator-image-field {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px dashed rgba(212, 175, 127, 0.35);
+  padding: 1.25rem;
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.curator-image-preview-wrap {
+  width: 160px;
+  height: 120px;
+  background: #000;
+  border: 1px solid rgba(212, 175, 127, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.curator-image-preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.curator-image-placeholder {
+  font-size: 0.68rem;
+  color: rgba(245, 237, 226, 0.4);
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.curator-image-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.curator-image-current-url {
+  font-size: 0.75rem;
+  color: rgba(245, 237, 226, 0.6);
+  word-break: break-all;
+  font-family: monospace;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 0.45rem 0.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.curator-upload-btn-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.curator-file-input {
+  display: none;
+}
+
+.curator-upload-trigger-btn {
+  background: rgba(212, 175, 127, 0.15);
+  color: #d4af7f;
+  border: 1px solid rgba(212, 175, 127, 0.4);
+  font-family: inherit;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.55rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.curator-upload-trigger-btn:hover {
+  background: rgba(212, 175, 127, 0.25);
+  border-color: #d4af7f;
+}
+
+/* ============================================================================
+   7. MEDIA VAULT / GALLERY UPLOADER
+   ============================================================================ */
+.curator-vault-dropzone {
+  border: 2px dashed rgba(212, 175, 127, 0.4);
+  background: rgba(212, 175, 127, 0.03);
+  padding: 3rem 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  margin-bottom: 2rem;
+}
+
+.curator-vault-dropzone:hover,
+.curator-vault-dropzone--drag {
+  background: rgba(212, 175, 127, 0.08);
+  border-color: #d4af7f;
+}
+
+.curator-vault-dropzone__icon {
+  font-size: 2.5rem;
+  color: #d4af7f;
+  margin-bottom: 0.8rem;
+}
+
+.curator-vault-dropzone__title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.4rem;
+  color: #fff;
+  margin: 0 0 0.5rem;
+}
+
+.curator-vault-dropzone__subtitle {
+  font-size: 0.78rem;
+  color: rgba(245, 237, 226, 0.6);
+  margin: 0;
+}
+
+.curator-vault-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.25rem;
+}
+
+.curator-vault-item {
+  background: #141312;
+  border: 1px solid rgba(212, 175, 127, 0.2);
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.curator-vault-item:hover {
+  border-color: #d4af7f;
+  transform: translateY(-2px);
+}
+
+.curator-vault-item__thumb {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+}
+
+.curator-vault-item__details {
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.curator-vault-item__name {
+  font-size: 0.72rem;
+  color: #f5ede2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: monospace;
+}
+
+.curator-vault-item__copy-btn {
+  background: rgba(212, 175, 127, 0.12);
+  border: 1px solid rgba(212, 175, 127, 0.3);
+  color: #d4af7f;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.5rem;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.15s ease;
+}
+
+.curator-vault-item__copy-btn:hover {
+  background: #d4af7f;
+  color: #0d0d0d;
+}
+
+/* ============================================================================
+   8. TOAST NOTIFICATION
+   ============================================================================ */
+.curator-toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 9999;
+  background: #141312;
+  border: 1px solid #d4af7f;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  padding: 1rem 1.5rem;
+  color: #f5ede2;
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  animation: slide-up 0.3s ease;
+}
+
+.curator-toast--success {
+  border-color: #50c878;
+}
+
+.curator-toast--error {
+  border-color: #e07a7a;
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .curator-layout {
+    flex-direction: column;
+  }
+  .curator-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid rgba(212, 175, 127, 0.15);
+    display: flex;
+    overflow-x: auto;
+    padding: 0.75rem;
+  }
+  .curator-sidebar__label {
+    display: none;
+  }
+  .curator-nav-item {
+    white-space: nowrap;
+    width: auto;
+  }
+  .curator-content {
+    padding: 1.5rem;
+  }
+  .curator-form-grid {
+    grid-template-columns: 1fr;
+  }
+  .curator-image-field {
+    grid-template-columns: 1fr;
+  }
+}

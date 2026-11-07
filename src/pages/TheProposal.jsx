@@ -4,10 +4,13 @@ import AppointmentModal from '../components/AppointmentModal'
 import { engagementRings } from '../data/products'
 import { useLanguage } from '../hooks/useLanguage'
 import { formatPrice } from '../utils/currencyConverter'
+import { useContentStore } from '../hooks/useContentStore'
 import './TheProposal.css'
 
 export default function TheProposal() {
   const { currency } = useLanguage()
+  const { content } = useContentStore()
+  const proposalSection = content?.proposalSection || {}
   const [appointmentModalOpen, setAppointmentModalOpen] = useState(false)
 
   // Curated 4 proposal rings
@@ -26,7 +29,7 @@ export default function TheProposal() {
       <section className="proposal-hero">
         <div className="proposal-hero__backdrop">
           <img 
-            src="/images/proposal/proposal_moment.jpg" 
+            src={proposalSection.images?.main || "/images/proposal/proposal_moment.jpg"} 
             alt="The Proposal Moment" 
             className="proposal-hero__img"
           />
@@ -34,10 +37,10 @@ export default function TheProposal() {
         </div>
 
         <div className="container proposal-hero__content">
-          <span className="editorial-eyebrow">THE PROPOSAL</span>
-          <h1 className="proposal-hero__title">MAKE THE MOMENT YOURS.</h1>
+          <span className="editorial-eyebrow">{proposalSection.eyebrow || "THE PROPOSAL"}</span>
+          <h1 className="proposal-hero__title">{proposalSection.headline || "MAKE THE MOMENT YOURS."}</h1>
           <p className="proposal-hero__subtitle">
-            For the question you've been carrying, and the life you hope to begin together.
+            {proposalSection.description || "For the question you've been carrying, and the life you hope to begin together."}
           </p>
           <div className="proposal-hero__actions">
             <button 

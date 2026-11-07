@@ -1,5 +1,5 @@
 import React, { useEffect, useCallback } from 'react'
-import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation, useNavigate } from 'react-router-dom'
 import { LanguageProvider } from './hooks/useLanguage'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -26,9 +26,38 @@ import OurHouse from './pages/OurHouse'
 import PrivateConsultations from './pages/PrivateConsultations'
 import Contact from './pages/Contact'
 
+// Hidden Atelier Curator Admin Portal
+import AtelierCurator from './pages/AtelierCurator'
+
 function AppContent() {
   const location = useLocation()
+  const navigate = useNavigate()
   const isHome = location.pathname === '/'
+  const isCuratorPortal = 
+    location.pathname.startsWith('/atelier-curator') || 
+    location.pathname.startsWith('/curator-portal')
+
+  // Discreet keyboard shortcut: Ctrl+Shift+A or Cmd+Shift+A opens the Curator Portal
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'A' || e.key === 'a')) {
+        e.preventDefault()
+        navigate('/atelier-curator')
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [navigate])
+
+  // If in hidden curator portal, render dedicated full-bleed admin suite without public chrome
+  if (isCuratorPortal) {
+    return (
+      <Routes>
+        <Route path="/atelier-curator" element={<AtelierCurator />} />
+        <Route path="/curator-portal" element={<AtelierCurator />} />
+      </Routes>
+    )
+  }
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>

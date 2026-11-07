@@ -1,0 +1,236 @@
+// ============================================================================
+// AVIORY & CO. - DEFAULT SITE CONTENT REPOSITORY
+// Master defaults for all editable images, texts, and sections
+// ============================================================================
+
+export const defaultSiteContent = {
+  hero: {
+    eyebrow: "BESPOKE INTIMACY",
+    headline: "THE SHAPE OF DESIRE",
+    subtitle: "For love, longing and the moments that belong only to you.",
+    ctaLabel: "DISCOVER AVIORY",
+    ctaHref: "#architecture-of-devotion",
+    videoUrl: "/videos/hero-luxury.mp4",
+    posterUrl: "/images/expressions/hero_model.jpg"
+  },
+  expressions: {
+    eyebrow: "FOUR EXPRESSIONS OF INTIMACY",
+    title: "THE ARCHITECTURE OF DEVOTION",
+    subtitle: "Love has its own language: a promise kept, a touch remembered, a look that lingers, a secret shared.",
+    cards: [
+      {
+        id: "vow",
+        name: "VOW",
+        step: "EXPRESSION ONE",
+        title: "A promise kept.",
+        desc: "Some promises are made in a moment and lived in every moment that follows.",
+        image: "/images/expressions/vow.jpg",
+        href: "/love-and-celebration",
+        ctaText: "DISCOVER VOW →"
+      },
+      {
+        id: "touch",
+        name: "TOUCH",
+        step: "EXPRESSION TWO",
+        title: "A touch remembered.",
+        desc: "For closeness, attraction and the quiet pull of being near.",
+        image: "/images/expressions/touch.jpg",
+        href: "/fine-jewellery",
+        ctaText: "DISCOVER TOUCH →"
+      },
+      {
+        id: "wonder",
+        name: "WONDER",
+        step: "EXPRESSION THREE",
+        title: "A look that lingers.",
+        desc: "For the sudden pull of attraction and the thrill of being captivated.",
+        image: "/images/expressions/wonder.jpg",
+        href: "/gemstones",
+        ctaText: "DISCOVER WONDER →"
+      },
+      {
+        id: "whisper",
+        name: "WHISPER",
+        step: "EXPRESSION FOUR",
+        title: "A secret shared.",
+        desc: "Some meanings are too personal for words. They belong to the two who understand.",
+        image: "/images/expressions/whisper.jpg",
+        href: "/bespoke",
+        ctaText: "DISCOVER WHISPER →"
+      }
+    ]
+  },
+  proposalSection: {
+    eyebrow: "THE PROPOSAL",
+    headline: "MAKE THE MOMENT YOURS.",
+    description: "For the question you've been carrying, and the life you hope to begin together.",
+    calloutAsk: "READY TO ASK?",
+    calloutSub: "Let's make the moment feel like yours.",
+    ctaText: "BEGIN YOUR PROPOSAL →",
+    ctaHref: "/the-proposal",
+    images: {
+      main: "/images/proposal/proposal_moment.jpg",
+      sub1: "/images/proposal/proposal_ring_hand.jpg",
+      sub2: "/images/proposal/proposal_candlelight.jpg"
+    }
+  },
+  colourEditSection: {
+    eyebrow: "THE COLOUR EDIT",
+    headline: "A WORLD OF COLOUR, WITH A STORY OF ITS OWN.",
+    subtitle: "Some colours catch your eye. Others stay with you.",
+    ctaText: "EXPLORE ALL COLOURS →",
+    families: [
+      {
+        id: "blue",
+        editorialName: "THE DEPTH OF BLUE",
+        colourFamily: "Blue",
+        tagline: "A colour with presence. A feeling that stays.",
+        description: "From midnight oceanic depths to calm cornflower mornings, Ceylon blue sapphires hold light with a quiet, undeniable authority. Untouched by artificial heat, their depth lives in unbroken silence.",
+        image: "/images/colour-edit/depth_of_blue.jpg",
+        colorHex: "#1B3B6F"
+      },
+      {
+        id: "pink",
+        editorialName: "THE ART OF BLUSH",
+        colourFamily: "Pink",
+        tagline: "Soft at first glance. Impossible to forget.",
+        description: "Delicate dawn pastels and vibrant lotus blossoms. Pink stones hold the gentle warmth of flushed skin and unspoken affection—radiant, modern, and profoundly intimate.",
+        image: "/images/colour-edit/art_of_blush.jpg",
+        colorHex: "#D87093"
+      },
+      {
+        id: "padparadscha",
+        editorialName: "BETWEEN ROSE & SUNSET",
+        colourFamily: "Padparadscha tones",
+        tagline: "A meeting of warmth, colour and fascination.",
+        description: "The rarest natural gem in the world—born only beneath Sri Lankan earth. An ethereal marriage of delicate lotus pink and golden sunrise orange that shifts with the light of every room.",
+        image: "/images/colour-edit/between_rose_sunset.jpg",
+        colorHex: "#E2725B"
+      },
+      {
+        id: "yellow",
+        editorialName: "A LITTLE SUNLIGHT",
+        colourFamily: "Yellow",
+        tagline: "Golden warmth that brings light to skin.",
+        description: "Like honeyed morning light streaming across linen. Ceylon yellow sapphires glow with an inner fire that brings extraordinary radiance and optimism against bare skin.",
+        image: "/images/colour-edit/a_little_sunlight.jpg",
+        colorHex: "#DAA520"
+      },
+      {
+        id: "red",
+        editorialName: "THE HEAT OF RED",
+        colourFamily: "Red",
+        tagline: "Fierce devotion and unbroken passion.",
+        description: "Rare Ceylon rubies holding intense natural fluorescence. Under low candlelight, the crimson crystal awakens with an ardent glow that mirrors the unspoken heat of devotion.",
+        image: "/images/colour-edit/the_heat_of_red.jpg",
+        colorHex: "#8B0000"
+      },
+      {
+        id: "violet",
+        editorialName: "AFTER DUSK",
+        colourFamily: "Violet & deep tones",
+        tagline: "Mysterious, quiet, and hypnotic.",
+        description: "Cobalt spinels and twilight-hued violet stones. For the one captivated by the hour when day surrenders to night—unconventional, rare, and deeply poetic.",
+        image: "/images/colour-edit/after_dusk.jpg",
+        colorHex: "#483D8B"
+      }
+    ]
+  },
+  curationsSection: {
+    eyebrow: "CURATED CREATIONS",
+    headline: "THINGS WORTH KEEPING CLOSE",
+    subtitle: "Discover the creations that speak to you.",
+    ctaText: "VIEW THE COMPLETE REPERTOIRE →",
+    ctaHref: "/love-and-celebration",
+    items: [
+      {
+        id: "curation-1",
+        category: "Solitaire Ring",
+        name: "The Royal Solitaire",
+        price: 18500,
+        image: "/images/products/ring-sapphire-solitaire.jpg",
+        description: "Hand-forged platinum holding an unbroken midnight blue Ceylon stone, resting against the skin that remembers you."
+      },
+      {
+        id: "curation-2",
+        category: "Halo Ring",
+        name: "The Lotus Halo",
+        price: 24000,
+        image: "/images/products/ring-padparadscha.jpg",
+        description: "Rare sunrise padparadscha stone framed by brilliant light, designed to drink the physical warmth of the wearer."
+      },
+      {
+        id: "curation-3",
+        category: "High Jewellery",
+        name: "The Sunset Lotus Collar",
+        price: 32000,
+        image: "/images/gifts-for-her.jpg",
+        description: "Warm precious metal shaped to rest heavy against her collarbone in private candlelit hours."
+      },
+      {
+        id: "curation-4",
+        category: "Trilogy Ring",
+        name: "The Three Promises",
+        price: 21500,
+        image: "/images/products/ring-emerald-solitaire.jpg",
+        description: "Three solitary stones honoring memory, devotion, and the unwritten chapters ahead."
+      }
+    ]
+  },
+  bespokeSection: {
+    eyebrow: "MADE AROUND YOU",
+    headline: "BEGIN WITH A FEELING.",
+    lead: "Tell us who it is for, what you want them to feel, or the moment you want to remember. Together, we will create something that could belong to no one else.",
+    image: "/images/expressions/bespoke_hands.jpg",
+    primaryCtaText: "BEGIN YOUR BESPOKE STORY",
+    primaryCtaHref: "/bespoke/enquiry",
+    secondaryCtaText: "THE BESPOKE EXPERIENCE",
+    secondaryCtaHref: "/bespoke/process"
+  },
+  heartbeatSection: {
+    eyebrow: "THE SECRET COVENANT",
+    headline: "The Heartbeat Gem™: Hidden Against Her Pulse",
+    quote: "The stone no one else will ever see—resting directly against the pulse point of the one you love.",
+    p1: "The world sees what you wear on the outside. But the true covenant of your piece remains hidden within.",
+    p2: "Set flush into the interior curve of the band, a private gemstone rests directly against her skin. Completely invisible to dinner parties, cameras, and strangers—felt with every beat of her pulse."
+  },
+  privateBanner: {
+    eyebrow: "THE PRIVATE SIDE OF LOVE",
+    headline: "SOME THINGS BELONG ONLY TO TWO.",
+    description: "A glance that says everything. A touch that needs no explanation. A moment the rest of the world never has to understand.",
+    ctaText: "ENTER THE AVIORY WORLD",
+    ctaHref: "/love-and-celebration",
+    image: "/images/expressions/private_love.jpg"
+  },
+  ourHouseSection: {
+    eyebrow: "OUR HOUSE",
+    headline: "A HOUSE BUILT AROUND FEELING.",
+    quote: "Some things are chosen for how they look. Others are chosen for what they mean.",
+    lead: "Aviory exists for the latter. For the moments, people and emotions we want to hold close. Every story begins with a feeling, and every personal expression begins with yours.",
+    image: "/images/expressions/our_house_portrait.jpg",
+    ctaText: "GET TO KNOW AVIORY →",
+    ctaHref: "/our-house"
+  },
+  journalSection: {
+    eyebrow: "THE AVIORY JOURNAL",
+    headline: "THE INTIMATE EDIT",
+    subtitle: "Notes on desire, devotion, attraction and the art of making a moment matter.",
+    ctaText: "READ THE JOURNAL →",
+    articles: [
+      {
+        id: "art-01",
+        title: "The Language of Touch",
+        excerpt: "On the things we feel without saying.",
+        image: "/images/expressions/journal_touch.jpg",
+        href: "/journal/the-secret-inner-band"
+      },
+      {
+        id: "art-02",
+        title: "The Beauty of Being Desired",
+        excerpt: "On attraction, confidence and connection.",
+        image: "/images/expressions/journal_desired.jpg",
+        href: "/journal/candlelight-and-gold"
+      }
+    ]
+  }
+}

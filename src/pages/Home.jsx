@@ -1,18 +1,36 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import HeroVideo from '../components/HeroVideo'
 import AppointmentModal from '../components/AppointmentModal'
-import { engagementRings, fineJewellery } from '../data/products'
 import { colourFamilies } from './TheColourEdit'
 import { useLanguage } from '../hooks/useLanguage'
 import { formatPrice } from '../utils/currencyConverter'
+import { useContentStore } from '../hooks/useContentStore'
 import './Home.css'
 
 export default function Home() {
   const { currency } = useLanguage()
+  const { content, fetchContent } = useContentStore()
   const [appointmentModalOpen, setAppointmentModalOpen] = useState(false)
   const [email, setEmail] = useState('')
   const [subscribed, setSubscribed] = useState(false)
+
+  // Fetch latest content on mount
+  useEffect(() => {
+    fetchContent()
+  }, [fetchContent])
+
+  // Extract sections with fallbacks
+  const hero = content?.hero || {}
+  const expressions = content?.expressions || {}
+  const proposalSection = content?.proposalSection || {}
+  const colourEditSection = content?.colourEditSection || {}
+  const curationsSection = content?.curationsSection || {}
+  const bespokeSection = content?.bespokeSection || {}
+  const heartbeatSection = content?.heartbeatSection || {}
+  const privateBanner = content?.privateBanner || {}
+  const ourHouseSection = content?.ourHouseSection || {}
+  const journalSection = content?.journalSection || {}
 
   // The Heartbeat Gem™ Interactive State
   const [activeHeartbeatGem, setActiveHeartbeatGem] = useState('sapphire')
@@ -51,26 +69,21 @@ export default function Home() {
 
   const currentHeartbeat = heartbeatOptions[activeHeartbeatGem]
 
-  // Curated 4 creations for "Things Worth Keeping Close"
-  const curatedCreations = [
-    engagementRings[0],
-    engagementRings[1],
-    fineJewellery[0] || engagementRings[2],
-    engagementRings[3]
-  ].filter(Boolean)
-
   return (
     <div className="aviory-romantic-home">
       {/* ====================================================================
           1. THE HERO — THE SHAPE OF DESIRE
           ==================================================================== */}
       <HeroVideo
-        video="/videos/hero-luxury.mp4"
-        poster="/images/expressions/hero_model.jpg"
-        eyebrow="BESPOKE INTIMACY"
-        headline="THE SHAPE OF DESIRE"
-        subtitle="For love, longing and the moments that belong only to you."
-        primaryCta={{ label: "DISCOVER AVIORY", href: "#architecture-of-devotion" }}
+        video={hero.videoUrl || "/videos/hero-luxury.mp4"}
+        poster={hero.posterUrl || "/images/expressions/hero_model.jpg"}
+        eyebrow={hero.eyebrow || "BESPOKE INTIMACY"}
+        headline={hero.headline || "THE SHAPE OF DESIRE"}
+        subtitle={hero.subtitle || "For love, longing and the moments that belong only to you."}
+        primaryCta={{ 
+          label: hero.ctaLabel || "DISCOVER AVIORY", 
+          href: hero.ctaHref || "#architecture-of-devotion" 
+        }}
         secondaryCta={null}
       />
 
@@ -84,105 +97,39 @@ export default function Home() {
       >
         <div className="container">
           <div className="section-header-centered">
-            <span className="editorial-eyebrow">FOUR EXPRESSIONS OF INTIMACY</span>
-            <h2 className="section-title">THE ARCHITECTURE OF DEVOTION</h2>
+            <span className="editorial-eyebrow">
+              {expressions.eyebrow || "FOUR EXPRESSIONS OF INTIMACY"}
+            </span>
+            <h2 className="section-title">
+              {expressions.title || "THE ARCHITECTURE OF DEVOTION"}
+            </h2>
             <p className="section-subtitle">
-              Love has its own language: a promise kept, a touch remembered, a look that lingers, a secret shared.
+              {expressions.subtitle || "Love has its own language: a promise kept, a touch remembered, a look that lingers, a secret shared."}
             </p>
           </div>
 
           <div className="devotion-grid">
-            {/* EXPRESSION ONE: VOW */}
-            <article className="devotion-card">
-              <Link to="/love-and-celebration" className="devotion-card__media-link">
-                <div 
-                  className="devotion-card__media"
-                  style={{ backgroundImage: 'url(/images/expressions/vow.jpg)' }}
-                >
-                  <div className="devotion-card__overlay" />
-                  <span className="devotion-card__tag">VOW</span>
-                </div>
-              </Link>
-              <div className="devotion-card__body">
-                <span className="devotion-card__eyebrow">EXPRESSION ONE</span>
-                <h3 className="devotion-card__title">A promise kept.</h3>
-                <p className="devotion-card__desc">
-                  Some promises are made in a moment and lived in every moment that follows.
-                </p>
-                <Link to="/love-and-celebration" className="devotion-card__cta">
-                  DISCOVER VOW &rarr;
+            {(expressions.cards || []).map((card, idx) => (
+              <article key={card.id || idx} className="devotion-card">
+                <Link to={card.href || "/love-and-celebration"} className="devotion-card__media-link">
+                  <div 
+                    className="devotion-card__media"
+                    style={{ backgroundImage: `url(${card.image})` }}
+                  >
+                    <div className="devotion-card__overlay" />
+                    <span className="devotion-card__tag">{card.name}</span>
+                  </div>
                 </Link>
-              </div>
-            </article>
-
-            {/* EXPRESSION TWO: TOUCH */}
-            <article className="devotion-card">
-              <Link to="/fine-jewellery" className="devotion-card__media-link">
-                <div 
-                  className="devotion-card__media"
-                  style={{ backgroundImage: 'url(/images/expressions/touch.jpg)' }}
-                >
-                  <div className="devotion-card__overlay" />
-                  <span className="devotion-card__tag">TOUCH</span>
+                <div className="devotion-card__body">
+                  <span className="devotion-card__eyebrow">{card.step}</span>
+                  <h3 className="devotion-card__title">{card.title}</h3>
+                  <p className="devotion-card__desc">{card.desc}</p>
+                  <Link to={card.href || "/love-and-celebration"} className="devotion-card__cta">
+                    {card.ctaText || `DISCOVER ${card.name} →`}
+                  </Link>
                 </div>
-              </Link>
-              <div className="devotion-card__body">
-                <span className="devotion-card__eyebrow">EXPRESSION TWO</span>
-                <h3 className="devotion-card__title">A touch remembered.</h3>
-                <p className="devotion-card__desc">
-                  For closeness, attraction and the quiet pull of being near.
-                </p>
-                <Link to="/fine-jewellery" className="devotion-card__cta">
-                  DISCOVER TOUCH &rarr;
-                </Link>
-              </div>
-            </article>
-
-            {/* EXPRESSION THREE: WONDER */}
-            <article className="devotion-card">
-              <Link to="/gemstones" className="devotion-card__media-link">
-                <div 
-                  className="devotion-card__media"
-                  style={{ backgroundImage: 'url(/images/expressions/wonder.jpg)' }}
-                >
-                  <div className="devotion-card__overlay" />
-                  <span className="devotion-card__tag">WONDER</span>
-                </div>
-              </Link>
-              <div className="devotion-card__body">
-                <span className="devotion-card__eyebrow">EXPRESSION THREE</span>
-                <h3 className="devotion-card__title">A look that lingers.</h3>
-                <p className="devotion-card__desc">
-                  For the sudden pull of attraction and the thrill of being captivated.
-                </p>
-                <Link to="/gemstones" className="devotion-card__cta">
-                  DISCOVER WONDER &rarr;
-                </Link>
-              </div>
-            </article>
-
-            {/* EXPRESSION FOUR: WHISPER */}
-            <article className="devotion-card">
-              <Link to="/bespoke" className="devotion-card__media-link">
-                <div 
-                  className="devotion-card__media"
-                  style={{ backgroundImage: 'url(/images/expressions/whisper.jpg)' }}
-                >
-                  <div className="devotion-card__overlay" />
-                  <span className="devotion-card__tag">WHISPER</span>
-                </div>
-              </Link>
-              <div className="devotion-card__body">
-                <span className="devotion-card__eyebrow">EXPRESSION FOUR</span>
-                <h3 className="devotion-card__title">A secret shared.</h3>
-                <p className="devotion-card__desc">
-                  Some meanings are too personal for words. They belong to the two who understand.
-                </p>
-                <Link to="/bespoke" className="devotion-card__cta">
-                  DISCOVER WHISPER &rarr;
-                </Link>
-              </div>
-            </article>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -194,30 +141,47 @@ export default function Home() {
         <div className="container">
           <div className="home-proposal-banner">
             <div className="home-proposal-banner__content">
-              <span className="editorial-eyebrow">THE PROPOSAL</span>
-              <h2 className="section-title">MAKE THE MOMENT YOURS.</h2>
+              <span className="editorial-eyebrow">
+                {proposalSection.eyebrow || "THE PROPOSAL"}
+              </span>
+              <h2 className="section-title">
+                {proposalSection.headline || "MAKE THE MOMENT YOURS."}
+              </h2>
               <p className="home-proposal-banner__desc">
-                For the question you've been carrying, and the life you hope to begin together.
+                {proposalSection.description || "For the question you've been carrying, and the life you hope to begin together."}
               </p>
 
               <div className="home-proposal-callout">
-                <span className="home-proposal-callout__ask">READY TO ASK?</span>
-                <p className="home-proposal-callout__sub">Let's make the moment feel like yours.</p>
-                <Link to="/the-proposal" className="btn-luxury-primary">
-                  BEGIN YOUR PROPOSAL &rarr;
+                <span className="home-proposal-callout__ask">
+                  {proposalSection.calloutAsk || "READY TO ASK?"}
+                </span>
+                <p className="home-proposal-callout__sub">
+                  {proposalSection.calloutSub || "Let's make the moment feel like yours."}
+                </p>
+                <Link to={proposalSection.ctaHref || "/the-proposal"} className="btn-luxury-primary">
+                  {proposalSection.ctaText || "BEGIN YOUR PROPOSAL →"}
                 </Link>
               </div>
             </div>
 
             <div className="home-proposal-montage">
               <div className="home-proposal-montage__item home-proposal-montage__item--main">
-                <img src="/images/proposal/proposal_moment.jpg" alt="The Proposal Question" />
+                <img 
+                  src={proposalSection.images?.main || "/images/proposal/proposal_moment.jpg"} 
+                  alt="The Proposal Question" 
+                />
               </div>
               <div className="home-proposal-montage__item home-proposal-montage__item--sub1">
-                <img src="/images/proposal/proposal_ring_hand.jpg" alt="Proposal Ring on Hand" />
+                <img 
+                  src={proposalSection.images?.sub1 || "/images/proposal/proposal_ring_hand.jpg"} 
+                  alt="Proposal Ring on Hand" 
+                />
               </div>
               <div className="home-proposal-montage__item home-proposal-montage__item--sub2">
-                <img src="/images/proposal/proposal_candlelight.jpg" alt="Candlelight Proposal" />
+                <img 
+                  src={proposalSection.images?.sub2 || "/images/proposal/proposal_candlelight.jpg"} 
+                  alt="Candlelight Proposal" 
+                />
               </div>
             </div>
           </div>
@@ -230,16 +194,19 @@ export default function Home() {
       <section className="home-colour-edit-section" aria-label="The Colour Edit">
         <div className="container">
           <div className="section-header-centered">
-            <span className="editorial-eyebrow">THE COLOUR EDIT</span>
-            <h2 className="section-title">A WORLD OF COLOUR, WITH A STORY OF ITS OWN.</h2>
+            <span className="editorial-eyebrow">
+              {colourEditSection.eyebrow || "THE COLOUR EDIT"}
+            </span>
+            <h2 className="section-title">
+              {colourEditSection.headline || "A WORLD OF COLOUR, WITH A STORY OF ITS OWN."}
+            </h2>
             <p className="section-subtitle">
-              Some colours catch your eye. Others stay with you.
+              {colourEditSection.subtitle || "Some colours catch your eye. Others stay with you."}
             </p>
           </div>
 
-          {/* Proper multi-card horizontal collection on desktop */}
           <div className="home-colour-cards-grid">
-            {colourFamilies.map((fam) => (
+            {(colourEditSection.families || colourFamilies).map((fam) => (
               <Link 
                 key={fam.id} 
                 to={`/the-colour-edit?color=${fam.id}`} 
@@ -254,7 +221,7 @@ export default function Home() {
                   <h3 className="home-colour-card__name">{fam.editorialName}</h3>
                   <p className="home-colour-card__tagline">{fam.tagline}</p>
                   <span className="home-colour-card__cta">
-                    DISCOVER {fam.colourFamily.toUpperCase()} &rarr;
+                    DISCOVER {(fam.colourFamily || '').toUpperCase()} &rarr;
                   </span>
                 </div>
               </Link>
@@ -263,14 +230,14 @@ export default function Home() {
 
           <div className="home-colour-footer-wrap">
             <Link to="/the-colour-edit" className="link-text-gold">
-              EXPLORE ALL COLOURS &rarr;
+              {colourEditSection.ctaText || "EXPLORE ALL COLOURS →"}
             </Link>
           </div>
         </div>
       </section>
 
       {/* ====================================================================
-          5. THINGS WORTH KEEPING CLOSE — UNDERSTATED PRODUCT CURATION
+          5. THINGS WORTH KEEPING CLOSE — PRODUCT CURATION
           ==================================================================== */}
       <section 
         id="things-worth-keeping-close" 
@@ -279,20 +246,24 @@ export default function Home() {
       >
         <div className="container">
           <div className="section-header-centered">
-            <span className="editorial-eyebrow">CURATED CREATIONS</span>
-            <h2 className="section-title">THINGS WORTH KEEPING CLOSE</h2>
+            <span className="editorial-eyebrow">
+              {curationsSection.eyebrow || "CURATED CREATIONS"}
+            </span>
+            <h2 className="section-title">
+              {curationsSection.headline || "THINGS WORTH KEEPING CLOSE"}
+            </h2>
             <p className="section-subtitle">
-              Discover the creations that speak to you.
+              {curationsSection.subtitle || "Discover the creations that speak to you."}
             </p>
           </div>
 
           <div className="curations-grid">
-            {curatedCreations.map((item) => (
+            {(curationsSection.items || []).map((item) => (
               <div key={item.id} className="curation-card">
-                <Link to={`/products/${item.id}`} className="curation-card__media-link">
+                <Link to="/love-and-celebration" className="curation-card__media-link">
                   <div className="curation-card__media">
                     <img 
-                      src={item.images?.[0] || item.image} 
+                      src={item.image} 
                       alt={item.name} 
                       className="curation-card__img"
                     />
@@ -302,14 +273,14 @@ export default function Home() {
                 <div className="curation-card__body">
                   <span className="curation-card__category">{item.category || 'High Jewellery'}</span>
                   <h3 className="curation-card__title">
-                    <Link to={`/products/${item.id}`}>{item.name}</Link>
+                    <Link to="/love-and-celebration">{item.name}</Link>
                   </h3>
                   <p className="curation-card__desc">{item.description}</p>
                   <div className="curation-card__footer">
                     <span className="curation-card__price">
                       {formatPrice(item.price, currency)}
                     </span>
-                    <Link to={`/products/${item.id}`} className="btn-luxury-primary btn-small">
+                    <Link to="/love-and-celebration" className="btn-luxury-primary btn-small">
                       VIEW CREATION
                     </Link>
                   </div>
@@ -319,8 +290,8 @@ export default function Home() {
           </div>
 
           <div className="curations-footer-wrap">
-            <Link to="/love-and-celebration" className="link-text-gold">
-              VIEW THE COMPLETE REPERTOIRE &rarr;
+            <Link to={curationsSection.ctaHref || "/love-and-celebration"} className="link-text-gold">
+              {curationsSection.ctaText || "VIEW THE COMPLETE REPERTOIRE →"}
             </Link>
           </div>
         </div>
@@ -334,23 +305,27 @@ export default function Home() {
           <div className="editorial-split-grid">
             <div className="editorial-split__media-wrap">
               <img 
-                src="/images/expressions/bespoke_hands.jpg" 
+                src={bespokeSection.image || "/images/expressions/bespoke_hands.jpg"} 
                 alt="Two hands clasped with devotion" 
                 className="editorial-split__img"
               />
             </div>
             <div className="editorial-split__content">
-              <span className="editorial-eyebrow">MADE AROUND YOU</span>
-              <h2 className="section-title">BEGIN WITH A FEELING.</h2>
+              <span className="editorial-eyebrow">
+                {bespokeSection.eyebrow || "MADE AROUND YOU"}
+              </span>
+              <h2 className="section-title">
+                {bespokeSection.headline || "BEGIN WITH A FEELING."}
+              </h2>
               <p className="editorial-split__lead">
-                Tell us who it is for, what you want them to feel, or the moment you want to remember. Together, we will create something that could belong to no one else.
+                {bespokeSection.lead || "Tell us who it is for, what you want them to feel, or the moment you want to remember. Together, we will create something that could belong to no one else."}
               </p>
               <div className="editorial-split__actions">
-                <Link to="/bespoke/enquiry" className="btn-luxury-primary">
-                  BEGIN YOUR BESPOKE STORY
+                <Link to={bespokeSection.primaryCtaHref || "/bespoke/enquiry"} className="btn-luxury-primary">
+                  {bespokeSection.primaryCtaText || "BEGIN YOUR BESPOKE STORY"}
                 </Link>
-                <Link to="/bespoke/process" className="btn-luxury-outline">
-                  THE BESPOKE EXPERIENCE
+                <Link to={bespokeSection.secondaryCtaHref || "/bespoke/process"} className="btn-luxury-outline">
+                  {bespokeSection.secondaryCtaText || "THE BESPOKE EXPERIENCE"}
                 </Link>
               </div>
             </div>
@@ -368,17 +343,15 @@ export default function Home() {
             <div className="heartbeat-visual-wrapper">
               <div className="heartbeat-ring-canvas">
                 <svg className="heartbeat-ring-svg" viewBox="0 0 320 320" fill="none">
-                  {/* Outer Ring Profile */}
                   <circle cx="160" cy="160" r="120" stroke="#D4AF7F" strokeWidth="14" opacity="0.65" />
                   <circle cx="160" cy="160" r="113" stroke="#F5EDE2" strokeWidth="1" />
-                  {/* Inner Ring Profile (Skin Contact Surface) */}
                   <circle cx="160" cy="160" r="106" stroke="#D4AF7F" strokeWidth="2" />
 
-                  {/* Solitaire Mount at Top (12 o'clock) */}
+                  {/* Solitaire Mount at Top */}
                   <polygon points="160,26 174,38 160,50 146,38" fill="#1A1A1A" />
                   <circle cx="160" cy="38" r="9" fill="#254E8C" />
 
-                  {/* The Secret Flush-Set Pulse Gem at Bottom (6 o'clock) */}
+                  {/* The Secret Flush-Set Pulse Gem at Bottom */}
                   <circle 
                     cx="160" 
                     cy="266" 
@@ -429,18 +402,22 @@ export default function Home() {
 
             {/* Narrative & Interactive Selector */}
             <div className="heartbeat-narrative">
-              <span className="editorial-eyebrow">THE SECRET COVENANT</span>
-              <h2 className="section-title">The Heartbeat Gem™: Hidden Against Her Pulse</h2>
+              <span className="editorial-eyebrow">
+                {heartbeatSection.eyebrow || "THE SECRET COVENANT"}
+              </span>
+              <h2 className="section-title">
+                {heartbeatSection.headline || "The Heartbeat Gem™: Hidden Against Her Pulse"}
+              </h2>
               
               <blockquote className="heartbeat-quote">
-                "The stone no one else will ever see—resting directly against the pulse point of the one you love."
+                "{heartbeatSection.quote || "The stone no one else will ever see—resting directly against the pulse point of the one you love."}"
               </blockquote>
 
               <p className="heartbeat-text">
-                The world sees what you wear on the outside. But the true covenant of your piece remains hidden within.
+                {heartbeatSection.p1 || "The world sees what you wear on the outside. But the true covenant of your piece remains hidden within."}
               </p>
               <p className="heartbeat-text">
-                Set flush into the interior curve of the band, a private gemstone rests directly against her skin. Completely invisible to dinner parties, cameras, and strangers—felt with every beat of her pulse.
+                {heartbeatSection.p2 || "Set flush into the interior curve of the band, a private gemstone rests directly against her skin. Completely invisible to dinner parties, cameras, and strangers—felt with every beat of her pulse."}
               </p>
 
               {/* Stone Selector Buttons */}
@@ -500,19 +477,23 @@ export default function Home() {
           ==================================================================== */}
       <section 
         className="home-private-banner" 
-        style={{ backgroundImage: 'url(/images/expressions/private_love.jpg)' }}
+        style={{ backgroundImage: `url(${privateBanner.image || '/images/expressions/private_love.jpg'})` }}
         aria-label="The Private Side of Love"
       >
         <div className="home-private-banner__overlay" />
         <div className="container">
           <div className="home-private-banner__content">
-            <span className="editorial-eyebrow">THE PRIVATE SIDE OF LOVE</span>
-            <h2 className="home-private-banner__title">SOME THINGS BELONG ONLY TO TWO.</h2>
+            <span className="editorial-eyebrow">
+              {privateBanner.eyebrow || "THE PRIVATE SIDE OF LOVE"}
+            </span>
+            <h2 className="home-private-banner__title">
+              {privateBanner.headline || "SOME THINGS BELONG ONLY TO TWO."}
+            </h2>
             <p className="home-private-banner__desc">
-              A glance that says everything. A touch that needs no explanation. A moment the rest of the world never has to understand.
+              {privateBanner.description || "A glance that says everything. A touch that needs no explanation. A moment the rest of the world never has to understand."}
             </p>
-            <Link to="/love-and-celebration" className="btn-luxury-primary">
-              ENTER THE AVIORY WORLD
+            <Link to={privateBanner.ctaHref || "/love-and-celebration"} className="btn-luxury-primary">
+              {privateBanner.ctaText || "ENTER THE AVIORY WORLD"}
             </Link>
           </div>
         </div>
@@ -526,23 +507,27 @@ export default function Home() {
           <div className="editorial-split-grid editorial-split-grid--reversed">
             <div className="editorial-split__media-wrap">
               <img 
-                src="/images/expressions/our_house_portrait.jpg" 
+                src={ourHouseSection.image || "/images/expressions/our_house_portrait.jpg"} 
                 alt="The House of Aviory" 
                 className="editorial-split__img"
               />
             </div>
             <div className="editorial-split__content">
-              <span className="editorial-eyebrow">OUR HOUSE</span>
-              <h2 className="section-title">A HOUSE BUILT AROUND FEELING.</h2>
+              <span className="editorial-eyebrow">
+                {ourHouseSection.eyebrow || "OUR HOUSE"}
+              </span>
+              <h2 className="section-title">
+                {ourHouseSection.headline || "A HOUSE BUILT AROUND FEELING."}
+              </h2>
               <p className="editorial-split__quote">
-                Some things are chosen for how they look. Others are chosen for what they mean.
+                "{ourHouseSection.quote || "Some things are chosen for how they look. Others are chosen for what they mean."}"
               </p>
               <p className="editorial-split__lead">
-                Aviory exists for the latter. For the moments, people and emotions we want to hold close. Every story begins with a feeling, and every personal expression begins with yours.
+                {ourHouseSection.lead || "Aviory exists for the latter. For the moments, people and emotions we want to hold close. Every story begins with a feeling, and every personal expression begins with yours."}
               </p>
               <div className="editorial-split__actions">
-                <Link to="/our-house" className="btn-luxury-primary">
-                  GET TO KNOW AVIORY &rarr;
+                <Link to={ourHouseSection.ctaHref || "/our-house"} className="btn-luxury-primary">
+                  {ourHouseSection.ctaText || "GET TO KNOW AVIORY →"}
                 </Link>
                 <button 
                   type="button" 
@@ -563,52 +548,41 @@ export default function Home() {
       <section className="home-journal-section" aria-label="The Aviory Journal">
         <div className="container">
           <div className="section-header-centered">
-            <span className="editorial-eyebrow">THE AVIORY JOURNAL</span>
-            <h2 className="section-title">THE INTIMATE EDIT</h2>
+            <span className="editorial-eyebrow">
+              {journalSection.eyebrow || "THE AVIORY JOURNAL"}
+            </span>
+            <h2 className="section-title">
+              {journalSection.headline || "THE INTIMATE EDIT"}
+            </h2>
             <p className="section-subtitle">
-              Notes on desire, devotion, attraction and the art of making a moment matter.
+              {journalSection.subtitle || "Notes on desire, devotion, attraction and the art of making a moment matter."}
             </p>
           </div>
 
           <div className="intimate-journal-grid">
-            <article className="intimate-journal-card">
-              <Link to="/journal/the-secret-inner-band" className="intimate-journal-card__media-link">
-                <div 
-                  className="intimate-journal-card__media"
-                  style={{ backgroundImage: 'url(/images/expressions/journal_touch.jpg)' }}
-                />
-              </Link>
-              <div className="intimate-journal-card__body">
-                <h3 className="intimate-journal-card__title">
-                  <Link to="/journal/the-secret-inner-band">The Language of Touch</Link>
-                </h3>
-                <p className="intimate-journal-card__excerpt">
-                  On the things we feel without saying.
-                </p>
-              </div>
-            </article>
-
-            <article className="intimate-journal-card">
-              <Link to="/journal/candlelight-and-gold" className="intimate-journal-card__media-link">
-                <div 
-                  className="intimate-journal-card__media"
-                  style={{ backgroundImage: 'url(/images/expressions/journal_desired.jpg)' }}
-                />
-              </Link>
-              <div className="intimate-journal-card__body">
-                <h3 className="intimate-journal-card__title">
-                  <Link to="/journal/candlelight-and-gold">The Beauty of Being Desired</Link>
-                </h3>
-                <p className="intimate-journal-card__excerpt">
-                  On attraction, confidence and connection.
-                </p>
-              </div>
-            </article>
+            {(journalSection.articles || []).map((art, idx) => (
+              <article key={art.id || idx} className="intimate-journal-card">
+                <Link to={art.href || "/journal"} className="intimate-journal-card__media-link">
+                  <div 
+                    className="intimate-journal-card__media"
+                    style={{ backgroundImage: `url(${art.image})` }}
+                  />
+                </Link>
+                <div className="intimate-journal-card__body">
+                  <h3 className="intimate-journal-card__title">
+                    <Link to={art.href || "/journal"}>{art.title}</Link>
+                  </h3>
+                  <p className="intimate-journal-card__excerpt">
+                    {art.excerpt}
+                  </p>
+                </div>
+              </article>
+            ))}
           </div>
 
           <div className="journal-footer-wrap">
             <Link to="/journal" className="link-text-gold">
-              READ THE JOURNAL &rarr;
+              {journalSection.ctaText || "READ THE JOURNAL →"}
             </Link>
           </div>
         </div>
